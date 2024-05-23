@@ -2,7 +2,7 @@
 
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { Button } from '@/components/ui';
-import { StatsCard } from '../components/StatsCard';
+import { StatsCard } from '../../components/StatsCard';
 
 const DashboardContent = () => {
 	return (
@@ -52,6 +52,8 @@ const DashboardContent = () => {
 
 export default function Home() {
 	return (
-		<>Please log in first.</>
+		<DashboardLayout>
+			<DashboardContent />
+		</DashboardLayout>
 	);
 }
