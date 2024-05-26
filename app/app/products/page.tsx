@@ -8,7 +8,7 @@ const DashboardContent = () => {
 	return (
 		<>
 			<div className="flex items-center">
-				<h1 className="text-lg font-semibold md:text-2xl">Dashboard</h1>
+				<h1 className="text-lg font-semibold md:text-2xl">Products</h1>
 			</div>
 			<div className="grid grid-cols-4 gap-x-4">
 				<StatsCard

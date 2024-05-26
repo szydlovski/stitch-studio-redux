@@ -1,19 +1,21 @@
+import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { cn } from '@/lib/utils';
+import { SessionProvider } from 'next-auth/react';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-	title: 'Stitch Studio by KamCraft',
+	title: 'Stitch Studio',
 	description: 'Generate, design & monetize cross stitch patterns',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
+	params: {};
 }>) {
 	return (
 		<html lang="en">
@@ -23,7 +25,7 @@ export default function RootLayout({
 					fontSans.className
 				)}
 			>
-				{children}
+				<SessionProvider>{children}</SessionProvider>
 			</body>
 		</html>
 	);
