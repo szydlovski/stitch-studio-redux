@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { cn } from '@/lib';
 import { usePathname } from 'next/navigation';
-import { MENU_LINKS } from './links';
+import { MENU_LINKS } from '../links';
 
 export const Sidebar = () => {
 	const pathname = usePathname();
