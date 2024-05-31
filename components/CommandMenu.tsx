@@ -36,6 +36,7 @@ export function CommandMenu() {
 	const [searchResults, setSearchResults] = React.useState<SearchResult[]>();
 	const [searching, setSearching] = React.useState(false);
 	const [state, setState] = React.useState<FilePatternPayload>();
+	const [success, setSuccess] = React.useState(false);
 	const router = useRouter();
 	const [open, setOpen] = React.useState(false);
 	const [dialogOpen, setDialogOpen] = React.useState(false);
@@ -45,7 +46,6 @@ export function CommandMenu() {
 		const { total, results } = await globalSearch(value);
 		setSearchResults(results);
 		setSearching(false);
-		console.log(results);
 	};
 
 	const debounced = debounce(handleDebounceFn, 500);
@@ -130,7 +130,6 @@ export function CommandMenu() {
 							className="flex gap-2"
 							value={'createProduct'}
 							onSelect={() => {
-								console.log('create product');
 								setDialogOpen(true);
 								setOpen(false);
 							}}
@@ -143,7 +142,12 @@ export function CommandMenu() {
 			</CommandDialog>
 
 			<Dialog open={dialogOpen} onOpenChange={(value) => setDialogOpen(value)}>
-				<CreateProductDialogContent state={state} setState={setState} />
+				<CreateProductDialogContent
+					state={state}
+					setState={setState}
+					success={success}
+					onSuccess={() => setSuccess(true)}
+				/>
 			</Dialog>
 		</>
 	);

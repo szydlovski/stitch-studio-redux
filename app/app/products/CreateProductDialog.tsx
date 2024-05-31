@@ -31,7 +31,6 @@ const formatPayload = async (file: File): Promise<FilePatternPayload> => {
 	const renderer = new PatternRenderer(textures);
 	const img = renderer.renderEmbroideryMockup(pattern, 4);
 	const dataUrl = img.toDataURL();
-	console.log('dataUrl', dataUrl);
 
 	return {
 		pattern,
@@ -47,9 +46,13 @@ const dataUrlToXataBase64 = (dataUrl: string) => {
 export const CreateProductDialogContent = ({
 	state,
 	setState,
+	success,
+	onSuccess,
 }: {
 	state?: FilePatternPayload;
 	setState: (state?: FilePatternPayload) => void;
+	success: boolean;
+	onSuccess?: () => void;
 }) => {
 	const [title, setTitle] = useState('');
 	const handlePickFile = useCallback(async () => {
@@ -57,64 +60,73 @@ export const CreateProductDialogContent = ({
 		const file = await selectFile();
 		setState(await formatPayload(file));
 	}, [setState]);
-	const handleSave = () => {
+	const handleSave = async () => {
 		if (!state) return;
 		const data = new FormData();
 		data.append('title', title);
 		data.append('thumbnail', dataUrlToXataBase64(state.src));
 		data.append('data', JSON.stringify(state.pattern.toData()));
-		createProduct(data).then((res) => console.log(res));
+		const product = await createProduct(data);
+		onSuccess?.();
 	};
 	return (
 		<DialogContent className="sm:max-w-[425px]">
 			<DialogHeader>
 				<DialogTitle>Create product</DialogTitle>
 				<DialogDescription>
-					Select a .PNG image to get started.
+					{success
+						? 'Product created successfully!'
+						: `Select a .PNG image to get started.`}
 				</DialogDescription>
 			</DialogHeader>
-			<div className="grid gap-4 py-4">
-				<div className="grid grid-cols-4 items-center gap-4">
-					<Label htmlFor="name" className="text-right">
-						File
-					</Label>
-					<Button
-						variant="outline"
-						className="col-span-3"
-						onClick={handlePickFile}
-					>
-						{state ? state.filename : 'Select file'}
-					</Button>
-				</div>
-				<div className="grid grid-cols-4 items-center gap-4">
-					<Label htmlFor="title" className="text-right">
-						Title
-					</Label>
-					<Input
-						id="title"
-						placeholder="My new product"
-						value={title}
-						onChange={(e) => setTitle(e.target.value)}
-						className="col-span-3"
-					/>
-				</div>
-			</div>
-			<div className="flex p-4 justify-center items-center aspect-square bg-neutral-100 rounded-md">
-				{state ? (
-					<img src={state.src} />
-				) : (
-					<span className="text-sm text-neutral-400">
-						Preview will appear here.
-					</span>
-				)}
-			</div>
-			<div className="grid grid-cols-3 gap-6">
-				<DataSet label={'Dimensions'}>{state?.pattern.dimensionsText}</DataSet>
-				<DataSet label={'Stitches'}>{state?.pattern.stitchCount}</DataSet>
-				<DataSet label={'Colors'}>{state?.pattern.colorCount}</DataSet>
-			</div>
+			{!success && (
+				<>
+					<div className="grid gap-4 py-4">
+						<div className="grid grid-cols-4 items-center gap-4">
+							<Label htmlFor="name" className="text-right">
+								File
+							</Label>
+							<Button
+								variant="outline"
+								className="col-span-3"
+								onClick={handlePickFile}
+							>
+								{state ? state.filename : 'Select file'}
+							</Button>
+						</div>
+						<div className="grid grid-cols-4 items-center gap-4">
+							<Label htmlFor="title" className="text-right">
+								Title
+							</Label>
+							<Input
+								id="title"
+								placeholder="My new product"
+								value={title}
+								onChange={(e) => setTitle(e.target.value)}
+								className="col-span-3"
+							/>
+						</div>
+					</div>
+					<div className="flex p-4 justify-center items-center aspect-square bg-neutral-100 rounded-md">
+						{state ? (
+							<img src={state.src} />
+						) : (
+							<span className="text-sm text-neutral-400">
+								Preview will appear here.
+							</span>
+						)}
+					</div>
+					<div className="grid grid-cols-3 gap-6">
+						<DataSet label={'Dimensions'}>
+							{state?.pattern.dimensionsText}
+						</DataSet>
+						<DataSet label={'Stitches'}>{state?.pattern.stitchCount}</DataSet>
+						<DataSet label={'Colors'}>{state?.pattern.colorCount}</DataSet>
+					</div>
+				</>
+			)}
 			<DialogFooter>
-				<Button type="submit" disabled={!state} onClick={handleSave}>
+				<Button type="submit" disabled={!state || success} onClick={handleSave}>
 					Save
 				</Button>
 			</DialogFooter>
@@ -124,12 +136,27 @@ export const CreateProductDialogContent = ({
 
 export const CreateProductDialog = () => {
 	const [state, setState] = useState<FilePatternPayload>();
+	const [success, setSuccess] = useState(false);
 	return (
-		<Dialog>
+		<Dialog
+			onOpenChange={() => {
+				if (success) {
+					setSuccess(false);
+					location.reload();
+				} else {
+					setState(undefined);
+				}
+			}}
+		>
 			<DialogTrigger asChild>
 				<Button>Create product</Button>
 			</DialogTrigger>
-			<CreateProductDialogContent state={state} setState={setState} />
+			<CreateProductDialogContent
+				state={state}
+				setState={setState}
+				success={success}
+				onSuccess={() => setSuccess(true)}
+			/>
 		</Dialog>
 	);
 };

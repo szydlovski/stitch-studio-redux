@@ -23,8 +23,6 @@ export const DashboardLayout = ({ children }: ContainerProps) => {
 	const router = useRouter();
 	const session = useSession();
 	React.useEffect(() => {
-		console.log();
-
 		if (session.status === 'unauthenticated') {
 			router.push('/login');
 		}

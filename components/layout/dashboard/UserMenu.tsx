@@ -16,7 +16,6 @@ import { signOut } from 'next-auth/react';
 
 export const UserMenu = () => {
 	const { data } = useSession();
-	console.log(data?.user?.image);
 	
 	return (
 		<>
