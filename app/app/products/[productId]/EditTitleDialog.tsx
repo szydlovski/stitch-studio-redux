@@ -55,7 +55,7 @@ export const EditTitleDialog = ({
 				<DialogHeader>
 					<DialogTitle>Edit product title</DialogTitle>
 					<DialogDescription>
-						Make changes to your profile here. Click save when you're done.
+						{`Make changes to your profile here. Click save when you're done.`}
 					</DialogDescription>
 				</DialogHeader>
 				<div className="flex flex-col gap-4">

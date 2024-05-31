@@ -56,7 +56,7 @@ export const CreateProductDialogContent = ({
 		setState(undefined);
 		const file = await selectFile();
 		setState(await formatPayload(file));
-	}, []);
+	}, [setState]);
 	const handleSave = () => {
 		if (!state) return;
 		const data = new FormData();
