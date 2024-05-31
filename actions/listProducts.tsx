@@ -30,7 +30,7 @@ export const listProducts = () =>
 			'author.email',
 		])
 		.sort('xata.updatedAt', 'desc')
-		.getMany()
+		.getMany({ fetchOptions: { next: { revalidate: 0 } } })
 		.then((products) =>
 			products.map(
 				({ id, title, thumbnail, brand, author }): ListProductsRecord => {
