@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpc49emuv5dpboeh31gg",
+  "parentID": "mig_cpc49deuv5dpboeh31fg",
+  "checksum": "1:c86dc0e1205a67cdb0934f95169f11092948e23ed562fbd662ea79c59683c6bb",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "user",
+        "oldName": "users"
+      }
+    }
+  ]
+}

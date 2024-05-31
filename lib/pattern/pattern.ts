@@ -1,6 +1,7 @@
 import { Drawable } from '@/lib/canvas';
 import { ColorGroup, RGBTuple } from './types';
 import { v4 as uuid } from 'uuid';
+import { readImageFromFile } from '../helpers';
 
 export interface PatternData {
 	readonly width: number;
@@ -30,6 +31,21 @@ export class Pattern {
 	}
 	public serialize(): string {
 		return JSON.stringify(this.toData());
+	}
+	// utility getters
+	get dimensionsText(): string {
+		return `${this.width} x ${this.height}`;
+	}
+	get colorCount(): number {
+		return this.groups.length;
+	}
+	get stitchCount(): number {
+		return this.groups.reduce((total, group) => total + group.pixels.length, 0);
+	}
+	// static constructors
+	static async fromFile(file: File): Promise<Pattern> {
+		const img = await readImageFromFile(file);
+		return Pattern.fromImage(img);
 	}
 	static fromImage(image: Drawable): Pattern {
 		const { width, height } = image;

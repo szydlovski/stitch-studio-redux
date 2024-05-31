@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://szydlovski-corp-bg81vi.eu-central-1.xata.sh/db/stitch-studio-redux",
+  "codegen": {
+    "output": "lib/xata.ts"
+  }
+}

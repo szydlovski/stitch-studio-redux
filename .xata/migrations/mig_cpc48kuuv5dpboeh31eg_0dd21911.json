@@ -1,0 +1,11 @@
+{
+  "id": "mig_cpc48kuuv5dpboeh31eg",
+  "checksum": "1:0dd219117402ac7b4494d1b487b551066f9492d1e800694f64128392f14d0d6e",
+  "operations": [
+    {
+      "addTable": {
+        "table": "products"
+      }
+    }
+  ]
+}

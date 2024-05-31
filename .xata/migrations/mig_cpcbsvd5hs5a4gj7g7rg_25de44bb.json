@@ -1,0 +1,19 @@
+{
+  "id": "mig_cpcbsvd5hs5a4gj7g7rg",
+  "parentID": "mig_cpcbq1d5hs5a4gj7g7qg",
+  "checksum": "1:25de44bb44db4bab747dd0e28d9893a83cdad3c596c03030dbd7380dd53623c5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "owner",
+          "type": "link",
+          "link": {
+            "table": "user"
+          }
+        },
+        "table": "brand"
+      }
+    }
+  ]
+}

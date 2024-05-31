@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -25,7 +26,9 @@ export default async function RootLayout({
 					fontSans.className
 				)}
 			>
-				<SessionProvider>{children}</SessionProvider>
+				<SessionProvider>
+					<TooltipProvider>{children}</TooltipProvider>
+				</SessionProvider>
 			</body>
 		</html>
 	);

@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpc49deuv5dpboeh31fg",
+  "parentID": "mig_cpc49br1lkssda16kedg",
+  "checksum": "1:16289ba1479f2d886379198fffe06537d7a64d6f36a77b5554259c353053fad3",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "product",
+        "oldName": "products"
+      }
+    }
+  ]
+}

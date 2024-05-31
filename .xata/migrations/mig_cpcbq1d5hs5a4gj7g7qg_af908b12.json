@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpcbq1d5hs5a4gj7g7qg",
+  "parentID": "mig_cpc4ucmuv5dpboeh31rg",
+  "checksum": "1:af908b122df07df7b0cf37c450a123d3e524c5c303e49c77a6fc3a35307ccce4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "logo",
+          "type": "file"
+        },
+        "table": "brand"
+      }
+    }
+  ]
+}

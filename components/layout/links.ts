@@ -1,4 +1,10 @@
-import { GaugeIcon, LineChart, LucideProps, Package, SwatchBookIcon, Users } from "lucide-react";
+import {
+	GaugeIcon,
+	LucideProps,
+	Package,
+	StoreIcon,
+	SwatchBookIcon,
+} from 'lucide-react';
 
 interface MenuLink {
 	href: string;
@@ -21,5 +27,10 @@ export const MENU_LINKS: MenuLink[] = [
 		href: '/app/palettes',
 		icon: SwatchBookIcon,
 		label: 'Palettes',
+	},
+	{
+		href: '/app/brands',
+		icon: StoreIcon,
+		label: 'Brands',
 	},
 ];

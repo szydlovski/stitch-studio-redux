@@ -1,0 +1,18 @@
+{
+  "id": "mig_cpc4dl31lkssda16kej0",
+  "parentID": "mig_cpc4cjj1lkssda16kei0",
+  "checksum": "1:0d1bec8420e70bf87d6d230ffaba0bad78e27b8aea36c4d940e995be280e66b7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "data",
+          "type": "json",
+          "notNull": true,
+          "defaultValue": "{}"
+        },
+        "table": "product"
+      }
+    }
+  ]
+}

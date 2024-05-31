@@ -1,0 +1,19 @@
+{
+  "id": "mig_cpc4abeuv5dpboeh31m0",
+  "parentID": "mig_cpc4a56uv5dpboeh31l0",
+  "checksum": "1:d62507d11557bbcb9f66c6a3a9231c12405a88bf211e52cf0528191d10da2382",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "author",
+          "type": "link",
+          "link": {
+            "table": "user"
+          }
+        },
+        "table": "product"
+      }
+    }
+  ]
+}

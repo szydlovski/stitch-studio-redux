@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpc4asmuv5dpboeh31og",
+  "parentID": "mig_cpc4alb1lkssda16kefg",
+  "checksum": "1:35b11de9657b4956a95097318dd225d7fa68ddf3359b1a638fc8ca4d497713e1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "thumbnail",
+          "type": "file"
+        },
+        "table": "product"
+      }
+    }
+  ]
+}
