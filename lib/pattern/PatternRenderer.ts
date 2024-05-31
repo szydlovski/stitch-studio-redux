@@ -68,7 +68,7 @@ export class PatternRenderer {
 		const fabricWidth = pattern.width + padding.left + padding.right;
 		const fabricHeight = pattern.height + padding.top + padding.bottom;
 		const fabricTexture = repeatTile(
-			this.textures[StylizedPatternLayers.Fabric],
+			this.textures[StylizedPatternLayers.Aida],
 			fabricWidth,
 			fabricHeight,
 			scale

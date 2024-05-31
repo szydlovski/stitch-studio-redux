@@ -18,7 +18,7 @@ export interface Padding {
 export type PaddingOpts = number | [number, number] | Padding;
 
 export enum StylizedPatternLayers {
-	Fabric = 'fabric',
+	Aida = 'aida',
 	StitchBase = 'stitch_base',
 	StitchSoftLight = 'stitch_soft_light',
 	StitchOverlay = 'stitch_overlay',
