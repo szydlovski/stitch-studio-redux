@@ -19,7 +19,7 @@ export interface ListProductsRecord {
 	};
 }
 
-export const listProducts = () =>
+const listProducts = () =>
 	getXataClient()
 		.db.product.select([
 			'*',
