@@ -22,7 +22,7 @@ export interface ProductDetails {
 	};
 }
 
-export const getProduct = (id: string) =>
+const getProduct = (id: string) =>
 	getXataClient()
 		.db.product.select([
 			'*',
