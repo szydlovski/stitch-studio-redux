@@ -18,6 +18,7 @@ import { loadStitchTextureDictionary } from '@/lib/pattern/helpers';
 import { Pattern } from '@/lib/pattern/pattern';
 import { ReactNode, useCallback, useState } from 'react';
 import { createProduct } from '../../../actions/createProduct';
+import { useQueryClient } from '@tanstack/react-query';
 
 export interface FilePatternPayload {
 	pattern: Pattern;
@@ -54,6 +55,7 @@ export const CreateProductDialogContent = ({
 	success: boolean;
 	onSuccess?: () => void;
 }) => {
+	const queryClient = useQueryClient();
 	const [title, setTitle] = useState('');
 	const handlePickFile = useCallback(async () => {
 		setState(undefined);
@@ -68,6 +70,7 @@ export const CreateProductDialogContent = ({
 		data.append('data', JSON.stringify(state.pattern.toData()));
 		const product = await createProduct(data);
 		onSuccess?.();
+		await queryClient.invalidateQueries({ queryKey: ['listProducts'] });
 	};
 	return (
 		<DialogContent className="sm:max-w-[425px]">
@@ -142,7 +145,6 @@ export const CreateProductDialog = ({ children }: { children: ReactNode }) => {
 			onOpenChange={() => {
 				if (success) {
 					setSuccess(false);
-					location.reload();
 				} else {
 					setState(undefined);
 				}

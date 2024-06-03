@@ -46,12 +46,10 @@ export const createProduct = async (data: FormData) => {
 	if (!session) {
 		return { success: false, message: 'Unauthorized' };
 	}
-	// console.log(session);
 
 	const payload = parseFormData<CreateProductDTO>(data);
-	// console.log(payload);
 	const result = await xata.db.product.create({
-		author: 'rec_cpc49q6otdb9928vhhi0',
+		author: session.identity.id,
 		brand: 'rec_cpc4clmotdb9928vhhog',
 		title: payload.title,
 		thumbnail: {
@@ -61,8 +59,6 @@ export const createProduct = async (data: FormData) => {
 		},
 		data: JSON.parse(payload.data),
 	});
-
-	console.log(`Created product with ID: ${result.id}`);
 
 	return { success: true };
 };

@@ -13,7 +13,7 @@ import {
 import { cn } from '@/lib';
 import Link from 'next/link';
 import { FC, ReactNode, useState } from 'react';
-import { ProfileCard } from './ProfileCard';
+import { ProfileCard } from './cards/ProfileCard';
 
 enum UserPreferencesTab {
 	Profile = 'profile',
@@ -34,7 +34,7 @@ const USER_PREFERENCES_TABS: Record<
 	[UserPreferencesTab.Profile]: {
 		label: 'Profile',
 		key: UserPreferencesTab.Profile,
-		content: () => <ProfileCard />,
+		content: ProfileCard,
 	},
 	[UserPreferencesTab.General]: {
 		label: 'General',
@@ -43,17 +43,9 @@ const USER_PREFERENCES_TABS: Record<
 			<Card>
 				<CardHeader>
 					<CardTitle>General</CardTitle>
-					<CardDescription>
-						Used to identify your store in the marketplace.
-					</CardDescription>
 				</CardHeader>
-				<CardContent>
-					<form>
-						<Input placeholder="Store Name" />
-					</form>
-				</CardContent>
 				<CardFooter className="border-t px-6 py-4">
-					<Button>Save</Button>
+					<Button disabled>Save</Button>
 				</CardFooter>
 			</Card>
 		),
@@ -65,17 +57,9 @@ const USER_PREFERENCES_TABS: Record<
 			<Card>
 				<CardHeader>
 					<CardTitle>Security</CardTitle>
-					<CardDescription>
-						Used to identify your store in the marketplace.
-					</CardDescription>
 				</CardHeader>
-				<CardContent>
-					<form>
-						<Input placeholder="Store Name" />
-					</form>
-				</CardContent>
 				<CardFooter className="border-t px-6 py-4">
-					<Button>Save</Button>
+					<Button disabled>Save</Button>
 				</CardFooter>
 			</Card>
 		),

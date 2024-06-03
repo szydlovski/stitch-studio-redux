@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpemn0i95h7k48946eig",
+  "parentID": "mig_cpemmli95h7k48946egg",
+  "checksum": "1:d3d7c19a1a8d4c3ac8de6c0073f7fa69c16437b1ea41c838f66380aa5ad53575",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "file"
+        },
+        "table": "covers"
+      }
+    }
+  ]
+}

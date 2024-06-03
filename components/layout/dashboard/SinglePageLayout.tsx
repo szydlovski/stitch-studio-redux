@@ -7,10 +7,15 @@ import { UserMenu } from '../../UserMenu';
 
 import { Button } from '@/components/ui';
 import { ArrowLeftIcon } from 'lucide-react';
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import Link from 'next/link';
 
-export const SinglePageLayout = ({ children }: ContainerProps) => {
+export interface SinglePageLayoutProps {
+	header: string;
+	children: ReactNode;
+}
+
+export const SinglePageLayout = ({ header, children }: SinglePageLayoutProps) => {
 	const pathname = usePathname();
 	const router = useRouter();
 	const session = useSession();
@@ -30,7 +35,7 @@ export const SinglePageLayout = ({ children }: ContainerProps) => {
 					</Link>
 				</Button>
 
-				<div className="text-lg font-semibold">User Preferences</div>
+				<span className="text-lg font-semibold">{header}</span>
 				<div className="flex items-center ml-auto">
 					<UserMenu />
 				</div>

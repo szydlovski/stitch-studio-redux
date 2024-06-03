@@ -9,7 +9,7 @@ export const MainCard = () => {
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle className="flex gap-4">
+				<CardTitle className="flex gap-4 items-center">
 					<span>{product.title}</span>
 					<div>
 						<EditTitleDialog initialValue={product.title} />

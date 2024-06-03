@@ -22,13 +22,9 @@ export const DashboardLayout = ({ children }: ContainerProps) => {
 	const pathname = usePathname();
 	const router = useRouter();
 	const session = useSession();
-	console.log(session?.status);
-	
 
 	React.useEffect(() => {
 		if (session.status === 'unauthenticated') {
-			console.log('redirecting to login');
-			
 			router.push('/login');
 		}
 	}, [pathname, router, session]);

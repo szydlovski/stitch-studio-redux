@@ -1,0 +1,19 @@
+{
+  "id": "mig_cpemn7i95h7k48946elg",
+  "parentID": "mig_cpemn0i95h7k48946eig",
+  "checksum": "1:1bd19f610030acd37c84b5a1d626176a7be32dcaf92f70d5ed14eda688a034e3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "product",
+          "type": "link",
+          "link": {
+            "table": "product"
+          }
+        },
+        "table": "covers"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mig_cpd5cil5hs5a4gj7gfv0",
+  "parentID": "mig_cpcbsvd5hs5a4gj7g7rg",
+  "checksum": "1:442086065ea81f9d21b62fcd8bac00f07a9274f0ccd865ddc0619fc629afa087",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "deleted",
+          "type": "bool",
+          "notNull": true,
+          "defaultValue": "false"
+        },
+        "table": "product"
+      }
+    }
+  ]
+}

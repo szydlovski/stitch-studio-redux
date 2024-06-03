@@ -22,7 +22,7 @@ export const ProfileCard = () => {
 				<CardHeader>
 					<CardTitle>Your Profile</CardTitle>
 					<CardDescription>
-						Used to identify your store in the marketplace.
+						Basic information about your account.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -38,7 +38,7 @@ export const ProfileCard = () => {
 					</div>
 				</CardContent>
 				<CardFooter className="border-t px-6 py-4">
-					<Button>Save</Button>
+					<Button disabled>Save</Button>
 				</CardFooter>
 			</Card>
 		)

@@ -12,6 +12,7 @@ import { MainCard } from './PatternInfoCard';
 import { PaletteCard } from './PaletteCard';
 import { CoversCard } from './CoversCard';
 import { ProductFilesCard } from './ProductFilesCard';
+import { DangerZoneCard } from './DangerZoneCard';
 
 export const SingleProductContent = () => {
 	const { product, pattern } = useProductContext();
@@ -32,6 +33,7 @@ export const SingleProductContent = () => {
 			<PaletteCard />
 			<CoversCard />
 			<ProductFilesCard />
+			<DangerZoneCard />
 		</div>
 	);
 };

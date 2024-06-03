@@ -17,7 +17,6 @@ import Link from 'next/link';
 
 export const UserDropdownMenuContent = () => {
 	const { data } = useSession();
-	console.log('session', data);
 	
 	return (
 		<DropdownMenuContent align="end">

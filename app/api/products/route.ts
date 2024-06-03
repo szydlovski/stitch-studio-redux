@@ -29,6 +29,7 @@ const listProducts = () =>
 			'author.name',
 			'author.email',
 		])
+		.filter({ deleted: false })
 		.sort('xata.updatedAt', 'desc')
 		.getMany({ fetchOptions: { next: { revalidate: 0 } } })
 		.then((products) =>
@@ -61,6 +62,6 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function GET() {
 	const products = await listProducts();
-  await sleep(1000);
+	await sleep(1000);
 	return Response.json(products);
 }

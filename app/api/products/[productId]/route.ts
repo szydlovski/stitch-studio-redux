@@ -1,3 +1,5 @@
+import { deleteProduct } from '@/actions/deleteProduct';
+import { updateTitle } from '@/actions/updateTitle';
 import { PatternData } from '@/lib/pattern/pattern';
 import { getXataClient } from '@/lib/xata';
 import { NextRequest } from 'next/server';
@@ -63,8 +65,36 @@ export async function GET(
 	req: NextRequest,
 	{ params: { productId } }: { params: { productId: string } }
 ) {
-  console.log('get product', productId);
-  
+
 	const product = await getProduct(productId);
 	return Response.json(product);
+}
+
+export async function PATCH(
+	req: NextRequest,
+	{ params: { productId } }: { params: { productId: string } }
+) {
+	const parsedBody = await req.json();
+	const result = await updateTitle(productId, parsedBody.title);
+	if (!result)
+		return Response.json(
+			{ error: true, message: 'Failed to update title' },
+			{ status: 404 }
+		);
+	const { id, title } = result;
+	return Response.json({ id, title });
+}
+
+export async function DELETE(
+	req: NextRequest,
+	{ params: { productId } }: { params: { productId: string } }
+) {
+	const result = await deleteProduct(productId);
+	if (!result)
+		return Response.json(
+			{ error: true, message: 'Failed to delete product' },
+			{ status: 404 }
+		);
+	const { id, title } = result;
+	return Response.json({ id, title });
 }

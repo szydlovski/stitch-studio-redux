@@ -3,7 +3,7 @@ import { UserPageContent } from './UserPageContent';
 
 export default function UserPage() {
 	return (
-		<SinglePageLayout>
+		<SinglePageLayout header={'User Settings'}>
 			<UserPageContent />
 		</SinglePageLayout>
 	);

@@ -15,7 +15,9 @@ const tables = [
       { name: "brand", type: "link", link: { table: "brand" } },
       { name: "thumbnail", type: "file" },
       { name: "data", type: "json", notNull: true, defaultValue: "{}" },
+      { name: "deleted", type: "bool", notNull: true, defaultValue: "false" },
     ],
+    revLinks: [{ column: "product", table: "covers" }],
   },
   {
     name: "user",
@@ -37,6 +39,13 @@ const tables = [
     ],
     revLinks: [{ column: "brand", table: "product" }],
   },
+  {
+    name: "covers",
+    columns: [
+      { name: "image", type: "file" },
+      { name: "product", type: "link", link: { table: "product" } },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -51,10 +60,14 @@ export type UserRecord = User & XataRecord;
 export type Brand = InferredTypes["brand"];
 export type BrandRecord = Brand & XataRecord;
 
+export type Covers = InferredTypes["covers"];
+export type CoversRecord = Covers & XataRecord;
+
 export type DatabaseSchema = {
   product: ProductRecord;
   user: UserRecord;
   brand: BrandRecord;
+  covers: CoversRecord;
 };
 
 const DatabaseClient = buildClient();

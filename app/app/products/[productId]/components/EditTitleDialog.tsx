@@ -35,17 +35,41 @@ import {
 import { Label } from '@/components/ui/label';
 import { Pattern } from '@/lib/pattern/pattern';
 import { getXataClient } from '@/lib/xata';
-import { useState } from 'react';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
+import { useProductContext } from './ProductContext';
+import { useDisclosure } from '@/lib/hooks/useDisclosure';
 
 export const EditTitleDialog = ({
 	initialValue = '',
 }: {
 	initialValue?: string;
 }) => {
+	const { isOpen, open, close, set: setOpen } = useDisclosure();
+	const queryClient = useQueryClient();
+	const { product } = useProductContext();
 	const [title, setTitle] = useState(initialValue);
-	const handleSave = () => {}
+	const { status, mutateAsync, reset } = useMutation({
+		mutationKey: ['updateProductTitle', product.id, title],
+		mutationFn: ({ title }: { title: string }) =>
+			fetch(`/api/products/${product.id}`, {
+				method: 'PATCH',
+				body: JSON.stringify({ title }),
+			}),
+	});
+	const handleSave = async () => {
+		await mutateAsync({ title });
+		await queryClient.invalidateQueries({ queryKey: ['product', product.id] });
+		close();
+	};
+
+	useEffect(() => {
+		setTitle(initialValue);
+		reset();
+	}, [isOpen]);
+
 	return (
-		<Dialog>
+		<Dialog open={isOpen} onOpenChange={setOpen}>
 			<DialogTrigger asChild>
 				<Button variant="outline" size="xs">
 					Edit
@@ -64,10 +88,13 @@ export const EditTitleDialog = ({
 						value={title}
 						onChange={(e) => setTitle(e.target.value)}
 						className="col-span-3"
+						disabled={status !== 'idle'}
 					/>
 				</div>
 				<DialogFooter>
-					<Button type="submit">Save changes</Button>
+					<Button type="submit" disabled={status !== 'idle' || title === initialValue} onClick={handleSave}>
+						{status === 'idle' ? 'Save changes' : status === 'pending' ? 'Saving...' : 'Saved!'}
+					</Button>
 				</DialogFooter>
 			</DialogContent>
 		</Dialog>

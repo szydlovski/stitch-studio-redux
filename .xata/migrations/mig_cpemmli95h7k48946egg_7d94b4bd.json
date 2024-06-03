@@ -1,0 +1,12 @@
+{
+  "id": "mig_cpemmli95h7k48946egg",
+  "parentID": "mig_cpd5cil5hs5a4gj7gfv0",
+  "checksum": "1:7d94b4bd19510d662bd3d3388dd185f1a15437803286641949b9c71a1a06becd",
+  "operations": [
+    {
+      "addTable": {
+        "table": "covers"
+      }
+    }
+  ]
+}
