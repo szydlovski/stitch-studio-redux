@@ -26,7 +26,7 @@ import { useRouter } from 'next/navigation';
 export const DangerZoneCard = () => {
 	const { product } = useProductContext();
 	const router = useRouter();
-	const { status, mutateAsync, reset } = useMutation({
+	const { status, mutateAsync } = useMutation({
 		mutationKey: ['deleteProduct', product.id],
 		mutationFn: () =>
 			fetch(`/api/products/${product.id}`, {
@@ -36,7 +36,7 @@ export const DangerZoneCard = () => {
 	const handleDelete = useCallback(async () => {
 		await mutateAsync();
 		router.push('/app/products');
-	}, []);
+	}, [mutateAsync, router]);
 	return (
 		<Card>
 			<CardHeader>

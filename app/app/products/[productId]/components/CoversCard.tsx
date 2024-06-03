@@ -41,7 +41,7 @@ export const CoversCard = () => {
 				flossColor5: pattern.groups[5].hex ?? defaultColor,
 			})
 		);
-	}, [setSrcs, pattern]);
+	}, [pattern, defaultColor]);
 	useEffect(
 		() =>
 			renders && setSrcs(renders.map((render): string => render.toDataURL())),
@@ -73,18 +73,27 @@ export const CoversCard = () => {
 							<div className="w-full max-w-full flex-1 max-h-[410px]">
 								<div className="grid grid-cols-4 gap-4 h-full">
 									{srcs?.map((src, i) => (
-										<div className="relative group flex items-center justify-center bg-muted rounded-md border aspect-square">
+										<div
+											key={i}
+											className="relative group flex items-center justify-center bg-muted rounded-md border aspect-square"
+										>
 											<div className="absolute bottom-0 left-0 w-full flex p-2">
 												<Checkbox className="w-8 h-8 bg-muted" checked />
 											</div>
-											<img key={i} src={src} className="max-h-full" />
+											<img
+												src={src}
+												className="max-h-full"
+												alt={'Generated cover'}
+											/>
 										</div>
 									))}
 								</div>
 							</div>
 						</ScrollArea>
 						<DialogFooter>
-							<Button type="submit" disabled>Save covers</Button>
+							<Button type="submit" disabled>
+								Save covers
+							</Button>
 						</DialogFooter>
 					</DialogContent>
 				</Dialog>

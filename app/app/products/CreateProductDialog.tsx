@@ -112,7 +112,7 @@ export const CreateProductDialogContent = ({
 					</div>
 					<div className="flex p-4 justify-center items-center aspect-square bg-neutral-100 rounded-md">
 						{state ? (
-							<img src={state.src} />
+							<img src={state.src} alt='Preview' />
 						) : (
 							<span className="text-sm text-neutral-400">
 								Preview will appear here.

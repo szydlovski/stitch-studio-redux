@@ -66,7 +66,7 @@ export const EditTitleDialog = ({
 	useEffect(() => {
 		setTitle(initialValue);
 		reset();
-	}, [isOpen]);
+	}, [isOpen, initialValue, reset]);
 
 	return (
 		<Dialog open={isOpen} onOpenChange={setOpen}>

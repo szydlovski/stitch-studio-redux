@@ -3,6 +3,7 @@ import { DataSet } from '@/components/DataSet';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { useProductContext } from '../components/ProductContext';
 import { EditTitleDialog } from './EditTitleDialog';
+import Image from 'next/image';
 
 export const MainCard = () => {
 	const { product, pattern } = useProductContext();
@@ -34,7 +35,12 @@ export const MainCard = () => {
 				</div>
 				<div className="w-full h-full">
 					<div className="aspect-square bg-neutral-200 flex justify-center items-center p-4 max-h-[400px] ml-auto">
-						<img src={product.thumbnail.src} />
+						<Image
+							width={product.thumbnail.width}
+							height={product.thumbnail.height}
+							alt={product.title}
+							src={product.thumbnail.src}
+						/>
 					</div>
 				</div>
 			</CardContent>
