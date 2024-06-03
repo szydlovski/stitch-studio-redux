@@ -2,11 +2,6 @@ import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { SessionProvider } from 'next-auth/react';
-import { TooltipProvider } from '@/components/ui/tooltip';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useMemo } from 'react';
-import { ClientProviders } from './providers';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -21,7 +16,6 @@ export default async function RootLayout({
 	children: React.ReactNode;
 	params: {};
 }>) {
-	const queryClient = useMemo(() => new QueryClient(), []);
 	return (
 		<html lang="en">
 			<body
@@ -30,7 +24,7 @@ export default async function RootLayout({
 					fontSans.className
 				)}
 			>
-				<ClientProviders>{children}</ClientProviders>
+				{children}
 			</body>
 		</html>
 	);

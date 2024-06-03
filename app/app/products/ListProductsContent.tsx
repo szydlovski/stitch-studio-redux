@@ -2,6 +2,7 @@
 import { ListProductsRecord } from '@/app/api/products/route';
 import { DashboardViewLayout } from '@/components/DashboardViewLayout';
 import {
+	Button,
 	Card,
 	CardContent,
 	CardDescription,
@@ -54,7 +55,7 @@ export const ProductTile = ({
 );
 
 const ProductGridContainer = ({ children }: { children: React.ReactNode }) => (
-	<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+	<div className="grid grid-cols-2 gap-4 py-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 		{children}
 	</div>
 );
@@ -66,7 +67,13 @@ export const ListProductsContent = () => {
 	});
 
 	return (
-		<DashboardViewLayout title={'Products'} action={<CreateProductDialog />}>
+		<div className="p-6 bg-muted/40 h-full">
+			<div className="flex">
+				<h1 className='text-lg font-semibold md:text-2xl'>Products</h1>
+				<CreateProductDialog>
+					<Button className='ml-auto' size="xs">Create product</Button>
+				</CreateProductDialog>
+			</div>
 			{status === 'error' ? (
 				<>Error</>
 			) : (
@@ -82,6 +89,6 @@ export const ListProductsContent = () => {
 						  ))}
 				</ProductGridContainer>
 			)}
-		</DashboardViewLayout>
+		</div>
 	);
 };

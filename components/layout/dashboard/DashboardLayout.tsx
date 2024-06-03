@@ -5,14 +5,14 @@ import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 import { MobileMenu } from './MobileMenu';
 import { Sidebar } from './Sidebar';
-import { UserMenu } from './UserMenu';
+import { UserMenu } from '../../UserMenu';
 
 import React from 'react';
-import { CommandMenu } from '../../CommandMenu';
+import { CommandToolbarItem } from '../../CommandMenu';
 
 export const Header = () => (
 	<header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
-		<CommandMenu />
+		<CommandToolbarItem />
 		<UserMenu />
 		<MobileMenu />
 	</header>
@@ -22,12 +22,16 @@ export const DashboardLayout = ({ children }: ContainerProps) => {
 	const pathname = usePathname();
 	const router = useRouter();
 	const session = useSession();
+	console.log(session?.status);
+	
+
 	React.useEffect(() => {
 		if (session.status === 'unauthenticated') {
+			console.log('redirecting to login');
+			
 			router.push('/login');
 		}
 	}, [pathname, router, session]);
-
 	return session.status === 'unauthenticated' ? (
 		<>Loading</>
 	) : (

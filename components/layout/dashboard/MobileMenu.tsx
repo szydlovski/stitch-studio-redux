@@ -1,15 +1,8 @@
 'use client';
-import { Menu, Package2 } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from '@/components/ui/card';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib';
 import { usePathname } from 'next/navigation';
@@ -31,8 +24,7 @@ export const MobileMenu = () => {
 						href="#"
 						className="flex items-center gap-2 text-lg font-semibold"
 					>
-						<Package2 className="h-6 w-6" />
-						<span className="sr-only">Acme Inc</span>
+						<span>StitchStudio</span>
 					</Link>
 					{MENU_LINKS.map(({ label, href, icon: Icon }) => (
 						<Link
@@ -52,22 +44,6 @@ export const MobileMenu = () => {
 						</Link>
 					))}
 				</nav>
-				<div className="mt-auto">
-					<Card>
-						<CardHeader>
-							<CardTitle>Upgrade to Pro</CardTitle>
-							<CardDescription>
-								Unlock all features and get unlimited access to our support
-								team.
-							</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<Button size="sm" className="w-full">
-								Upgrade
-							</Button>
-						</CardContent>
-					</Card>
-				</div>
 			</SheetContent>
 		</Sheet>
 	);

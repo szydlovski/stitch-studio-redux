@@ -17,10 +17,10 @@ import {
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Image from 'next/image';
-import { DataTable } from '../../../components/DataTable';
-import { ListBrandRecord } from '../../../actions/listBrands';
+import { DataTable } from '@/components/DataTable';
+import { ListBrandRecord } from '@/actions/listBrands';
 
-export async function BrandsView({ brands }: { brands: ListBrandRecord[] }) {
+export async function BrandsContent({ brands }: { brands: ListBrandRecord[] }) {
 	return (
 		<div className="bg-muted/40 p-6 min-h-full">
 			<Card>
@@ -29,14 +29,6 @@ export async function BrandsView({ brands }: { brands: ListBrandRecord[] }) {
 					<CardDescription>
 						Manage brands, Etsy stores and cover templates.
 					</CardDescription>
-					<div className="flex">
-						<Button size="sm" className="h-8 gap-1">
-							<PlusCircle className="h-3.5 w-3.5" />
-							<span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-								New brand
-							</span>
-						</Button>
-					</div>
 				</CardHeader>
 				<CardContent>
 					<DataTable

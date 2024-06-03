@@ -16,7 +16,7 @@ import { selectFile } from '@/lib';
 import { PatternRenderer } from '@/lib/pattern/PatternRenderer';
 import { loadStitchTextureDictionary } from '@/lib/pattern/helpers';
 import { Pattern } from '@/lib/pattern/pattern';
-import { useCallback, useState } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 import { createProduct } from '../../../actions/createProduct';
 
 export interface FilePatternPayload {
@@ -134,7 +134,7 @@ export const CreateProductDialogContent = ({
 	);
 };
 
-export const CreateProductDialog = () => {
+export const CreateProductDialog = ({ children }: { children: ReactNode }) => {
 	const [state, setState] = useState<FilePatternPayload>();
 	const [success, setSuccess] = useState(false);
 	return (
@@ -148,9 +148,7 @@ export const CreateProductDialog = () => {
 				}
 			}}
 		>
-			<DialogTrigger asChild>
-				<Button>Create product</Button>
-			</DialogTrigger>
+			<DialogTrigger asChild>{children}</DialogTrigger>
 			<CreateProductDialogContent
 				state={state}
 				setState={setState}

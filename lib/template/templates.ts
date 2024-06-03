@@ -581,19 +581,3 @@ export const pinterest1Template: TemplateManifest = {
 		},
 	],
 };
-
-const harvest = () =>
-	Array.from(document.querySelectorAll('.columns'))
-		.map((col) => {
-			const header = col.querySelector('.column-header');
-			const colors = Array.from(col.querySelectorAll('.thread-image'));
-			return {
-				group: `${header?.textContent}`.trim(),
-				colors: colors.map((c) => ({
-					id: `${c.textContent}`.trim(),
-					color: `${c.computedStyleMap().get('background-color')}`,
-				})),
-			};
-		})
-		.filter(({ colors }) => colors.length > 0)
-		.slice(1);

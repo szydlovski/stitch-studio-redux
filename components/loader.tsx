@@ -19,3 +19,9 @@ export const Loader = () => (
 		<span className="sr-only">Loading...</span>
 	</div>
 );
+
+export const FullScreenLoader = () => (
+	<div className="p-6 h-screen w-screen flex justify-center items-center">
+		<Loader />
+	</div>
+);

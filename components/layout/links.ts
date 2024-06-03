@@ -24,13 +24,13 @@ export const MENU_LINKS: MenuLink[] = [
 		label: 'Products',
 	},
 	{
-		href: '/app/palettes',
-		icon: SwatchBookIcon,
-		label: 'Palettes',
-	},
-	{
 		href: '/app/brands',
 		icon: StoreIcon,
 		label: 'Brands',
+	},
+	{
+		href: '/app/palettes',
+		icon: SwatchBookIcon,
+		label: 'Palettes',
 	},
 ];

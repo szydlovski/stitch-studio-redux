@@ -1,5 +1,5 @@
 import { DashboardLayout } from '@/components/layout/dashboard/DashboardLayout';
-import { SingleProductContent } from './SingleProductContent';
+import { SingleProductContent } from './components/SingleProductContent';
 import { ProductContextProvider } from './components/ProductContext';
 
 export default function ProductPage({

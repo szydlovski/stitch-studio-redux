@@ -104,6 +104,13 @@ export class TemplateRenderer {
 			}
 		});
 	}
+	public async loadAndRenderTemplate(
+		template: TemplateManifest,
+		props: TemplateProps
+	): Promise<HTMLCanvasElement> {
+		await this.preloadTemplateTextures(template);
+		return this.renderTemplate(template, props);
+	}
 	private getTexture(url: string): Drawable {
 		const texture = this.textureCache[url];
 		if (!texture) {

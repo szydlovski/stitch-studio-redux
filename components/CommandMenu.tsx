@@ -1,5 +1,5 @@
 'use client';
-import { BrushIcon, Search } from 'lucide-react';
+import { BrushIcon, SearchIcon } from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
 import { useRouter } from 'next/navigation';
@@ -23,6 +23,7 @@ import { globalSearch } from '../actions/globalSearch';
 import debounce from 'lodash.debounce';
 import { ProductRecord } from '@/lib/xata';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
 	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -31,7 +32,7 @@ type SearchResult = ArrayElement<
 	Awaited<ReturnType<typeof globalSearch>>['results']
 >;
 
-export function CommandMenu() {
+export function CommandToolbarItem() {
 	const [searchTerm, setSearchTerm] = React.useState('');
 	const [searchResults, setSearchResults] = React.useState<SearchResult[]>();
 	const [searching, setSearching] = React.useState(false);
@@ -63,19 +64,7 @@ export function CommandMenu() {
 
 	return (
 		<>
-			<div className="w-full flex-1">
-				<form>
-					<div className="relative">
-						<Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-						<Input
-							type="search"
-							placeholder="Search..."
-							className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
-							onFocus={() => setOpen(true)}
-						/>
-					</div>
-				</form>
-			</div>
+			<DashboardCommandTrigger onOpen={() => setOpen(true)} />
 			<CommandDialog open={open} onOpenChange={setOpen}>
 				<CommandInput
 					value={searchTerm}
@@ -88,43 +77,12 @@ export function CommandMenu() {
 				/>
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
-					{searchTerm.length >= 3 && searchResults && (
-						<CommandGroup heading="Search">
-							{searchResults.map(({ table, record }) => {
-								return (
-									<CommandItem
-										className="flex gap-2"
-										key={record.id}
-										value={record.title}
-										onSelect={() => router.push(`/app/products/${record.id}`)}
-									>
-										<div className="h-[20px] w-[20px] flex">
-											<Image
-												src={record.thumbnail!.signedUrl!}
-												width={record.thumbnail!.attributes!.width!}
-												height={record.thumbnail!.attributes!.height!}
-												alt={record.title!}
-											/>
-										</div>
-										{record.title}
-									</CommandItem>
-								);
-							})}
-						</CommandGroup>
-					)}
-					<CommandGroup heading="Navigation">
-						{MENU_LINKS.map(({ href, label, icon: Icon }) => (
-							<CommandItem
-								className="flex gap-2"
-								key={label}
-								value={label}
-								onSelect={() => router.push(href)}
-							>
-								<Icon className="opacity-75" />
-								{label}
-							</CommandItem>
-						))}
-					</CommandGroup>
+					<CommandSearchResults
+						searchTerm={searchTerm}
+						searchResults={searchResults ?? []}
+						searching={searching}
+					/>
+					<NavigationCommands />
 					<CommandGroup heading="Actions">
 						<CommandItem
 							className="flex gap-2"
@@ -140,7 +98,6 @@ export function CommandMenu() {
 					</CommandGroup>
 				</CommandList>
 			</CommandDialog>
-
 			<Dialog open={dialogOpen} onOpenChange={(value) => setDialogOpen(value)}>
 				<CreateProductDialogContent
 					state={state}
@@ -152,3 +109,72 @@ export function CommandMenu() {
 		</>
 	);
 }
+
+export function CommandSearchResults({
+	searchTerm,
+	searchResults,
+}: {
+	searchTerm: string;
+	searchResults: SearchResult[];
+	searching: boolean;
+}) {
+	return (
+		searchTerm.length >= 3 &&
+		searchResults && (
+			<CommandGroup heading="Search">
+				{searchResults.map(({ table, record }) => {
+					return (
+						<CommandItem asChild key={record.id} value={record.title}>
+							<Link className="flex gap-2" href={`/app/products/${record.id}`}>
+								<div className="h-[20px] w-[20px] flex">
+									<Image
+										src={record.thumbnail!.signedUrl!}
+										width={record.thumbnail!.attributes!.width!}
+										height={record.thumbnail!.attributes!.height!}
+										alt={record.title!}
+									/>
+								</div>
+								{record.title}
+							</Link>
+						</CommandItem>
+					);
+				})}
+			</CommandGroup>
+		)
+	);
+}
+
+export function NavigationCommands() {
+	return (
+		<CommandGroup heading="Navigation">
+			{MENU_LINKS.map(({ href, label, icon: Icon }) => (
+				<CommandItem asChild key={label} value={label}>
+					<Link href={href} className="flex gap-2">
+						<Icon className="opacity-75" />
+						{label}
+					</Link>
+				</CommandItem>
+			))}
+		</CommandGroup>
+	);
+}
+
+export const DashboardCommandTrigger = ({ onOpen }: { onOpen: () => void }) => {
+	return (
+		<>
+			<div className="w-full flex-1">
+				<form>
+					<div className="relative">
+						<SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+						<Input
+							type="search"
+							placeholder="Search..."
+							className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
+							onFocus={onOpen}
+						/>
+					</div>
+				</form>
+			</div>
+		</>
+	);
+};
