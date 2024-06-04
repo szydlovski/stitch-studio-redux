@@ -3,7 +3,7 @@
 import { ContainerProps } from '@/lib/types';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
-import { UserMenu } from '../../UserMenu';
+import { UserMenu } from '../../UserMenu/UserMenu';
 
 import { Button } from '@/components/ui';
 import { ArrowLeftIcon } from 'lucide-react';

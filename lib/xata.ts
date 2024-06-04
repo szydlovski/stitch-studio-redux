@@ -17,7 +17,7 @@ const tables = [
       { name: "data", type: "json", notNull: true, defaultValue: "{}" },
       { name: "deleted", type: "bool", notNull: true, defaultValue: "false" },
     ],
-    revLinks: [{ column: "product", table: "covers" }],
+    revLinks: [{ column: "product", table: "productImage" }],
   },
   {
     name: "user",
@@ -40,10 +40,12 @@ const tables = [
     revLinks: [{ column: "brand", table: "product" }],
   },
   {
-    name: "covers",
+    name: "productImage",
     columns: [
       { name: "image", type: "file" },
       { name: "product", type: "link", link: { table: "product" } },
+      { name: "attributes", type: "json", notNull: true, defaultValue: "{}" },
+      { name: "key", type: "string", notNull: true, defaultValue: "" },
     ],
   },
 ] as const;
@@ -60,14 +62,14 @@ export type UserRecord = User & XataRecord;
 export type Brand = InferredTypes["brand"];
 export type BrandRecord = Brand & XataRecord;
 
-export type Covers = InferredTypes["covers"];
-export type CoversRecord = Covers & XataRecord;
+export type ProductImage = InferredTypes["productImage"];
+export type ProductImageRecord = ProductImage & XataRecord;
 
 export type DatabaseSchema = {
   product: ProductRecord;
   user: UserRecord;
   brand: BrandRecord;
-  covers: CoversRecord;
+  productImage: ProductImageRecord;
 };
 
 const DatabaseClient = buildClient();

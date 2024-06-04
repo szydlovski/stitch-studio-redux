@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 
 export interface UseDisclosure {
-	isOpen: boolean;
+	state: boolean;
 	open: () => void;
 	close: () => void;
 	toggle: () => void;
@@ -9,9 +9,9 @@ export interface UseDisclosure {
 }
 
 export const useDisclosure = (): UseDisclosure => {
-	const [isOpen, set] = useState(false);
+	const [state, set] = useState(false);
 	const open = useCallback(() => set(true), []);
 	const close = useCallback(() => set(false), []);
 	const toggle = useCallback(() => set((prev) => !prev), []);
-	return { isOpen, open, close, toggle, set };
+	return { state, open, close, toggle, set };
 };

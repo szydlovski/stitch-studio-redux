@@ -21,7 +21,10 @@ export class PatternRenderer {
 			}
 		});
 	}
-	public renderEmbroideryMockup(pattern: Pattern, scale: number): HTMLCanvasElement {
+	public renderEmbroideryMockup(
+		pattern: Pattern,
+		scale: number
+	): HTMLCanvasElement {
 		const targetWidth = pattern.width * scale;
 		const targetHeight = pattern.height * scale;
 		const patternRender = this.renderFlat(pattern, scale);
@@ -62,7 +65,8 @@ export class PatternRenderer {
 	public renderEmbroideryOnFabricMockup(
 		pattern: Pattern,
 		scale: number,
-		paddingOptions: PaddingOpts = 0
+		paddingOptions: PaddingOpts = 0,
+		fabricColor: string = '#fef'
 	) {
 		const padding = resolvePaddingOpts(paddingOptions);
 		const fabricWidth = pattern.width + padding.left + padding.right;
@@ -75,7 +79,12 @@ export class PatternRenderer {
 		);
 		const stylizedRender = this.renderEmbroideryMockup(pattern, scale);
 		return createCanvas(fabricTexture, (ctx) => {
+			ctx.globalCompositeOperation = 'source-over';
+			ctx.fillStyle = fabricColor;
+			ctx.fillRect(0, 0, fabricTexture.width, fabricTexture.height);
+			ctx.globalCompositeOperation = 'multiply';
 			ctx.drawImage(fabricTexture, 0, 0);
+			ctx.globalCompositeOperation = 'source-over';
 			ctx.drawImage(stylizedRender, padding.left * scale, padding.top * scale);
 		});
 	}

@@ -1,0 +1,18 @@
+{
+  "id": "mig_cpf5i43epss39ub2bn6g",
+  "parentID": "mig_cpevlh0revv20nv1qusg",
+  "checksum": "1:7233223eaf9f10944d938731d280b63a640cbe0ef018b572311d09326bc9b3b6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "attributes",
+          "type": "json",
+          "notNull": true,
+          "defaultValue": "{}"
+        },
+        "table": "productImage"
+      }
+    }
+  ]
+}

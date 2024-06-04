@@ -1,6 +1,6 @@
 import { DashboardLayout } from '@/components/layout/dashboard/DashboardLayout';
-import { SingleProductContent } from './components/SingleProductContent';
-import { ProductContextProvider } from './components/ProductContext';
+import { SingleProductContent } from './content';
+import { ProductContextProvider } from '@/components/context/ProductContext';
 
 export default function ProductPage({
 	params: { productId },

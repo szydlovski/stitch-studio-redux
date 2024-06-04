@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpevjth0dn1i86f30rd0",
+  "parentID": "mig_cpemn7i95h7k48946elg",
+  "checksum": "1:478580104c44ef376e9f1a053849ecb11fd946eb63b9ca329b77ca2b06d7beab",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "productImages",
+        "oldName": "covers"
+      }
+    }
+  ]
+}

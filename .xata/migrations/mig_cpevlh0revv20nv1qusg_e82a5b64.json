@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpevlh0revv20nv1qusg",
+  "parentID": "mig_cpevjth0dn1i86f30rd0",
+  "checksum": "1:e82a5b64489fef220b801948b19e83337ee33770bd24e81c702e4134233b8c2f",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "productImage",
+        "oldName": "productImages"
+      }
+    }
+  ]
+}

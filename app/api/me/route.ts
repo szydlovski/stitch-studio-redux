@@ -1,9 +1,10 @@
-import { getUserByEmail } from '@/actions/getUserByEmail';
+import { getUserByEmail } from '@/lib/getUserByEmail';
 import { auth } from '@/config/auth';
 import { getXataClient } from '@/lib/xata';
+import { NextResponse } from 'next/server';
 
 const createErrorResponse = (message: string, status = 400) => {
-	return Response.json({ error: true, message }, { status });
+	return NextResponse.json({ error: true, message }, { status });
 };
 
 export async function GET() {
@@ -16,5 +17,5 @@ export async function GET() {
 	if (!user) {
 		return createErrorResponse('User not found', 401);
 	}
-	return Response.json({ identity: user.toSerializable() });
+	return NextResponse.json({ identity: user.toSerializable() });
 }

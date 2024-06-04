@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['eu-central-1.xata.sh'],
-  },
+	images: {
+		remotePatterns: [
+			{
+				hostname: 'eu-central-1.xata.sh',
+			},
+		],
+	},
 };
 
 export default nextConfig;

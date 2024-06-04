@@ -13,7 +13,7 @@ import {
 import { cn } from '@/lib';
 import Link from 'next/link';
 import { FC, ReactNode, useState } from 'react';
-import { ProfileCard } from './cards/ProfileCard';
+import { ProfileCard } from '../../../components/UserCards/ProfileCard';
 
 enum UserPreferencesTab {
 	Profile = 'profile',
@@ -24,7 +24,7 @@ enum UserPreferencesTab {
 interface UserPreferencesTabConfig {
 	label: string;
 	key: UserPreferencesTab;
-	content: () => ReactNode;
+	content: FC;
 }
 
 const USER_PREFERENCES_TABS: Record<

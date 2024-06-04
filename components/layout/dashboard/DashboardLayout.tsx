@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 import { MobileMenu } from './MobileMenu';
 import { Sidebar } from './Sidebar';
-import { UserMenu } from '../../UserMenu';
+import { UserMenu } from '../../UserMenu/UserMenu';
 
 import React from 'react';
 import { CommandToolbarItem } from '../../CommandMenu';

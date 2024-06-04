@@ -6,13 +6,13 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table';
-import { ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 interface ColumnConfig<T> {
 	key: string;
 	label?: string;
 	className?: string;
-	cell: ({ row }: { row: T }) => ReactNode;
+	cell: FC<{ row: T }>;
 }
 
 export const DataTable = <T,>({

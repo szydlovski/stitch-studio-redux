@@ -1,4 +1,4 @@
-import { getUserByEmail } from '@/actions/getUserByEmail';
+import { getUserByEmail } from '@/lib/getUserByEmail';
 import NextAuth from 'next-auth';
 import Google from 'next-auth/providers/google';
 

@@ -1,67 +1,30 @@
-import { getXataClient } from '@/lib/xata';
+import { routeHandler } from '@/lib/routeHandler';
+import { NextResponse } from 'next/server';
+import { ListProductsQuery } from '@/context/product/infrastructure/query/ListProductsQuery';
+import { CreateProductQuery } from '@/context/product/infrastructure/query/CreateProductQuery';
 
-export interface ListProductsRecord {
-	id: string;
-	title: string;
-	thumbnail: {
-		src: string;
-		width: number;
-		height: number;
-	};
-	brand: {
-		id: string;
-		name: string;
-	};
-	author: {
-		id: string;
-		name: string;
-		email: string;
-	};
-}
+export const GET = routeHandler(
+	async ({ xata }) => {
+		const products = await new ListProductsQuery(xata).execute();
+		return NextResponse.json({ products });
+	},
+	{
+		auth: true,
+	}
+);
 
-const listProducts = () =>
-	getXataClient()
-		.db.product.select([
-			'*',
-			'thumbnail.*',
-			'thumbnail.signedUrl',
-			'brand.name',
-			'author.name',
-			'author.email',
-		])
-		.filter({ deleted: false })
-		.sort('xata.updatedAt', 'desc')
-		.getMany({ fetchOptions: { next: { revalidate: 0 } } })
-		.then((products) =>
-			products.map(
-				({ id, title, thumbnail, brand, author }): ListProductsRecord => {
-					if (!brand || !author) throw new Error();
-					return {
-						id,
-						title,
-						thumbnail: {
-							src: thumbnail?.signedUrl ?? '',
-							width: thumbnail?.attributes?.width,
-							height: thumbnail?.attributes?.height,
-						},
-						brand: {
-							id: brand.id,
-							name: brand.name!,
-						},
-						author: {
-							id: author.id,
-							name: author.name!,
-							email: author.email!,
-						},
-					};
-				}
-			)
+export const POST = routeHandler(
+	async ({ xata, req, session }) => {
+		const body = await req.json();
+		const product = await new CreateProductQuery(xata).execute(
+			session.identity.id,
+			body.title,
+			body.thumbnail,
+			body.data
 		);
-
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-export async function GET() {
-	const products = await listProducts();
-	await sleep(1000);
-	return Response.json(products);
-}
+		return NextResponse.json(product);
+	},
+	{
+		auth: true,
+	}
+);

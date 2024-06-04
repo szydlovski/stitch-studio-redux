@@ -1,5 +1,7 @@
-import { MoreHorizontal, PlusCircle } from 'lucide-react';
+import { MoreHorizontal } from 'lucide-react';
 
+import { ListBrandRecord } from '@/app/app/brands/listBrands';
+import { DataTable } from '@/components/DataTable';
 import { Button } from '@/components/ui/button';
 import {
 	Card,
@@ -17,10 +19,8 @@ import {
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Image from 'next/image';
-import { DataTable } from '@/components/DataTable';
-import { ListBrandRecord } from '@/actions/listBrands';
 
-export async function BrandsContent({ brands }: { brands: ListBrandRecord[] }) {
+export const BrandsContent = ({ brands }: { brands: ListBrandRecord[] }) => {
 	return (
 		<div className="bg-muted/40 p-6 min-h-full">
 			<Card>
@@ -51,17 +51,17 @@ export async function BrandsContent({ brands }: { brands: ListBrandRecord[] }) {
 							{
 								key: 'name',
 								label: 'Name',
-								cell: ({ row: { name } }) => name,
+								cell: ({ row: { name } }) => <>{name}</>,
 							},
 							{
 								key: 'totalSales',
 								label: 'Total Sales',
-								cell: ({ row: { totalProducts } }) => totalProducts,
+								cell: ({ row: { totalProducts } }) => <>{totalProducts}</>,
 							},
 							{
 								key: 'owner',
 								label: 'Owner',
-								cell: ({ row: { owner } }) => owner,
+								cell: ({ row: { owner } }) => <>{owner}</>,
 							},
 							{
 								key: 'actions',
@@ -92,4 +92,4 @@ export async function BrandsContent({ brands }: { brands: ListBrandRecord[] }) {
 			</Card>
 		</div>
 	);
-}
+};

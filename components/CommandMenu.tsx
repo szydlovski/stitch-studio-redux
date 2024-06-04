@@ -18,8 +18,8 @@ import { Dialog } from '@/components/ui/dialog';
 import {
 	CreateProductDialogContent,
 	FilePatternPayload,
-} from '@/app/app/products/CreateProductDialog';
-import { globalSearch } from '../actions/globalSearch';
+} from '@/context/product/application/CreateProduct/CreateProductDialog';
+import { globalSearch } from '../lib/globalSearch';
 import debounce from 'lodash.debounce';
 import { ProductRecord } from '@/lib/xata';
 import Image from 'next/image';
@@ -118,29 +118,28 @@ export function CommandSearchResults({
 	searchResults: SearchResult[];
 	searching: boolean;
 }) {
+	const show = searchTerm.length >= 3 && searchResults.length > 0;
+	if (!show) return null;
 	return (
-		searchTerm.length >= 3 &&
-		searchResults && (
-			<CommandGroup heading="Search">
-				{searchResults.map(({ table, record }) => {
-					return (
-						<CommandItem asChild key={record.id} value={record.title}>
-							<Link className="flex gap-2" href={`/app/products/${record.id}`}>
-								<div className="h-[20px] w-[20px] flex">
-									<Image
-										src={record.thumbnail!.signedUrl!}
-										width={record.thumbnail!.attributes!.width!}
-										height={record.thumbnail!.attributes!.height!}
-										alt={record.title!}
-									/>
-								</div>
-								{record.title}
-							</Link>
-						</CommandItem>
-					);
-				})}
-			</CommandGroup>
-		)
+		<CommandGroup heading="Search">
+			{searchResults.map(({ table, record }) => {
+				return (
+					<CommandItem asChild key={record.id} value={record.title}>
+						<Link className="flex gap-2" href={`/app/products/${record.id}`}>
+							<div className="h-[20px] w-[20px] flex">
+								<Image
+									src={record.thumbnail!.signedUrl!}
+									width={record.thumbnail!.attributes!.width!}
+									height={record.thumbnail!.attributes!.height!}
+									alt={record.title!}
+								/>
+							</div>
+							{record.title}
+						</Link>
+					</CommandItem>
+				);
+			})}
+		</CommandGroup>
 	);
 }
 
