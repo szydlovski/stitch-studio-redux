@@ -117,7 +117,11 @@ export const Step2AdjustColors = () => {
 									key={key}
 									style={style}
 									color={state.colors[key]}
-									onClick={() => setActiveColorKey(key)}
+									onClick={() =>
+										setActiveColorKey((prev) =>
+											prev === key ? undefined : key
+										)
+									}
 								/>
 							))}
 						</>
@@ -139,7 +143,7 @@ export const Step2AdjustColors = () => {
 							}
 						/>
 					</div>
-					<div className="flex border rounded-md bg-muted">
+					<div className="flex border rounded-md bg-muted h-[200px]">
 						{activeColorKey ? (
 							<div className="flex flex-1">
 								<HexColorPicker
@@ -147,12 +151,12 @@ export const Step2AdjustColors = () => {
 									color={state.colors[activeColorKey]}
 									onChange={updateActiveColor}
 								/>
-								<ScrollArea className="flex-[0.6] max-h-[200px]">
-									<div className="p-2 flex flex-wrap justify-start items-start content-start gap-2 mt-0">
+								<ScrollArea className="flex-[0.8] h-full">
+									<div className="p-2 flex flex-wrap justify-start items-start content-start gap-1.5 mt-0">
 										{palette.map((color, i) => (
 											<div
 												key={i}
-												className="h-7 w-7 rounded-sm cursor-pointer"
+												className="h-7 w-7 rounded-sm cursor-pointer border"
 												style={{ backgroundColor: color }}
 												onClick={() => updateActiveColor(color)}
 											/>
@@ -161,7 +165,9 @@ export const Step2AdjustColors = () => {
 								</ScrollArea>
 							</div>
 						) : (
-							<div className="flex flex-1">No color selected.</div>
+							<div className="flex flex-1 justify-center items-center">
+								<span className='text-sm text-foreground/25 font-semibold'>No color selected.</span>
+							</div>
 						)}
 					</div>
 				</div>

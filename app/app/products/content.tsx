@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui';
 import { CreateProductDialog } from '@/context/product/application/CreateProduct/CreateProductDialog';
 import { ProductList } from '@/context/product/application/ProductList/ProductList';
+import { WandSparklesIcon } from 'lucide-react';
 
 export const ListProductsContent = () => {
 	return (
@@ -8,7 +9,8 @@ export const ListProductsContent = () => {
 			<div className="flex">
 				<h1 className="text-lg font-semibold md:text-2xl">Products</h1>
 				<CreateProductDialog>
-					<Button className="ml-auto" size="xs">
+					<Button className="ml-auto flex gap-1" size="xs">
+						<WandSparklesIcon size={16} />
 						Create product
 					</Button>
 				</CreateProductDialog>
