@@ -12,6 +12,8 @@ import { MinusIcon, PlusIcon } from 'lucide-react';
 
 const adjustScale = (value: number) => -0.5 + (1 - value) * 2;
 
+const STEP = 0.01;
+
 const getPaddingFromOptions = (
 	pattern: Pattern,
 	{ scale, xOffset, yOffset }: PaddingOptions
@@ -97,15 +99,39 @@ export const PaddingOptionsInput = ({
 		<div className="grid grid-cols-2 gap-4">
 			<div className="flex flex-col gap-2 col-span-2">
 				<Label>{'Zoom'}</Label>
-				<Slider
-					value={[localScale]}
-					max={1}
-					step={0.01}
-					onValueChange={([value]) => {
-						setLocalScale(value);
-						debouncedUpdateOptions({ scale: value });
-					}}
-				/>
+				<div className="flex gap-2">
+					<Button
+						variant='ghost'
+						size='xs'
+						onClick={() => {
+							const newScale = localScale - STEP;
+							setLocalScale(newScale);
+							debouncedUpdateOptions({ scale: newScale });
+						}}
+					>
+						<MinusIcon size={12} />
+					</Button>
+					<Slider
+						value={[localScale]}
+						max={1}
+						step={STEP}
+						onValueChange={([value]) => {
+							setLocalScale(value);
+							debouncedUpdateOptions({ scale: value });
+						}}
+					/>
+					<Button
+						variant='ghost'
+						size='xs'
+						onClick={() => {
+							const newScale = localScale + STEP;
+							setLocalScale(newScale);
+							debouncedUpdateOptions({ scale: newScale });
+						}}
+					>
+						<PlusIcon size={12} />
+					</Button>
+				</div>
 			</div>
 			<OffsetInput
 				label="X Offset"

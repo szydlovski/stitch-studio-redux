@@ -13,6 +13,7 @@ import {
 } from 'react';
 import { COVER_GENERATOR_STEPS_ORDER } from './config';
 import {
+	ColorKey,
 	CoverGeneratorAction,
 	CoverGeneratorActions,
 	CoverGeneratorState,
@@ -47,6 +48,8 @@ interface CoverGeneratorContextValue {
 		React.SetStateAction<CoverGeneratorState | undefined>
 	>;
 	closeGenerator: () => void;
+	activeColorKey?: ColorKey;
+	setActiveColorKey: React.Dispatch<React.SetStateAction<ColorKey | undefined>>;
 }
 
 const CoverGeneratorContext = createContext<CoverGeneratorContextValue>(
@@ -101,6 +104,7 @@ export const CoverGeneratorProvider = ({
 	const [rendersLoading, setRendersLoading] = useState<boolean>(false);
 	const [lastRenderedState, setLastRenderedState] =
 		useState<CoverGeneratorState>();
+	const [activeColorKey, setActiveColorKey] = useState<ColorKey>();
 	const [renders = [], setRenders] = useState<ProductImageState[]>();
 	const resetState = useCallback(
 		() =>
@@ -125,6 +129,8 @@ export const CoverGeneratorProvider = ({
 				lastRenderedState,
 				setLastRenderedState,
 				closeGenerator: onClose,
+				activeColorKey,
+				setActiveColorKey,
 			}}
 		>
 			{children}

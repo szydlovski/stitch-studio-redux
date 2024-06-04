@@ -1,58 +1,41 @@
 'use client';
 import { Button } from '@/components/ui';
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from '@/components/ui/popover';
 import { cn } from '@/lib';
-import { useDisclosure } from '@/lib/hooks/useDisclosure';
 import { CSSProperties } from 'react';
-import { HexColorPicker } from 'react-colorful';
 
 export const CoverColorPicker = ({
 	color,
-	onChange,
-	palette,
 	className,
 	style,
+	onClick,
+	active,
 }: {
 	color: string;
-	onChange: (color: string) => void;
-	palette?: string[];
 	className?: string;
 	style?: CSSProperties;
+	onClick?: () => void;
+	active?: boolean;
 }) => {
-	const { state: isOpen, set: setOpen } = useDisclosure();
 	return (
 		<div className={cn('absolute', className)} style={style}>
-			<Popover open={isOpen} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
-					<Button
-						className="w-6 h-6 p-0 rounded-full border-background border-2 shadow-md shadow-foreground/40"
-						style={{ backgroundColor: color }}
-					/>
-				</PopoverTrigger>
-				<PopoverContent className="p-0 w-4xl">
-					<HexColorPicker
-						style={{ width: '100%' }}
-						color={color}
-						onChange={(newColor) => onChange(newColor)}
-					/>
-					{palette && (
-						<div className="p-2 grid grid-cols-6 gap-2 mt-0">
-							{palette.map((color, i) => (
-								<Button
-									key={i}
-									className="w-full rounded-full border-background border-2 shadow-md shadow-foreground/40"
-									style={{ backgroundColor: color }}
-									onClick={() => onChange(color)}
-								/>
-							))}
-						</div>
-					)}
-				</PopoverContent>
-			</Popover>
+			{active && (
+				<div
+					className={
+						'w-6 h-6 p-0 rounded-full bg-background transition-all top-0 left-0 absolute origin-center scale-[130%] animate-ping anim'
+					}
+				/>
+			)}
+			<Button
+				className={cn(
+					'w-6 h-6 p-0 rounded-full border-background border-2 shadow-md shadow-foreground/40 transition-all relative origin-center',
+					{
+						'scale-[135%]': active,
+						'hover:scale-[115%]': !active,
+					}
+				)}
+				style={{ backgroundColor: color, transformOrigin: 'center' }}
+				onClick={onClick}
+			/>
 		</div>
 	);
 };

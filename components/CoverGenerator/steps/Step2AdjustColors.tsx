@@ -8,30 +8,40 @@ import {
 } from '@/components/ui/dialog';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib';
-import { CSSProperties, useEffect, useState } from 'react';
+import {
+	CSSProperties,
+	useCallback,
+	useEffect,
+	useMemo,
+	useState,
+} from 'react';
 import { renderStitchFairyMainCover } from '../../../lib/templateRendering';
 import { CoverColorPicker } from '../CoverColorPicker';
 import { useCoverGeneratorContext } from '../CoverGeneratorContext';
 import { ColorKey, CoverGeneratorActions } from '../reducer';
 import { PaddingOptionsInput } from './PaddingOptionsInput';
+import { HexColorInput, HexColorPicker } from 'react-colorful';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 type CoverColorPickerConfig = {
 	style: CSSProperties;
 	key: ColorKey;
 	palette?: string[];
+	side?: 'top' | 'right' | 'bottom' | 'left';
 };
 const coverColorPickerConfigs: CoverColorPickerConfig[] = [
 	{
-		style: { top: '22%', right: '25%' },
+		style: { top: '23%', left: '73%' },
 		key: 'background',
 		palette: ['#242424', '#fefefe'],
+		side: 'top',
 	},
-	{ style: { top: '56%', right: '5%' }, key: 'fabric' },
-	{ style: { top: '67%', left: '3%' }, key: 'floss1' },
-	{ style: { top: '72%', left: '7%' }, key: 'floss2' },
-	{ style: { top: '78%', left: '10%' }, key: 'floss3' },
-	{ style: { top: '84%', left: '12%' }, key: 'floss4' },
-	{ style: { top: '90%', left: '14%' }, key: 'floss5' },
+	{ style: { top: '57%', left: '92%' }, side: 'top', key: 'fabric' },
+	{ style: { top: '68%', left: '4%' }, side: 'left', key: 'floss1' },
+	{ style: { top: '73%', left: '8%' }, side: 'left', key: 'floss2' },
+	{ style: { top: '79%', left: '11%' }, side: 'left', key: 'floss3' },
+	{ style: { top: '85%', left: '13%' }, side: 'left', key: 'floss4' },
+	{ style: { top: '91%', left: '15%' }, side: 'bottom', key: 'floss5' },
 ];
 
 export const Step2AdjustColors = () => {
@@ -41,9 +51,33 @@ export const Step2AdjustColors = () => {
 		dispatch,
 		resetState,
 		stepper: { hasNext, nextStep },
+		activeColorKey,
+		setActiveColorKey,
 	} = useCoverGeneratorContext();
+
+	const palette = useMemo(
+		() => [
+			...(coverColorPickerConfigs.find(({ key }) => key === activeColorKey)
+				?.palette ?? []),
+			...pattern.groups.map((color) => color.hex),
+		],
+		[activeColorKey]
+	);
 	const { scale, xOffset, yOffset } = state.paddingOptions;
 	const [previewSrc, setPreviewSrc] = useState<string>();
+	const updateActiveColor = useCallback(
+		(color: string) => {
+			if (activeColorKey) {
+				dispatch(
+					CoverGeneratorActions.setColor({
+						key: activeColorKey,
+						value: color,
+					})
+				);
+			}
+		},
+		[activeColorKey]
+	);
 	useEffect(() => {
 		renderStitchFairyMainCover({
 			pattern,
@@ -57,7 +91,6 @@ export const Step2AdjustColors = () => {
 			flossColor5: state.colors.floss5,
 		}).then((render) => setPreviewSrc(render.toDataURL()));
 	}, [pattern, state.padding, state.colors]);
-	const patternPalette = pattern.groups.map((color) => color.hex);
 
 	return (
 		<>
@@ -78,22 +111,13 @@ export const Step2AdjustColors = () => {
 								alt="Preview"
 								className="w-full rounded-md border"
 							/>
-							{coverColorPickerConfigs.map(({ style, palette, key }) => (
+							{coverColorPickerConfigs.map(({ style, key }) => (
 								<CoverColorPicker
+									active={activeColorKey === key}
 									key={key}
 									style={style}
-									palette={
-										palette ? [...palette, ...patternPalette] : patternPalette
-									}
 									color={state.colors[key]}
-									onChange={(color) =>
-										dispatch(
-											CoverGeneratorActions.setColor({
-												key,
-												value: color,
-											})
-										)
-									}
+									onClick={() => setActiveColorKey(key)}
 								/>
 							))}
 						</>
@@ -115,7 +139,31 @@ export const Step2AdjustColors = () => {
 							}
 						/>
 					</div>
-					<div className="border rounded-md p-4">{'NYI'}</div>
+					<div className="flex border rounded-md bg-muted">
+						{activeColorKey ? (
+							<div className="flex flex-1">
+								<HexColorPicker
+									className="flex-1"
+									color={state.colors[activeColorKey]}
+									onChange={updateActiveColor}
+								/>
+								<ScrollArea className="flex-[0.6] max-h-[200px]">
+									<div className="p-2 flex flex-wrap justify-start items-start content-start gap-2 mt-0">
+										{palette.map((color, i) => (
+											<div
+												key={i}
+												className="h-7 w-7 rounded-sm cursor-pointer"
+												style={{ backgroundColor: color }}
+												onClick={() => updateActiveColor(color)}
+											/>
+										))}
+									</div>
+								</ScrollArea>
+							</div>
+						) : (
+							<div className="flex flex-1">No color selected.</div>
+						)}
+					</div>
 				</div>
 			</div>
 			<DialogFooter className="mt-6 flex">
