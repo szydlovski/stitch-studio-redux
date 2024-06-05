@@ -10,9 +10,8 @@ import {
 import { useProductContext } from '@/components/context/ProductContext';
 import { CoversCard } from '@/context/product/application/ProductCards/CoversCard';
 import { DangerZoneCard } from '@/context/product/application/ProductCards/DangerZoneCard';
-import { PaletteCard } from '@/context/product/application/ProductCards/PaletteCard';
-import { PatternInfoCard } from '@/context/product/application/ProductCards/PatternInfoCard';
-import { ProductFilesCard } from '@/context/product/application/ProductCards/ProductFilesCard';
+import { ProductCard } from '@/context/product/application/ProductCards/ProductCard';
+import { PdfCard } from '@/context/product/application/ProductCards/PdfCard';
 
 export const SingleProductContent = () => {
 	const { product } = useProductContext();
@@ -21,7 +20,7 @@ export const SingleProductContent = () => {
 			<Breadcrumb>
 				<BreadcrumbList>
 					<BreadcrumbItem>
-						<BreadcrumbLink href="/app/products">Products</BreadcrumbLink>
+						<BreadcrumbLink href="/studio/products">Products</BreadcrumbLink>
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />
 					<BreadcrumbItem>
@@ -29,10 +28,9 @@ export const SingleProductContent = () => {
 					</BreadcrumbItem>
 				</BreadcrumbList>
 			</Breadcrumb>
-			<PatternInfoCard />
+			<ProductCard />
 			<CoversCard />
-			<PaletteCard />
-			<ProductFilesCard />
+			<PdfCard />
 			<DangerZoneCard />
 		</div>
 	);

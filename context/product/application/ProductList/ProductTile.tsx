@@ -19,7 +19,7 @@ export const ProductTile = ({
 	product: { id, title, thumbnail, author },
 }: ProductTileProps) => {
 	return (
-		<Link key={id} href={`/app/products/${id}`}>
+		<Link key={id} href={`/studio/products/${id}`}>
 			<Card>
 				<CardContent className="p-0 bg-neutral-100 aspect-square">
 					<div className="h-full w-full flex justify-center items-center p-2 md:p-4">

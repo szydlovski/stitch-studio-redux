@@ -24,7 +24,7 @@ export const UserDropdownMenuContent = () => {
 			<DropdownMenuSeparator />
 			<DropdownMenuItem>Test</DropdownMenuItem>
 			<DropdownMenuItem asChild>
-				<Link href="/app/user">Settings</Link>
+				<Link href="/studio/user">Settings</Link>
 			</DropdownMenuItem>
 			<DropdownMenuSeparator />
 			<DropdownMenuItem onClick={() => signOut({ callbackUrl: '/login' })}>

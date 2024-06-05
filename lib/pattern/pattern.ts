@@ -15,6 +15,11 @@ export class Pattern {
 		public readonly height: number,
 		public readonly groups: ColorGroup[]
 	) {}
+	public getPixelColor(x: number, y: number): string | undefined {
+		return this.groups.find(({ pixels }) =>
+			pixels.some((pixel) => pixel.x === x && pixel.y === y)
+		)?.hex;
+	}
 	public changeColor(oldColor: string, newColor: string): Pattern {
 		const { width, height, groups } = this;
 		return new Pattern(

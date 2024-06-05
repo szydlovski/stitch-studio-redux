@@ -89,10 +89,10 @@ export const Step3ReviewImages = () => {
 		<>
 			<DialogHeader className="mb-6">
 				<DialogTitle className="flex gap-4 items-center">
-					{'StitchFairyCo Cover Generator'}
+					{'Review generated images'}
 				</DialogTitle>
 				<DialogDescription>
-					{`Click the Start button to start generating covers. You can select the covers you want to use in your product.`}
+					{`Review the generated images and save them to your product.`}
 				</DialogDescription>
 			</DialogHeader>
 			<>

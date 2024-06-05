@@ -12,7 +12,7 @@ export const DashboardViewLayout = ({
 	action?: ReactNode;
 }) => {
 	return (
-		<div className='p-6 bg-muted/40 min-h-full'>
+		<div className="p-6 bg-muted/40 min-h-full">
 			{breadcrumbs}
 			{(title || action) && (
 				<div className="flex items-start">

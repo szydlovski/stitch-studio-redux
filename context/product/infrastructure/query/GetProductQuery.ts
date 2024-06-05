@@ -2,7 +2,7 @@ import { XataQuery } from '@/lib/XataQuery';
 import { ProductDetailsAttributes } from '../../domain/ProductDetails';
 
 export class GetProductQuery extends XataQuery<ProductDetailsAttributes> {
-	public async execute(id: string) {
+	public async execute(id: string): Promise<ProductDetailsAttributes> {
 		const product = await this.xata.db.product
 			.select([
 				'*',

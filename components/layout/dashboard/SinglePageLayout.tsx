@@ -30,7 +30,7 @@ export const SinglePageLayout = ({ header, children }: SinglePageLayoutProps) =>
 		<div className="flex h-screen flex-col max-h-full">
 			<header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
 				<Button asChild variant="ghost" size="icon" className="rounded-full">
-					<Link href="/app">
+					<Link href="/studio">
 						<ArrowLeftIcon />
 					</Link>
 				</Button>

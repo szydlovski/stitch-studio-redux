@@ -33,7 +33,7 @@ export const DangerZoneCard = () => {
 	});
 	const handleDelete = useCallback(async () => {
 		await mutateAsync();
-		router.push('/app/products');
+		router.push('/studio/products');
 	}, [mutateAsync, router]);
 	return (
 		<Card>

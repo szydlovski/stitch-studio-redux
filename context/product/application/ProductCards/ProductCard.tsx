@@ -4,8 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { useProductContext } from '@/components/context/ProductContext';
 import { EditTitleDialog } from './EditTitleDialog';
 import Image from 'next/image';
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from '@/components/ui/tooltip';
 
-export const PatternInfoCard = () => {
+export const ProductCard = () => {
 	const { product, pattern } = useProductContext();
 	return (
 		<Card>
@@ -32,6 +37,21 @@ export const PatternInfoCard = () => {
 					<DataSet label="Dimensions">{pattern.dimensionsText}</DataSet>
 					<DataSet label="Stitches">{pattern.stitchCount}</DataSet>
 					<DataSet label="Colors">{pattern.colorCount}</DataSet>
+					<DataSet label="Palette">
+						<div className="flex gap-1">
+							{pattern.groups.map(({ hex }) => (
+								<Tooltip>
+									<TooltipTrigger asChild>
+										<div
+											className="h-6 w-6 rounded-sm border"
+											style={{ backgroundColor: hex }}
+										/>
+									</TooltipTrigger>
+									<TooltipContent side='bottom'>{hex}</TooltipContent>
+								</Tooltip>
+							))}
+						</div>
+					</DataSet>
 				</div>
 				<div className="w-full h-full">
 					<div className="aspect-square bg-neutral-200 flex justify-center items-center p-4 max-h-[400px] ml-auto">

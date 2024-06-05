@@ -14,22 +14,22 @@ interface MenuLink {
 
 export const MENU_LINKS: MenuLink[] = [
 	{
-		href: '/app/dashboard',
+		href: '/studio/dashboard',
 		icon: GaugeIcon,
 		label: 'Dashboard',
 	},
 	{
-		href: '/app/products',
+		href: '/studio/products',
 		icon: Package,
 		label: 'Products',
 	},
 	{
-		href: '/app/brands',
+		href: '/studio/brands',
 		icon: StoreIcon,
 		label: 'Brands',
 	},
 	{
-		href: '/app/palettes',
+		href: '/studio/palettes',
 		icon: SwatchBookIcon,
 		label: 'Palettes',
 	},

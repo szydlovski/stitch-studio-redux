@@ -1,6 +1,6 @@
 import { MoreHorizontal } from 'lucide-react';
 
-import { ListBrandRecord } from '@/app/app/brands/listBrands';
+import { ListBrandRecord } from './listBrands';
 import { DataTable } from '@/components/DataTable';
 import { Button } from '@/components/ui/button';
 import {

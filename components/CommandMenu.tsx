@@ -125,7 +125,7 @@ export function CommandSearchResults({
 			{searchResults.map(({ table, record }) => {
 				return (
 					<CommandItem asChild key={record.id} value={record.title}>
-						<Link className="flex gap-2" href={`/app/products/${record.id}`}>
+						<Link className="flex gap-2" href={`/studio/products/${record.id}`}>
 							<div className="h-[20px] w-[20px] flex">
 								<Image
 									src={record.thumbnail!.signedUrl!}
