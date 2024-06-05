@@ -34,26 +34,18 @@ export const CoverPage = ({ product, pattern }: PdfPageProps) => (
 					</div>
 					<h2>Tips</h2>
 					<p>
-						The size of your design depends on the cross stitch fabric you
-						choose. The higher the fabric's "count" (the number of stitches per
-						inch), the smaller the stitches and therefore your design
+						{`The size of your design depends on the cross stitch fabric you choose. The higher the fabric's "count" (the number of stitches per inch), the smaller the stitches and therefore your design.`}
 					</p>
 					<p>
-						Refer to the next page for required thread colors and stitch counts.
-						Threads come in 6 strands, which should be divided into 3 sets of 2
-						strands. You can complete approximately 1800 stitches using one
-						skein.
+						{`Refer to the next page for required thread colors and stitch counts. Threads come in 6 strands, which should be divided into 3 sets of 2 strands. You can complete approximately 1800 stitches using one skein.`}
 					</p>
 				</div>
 				<div>[Loop Mockup]</div>
 			</div>
 			<div className="copyright">
-				<p>Copyright © KamCraft s.c.</p>
+				<p>{`Copyright © KamCraft s.c.`}</p>
 				<p>
-					All rights reserved. This pattern and all its variations constitute
-					copyrighted work of KamCraft s.c. (trading as StitchFairyCo). This
-					pattern is intended for personal use only and may not be resold,
-					redistributed or published in digital or printed form.
+					{`All rights reserved. This pattern and all its variations constitute copyrighted work of KamCraft s.c. (trading as StitchFairyCo). This pattern is intended for personal use only and may not be resold, redistributed or published in digital or printed form.`}
 				</p>
 			</div>
 		</div>
