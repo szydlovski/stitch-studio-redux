@@ -8,10 +8,10 @@ import {
 	BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { useProductContext } from '@/components/context/ProductContext';
-import { CoversCard } from '@/context/product/application/ProductCards/CoversCard';
-import { DangerZoneCard } from '@/context/product/application/ProductCards/DangerZoneCard';
-import { ProductCard } from '@/context/product/application/ProductCards/ProductCard';
-import { PdfCard } from '@/context/product/application/ProductCards/PdfCard';
+import { CoversCard } from '@/application/product/ProductCards/CoversCard';
+import { DangerZoneCard } from '@/application/product/ProductCards/DangerZoneCard';
+import { ProductCard } from '@/application/product/ProductCards/ProductCard';
+import { PdfCard } from '@/application/product/ProductCards/PdfCard';
 
 export const SingleProductContent = () => {
 	const { product } = useProductContext();

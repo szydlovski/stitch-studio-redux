@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui';
-import { CreateProductDialog } from '@/context/product/application/CreateProduct/CreateProductDialog';
-import { ProductList } from '@/context/product/application/ProductList/ProductList';
+import { CreateProductDialog } from '@/application/product/CreateProduct/CreateProductDialog';
+import { ProductList } from '@/application/product/ProductList/ProductList';
 import { WandSparklesIcon } from 'lucide-react';
 
 export const ListProductsContent = () => {

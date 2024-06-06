@@ -1,4 +1,4 @@
-import { auth as getSession } from '@/config/auth';
+import { auth as getSession } from '@/app/auth';
 import { XataClient, getXataClient } from '@/lib/xata';
 import { Session } from 'next-auth';
 import { NextResponse } from 'next/server';

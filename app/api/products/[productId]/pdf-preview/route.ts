@@ -1,6 +1,6 @@
-import { ProductDetails } from '@/context/product/domain/ProductDetails';
-import { GetProductQuery } from '@/context/product/infrastructure/query/GetProductQuery';
-import { renderPatternFileHtml } from '@/lib/PdfRenderer/renderPatternFileHtml';
+import { ProductDetails } from '@/domain/product/ProductDetails';
+import { GetProductQuery } from '@/infrastructure/product/query/GetProductQuery';
+import { renderPatternFileHtml } from '@/lib/pdf/renderPatternFileHtml';
 import { routeHandler } from '@/lib/routeHandler';
 import { NextResponse } from 'next/server';
 

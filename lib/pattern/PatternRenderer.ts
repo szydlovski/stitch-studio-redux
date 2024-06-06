@@ -82,8 +82,13 @@ export class PatternRenderer {
 			ctx.globalCompositeOperation = 'source-over';
 			ctx.fillStyle = fabricColor;
 			ctx.fillRect(0, 0, fabricTexture.width, fabricTexture.height);
+
+			ctx.globalAlpha = 1;
 			ctx.globalCompositeOperation = 'multiply';
 			ctx.drawImage(fabricTexture, 0, 0);
+
+			
+			ctx.globalAlpha = 1;
 			ctx.globalCompositeOperation = 'source-over';
 			ctx.drawImage(stylizedRender, padding.left * scale, padding.top * scale);
 		});

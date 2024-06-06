@@ -1,7 +1,7 @@
 import { routeHandler } from '@/lib/routeHandler';
 import { NextResponse } from 'next/server';
-import { ListProductsQuery } from '@/context/product/infrastructure/query/ListProductsQuery';
-import { CreateProductQuery } from '@/context/product/infrastructure/query/CreateProductQuery';
+import { ListProductsQuery } from '@/infrastructure/product/query/ListProductsQuery';
+import { CreateProductQuery } from '@/infrastructure/product/query/CreateProductQuery';
 
 export const GET = routeHandler(
 	async ({ xata }) => {

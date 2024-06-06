@@ -1,6 +1,5 @@
 'use client';
-import { CoverGeneratorState } from '@/components/CoverGenerator/reducer';
-import { getSquarePadding } from '@/lib/helpers';
+import { CoverGeneratorState } from '@/application/product/CoverGenerator/reducer';
 import { PatternRenderer } from '@/lib/pattern/PatternRenderer';
 import { loadStitchTextureDictionary } from '@/lib/pattern/helpers';
 import { Pattern } from '@/lib/pattern/pattern';
@@ -20,7 +19,7 @@ import {
 
 interface RenderStitchFairyCoversProps {
 	pattern: Pattern;
-	state: CoverGeneratorState
+	state: CoverGeneratorState;
 }
 
 export interface RenderedProductImage {

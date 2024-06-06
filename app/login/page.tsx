@@ -1,5 +1,5 @@
 import { LoginScreen } from '@/components/auth/LoginScreen';
-import { auth } from '@/config/auth';
+import { auth } from '@/app/auth';
 import { redirect } from 'next/navigation';
 
 export default async function LoginPage() {

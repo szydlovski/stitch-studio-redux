@@ -18,7 +18,7 @@ import { Dialog } from '@/components/ui/dialog';
 import {
 	CreateProductDialogContent,
 	FilePatternPayload,
-} from '@/context/product/application/CreateProduct/CreateProductDialog';
+} from '@/application/product/CreateProduct/CreateProductDialog';
 import { globalSearch } from '../lib/globalSearch';
 import debounce from 'lodash.debounce';
 import { ProductRecord } from '@/lib/xata';

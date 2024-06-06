@@ -1,6 +1,6 @@
 'use client';
-import { ProductDetails } from '@/context/product/domain/ProductDetails';
-import { ProductApiClient } from '@/context/product/infrastructure/ProductApiClient';
+import { ProductDetails } from '@/domain/product/ProductDetails';
+import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
 import { Pattern } from '@/lib/pattern/pattern';
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode, createContext, useContext } from 'react';

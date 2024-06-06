@@ -1,6 +1,6 @@
-import { DeleteProductQuery } from '@/context/product/infrastructure/query/DeleteProductQuery';
-import { GetProductQuery } from '@/context/product/infrastructure/query/GetProductQuery';
-import { UpdateProductTitleQuery } from '@/context/product/infrastructure/query/UpdateProductTitleQuery';
+import { DeleteProductQuery } from '@/infrastructure/product/query/DeleteProductQuery';
+import { GetProductQuery } from '@/infrastructure/product/query/GetProductQuery';
+import { UpdateProductTitleQuery } from '@/infrastructure/product/query/UpdateProductTitleQuery';
 import { routeHandler } from '@/lib/routeHandler';
 import { NextResponse } from 'next/server';
 
