@@ -14,3 +14,9 @@ export interface ProductAuthor {
 	name: string;
 	email: string;
 }
+
+export interface ProductAttributes {
+	hoopConfig?: any;
+	coverConfig?: any;
+	printableConfig?: any;
+}

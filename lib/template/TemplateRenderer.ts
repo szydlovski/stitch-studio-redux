@@ -84,27 +84,34 @@ export class TemplateRenderer {
 			}
 		});
 	}
+	public renderTemplateOnCanvas(
+		template: TemplateManifest,
+		props: TemplateProps,
+		ctx: CanvasRenderingContext2D
+	): void {
+		for (const layer of template.layers) {
+			let layerRender = this.renderTemplateLayer(layer, template, props);
+			if (layer.mask) {
+				const maskRender = this.renderTemplateLayer(
+					layer.mask,
+					template,
+					props
+				);
+				layerRender = maskCanvas(layerRender, maskRender);
+			}
+			ctx.globalCompositeOperation = layer.mode ?? 'source-over';
+			ctx.drawImage(layerRender, 0, 0);
+		}
+	}
 	public renderTemplate(
 		template: TemplateManifest,
 		props: TemplateProps
 	): HTMLCanvasElement {
-		return createCanvas(template.dimensions, (ctx) => {
-			for (const layer of template.layers) {
-				let layerRender = this.renderTemplateLayer(layer, template, props);
-				if (layer.mask) {
-					const maskRender = this.renderTemplateLayer(
-						layer.mask,
-						template,
-						props
-					);
-					layerRender = maskCanvas(layerRender, maskRender);
-				}
-				ctx.globalCompositeOperation = layer.mode ?? 'source-over';
-				ctx.drawImage(layerRender, 0, 0);
-			}
-		});
+		return createCanvas(template.dimensions, (ctx) =>
+			this.renderTemplateOnCanvas(template, props, ctx)
+		);
 	}
-	public async loadAndRenderTemplate(
+	public async renderTemplateAsync(
 		template: TemplateManifest,
 		props: TemplateProps
 	): Promise<HTMLCanvasElement> {

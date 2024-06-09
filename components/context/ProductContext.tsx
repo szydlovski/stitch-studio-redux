@@ -1,13 +1,13 @@
 'use client';
 import { ProductDetails } from '@/domain/product/ProductDetails';
 import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
-import { Pattern } from '@/lib/pattern/pattern';
+import { CrossStitchPattern } from '@/lib/cross-stitch';
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode, createContext, useContext } from 'react';
 
 interface ProductContextType {
 	product: ProductDetails;
-	pattern: Pattern;
+	pattern: CrossStitchPattern;
 }
 
 export const ProductContext = createContext<ProductContextType | undefined>(
@@ -33,12 +33,12 @@ export const ProductContextProvider = ({
 	return (
 		<>
 			{status === 'error' ? (
-				errorContent
+				errorContent ?? <>Error</>
 			) : status === 'pending' ? (
 				loadingContent
 			) : (
 				<ProductContext.Provider
-					value={{ product: data, pattern: Pattern.fromData(data.data) }}
+					value={{ product: data, pattern: CrossStitchPattern.fromData(data.data) }}
 				>
 					{children}
 				</ProductContext.Provider>

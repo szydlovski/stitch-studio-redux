@@ -1,7 +1,6 @@
 import { ProductDetails } from '@/domain/product/ProductDetails';
-import { Pattern } from '@/lib/pattern/pattern';
+import { CrossStitchPattern } from '@/lib/cross-stitch';
 
 export interface PdfPageProps {
 	product: ProductDetails;
-	pattern: Pattern;
 }

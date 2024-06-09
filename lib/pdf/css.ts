@@ -16,7 +16,8 @@ body {
 .demo-container {
   background-color: #242424;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   gap: 96px;
   justify-content: center;
   align-items: center;
@@ -34,6 +35,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 24px;
   height: 100%;
 }
@@ -42,6 +44,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.header .logo {
+  max-width: 100px;
+  margin-bottom: 12px;
 }
 
 .title {
@@ -58,17 +65,72 @@ body {
 
 .columns {
   display: grid;
-  gap: 24px;
+  gap: 36px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.details-container {
+.page-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: auto;
+}
+
+.hoop-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hoop {
+  max-width: 100%;
+}
+
+.details table {
+  font-size: 14px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  td {
+    border: 2px solid #ddd;
+    padding: 6px 9px;
+  }
+  td:first-child {
+    width: 30%;
+    font-weight: bold;
+    border-left: 0;
+  }
+  td:nth-child(2) {
+  }
+  td:last-child {
+    border-right: 0;
+  }
+  tr:last-child td {
+    border-bottom: 0;
+  }
+  tr:first-child td {
+    border-top: 0;
+  }
+}
+
+tr.aida {
+  td span {
+    display: block;
+  }
+  td span:nth-child(2) {
+    font-size: 12px;
+    opacity: 0.75;
+  }
+}
+
+.details-content {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.details {
+
+.details p {
+  font-size: 14px;
 }
 
 .details h2 {
@@ -76,7 +138,6 @@ body {
   font-size: 18px;
   padding-bottom: 3px;
   border-bottom: 2px solid #222;
-  margin-bottom: 12px;
 }
 
 .dataset-group {
@@ -101,10 +162,10 @@ body {
 .copyright {
   border: 3px solid #dc2626;
   color: #dc2626;
-  padding: 18px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 6px;
   font-weight: bold;
   margin-top: auto;
   font-size: 12px;
@@ -147,9 +208,20 @@ body {
     height: 12px;
     border: 1px solid #222;
     position: relative;
-    font-size: 2px;
     text-align: center;
+  }
+  td a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     background-color: var(--c);
+    color: var(--t);
+    position: absolute;
+    font-size: 9px;
   }
   td:nth-child(5n) {
     border-right: 2px solid #222;

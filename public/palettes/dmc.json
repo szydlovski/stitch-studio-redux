@@ -1,8 +1,7 @@
 [
   {
-    "label": "Salmon Very Light (DMC 3713)",
+    "name": "Salmon Very Light (DMC 3713)",
     "color": "#ffe2e2",
-    "vendor": "dmc",
     "meta": {
       "number": "3713",
       "name": "Salmon Very Light",
@@ -10,9 +9,8 @@
     }
   },
   {
-    "label": "Salmon Light (DMC 761)",
+    "name": "Salmon Light (DMC 761)",
     "color": "#ffc9c9",
-    "vendor": "dmc",
     "meta": {
       "number": "761",
       "name": "Salmon Light",
@@ -20,9 +18,8 @@
     }
   },
   {
-    "label": "Salmon (DMC 760)",
+    "name": "Salmon (DMC 760)",
     "color": "#f5adad",
-    "vendor": "dmc",
     "meta": {
       "number": "760",
       "name": "Salmon",
@@ -30,9 +27,8 @@
     }
   },
   {
-    "label": "Salmon Medium (DMC 3712)",
+    "name": "Salmon Medium (DMC 3712)",
     "color": "#f18787",
-    "vendor": "dmc",
     "meta": {
       "number": "3712",
       "name": "Salmon Medium",
@@ -40,9 +36,8 @@
     }
   },
   {
-    "label": "Salmon Dark (DMC 3328)",
+    "name": "Salmon Dark (DMC 3328)",
     "color": "#e36d6d",
-    "vendor": "dmc",
     "meta": {
       "number": "3328",
       "name": "Salmon Dark",
@@ -50,9 +45,8 @@
     }
   },
   {
-    "label": "Salmon Very Dark (DMC 347)",
+    "name": "Salmon Very Dark (DMC 347)",
     "color": "#bf2d2d",
-    "vendor": "dmc",
     "meta": {
       "number": "347",
       "name": "Salmon Very Dark",
@@ -60,9 +54,8 @@
     }
   },
   {
-    "label": "Peach (DMC 353)",
+    "name": "Peach (DMC 353)",
     "color": "#fed7cc",
-    "vendor": "dmc",
     "meta": {
       "number": "353",
       "name": "Peach",
@@ -70,9 +63,8 @@
     }
   },
   {
-    "label": "Coral Light (DMC 352)",
+    "name": "Coral Light (DMC 352)",
     "color": "#fd9c97",
-    "vendor": "dmc",
     "meta": {
       "number": "352",
       "name": "Coral Light",
@@ -80,9 +72,8 @@
     }
   },
   {
-    "label": "Coral (DMC 351)",
+    "name": "Coral (DMC 351)",
     "color": "#e96a67",
-    "vendor": "dmc",
     "meta": {
       "number": "351",
       "name": "Coral",
@@ -90,9 +81,8 @@
     }
   },
   {
-    "label": "Coral Medium (DMC 350)",
+    "name": "Coral Medium (DMC 350)",
     "color": "#e04848",
-    "vendor": "dmc",
     "meta": {
       "number": "350",
       "name": "Coral Medium",
@@ -100,9 +90,8 @@
     }
   },
   {
-    "label": "Coral Dark (DMC 349)",
+    "name": "Coral Dark (DMC 349)",
     "color": "#d21035",
-    "vendor": "dmc",
     "meta": {
       "number": "349",
       "name": "Coral Dark",
@@ -110,9 +99,8 @@
     }
   },
   {
-    "label": "Coral Red Very Dark (DMC 817)",
+    "name": "Coral Red Very Dark (DMC 817)",
     "color": "#bb051f",
-    "vendor": "dmc",
     "meta": {
       "number": "817",
       "name": "Coral Red Very Dark",
@@ -120,9 +108,8 @@
     }
   },
   {
-    "label": "Melon Light (DMC 3708)",
+    "name": "Melon Light (DMC 3708)",
     "color": "#ffcbd5",
-    "vendor": "dmc",
     "meta": {
       "number": "3708",
       "name": "Melon Light",
@@ -130,9 +117,8 @@
     }
   },
   {
-    "label": "Melon Medium (DMC 3706)",
+    "name": "Melon Medium (DMC 3706)",
     "color": "#ffadbc",
-    "vendor": "dmc",
     "meta": {
       "number": "3706",
       "name": "Melon Medium",
@@ -140,9 +126,8 @@
     }
   },
   {
-    "label": "Melon Dark (DMC 3705)",
+    "name": "Melon Dark (DMC 3705)",
     "color": "#ff7992",
-    "vendor": "dmc",
     "meta": {
       "number": "3705",
       "name": "Melon Dark",
@@ -150,9 +135,8 @@
     }
   },
   {
-    "label": "Melon Very Dark (DMC 3801)",
+    "name": "Melon Very Dark (DMC 3801)",
     "color": "#e74967",
-    "vendor": "dmc",
     "meta": {
       "number": "3801",
       "name": "Melon Very Dark",
@@ -160,9 +144,8 @@
     }
   },
   {
-    "label": "Bright Red (DMC 666)",
+    "name": "Bright Red (DMC 666)",
     "color": "#e31d42",
-    "vendor": "dmc",
     "meta": {
       "number": "666",
       "name": "Bright Red",
@@ -170,9 +153,8 @@
     }
   },
   {
-    "label": "Red (DMC 321)",
+    "name": "Red (DMC 321)",
     "color": "#c72b3b",
-    "vendor": "dmc",
     "meta": {
       "number": "321",
       "name": "Red",
@@ -180,9 +162,8 @@
     }
   },
   {
-    "label": "Red Medium (DMC 304)",
+    "name": "Red Medium (DMC 304)",
     "color": "#b71f33",
-    "vendor": "dmc",
     "meta": {
       "number": "304",
       "name": "Red Medium",
@@ -190,9 +171,8 @@
     }
   },
   {
-    "label": "Red Dark (DMC 498)",
+    "name": "Red Dark (DMC 498)",
     "color": "#a7132b",
-    "vendor": "dmc",
     "meta": {
       "number": "498",
       "name": "Red Dark",
@@ -200,9 +180,8 @@
     }
   },
   {
-    "label": "Garnet (DMC 816)",
+    "name": "Garnet (DMC 816)",
     "color": "#970b23",
-    "vendor": "dmc",
     "meta": {
       "number": "816",
       "name": "Garnet",
@@ -210,9 +189,8 @@
     }
   },
   {
-    "label": "Garnet Medium (DMC 815)",
+    "name": "Garnet Medium (DMC 815)",
     "color": "#87071f",
-    "vendor": "dmc",
     "meta": {
       "number": "815",
       "name": "Garnet Medium",
@@ -220,9 +198,8 @@
     }
   },
   {
-    "label": "Garnet Dark (DMC 814)",
+    "name": "Garnet Dark (DMC 814)",
     "color": "#7b001b",
-    "vendor": "dmc",
     "meta": {
       "number": "814",
       "name": "Garnet Dark",
@@ -230,9 +207,8 @@
     }
   },
   {
-    "label": "Carnation Very Light (DMC 894)",
+    "name": "Carnation Very Light (DMC 894)",
     "color": "#ffb2bb",
-    "vendor": "dmc",
     "meta": {
       "number": "894",
       "name": "Carnation Very Light",
@@ -240,9 +216,8 @@
     }
   },
   {
-    "label": "Carnation Light (DMC 893)",
+    "name": "Carnation Light (DMC 893)",
     "color": "#fc90a2",
-    "vendor": "dmc",
     "meta": {
       "number": "893",
       "name": "Carnation Light",
@@ -250,9 +225,8 @@
     }
   },
   {
-    "label": "Carnation Medium (DMC 892)",
+    "name": "Carnation Medium (DMC 892)",
     "color": "#ff798c",
-    "vendor": "dmc",
     "meta": {
       "number": "892",
       "name": "Carnation Medium",
@@ -260,9 +234,8 @@
     }
   },
   {
-    "label": "Carnation Dark (DMC 891)",
+    "name": "Carnation Dark (DMC 891)",
     "color": "#ff5773",
-    "vendor": "dmc",
     "meta": {
       "number": "891",
       "name": "Carnation Dark",
@@ -270,9 +243,8 @@
     }
   },
   {
-    "label": "Baby Pink (DMC 818)",
+    "name": "Baby Pink (DMC 818)",
     "color": "#ffdfd9",
-    "vendor": "dmc",
     "meta": {
       "number": "818",
       "name": "Baby Pink",
@@ -280,9 +252,8 @@
     }
   },
   {
-    "label": "Geranium Pale (DMC 957)",
+    "name": "Geranium Pale (DMC 957)",
     "color": "#fdb5b5",
-    "vendor": "dmc",
     "meta": {
       "number": "957",
       "name": "Geranium Pale",
@@ -290,9 +261,8 @@
     }
   },
   {
-    "label": "Geranium (DMC 956)",
+    "name": "Geranium (DMC 956)",
     "color": "#ff9191",
-    "vendor": "dmc",
     "meta": {
       "number": "956",
       "name": "Geranium",
@@ -300,9 +270,8 @@
     }
   },
   {
-    "label": "Rose Dark (DMC 309)",
+    "name": "Rose Dark (DMC 309)",
     "color": "#564a4a",
-    "vendor": "dmc",
     "meta": {
       "number": "309",
       "name": "Rose Dark",
@@ -310,9 +279,8 @@
     }
   },
   {
-    "label": "Dusty Rose Ult Vy Lt (DMC 963)",
+    "name": "Dusty Rose Ult Vy Lt (DMC 963)",
     "color": "#ffd7d7",
-    "vendor": "dmc",
     "meta": {
       "number": "963",
       "name": "Dusty Rose Ult Vy Lt",
@@ -320,9 +288,8 @@
     }
   },
   {
-    "label": "Dusty Rose Med Vy Lt (DMC 3716)",
+    "name": "Dusty Rose Med Vy Lt (DMC 3716)",
     "color": "#ffbdbd",
-    "vendor": "dmc",
     "meta": {
       "number": "3716",
       "name": "Dusty Rose Med Vy Lt",
@@ -330,9 +297,8 @@
     }
   },
   {
-    "label": "Dusty Rose Medium (DMC 962)",
+    "name": "Dusty Rose Medium (DMC 962)",
     "color": "#e68a8a",
-    "vendor": "dmc",
     "meta": {
       "number": "962",
       "name": "Dusty Rose Medium",
@@ -340,9 +306,8 @@
     }
   },
   {
-    "label": "Dusty Rose Dark (DMC 961)",
+    "name": "Dusty Rose Dark (DMC 961)",
     "color": "#cf7373",
-    "vendor": "dmc",
     "meta": {
       "number": "961",
       "name": "Dusty Rose Dark",
@@ -350,9 +315,8 @@
     }
   },
   {
-    "label": "Raspberry Light (DMC 3833)",
+    "name": "Raspberry Light (DMC 3833)",
     "color": "#ea8699",
-    "vendor": "dmc",
     "meta": {
       "number": "3833",
       "name": "Raspberry Light",
@@ -360,9 +324,8 @@
     }
   },
   {
-    "label": "Raspberry Medium (DMC 3832)",
+    "name": "Raspberry Medium (DMC 3832)",
     "color": "#db556e",
-    "vendor": "dmc",
     "meta": {
       "number": "3832",
       "name": "Raspberry Medium",
@@ -370,9 +333,8 @@
     }
   },
   {
-    "label": "Raspberry Dark (DMC 3831)",
+    "name": "Raspberry Dark (DMC 3831)",
     "color": "#b32f48",
-    "vendor": "dmc",
     "meta": {
       "number": "3831",
       "name": "Raspberry Dark",
@@ -380,9 +342,8 @@
     }
   },
   {
-    "label": "Raspberry Very Dark (DMC 777)",
+    "name": "Raspberry Very Dark (DMC 777)",
     "color": "#913546",
-    "vendor": "dmc",
     "meta": {
       "number": "777",
       "name": "Raspberry Very Dark",
@@ -390,9 +351,8 @@
     }
   },
   {
-    "label": "Baby Pink Light (DMC 819)",
+    "name": "Baby Pink Light (DMC 819)",
     "color": "#ffeeeb",
-    "vendor": "dmc",
     "meta": {
       "number": "819",
       "name": "Baby Pink Light",
@@ -400,9 +360,8 @@
     }
   },
   {
-    "label": "Rose Light (DMC 3326)",
+    "name": "Rose Light (DMC 3326)",
     "color": "#fbadb4",
-    "vendor": "dmc",
     "meta": {
       "number": "3326",
       "name": "Rose Light",
@@ -410,9 +369,8 @@
     }
   },
   {
-    "label": "Pink Medium (DMC 776)",
+    "name": "Pink Medium (DMC 776)",
     "color": "#fcb0b9",
-    "vendor": "dmc",
     "meta": {
       "number": "776",
       "name": "Pink Medium",
@@ -420,9 +378,8 @@
     }
   },
   {
-    "label": "Rose Medium (DMC 899)",
+    "name": "Rose Medium (DMC 899)",
     "color": "#f27688",
-    "vendor": "dmc",
     "meta": {
       "number": "899",
       "name": "Rose Medium",
@@ -430,9 +387,8 @@
     }
   },
   {
-    "label": "Rose (DMC 335)",
+    "name": "Rose (DMC 335)",
     "color": "#ee546e",
-    "vendor": "dmc",
     "meta": {
       "number": "335",
       "name": "Rose",
@@ -440,9 +396,8 @@
     }
   },
   {
-    "label": "Rose Very Dark (DMC 326)",
+    "name": "Rose Very Dark (DMC 326)",
     "color": "#b33b4b",
-    "vendor": "dmc",
     "meta": {
       "number": "326",
       "name": "Rose Very Dark",
@@ -450,9 +405,8 @@
     }
   },
   {
-    "label": "Dusty Rose Vry Lt (DMC 151)",
+    "name": "Dusty Rose Vry Lt (DMC 151)",
     "color": "#f0ced4",
-    "vendor": "dmc",
     "meta": {
       "number": "151",
       "name": "Dusty Rose Vry Lt",
@@ -460,9 +414,8 @@
     }
   },
   {
-    "label": "Dusty Rose Light (DMC 3354)",
+    "name": "Dusty Rose Light (DMC 3354)",
     "color": "#e4a6ac",
-    "vendor": "dmc",
     "meta": {
       "number": "3354",
       "name": "Dusty Rose Light",
@@ -470,9 +423,8 @@
     }
   },
   {
-    "label": "Dusty Rose (DMC 3733)",
+    "name": "Dusty Rose (DMC 3733)",
     "color": "#e8879b",
-    "vendor": "dmc",
     "meta": {
       "number": "3733",
       "name": "Dusty Rose",
@@ -480,9 +432,8 @@
     }
   },
   {
-    "label": "Dusty Rose Very Dark (DMC 3731)",
+    "name": "Dusty Rose Very Dark (DMC 3731)",
     "color": "#da6783",
-    "vendor": "dmc",
     "meta": {
       "number": "3731",
       "name": "Dusty Rose Very Dark",
@@ -490,9 +441,8 @@
     }
   },
   {
-    "label": "Dusty Rose Ultra Dark (DMC 3350)",
+    "name": "Dusty Rose Ultra Dark (DMC 3350)",
     "color": "#bc4365",
-    "vendor": "dmc",
     "meta": {
       "number": "3350",
       "name": "Dusty Rose Ultra Dark",
@@ -500,9 +450,8 @@
     }
   },
   {
-    "label": "Dusty Rose Ult Vy Dk (DMC 150)",
+    "name": "Dusty Rose Ult Vy Dk (DMC 150)",
     "color": "#ab0249",
-    "vendor": "dmc",
     "meta": {
       "number": "150",
       "name": "Dusty Rose Ult Vy Dk",
@@ -510,9 +459,8 @@
     }
   },
   {
-    "label": "Mauve Light (DMC 3689)",
+    "name": "Mauve Light (DMC 3689)",
     "color": "#fbbfc2",
-    "vendor": "dmc",
     "meta": {
       "number": "3689",
       "name": "Mauve Light",
@@ -520,9 +468,8 @@
     }
   },
   {
-    "label": "Mauve Medium (DMC 3688)",
+    "name": "Mauve Medium (DMC 3688)",
     "color": "#e7a9ac",
-    "vendor": "dmc",
     "meta": {
       "number": "3688",
       "name": "Mauve Medium",
@@ -530,9 +477,8 @@
     }
   },
   {
-    "label": "Mauve (DMC 3687)",
+    "name": "Mauve (DMC 3687)",
     "color": "#c96b70",
-    "vendor": "dmc",
     "meta": {
       "number": "3687",
       "name": "Mauve",
@@ -540,9 +486,8 @@
     }
   },
   {
-    "label": "Mauve Dark (DMC 3803)",
+    "name": "Mauve Dark (DMC 3803)",
     "color": "#ab3357",
-    "vendor": "dmc",
     "meta": {
       "number": "3803",
       "name": "Mauve Dark",
@@ -550,9 +495,8 @@
     }
   },
   {
-    "label": "Mauve Very Dark (DMC 3685)",
+    "name": "Mauve Very Dark (DMC 3685)",
     "color": "#881531",
-    "vendor": "dmc",
     "meta": {
       "number": "3685",
       "name": "Mauve Very Dark",
@@ -560,9 +504,8 @@
     }
   },
   {
-    "label": "Cranberry Very Light (DMC 605)",
+    "name": "Cranberry Very Light (DMC 605)",
     "color": "#ffc0cd",
-    "vendor": "dmc",
     "meta": {
       "number": "605",
       "name": "Cranberry Very Light",
@@ -570,9 +513,8 @@
     }
   },
   {
-    "label": "Cranberry Light (DMC 604)",
+    "name": "Cranberry Light (DMC 604)",
     "color": "#ffb0be",
-    "vendor": "dmc",
     "meta": {
       "number": "604",
       "name": "Cranberry Light",
@@ -580,9 +522,8 @@
     }
   },
   {
-    "label": "Cranberry (DMC 603)",
+    "name": "Cranberry (DMC 603)",
     "color": "#ffa4be",
-    "vendor": "dmc",
     "meta": {
       "number": "603",
       "name": "Cranberry",
@@ -590,9 +531,8 @@
     }
   },
   {
-    "label": "Cranberry Medium (DMC 602)",
+    "name": "Cranberry Medium (DMC 602)",
     "color": "#e24874",
-    "vendor": "dmc",
     "meta": {
       "number": "602",
       "name": "Cranberry Medium",
@@ -600,9 +540,8 @@
     }
   },
   {
-    "label": "Cranberry Dark (DMC 601)",
+    "name": "Cranberry Dark (DMC 601)",
     "color": "#d1286a",
-    "vendor": "dmc",
     "meta": {
       "number": "601",
       "name": "Cranberry Dark",
@@ -610,9 +549,8 @@
     }
   },
   {
-    "label": "Cranberry Very Dark (DMC 600)",
+    "name": "Cranberry Very Dark (DMC 600)",
     "color": "#cd2f63",
-    "vendor": "dmc",
     "meta": {
       "number": "600",
       "name": "Cranberry Very Dark",
@@ -620,9 +558,8 @@
     }
   },
   {
-    "label": "Cyclamen Pink Light (DMC 3806)",
+    "name": "Cyclamen Pink Light (DMC 3806)",
     "color": "#ff8cae",
-    "vendor": "dmc",
     "meta": {
       "number": "3806",
       "name": "Cyclamen Pink Light",
@@ -630,9 +567,8 @@
     }
   },
   {
-    "label": "Cyclamen Pink (DMC 3805)",
+    "name": "Cyclamen Pink (DMC 3805)",
     "color": "#f3478b",
-    "vendor": "dmc",
     "meta": {
       "number": "3805",
       "name": "Cyclamen Pink",
@@ -640,9 +576,8 @@
     }
   },
   {
-    "label": "Cyclamen Pink Dark (DMC 3804)",
+    "name": "Cyclamen Pink Dark (DMC 3804)",
     "color": "#e02876",
-    "vendor": "dmc",
     "meta": {
       "number": "3804",
       "name": "Cyclamen Pink Dark",
@@ -650,9 +585,8 @@
     }
   },
   {
-    "label": "Plum Ultra Light (DMC 3609)",
+    "name": "Plum Ultra Light (DMC 3609)",
     "color": "#f4aed5",
-    "vendor": "dmc",
     "meta": {
       "number": "3609",
       "name": "Plum Ultra Light",
@@ -660,9 +594,8 @@
     }
   },
   {
-    "label": "Plum Very Light (DMC 3608)",
+    "name": "Plum Very Light (DMC 3608)",
     "color": "#ea9cc4",
-    "vendor": "dmc",
     "meta": {
       "number": "3608",
       "name": "Plum Very Light",
@@ -670,9 +603,8 @@
     }
   },
   {
-    "label": "Plum Light (DMC 3607)",
+    "name": "Plum Light (DMC 3607)",
     "color": "#c54989",
-    "vendor": "dmc",
     "meta": {
       "number": "3607",
       "name": "Plum Light",
@@ -680,9 +612,8 @@
     }
   },
   {
-    "label": "Plum (DMC 718)",
+    "name": "Plum (DMC 718)",
     "color": "#9c2462",
-    "vendor": "dmc",
     "meta": {
       "number": "718",
       "name": "Plum",
@@ -690,9 +621,8 @@
     }
   },
   {
-    "label": "Plum Medium (DMC 917)",
+    "name": "Plum Medium (DMC 917)",
     "color": "#9b1359",
-    "vendor": "dmc",
     "meta": {
       "number": "917",
       "name": "Plum Medium",
@@ -700,9 +630,8 @@
     }
   },
   {
-    "label": "Plum Dark (DMC 915)",
+    "name": "Plum Dark (DMC 915)",
     "color": "#820043",
-    "vendor": "dmc",
     "meta": {
       "number": "915",
       "name": "Plum Dark",
@@ -710,9 +639,8 @@
     }
   },
   {
-    "label": "Shell Pink Ult Vy Lt (DMC 225)",
+    "name": "Shell Pink Ult Vy Lt (DMC 225)",
     "color": "#ffdfd5",
-    "vendor": "dmc",
     "meta": {
       "number": "225",
       "name": "Shell Pink Ult Vy Lt",
@@ -720,9 +648,8 @@
     }
   },
   {
-    "label": "Shell Pink Very Light (DMC 224)",
+    "name": "Shell Pink Very Light (DMC 224)",
     "color": "#ebb7af",
-    "vendor": "dmc",
     "meta": {
       "number": "224",
       "name": "Shell Pink Very Light",
@@ -730,9 +657,8 @@
     }
   },
   {
-    "label": "Shell Pink Med Light (DMC 152)",
+    "name": "Shell Pink Med Light (DMC 152)",
     "color": "#e2a099",
-    "vendor": "dmc",
     "meta": {
       "number": "152",
       "name": "Shell Pink Med Light",
@@ -740,9 +666,8 @@
     }
   },
   {
-    "label": "Shell Pink Light (DMC 223)",
+    "name": "Shell Pink Light (DMC 223)",
     "color": "#cc847c",
-    "vendor": "dmc",
     "meta": {
       "number": "223",
       "name": "Shell Pink Light",
@@ -750,9 +675,8 @@
     }
   },
   {
-    "label": "Shell Pink Med (DMC 3722)",
+    "name": "Shell Pink Med (DMC 3722)",
     "color": "#bc6c64",
-    "vendor": "dmc",
     "meta": {
       "number": "3722",
       "name": "Shell Pink Med",
@@ -760,9 +684,8 @@
     }
   },
   {
-    "label": "Shell Pink Dark (DMC 3721)",
+    "name": "Shell Pink Dark (DMC 3721)",
     "color": "#a14b51",
-    "vendor": "dmc",
     "meta": {
       "number": "3721",
       "name": "Shell Pink Dark",
@@ -770,9 +693,8 @@
     }
   },
   {
-    "label": "Shell Pink Vy Dk (DMC 221)",
+    "name": "Shell Pink Vy Dk (DMC 221)",
     "color": "#883e43",
-    "vendor": "dmc",
     "meta": {
       "number": "221",
       "name": "Shell Pink Vy Dk",
@@ -780,9 +702,8 @@
     }
   },
   {
-    "label": "Antique Mauve Vy Lt (DMC 778)",
+    "name": "Antique Mauve Vy Lt (DMC 778)",
     "color": "#dfb3bb",
-    "vendor": "dmc",
     "meta": {
       "number": "778",
       "name": "Antique Mauve Vy Lt",
@@ -790,9 +711,8 @@
     }
   },
   {
-    "label": "Antique Mauve Light (DMC 3727)",
+    "name": "Antique Mauve Light (DMC 3727)",
     "color": "#dba9b2",
-    "vendor": "dmc",
     "meta": {
       "number": "3727",
       "name": "Antique Mauve Light",
@@ -800,9 +720,8 @@
     }
   },
   {
-    "label": "Antique Mauve Med (DMC 316)",
+    "name": "Antique Mauve Med (DMC 316)",
     "color": "#b7737f",
-    "vendor": "dmc",
     "meta": {
       "number": "316",
       "name": "Antique Mauve Med",
@@ -810,9 +729,8 @@
     }
   },
   {
-    "label": "Antique Mauve Dark (DMC 3726)",
+    "name": "Antique Mauve Dark (DMC 3726)",
     "color": "#9b5b66",
-    "vendor": "dmc",
     "meta": {
       "number": "3726",
       "name": "Antique Mauve Dark",
@@ -820,9 +738,8 @@
     }
   },
   {
-    "label": "Antique Mauve Md Dk (DMC 315)",
+    "name": "Antique Mauve Md Dk (DMC 315)",
     "color": "#814952",
-    "vendor": "dmc",
     "meta": {
       "number": "315",
       "name": "Antique Mauve Md Dk",
@@ -830,9 +747,8 @@
     }
   },
   {
-    "label": "Antique Mauve Vy Dk (DMC 3802)",
+    "name": "Antique Mauve Vy Dk (DMC 3802)",
     "color": "#714149",
-    "vendor": "dmc",
     "meta": {
       "number": "3802",
       "name": "Antique Mauve Vy Dk",
@@ -840,9 +756,8 @@
     }
   },
   {
-    "label": "Garnet Very Dark (DMC 902)",
+    "name": "Garnet Very Dark (DMC 902)",
     "color": "#822637",
-    "vendor": "dmc",
     "meta": {
       "number": "902",
       "name": "Garnet Very Dark",
@@ -850,9 +765,8 @@
     }
   },
   {
-    "label": "Antique Violet Vy Lt (DMC 3743)",
+    "name": "Antique Violet Vy Lt (DMC 3743)",
     "color": "#d7cbd3",
-    "vendor": "dmc",
     "meta": {
       "number": "3743",
       "name": "Antique Violet Vy Lt",
@@ -860,9 +774,8 @@
     }
   },
   {
-    "label": "Antique Violet Light (DMC 3042)",
+    "name": "Antique Violet Light (DMC 3042)",
     "color": "#b79da7",
-    "vendor": "dmc",
     "meta": {
       "number": "3042",
       "name": "Antique Violet Light",
@@ -870,9 +783,8 @@
     }
   },
   {
-    "label": "Antique Violet Medium (DMC 3041)",
+    "name": "Antique Violet Medium (DMC 3041)",
     "color": "#956f7c",
-    "vendor": "dmc",
     "meta": {
       "number": "3041",
       "name": "Antique Violet Medium",
@@ -880,9 +792,8 @@
     }
   },
   {
-    "label": "Antique Violet Dark (DMC 3740)",
+    "name": "Antique Violet Dark (DMC 3740)",
     "color": "#785762",
-    "vendor": "dmc",
     "meta": {
       "number": "3740",
       "name": "Antique Violet Dark",
@@ -890,9 +801,8 @@
     }
   },
   {
-    "label": "Grape Light (DMC 3836)",
+    "name": "Grape Light (DMC 3836)",
     "color": "#ba91aa",
-    "vendor": "dmc",
     "meta": {
       "number": "3836",
       "name": "Grape Light",
@@ -900,9 +810,8 @@
     }
   },
   {
-    "label": "Grape Medium (DMC 3835)",
+    "name": "Grape Medium (DMC 3835)",
     "color": "#946083",
-    "vendor": "dmc",
     "meta": {
       "number": "3835",
       "name": "Grape Medium",
@@ -910,9 +819,8 @@
     }
   },
   {
-    "label": "Grape Dark (DMC 3834)",
+    "name": "Grape Dark (DMC 3834)",
     "color": "#72375d",
-    "vendor": "dmc",
     "meta": {
       "number": "3834",
       "name": "Grape Dark",
@@ -920,9 +828,8 @@
     }
   },
   {
-    "label": "Grape Very Dark (DMC 154)",
+    "name": "Grape Very Dark (DMC 154)",
     "color": "#572433",
-    "vendor": "dmc",
     "meta": {
       "number": "154",
       "name": "Grape Very Dark",
@@ -930,9 +837,8 @@
     }
   },
   {
-    "label": "Lavender Light (DMC 211)",
+    "name": "Lavender Light (DMC 211)",
     "color": "#e3cbe3",
-    "vendor": "dmc",
     "meta": {
       "number": "211",
       "name": "Lavender Light",
@@ -940,9 +846,8 @@
     }
   },
   {
-    "label": "Lavender Medium (DMC 210)",
+    "name": "Lavender Medium (DMC 210)",
     "color": "#c39fc3",
-    "vendor": "dmc",
     "meta": {
       "number": "210",
       "name": "Lavender Medium",
@@ -950,9 +855,8 @@
     }
   },
   {
-    "label": "Lavender Dark (DMC 209)",
+    "name": "Lavender Dark (DMC 209)",
     "color": "#a37ba7",
-    "vendor": "dmc",
     "meta": {
       "number": "209",
       "name": "Lavender Dark",
@@ -960,9 +864,8 @@
     }
   },
   {
-    "label": "Lavender Very Dark (DMC 208)",
+    "name": "Lavender Very Dark (DMC 208)",
     "color": "#835b8b",
-    "vendor": "dmc",
     "meta": {
       "number": "208",
       "name": "Lavender Very Dark",
@@ -970,9 +873,8 @@
     }
   },
   {
-    "label": "Lavender Ultra Dark (DMC 3837)",
+    "name": "Lavender Ultra Dark (DMC 3837)",
     "color": "#6c3a6e",
-    "vendor": "dmc",
     "meta": {
       "number": "3837",
       "name": "Lavender Ultra Dark",
@@ -980,9 +882,8 @@
     }
   },
   {
-    "label": "Violet Dark (DMC 327)",
+    "name": "Violet Dark (DMC 327)",
     "color": "#633666",
-    "vendor": "dmc",
     "meta": {
       "number": "327",
       "name": "Violet Dark",
@@ -990,9 +891,8 @@
     }
   },
   {
-    "label": "Violet Very Light (DMC 153)",
+    "name": "Violet Very Light (DMC 153)",
     "color": "#e6ccd9",
-    "vendor": "dmc",
     "meta": {
       "number": "153",
       "name": "Violet Very Light",
@@ -1000,9 +900,8 @@
     }
   },
   {
-    "label": "Violet Light (DMC 554)",
+    "name": "Violet Light (DMC 554)",
     "color": "#dbb3cb",
-    "vendor": "dmc",
     "meta": {
       "number": "554",
       "name": "Violet Light",
@@ -1010,9 +909,8 @@
     }
   },
   {
-    "label": "Violet (DMC 553)",
+    "name": "Violet (DMC 553)",
     "color": "#a3638b",
-    "vendor": "dmc",
     "meta": {
       "number": "553",
       "name": "Violet",
@@ -1020,9 +918,8 @@
     }
   },
   {
-    "label": "Violet  Medium (DMC 552)",
+    "name": "Violet  Medium (DMC 552)",
     "color": "#803a6b",
-    "vendor": "dmc",
     "meta": {
       "number": "552",
       "name": "Violet  Medium",
@@ -1030,9 +927,8 @@
     }
   },
   {
-    "label": "Violet Very Dark (DMC 550)",
+    "name": "Violet Very Dark (DMC 550)",
     "color": "#5c184e",
-    "vendor": "dmc",
     "meta": {
       "number": "550",
       "name": "Violet Very Dark",
@@ -1040,9 +936,8 @@
     }
   },
   {
-    "label": "Blue Violet Vy Lt (DMC 3747)",
+    "name": "Blue Violet Vy Lt (DMC 3747)",
     "color": "#d3d7ed",
-    "vendor": "dmc",
     "meta": {
       "number": "3747",
       "name": "Blue Violet Vy Lt",
@@ -1050,9 +945,8 @@
     }
   },
   {
-    "label": "Blue Violet Light (DMC 341)",
+    "name": "Blue Violet Light (DMC 341)",
     "color": "#b7bfdd",
-    "vendor": "dmc",
     "meta": {
       "number": "341",
       "name": "Blue Violet Light",
@@ -1060,9 +954,8 @@
     }
   },
   {
-    "label": "Blue Violet Med Lt (DMC 156)",
+    "name": "Blue Violet Med Lt (DMC 156)",
     "color": "#a3aed1",
-    "vendor": "dmc",
     "meta": {
       "number": "156",
       "name": "Blue Violet Med Lt",
@@ -1070,9 +963,8 @@
     }
   },
   {
-    "label": "Blue Violet Medium (DMC 340)",
+    "name": "Blue Violet Medium (DMC 340)",
     "color": "#ada7c7",
-    "vendor": "dmc",
     "meta": {
       "number": "340",
       "name": "Blue Violet Medium",
@@ -1080,9 +972,8 @@
     }
   },
   {
-    "label": "Blue Violet Med Dark (DMC 155)",
+    "name": "Blue Violet Med Dark (DMC 155)",
     "color": "#9891b6",
-    "vendor": "dmc",
     "meta": {
       "number": "155",
       "name": "Blue Violet Med Dark",
@@ -1090,9 +981,8 @@
     }
   },
   {
-    "label": "Blue Violet Dark (DMC 3746)",
+    "name": "Blue Violet Dark (DMC 3746)",
     "color": "#776b98",
-    "vendor": "dmc",
     "meta": {
       "number": "3746",
       "name": "Blue Violet Dark",
@@ -1100,9 +990,8 @@
     }
   },
   {
-    "label": "Blue Violet Very Dark (DMC 333)",
+    "name": "Blue Violet Very Dark (DMC 333)",
     "color": "#5c5478",
-    "vendor": "dmc",
     "meta": {
       "number": "333",
       "name": "Blue Violet Very Dark",
@@ -1110,9 +999,8 @@
     }
   },
   {
-    "label": "Cornflower Blue Vy Lt (DMC 157)",
+    "name": "Cornflower Blue Vy Lt (DMC 157)",
     "color": "#bbc3d9",
-    "vendor": "dmc",
     "meta": {
       "number": "157",
       "name": "Cornflower Blue Vy Lt",
@@ -1120,9 +1008,8 @@
     }
   },
   {
-    "label": "Cornflower Blue Light (DMC 794)",
+    "name": "Cornflower Blue Light (DMC 794)",
     "color": "#8f9cc1",
-    "vendor": "dmc",
     "meta": {
       "number": "794",
       "name": "Cornflower Blue Light",
@@ -1130,9 +1017,8 @@
     }
   },
   {
-    "label": "Cornflower Blue Med (DMC 793)",
+    "name": "Cornflower Blue Med (DMC 793)",
     "color": "#707da2",
-    "vendor": "dmc",
     "meta": {
       "number": "793",
       "name": "Cornflower Blue Med",
@@ -1140,9 +1026,8 @@
     }
   },
   {
-    "label": "Cornflower Blue (DMC 3807)",
+    "name": "Cornflower Blue (DMC 3807)",
     "color": "#60678c",
-    "vendor": "dmc",
     "meta": {
       "number": "3807",
       "name": "Cornflower Blue",
@@ -1150,9 +1035,8 @@
     }
   },
   {
-    "label": "Cornflower Blue Dark (DMC 792)",
+    "name": "Cornflower Blue Dark (DMC 792)",
     "color": "#555b7b",
-    "vendor": "dmc",
     "meta": {
       "number": "792",
       "name": "Cornflower Blue Dark",
@@ -1160,9 +1044,8 @@
     }
   },
   {
-    "label": "Cornflower Blu M V D (DMC 158)",
+    "name": "Cornflower Blu M V D (DMC 158)",
     "color": "#4c526e",
-    "vendor": "dmc",
     "meta": {
       "number": "158",
       "name": "Cornflower Blu M V D",
@@ -1170,9 +1053,8 @@
     }
   },
   {
-    "label": "Cornflower Blue V D (DMC 791)",
+    "name": "Cornflower Blue V D (DMC 791)",
     "color": "#464563",
-    "vendor": "dmc",
     "meta": {
       "number": "791",
       "name": "Cornflower Blue V D",
@@ -1180,9 +1062,8 @@
     }
   },
   {
-    "label": "Lavender Blue Light (DMC 3840)",
+    "name": "Lavender Blue Light (DMC 3840)",
     "color": "#b0c0da",
-    "vendor": "dmc",
     "meta": {
       "number": "3840",
       "name": "Lavender Blue Light",
@@ -1190,9 +1071,8 @@
     }
   },
   {
-    "label": "Lavender Blue Med (DMC 3839)",
+    "name": "Lavender Blue Med (DMC 3839)",
     "color": "#7b8eab",
-    "vendor": "dmc",
     "meta": {
       "number": "3839",
       "name": "Lavender Blue Med",
@@ -1200,9 +1080,8 @@
     }
   },
   {
-    "label": "Lavender Blue Dark (DMC 3838)",
+    "name": "Lavender Blue Dark (DMC 3838)",
     "color": "#5c7294",
-    "vendor": "dmc",
     "meta": {
       "number": "3838",
       "name": "Lavender Blue Dark",
@@ -1210,9 +1089,8 @@
     }
   },
   {
-    "label": "Delft Blue Pale (DMC 800)",
+    "name": "Delft Blue Pale (DMC 800)",
     "color": "#c0ccde",
-    "vendor": "dmc",
     "meta": {
       "number": "800",
       "name": "Delft Blue Pale",
@@ -1220,9 +1098,8 @@
     }
   },
   {
-    "label": "Delft Blue (DMC 809)",
+    "name": "Delft Blue (DMC 809)",
     "color": "#94a8c6",
-    "vendor": "dmc",
     "meta": {
       "number": "809",
       "name": "Delft Blue",
@@ -1230,9 +1107,8 @@
     }
   },
   {
-    "label": "Delft Blue Medium (DMC 799)",
+    "name": "Delft Blue Medium (DMC 799)",
     "color": "#748eb6",
-    "vendor": "dmc",
     "meta": {
       "number": "799",
       "name": "Delft Blue Medium",
@@ -1240,9 +1116,8 @@
     }
   },
   {
-    "label": "Delft Blue Dark (DMC 798)",
+    "name": "Delft Blue Dark (DMC 798)",
     "color": "#466a8e",
-    "vendor": "dmc",
     "meta": {
       "number": "798",
       "name": "Delft Blue Dark",
@@ -1250,9 +1125,8 @@
     }
   },
   {
-    "label": "Royal Blue (DMC 797)",
+    "name": "Royal Blue (DMC 797)",
     "color": "#13477d",
-    "vendor": "dmc",
     "meta": {
       "number": "797",
       "name": "Royal Blue",
@@ -1260,9 +1134,8 @@
     }
   },
   {
-    "label": "Royal Blue Dark (DMC 796)",
+    "name": "Royal Blue Dark (DMC 796)",
     "color": "#11416d",
-    "vendor": "dmc",
     "meta": {
       "number": "796",
       "name": "Royal Blue Dark",
@@ -1270,9 +1143,8 @@
     }
   },
   {
-    "label": "Royal Blue Very Dark (DMC 820)",
+    "name": "Royal Blue Very Dark (DMC 820)",
     "color": "#0e365c",
-    "vendor": "dmc",
     "meta": {
       "number": "820",
       "name": "Royal Blue Very Dark",
@@ -1280,9 +1152,8 @@
     }
   },
   {
-    "label": "Blue Ultra Very Light (DMC 162)",
+    "name": "Blue Ultra Very Light (DMC 162)",
     "color": "#dbecf5",
-    "vendor": "dmc",
     "meta": {
       "number": "162",
       "name": "Blue Ultra Very Light",
@@ -1290,9 +1161,8 @@
     }
   },
   {
-    "label": "Blue Very Light (DMC 827)",
+    "name": "Blue Very Light (DMC 827)",
     "color": "#bddded",
-    "vendor": "dmc",
     "meta": {
       "number": "827",
       "name": "Blue Very Light",
@@ -1300,9 +1170,8 @@
     }
   },
   {
-    "label": "Blue Light (DMC 813)",
+    "name": "Blue Light (DMC 813)",
     "color": "#a1c2d7",
-    "vendor": "dmc",
     "meta": {
       "number": "813",
       "name": "Blue Light",
@@ -1310,9 +1179,8 @@
     }
   },
   {
-    "label": "Blue Medium (DMC 826)",
+    "name": "Blue Medium (DMC 826)",
     "color": "#6b9ebf",
-    "vendor": "dmc",
     "meta": {
       "number": "826",
       "name": "Blue Medium",
@@ -1320,9 +1188,8 @@
     }
   },
   {
-    "label": "Blue Dark (DMC 825)",
+    "name": "Blue Dark (DMC 825)",
     "color": "#4781a5",
-    "vendor": "dmc",
     "meta": {
       "number": "825",
       "name": "Blue Dark",
@@ -1330,9 +1197,8 @@
     }
   },
   {
-    "label": "Blue Very Dark (DMC 824)",
+    "name": "Blue Very Dark (DMC 824)",
     "color": "#396987",
-    "vendor": "dmc",
     "meta": {
       "number": "824",
       "name": "Blue Very Dark",
@@ -1340,9 +1206,8 @@
     }
   },
   {
-    "label": "Electric Blue Medium (DMC 996)",
+    "name": "Electric Blue Medium (DMC 996)",
     "color": "#30c2ec",
-    "vendor": "dmc",
     "meta": {
       "number": "996",
       "name": "Electric Blue Medium",
@@ -1350,9 +1215,8 @@
     }
   },
   {
-    "label": "Electric Blue (DMC 3843)",
+    "name": "Electric Blue (DMC 3843)",
     "color": "#14aad0",
-    "vendor": "dmc",
     "meta": {
       "number": "3843",
       "name": "Electric Blue",
@@ -1360,9 +1224,8 @@
     }
   },
   {
-    "label": "Electric Blue Dark (DMC 995)",
+    "name": "Electric Blue Dark (DMC 995)",
     "color": "#2696b6",
-    "vendor": "dmc",
     "meta": {
       "number": "995",
       "name": "Electric Blue Dark",
@@ -1370,9 +1233,8 @@
     }
   },
   {
-    "label": "Turquoise Bright Light (DMC 3846)",
+    "name": "Turquoise Bright Light (DMC 3846)",
     "color": "#06e3e6",
-    "vendor": "dmc",
     "meta": {
       "number": "3846",
       "name": "Turquoise Bright Light",
@@ -1380,9 +1242,8 @@
     }
   },
   {
-    "label": "Turquoise Bright Med (DMC 3845)",
+    "name": "Turquoise Bright Med (DMC 3845)",
     "color": "#04c4ca",
-    "vendor": "dmc",
     "meta": {
       "number": "3845",
       "name": "Turquoise Bright Med",
@@ -1390,9 +1251,8 @@
     }
   },
   {
-    "label": "Turquoise Bright Dark (DMC 3844)",
+    "name": "Turquoise Bright Dark (DMC 3844)",
     "color": "#12aeba",
-    "vendor": "dmc",
     "meta": {
       "number": "3844",
       "name": "Turquoise Bright Dark",
@@ -1400,9 +1260,8 @@
     }
   },
   {
-    "label": "Blue Gray Light (DMC 159)",
+    "name": "Blue Gray Light (DMC 159)",
     "color": "#c7cad7",
-    "vendor": "dmc",
     "meta": {
       "number": "159",
       "name": "Blue Gray Light",
@@ -1410,9 +1269,8 @@
     }
   },
   {
-    "label": "Blue Gray Medium (DMC 160)",
+    "name": "Blue Gray Medium (DMC 160)",
     "color": "#999fb7",
-    "vendor": "dmc",
     "meta": {
       "number": "160",
       "name": "Blue Gray Medium",
@@ -1420,9 +1278,8 @@
     }
   },
   {
-    "label": "Blue Gray (DMC 161)",
+    "name": "Blue Gray (DMC 161)",
     "color": "#7880a4",
-    "vendor": "dmc",
     "meta": {
       "number": "161",
       "name": "Blue Gray",
@@ -1430,9 +1287,8 @@
     }
   },
   {
-    "label": "Baby Blue Ult Vy Lt (DMC 3756)",
+    "name": "Baby Blue Ult Vy Lt (DMC 3756)",
     "color": "#eefcfc",
-    "vendor": "dmc",
     "meta": {
       "number": "3756",
       "name": "Baby Blue Ult Vy Lt",
@@ -1440,9 +1296,8 @@
     }
   },
   {
-    "label": "Baby Blue Very Light (DMC 775)",
+    "name": "Baby Blue Very Light (DMC 775)",
     "color": "#d9ebf1",
-    "vendor": "dmc",
     "meta": {
       "number": "775",
       "name": "Baby Blue Very Light",
@@ -1450,9 +1305,8 @@
     }
   },
   {
-    "label": "Baby Blue Pale (DMC 3841)",
+    "name": "Baby Blue Pale (DMC 3841)",
     "color": "#cddfed",
-    "vendor": "dmc",
     "meta": {
       "number": "3841",
       "name": "Baby Blue Pale",
@@ -1460,9 +1314,8 @@
     }
   },
   {
-    "label": "Baby Blue Light (DMC 3325)",
+    "name": "Baby Blue Light (DMC 3325)",
     "color": "#b8d2e6",
-    "vendor": "dmc",
     "meta": {
       "number": "3325",
       "name": "Baby Blue Light",
@@ -1470,9 +1323,8 @@
     }
   },
   {
-    "label": "Baby Blue (DMC 3755)",
+    "name": "Baby Blue (DMC 3755)",
     "color": "#93b4ce",
-    "vendor": "dmc",
     "meta": {
       "number": "3755",
       "name": "Baby Blue",
@@ -1480,9 +1332,8 @@
     }
   },
   {
-    "label": "Baby Blue Medium (DMC 334)",
+    "name": "Baby Blue Medium (DMC 334)",
     "color": "#739fc1",
-    "vendor": "dmc",
     "meta": {
       "number": "334",
       "name": "Baby Blue Medium",
@@ -1490,9 +1341,8 @@
     }
   },
   {
-    "label": "Baby Blue Dark (DMC 322)",
+    "name": "Baby Blue Dark (DMC 322)",
     "color": "#5a8fb8",
-    "vendor": "dmc",
     "meta": {
       "number": "322",
       "name": "Baby Blue Dark",
@@ -1500,9 +1350,8 @@
     }
   },
   {
-    "label": "Baby Blue Very Dark (DMC 312)",
+    "name": "Baby Blue Very Dark (DMC 312)",
     "color": "#35668b",
-    "vendor": "dmc",
     "meta": {
       "number": "312",
       "name": "Baby Blue Very Dark",
@@ -1510,9 +1359,8 @@
     }
   },
   {
-    "label": "Baby Blue Ult Vy Dk (DMC 803)",
+    "name": "Baby Blue Ult Vy Dk (DMC 803)",
     "color": "#2c597c",
-    "vendor": "dmc",
     "meta": {
       "number": "803",
       "name": "Baby Blue Ult Vy Dk",
@@ -1520,9 +1368,8 @@
     }
   },
   {
-    "label": "Navy Blue (DMC 336)",
+    "name": "Navy Blue (DMC 336)",
     "color": "#253b73",
-    "vendor": "dmc",
     "meta": {
       "number": "336",
       "name": "Navy Blue",
@@ -1530,9 +1377,8 @@
     }
   },
   {
-    "label": "Navy Blue Dark (DMC 823)",
+    "name": "Navy Blue Dark (DMC 823)",
     "color": "#213063",
-    "vendor": "dmc",
     "meta": {
       "number": "823",
       "name": "Navy Blue Dark",
@@ -1540,9 +1386,8 @@
     }
   },
   {
-    "label": "Navy Blue Very Dark (DMC 939)",
+    "name": "Navy Blue Very Dark (DMC 939)",
     "color": "#1b2853",
-    "vendor": "dmc",
     "meta": {
       "number": "939",
       "name": "Navy Blue Very Dark",
@@ -1550,9 +1395,8 @@
     }
   },
   {
-    "label": "Antique Blue Ult Vy Lt (DMC 3753)",
+    "name": "Antique Blue Ult Vy Lt (DMC 3753)",
     "color": "#dbe2e9",
-    "vendor": "dmc",
     "meta": {
       "number": "3753",
       "name": "Antique Blue Ult Vy Lt",
@@ -1560,9 +1404,8 @@
     }
   },
   {
-    "label": "Antique Blue Very Lt (DMC 3752)",
+    "name": "Antique Blue Very Lt (DMC 3752)",
     "color": "#c7d1db",
-    "vendor": "dmc",
     "meta": {
       "number": "3752",
       "name": "Antique Blue Very Lt",
@@ -1570,9 +1413,8 @@
     }
   },
   {
-    "label": "Antique Blue Light (DMC 932)",
+    "name": "Antique Blue Light (DMC 932)",
     "color": "#a2b5c6",
-    "vendor": "dmc",
     "meta": {
       "number": "932",
       "name": "Antique Blue Light",
@@ -1580,9 +1422,8 @@
     }
   },
   {
-    "label": "Antique Blue Medium (DMC 931)",
+    "name": "Antique Blue Medium (DMC 931)",
     "color": "#6a859e",
-    "vendor": "dmc",
     "meta": {
       "number": "931",
       "name": "Antique Blue Medium",
@@ -1590,9 +1431,8 @@
     }
   },
   {
-    "label": "Antique Blue Dark (DMC 930)",
+    "name": "Antique Blue Dark (DMC 930)",
     "color": "#455c71",
-    "vendor": "dmc",
     "meta": {
       "number": "930",
       "name": "Antique Blue Dark",
@@ -1600,9 +1440,8 @@
     }
   },
   {
-    "label": "Antique Blue Very Dk (DMC 3750)",
+    "name": "Antique Blue Very Dk (DMC 3750)",
     "color": "#384c5e",
-    "vendor": "dmc",
     "meta": {
       "number": "3750",
       "name": "Antique Blue Very Dk",
@@ -1610,9 +1449,8 @@
     }
   },
   {
-    "label": "Sky Blue Vy Lt (DMC 828)",
+    "name": "Sky Blue Vy Lt (DMC 828)",
     "color": "#c5e8ed",
-    "vendor": "dmc",
     "meta": {
       "number": "828",
       "name": "Sky Blue Vy Lt",
@@ -1620,9 +1458,8 @@
     }
   },
   {
-    "label": "Sky Blue Light (DMC 3761)",
+    "name": "Sky Blue Light (DMC 3761)",
     "color": "#acd8e2",
-    "vendor": "dmc",
     "meta": {
       "number": "3761",
       "name": "Sky Blue Light",
@@ -1630,9 +1467,8 @@
     }
   },
   {
-    "label": "Sky Blue (DMC 519)",
+    "name": "Sky Blue (DMC 519)",
     "color": "#7eb1c8",
-    "vendor": "dmc",
     "meta": {
       "number": "519",
       "name": "Sky Blue",
@@ -1640,9 +1476,8 @@
     }
   },
   {
-    "label": "Wedgewood Light (DMC 518)",
+    "name": "Wedgewood Light (DMC 518)",
     "color": "#4f93a7",
-    "vendor": "dmc",
     "meta": {
       "number": "518",
       "name": "Wedgewood Light",
@@ -1650,9 +1485,8 @@
     }
   },
   {
-    "label": "Wedgewood Med (DMC 3760)",
+    "name": "Wedgewood Med (DMC 3760)",
     "color": "#3e85a2",
-    "vendor": "dmc",
     "meta": {
       "number": "3760",
       "name": "Wedgewood Med",
@@ -1660,9 +1494,8 @@
     }
   },
   {
-    "label": "Wedgewood Dark (DMC 517)",
+    "name": "Wedgewood Dark (DMC 517)",
     "color": "#3b768f",
-    "vendor": "dmc",
     "meta": {
       "number": "517",
       "name": "Wedgewood Dark",
@@ -1670,9 +1503,8 @@
     }
   },
   {
-    "label": "Wedgewood Vry Dk (DMC 3842)",
+    "name": "Wedgewood Vry Dk (DMC 3842)",
     "color": "#32667c",
-    "vendor": "dmc",
     "meta": {
       "number": "3842",
       "name": "Wedgewood Vry Dk",
@@ -1680,9 +1512,8 @@
     }
   },
   {
-    "label": "Wedgewood Ult VyDk (DMC 311)",
+    "name": "Wedgewood Ult VyDk (DMC 311)",
     "color": "#1c5066",
-    "vendor": "dmc",
     "meta": {
       "number": "311",
       "name": "Wedgewood Ult VyDk",
@@ -1690,9 +1521,8 @@
     }
   },
   {
-    "label": "Peacock Blue Vy Lt (DMC 747)",
+    "name": "Peacock Blue Vy Lt (DMC 747)",
     "color": "#e5fcfd",
-    "vendor": "dmc",
     "meta": {
       "number": "747",
       "name": "Peacock Blue Vy Lt",
@@ -1700,9 +1530,8 @@
     }
   },
   {
-    "label": "Peacock Blue Light (DMC 3766)",
+    "name": "Peacock Blue Light (DMC 3766)",
     "color": "#99cfd9",
-    "vendor": "dmc",
     "meta": {
       "number": "3766",
       "name": "Peacock Blue Light",
@@ -1710,9 +1539,8 @@
     }
   },
   {
-    "label": "Peacock Blue (DMC 807)",
+    "name": "Peacock Blue (DMC 807)",
     "color": "#64abba",
-    "vendor": "dmc",
     "meta": {
       "number": "807",
       "name": "Peacock Blue",
@@ -1720,9 +1548,8 @@
     }
   },
   {
-    "label": "Peacock Blue Dark (DMC 806)",
+    "name": "Peacock Blue Dark (DMC 806)",
     "color": "#3d95a5",
-    "vendor": "dmc",
     "meta": {
       "number": "806",
       "name": "Peacock Blue Dark",
@@ -1730,9 +1557,8 @@
     }
   },
   {
-    "label": "Peacock Blue Vy Dk (DMC 3765)",
+    "name": "Peacock Blue Vy Dk (DMC 3765)",
     "color": "#347f8c",
-    "vendor": "dmc",
     "meta": {
       "number": "3765",
       "name": "Peacock Blue Vy Dk",
@@ -1740,9 +1566,8 @@
     }
   },
   {
-    "label": "Turquoise Very Light (DMC 3811)",
+    "name": "Turquoise Very Light (DMC 3811)",
     "color": "#bce3e6",
-    "vendor": "dmc",
     "meta": {
       "number": "3811",
       "name": "Turquoise Very Light",
@@ -1750,9 +1575,8 @@
     }
   },
   {
-    "label": "Turquoise Light (DMC 598)",
+    "name": "Turquoise Light (DMC 598)",
     "color": "#90c3cc",
-    "vendor": "dmc",
     "meta": {
       "number": "598",
       "name": "Turquoise Light",
@@ -1760,9 +1584,8 @@
     }
   },
   {
-    "label": "Turquoise (DMC 597)",
+    "name": "Turquoise (DMC 597)",
     "color": "#5ba3b3",
-    "vendor": "dmc",
     "meta": {
       "number": "597",
       "name": "Turquoise",
@@ -1770,9 +1593,8 @@
     }
   },
   {
-    "label": "Turquoise Dark (DMC 3810)",
+    "name": "Turquoise Dark (DMC 3810)",
     "color": "#488e9a",
-    "vendor": "dmc",
     "meta": {
       "number": "3810",
       "name": "Turquoise Dark",
@@ -1780,9 +1602,8 @@
     }
   },
   {
-    "label": "Turquoise Vy Dark (DMC 3809)",
+    "name": "Turquoise Vy Dark (DMC 3809)",
     "color": "#3f7c85",
-    "vendor": "dmc",
     "meta": {
       "number": "3809",
       "name": "Turquoise Vy Dark",
@@ -1790,9 +1611,8 @@
     }
   },
   {
-    "label": "Turquoise Ult Vy Dk (DMC 3808)",
+    "name": "Turquoise Ult Vy Dk (DMC 3808)",
     "color": "#366970",
-    "vendor": "dmc",
     "meta": {
       "number": "3808",
       "name": "Turquoise Ult Vy Dk",
@@ -1800,9 +1620,8 @@
     }
   },
   {
-    "label": "Gray Green Vy Lt (DMC 928)",
+    "name": "Gray Green Vy Lt (DMC 928)",
     "color": "#dde3e3",
-    "vendor": "dmc",
     "meta": {
       "number": "928",
       "name": "Gray Green Vy Lt",
@@ -1810,9 +1629,8 @@
     }
   },
   {
-    "label": "Gray Green Light (DMC 927)",
+    "name": "Gray Green Light (DMC 927)",
     "color": "#bdcbcb",
-    "vendor": "dmc",
     "meta": {
       "number": "927",
       "name": "Gray Green Light",
@@ -1820,9 +1638,8 @@
     }
   },
   {
-    "label": "Gray Green Med (DMC 926)",
+    "name": "Gray Green Med (DMC 926)",
     "color": "#98aeae",
-    "vendor": "dmc",
     "meta": {
       "number": "926",
       "name": "Gray Green Med",
@@ -1830,9 +1647,8 @@
     }
   },
   {
-    "label": "Gray Green Dark (DMC 3768)",
+    "name": "Gray Green Dark (DMC 3768)",
     "color": "#657f7f",
-    "vendor": "dmc",
     "meta": {
       "number": "3768",
       "name": "Gray Green Dark",
@@ -1840,9 +1656,8 @@
     }
   },
   {
-    "label": "Gray Green Vy Dark (DMC 924)",
+    "name": "Gray Green Vy Dark (DMC 924)",
     "color": "#566a6a",
-    "vendor": "dmc",
     "meta": {
       "number": "924",
       "name": "Gray Green Vy Dark",
@@ -1850,9 +1665,8 @@
     }
   },
   {
-    "label": "Teal Green Light (DMC 3849)",
+    "name": "Teal Green Light (DMC 3849)",
     "color": "#52b3a4",
-    "vendor": "dmc",
     "meta": {
       "number": "3849",
       "name": "Teal Green Light",
@@ -1860,9 +1674,8 @@
     }
   },
   {
-    "label": "Teal Green Med (DMC 3848)",
+    "name": "Teal Green Med (DMC 3848)",
     "color": "#559392",
-    "vendor": "dmc",
     "meta": {
       "number": "3848",
       "name": "Teal Green Med",
@@ -1870,9 +1683,8 @@
     }
   },
   {
-    "label": "Teal Green Dark (DMC 3847)",
+    "name": "Teal Green Dark (DMC 3847)",
     "color": "#347d75",
-    "vendor": "dmc",
     "meta": {
       "number": "3847",
       "name": "Teal Green Dark",
@@ -1880,9 +1692,8 @@
     }
   },
   {
-    "label": "Sea Green Light (DMC 964)",
+    "name": "Sea Green Light (DMC 964)",
     "color": "#a9e2d8",
-    "vendor": "dmc",
     "meta": {
       "number": "964",
       "name": "Sea Green Light",
@@ -1890,9 +1701,8 @@
     }
   },
   {
-    "label": "Sea Green Med (DMC 959)",
+    "name": "Sea Green Med (DMC 959)",
     "color": "#59c7b4",
-    "vendor": "dmc",
     "meta": {
       "number": "959",
       "name": "Sea Green Med",
@@ -1900,9 +1710,8 @@
     }
   },
   {
-    "label": "Sea Green Dark (DMC 958)",
+    "name": "Sea Green Dark (DMC 958)",
     "color": "#3eb6a1",
-    "vendor": "dmc",
     "meta": {
       "number": "958",
       "name": "Sea Green Dark",
@@ -1910,9 +1719,8 @@
     }
   },
   {
-    "label": "Sea Green Vy Dk (DMC 3812)",
+    "name": "Sea Green Vy Dk (DMC 3812)",
     "color": "#2f8c84",
-    "vendor": "dmc",
     "meta": {
       "number": "3812",
       "name": "Sea Green Vy Dk",
@@ -1920,9 +1728,8 @@
     }
   },
   {
-    "label": "Green Bright Lt (DMC 3851)",
+    "name": "Green Bright Lt (DMC 3851)",
     "color": "#49b3a1",
-    "vendor": "dmc",
     "meta": {
       "number": "3851",
       "name": "Green Bright Lt",
@@ -1930,9 +1737,8 @@
     }
   },
   {
-    "label": "Green Bright Md (DMC 943)",
+    "name": "Green Bright Md (DMC 943)",
     "color": "#3d9384",
-    "vendor": "dmc",
     "meta": {
       "number": "943",
       "name": "Green Bright Md",
@@ -1940,9 +1746,8 @@
     }
   },
   {
-    "label": "Green Bright Dk (DMC 3850)",
+    "name": "Green Bright Dk (DMC 3850)",
     "color": "#378477",
-    "vendor": "dmc",
     "meta": {
       "number": "3850",
       "name": "Green Bright Dk",
@@ -1950,9 +1755,8 @@
     }
   },
   {
-    "label": "Aquamarine Vy Lt (DMC 993)",
+    "name": "Aquamarine Vy Lt (DMC 993)",
     "color": "#90c0b4",
-    "vendor": "dmc",
     "meta": {
       "number": "993",
       "name": "Aquamarine Vy Lt",
@@ -1960,9 +1764,8 @@
     }
   },
   {
-    "label": "Aquamarine Lt (DMC 992)",
+    "name": "Aquamarine Lt (DMC 992)",
     "color": "#6fae9f",
-    "vendor": "dmc",
     "meta": {
       "number": "992",
       "name": "Aquamarine Lt",
@@ -1970,9 +1773,8 @@
     }
   },
   {
-    "label": "Aquamarine (DMC 3814)",
+    "name": "Aquamarine (DMC 3814)",
     "color": "#508b7d",
-    "vendor": "dmc",
     "meta": {
       "number": "3814",
       "name": "Aquamarine",
@@ -1980,9 +1782,8 @@
     }
   },
   {
-    "label": "Aquamarine Dk (DMC 991)",
+    "name": "Aquamarine Dk (DMC 991)",
     "color": "#477b6e",
-    "vendor": "dmc",
     "meta": {
       "number": "991",
       "name": "Aquamarine Dk",
@@ -1990,9 +1791,8 @@
     }
   },
   {
-    "label": "Jade Ultra Vy Lt (DMC 966)",
+    "name": "Jade Ultra Vy Lt (DMC 966)",
     "color": "#b9d7c0",
-    "vendor": "dmc",
     "meta": {
       "number": "966",
       "name": "Jade Ultra Vy Lt",
@@ -2000,9 +1800,8 @@
     }
   },
   {
-    "label": "Jade Very Light (DMC 564)",
+    "name": "Jade Very Light (DMC 564)",
     "color": "#a7cdaf",
-    "vendor": "dmc",
     "meta": {
       "number": "564",
       "name": "Jade Very Light",
@@ -2010,9 +1809,8 @@
     }
   },
   {
-    "label": "Jade Light (DMC 563)",
+    "name": "Jade Light (DMC 563)",
     "color": "#8fc098",
-    "vendor": "dmc",
     "meta": {
       "number": "563",
       "name": "Jade Light",
@@ -2020,9 +1818,8 @@
     }
   },
   {
-    "label": "Jade Medium (DMC 562)",
+    "name": "Jade Medium (DMC 562)",
     "color": "#53976a",
-    "vendor": "dmc",
     "meta": {
       "number": "562",
       "name": "Jade Medium",
@@ -2030,9 +1827,8 @@
     }
   },
   {
-    "label": "Jade Green (DMC 505)",
+    "name": "Jade Green (DMC 505)",
     "color": "#338362",
-    "vendor": "dmc",
     "meta": {
       "number": "505",
       "name": "Jade Green",
@@ -2040,9 +1836,8 @@
     }
   },
   {
-    "label": "Celadon Green Lt (DMC 3817)",
+    "name": "Celadon Green Lt (DMC 3817)",
     "color": "#99c3aa",
-    "vendor": "dmc",
     "meta": {
       "number": "3817",
       "name": "Celadon Green Lt",
@@ -2050,9 +1845,8 @@
     }
   },
   {
-    "label": "Celadon Green (DMC 3816)",
+    "name": "Celadon Green (DMC 3816)",
     "color": "#65a57d",
-    "vendor": "dmc",
     "meta": {
       "number": "3816",
       "name": "Celadon Green",
@@ -2060,9 +1854,8 @@
     }
   },
   {
-    "label": "Celadon Green Md (DMC 163)",
+    "name": "Celadon Green Md (DMC 163)",
     "color": "#4d8361",
-    "vendor": "dmc",
     "meta": {
       "number": "163",
       "name": "Celadon Green Md",
@@ -2070,9 +1863,8 @@
     }
   },
   {
-    "label": "Celadon Green Dk (DMC 3815)",
+    "name": "Celadon Green Dk (DMC 3815)",
     "color": "#477759",
-    "vendor": "dmc",
     "meta": {
       "number": "3815",
       "name": "Celadon Green Dk",
@@ -2080,9 +1872,8 @@
     }
   },
   {
-    "label": "Celadon Green VD (DMC 561)",
+    "name": "Celadon Green VD (DMC 561)",
     "color": "#2c6a45",
-    "vendor": "dmc",
     "meta": {
       "number": "561",
       "name": "Celadon Green VD",
@@ -2090,9 +1881,8 @@
     }
   },
   {
-    "label": "Blue Green Vy Lt (DMC 504)",
+    "name": "Blue Green Vy Lt (DMC 504)",
     "color": "#c4decc",
-    "vendor": "dmc",
     "meta": {
       "number": "504",
       "name": "Blue Green Vy Lt",
@@ -2100,9 +1890,8 @@
     }
   },
   {
-    "label": "Blue Green Lt (DMC 3813)",
+    "name": "Blue Green Lt (DMC 3813)",
     "color": "#b2d4bd",
-    "vendor": "dmc",
     "meta": {
       "number": "3813",
       "name": "Blue Green Lt",
@@ -2110,9 +1899,8 @@
     }
   },
   {
-    "label": "Blue Green Med (DMC 503)",
+    "name": "Blue Green Med (DMC 503)",
     "color": "#7bac94",
-    "vendor": "dmc",
     "meta": {
       "number": "503",
       "name": "Blue Green Med",
@@ -2120,9 +1908,8 @@
     }
   },
   {
-    "label": "Blue Green (DMC 502)",
+    "name": "Blue Green (DMC 502)",
     "color": "#5b9071",
-    "vendor": "dmc",
     "meta": {
       "number": "502",
       "name": "Blue Green",
@@ -2130,9 +1917,8 @@
     }
   },
   {
-    "label": "Blue Green Dark (DMC 501)",
+    "name": "Blue Green Dark (DMC 501)",
     "color": "#396f52",
-    "vendor": "dmc",
     "meta": {
       "number": "501",
       "name": "Blue Green Dark",
@@ -2140,9 +1926,8 @@
     }
   },
   {
-    "label": "Blue Green Vy Dk (DMC 500)",
+    "name": "Blue Green Vy Dk (DMC 500)",
     "color": "#044d33",
-    "vendor": "dmc",
     "meta": {
       "number": "500",
       "name": "Blue Green Vy Dk",
@@ -2150,9 +1935,8 @@
     }
   },
   {
-    "label": "Nile Green Light (DMC 955)",
+    "name": "Nile Green Light (DMC 955)",
     "color": "#a2d6ad",
-    "vendor": "dmc",
     "meta": {
       "number": "955",
       "name": "Nile Green Light",
@@ -2160,9 +1944,8 @@
     }
   },
   {
-    "label": "Nile Green (DMC 954)",
+    "name": "Nile Green (DMC 954)",
     "color": "#88ba91",
-    "vendor": "dmc",
     "meta": {
       "number": "954",
       "name": "Nile Green",
@@ -2170,9 +1953,8 @@
     }
   },
   {
-    "label": "Nile Green Med (DMC 913)",
+    "name": "Nile Green Med (DMC 913)",
     "color": "#6dab77",
-    "vendor": "dmc",
     "meta": {
       "number": "913",
       "name": "Nile Green Med",
@@ -2180,9 +1962,8 @@
     }
   },
   {
-    "label": "Emerald Green Lt (DMC 912)",
+    "name": "Emerald Green Lt (DMC 912)",
     "color": "#1b9d6b",
-    "vendor": "dmc",
     "meta": {
       "number": "912",
       "name": "Emerald Green Lt",
@@ -2190,9 +1971,8 @@
     }
   },
   {
-    "label": "Emerald Green Med (DMC 911)",
+    "name": "Emerald Green Med (DMC 911)",
     "color": "#189065",
-    "vendor": "dmc",
     "meta": {
       "number": "911",
       "name": "Emerald Green Med",
@@ -2200,9 +1980,8 @@
     }
   },
   {
-    "label": "Emerald Green Dark (DMC 910)",
+    "name": "Emerald Green Dark (DMC 910)",
     "color": "#187e56",
-    "vendor": "dmc",
     "meta": {
       "number": "910",
       "name": "Emerald Green Dark",
@@ -2210,9 +1989,8 @@
     }
   },
   {
-    "label": "Emerald Green Vy Dk (DMC 909)",
+    "name": "Emerald Green Vy Dk (DMC 909)",
     "color": "#156f49",
-    "vendor": "dmc",
     "meta": {
       "number": "909",
       "name": "Emerald Green Vy Dk",
@@ -2220,9 +1998,8 @@
     }
   },
   {
-    "label": "Emerald Grn Ult V Dk (DMC 3818)",
+    "name": "Emerald Grn Ult V Dk (DMC 3818)",
     "color": "#115a3b",
-    "vendor": "dmc",
     "meta": {
       "number": "3818",
       "name": "Emerald Grn Ult V Dk",
@@ -2230,9 +2007,8 @@
     }
   },
   {
-    "label": "Pistachio Green Vy Lt (DMC 369)",
+    "name": "Pistachio Green Vy Lt (DMC 369)",
     "color": "#d7edcc",
-    "vendor": "dmc",
     "meta": {
       "number": "369",
       "name": "Pistachio Green Vy Lt",
@@ -2240,9 +2016,8 @@
     }
   },
   {
-    "label": "Pistachio Green Lt (DMC 368)",
+    "name": "Pistachio Green Lt (DMC 368)",
     "color": "#a6c298",
-    "vendor": "dmc",
     "meta": {
       "number": "368",
       "name": "Pistachio Green Lt",
@@ -2250,9 +2025,8 @@
     }
   },
   {
-    "label": "Pistachio Green Med (DMC 320)",
+    "name": "Pistachio Green Med (DMC 320)",
     "color": "#69885a",
-    "vendor": "dmc",
     "meta": {
       "number": "320",
       "name": "Pistachio Green Med",
@@ -2260,9 +2034,8 @@
     }
   },
   {
-    "label": "Pistachio Green Dk (DMC 367)",
+    "name": "Pistachio Green Dk (DMC 367)",
     "color": "#617a52",
-    "vendor": "dmc",
     "meta": {
       "number": "367",
       "name": "Pistachio Green Dk",
@@ -2270,9 +2043,8 @@
     }
   },
   {
-    "label": "Pistachio Grn Vy Dk (DMC 319)",
+    "name": "Pistachio Grn Vy Dk (DMC 319)",
     "color": "#205f2e",
-    "vendor": "dmc",
     "meta": {
       "number": "319",
       "name": "Pistachio Grn Vy Dk",
@@ -2280,9 +2052,8 @@
     }
   },
   {
-    "label": "Pistachio Grn Ult V D (DMC 890)",
+    "name": "Pistachio Grn Ult V D (DMC 890)",
     "color": "#174923",
-    "vendor": "dmc",
     "meta": {
       "number": "890",
       "name": "Pistachio Grn Ult V D",
@@ -2290,9 +2061,8 @@
     }
   },
   {
-    "label": "Forest Green Lt (DMC 164)",
+    "name": "Forest Green Lt (DMC 164)",
     "color": "#c8d8b8",
-    "vendor": "dmc",
     "meta": {
       "number": "164",
       "name": "Forest Green Lt",
@@ -2300,9 +2070,8 @@
     }
   },
   {
-    "label": "Forest Green  (DMC 989)",
+    "name": "Forest Green  (DMC 989)",
     "color": "#8da675",
-    "vendor": "dmc",
     "meta": {
       "number": "989",
       "name": "Forest Green ",
@@ -2310,9 +2079,8 @@
     }
   },
   {
-    "label": "Forest Green Med (DMC 988)",
+    "name": "Forest Green Med (DMC 988)",
     "color": "#738b5b",
-    "vendor": "dmc",
     "meta": {
       "number": "988",
       "name": "Forest Green Med",
@@ -2320,9 +2088,8 @@
     }
   },
   {
-    "label": "Forest Green Dk (DMC 987)",
+    "name": "Forest Green Dk (DMC 987)",
     "color": "#587141",
-    "vendor": "dmc",
     "meta": {
       "number": "987",
       "name": "Forest Green Dk",
@@ -2330,9 +2097,8 @@
     }
   },
   {
-    "label": "Forest Green Vy Dk (DMC 986)",
+    "name": "Forest Green Vy Dk (DMC 986)",
     "color": "#405230",
-    "vendor": "dmc",
     "meta": {
       "number": "986",
       "name": "Forest Green Vy Dk",
@@ -2340,9 +2106,8 @@
     }
   },
   {
-    "label": "Yellow Green Vy Lt (DMC 772)",
+    "name": "Yellow Green Vy Lt (DMC 772)",
     "color": "#e4ecd4",
-    "vendor": "dmc",
     "meta": {
       "number": "772",
       "name": "Yellow Green Vy Lt",
@@ -2350,9 +2115,8 @@
     }
   },
   {
-    "label": "Yellow Green Lt (DMC 3348)",
+    "name": "Yellow Green Lt (DMC 3348)",
     "color": "#ccd9b1",
-    "vendor": "dmc",
     "meta": {
       "number": "3348",
       "name": "Yellow Green Lt",
@@ -2360,9 +2124,8 @@
     }
   },
   {
-    "label": "Yellow Green Med (DMC 3347)",
+    "name": "Yellow Green Med (DMC 3347)",
     "color": "#71935c",
-    "vendor": "dmc",
     "meta": {
       "number": "3347",
       "name": "Yellow Green Med",
@@ -2370,9 +2133,8 @@
     }
   },
   {
-    "label": "Hunter Green (DMC 3346)",
+    "name": "Hunter Green (DMC 3346)",
     "color": "#406a3a",
-    "vendor": "dmc",
     "meta": {
       "number": "3346",
       "name": "Hunter Green",
@@ -2380,9 +2142,8 @@
     }
   },
   {
-    "label": "Hunter Green Dk (DMC 3345)",
+    "name": "Hunter Green Dk (DMC 3345)",
     "color": "#1b5915",
-    "vendor": "dmc",
     "meta": {
       "number": "3345",
       "name": "Hunter Green Dk",
@@ -2390,9 +2151,8 @@
     }
   },
   {
-    "label": "Hunter Green Vy Dk (DMC 895)",
+    "name": "Hunter Green Vy Dk (DMC 895)",
     "color": "#1b5300",
-    "vendor": "dmc",
     "meta": {
       "number": "895",
       "name": "Hunter Green Vy Dk",
@@ -2400,9 +2160,8 @@
     }
   },
   {
-    "label": "Chartreuse Bright (DMC 704)",
+    "name": "Chartreuse Bright (DMC 704)",
     "color": "#9ecf34",
-    "vendor": "dmc",
     "meta": {
       "number": "704",
       "name": "Chartreuse Bright",
@@ -2410,9 +2169,8 @@
     }
   },
   {
-    "label": "Chartreuse (DMC 703)",
+    "name": "Chartreuse (DMC 703)",
     "color": "#7bb547",
-    "vendor": "dmc",
     "meta": {
       "number": "703",
       "name": "Chartreuse",
@@ -2420,9 +2178,8 @@
     }
   },
   {
-    "label": "Kelly Green (DMC 702)",
+    "name": "Kelly Green (DMC 702)",
     "color": "#47a72f",
-    "vendor": "dmc",
     "meta": {
       "number": "702",
       "name": "Kelly Green",
@@ -2430,9 +2187,8 @@
     }
   },
   {
-    "label": "Green Light (DMC 701)",
+    "name": "Green Light (DMC 701)",
     "color": "#3f8f29",
-    "vendor": "dmc",
     "meta": {
       "number": "701",
       "name": "Green Light",
@@ -2440,9 +2196,8 @@
     }
   },
   {
-    "label": "Green Bright (DMC 700)",
+    "name": "Green Bright (DMC 700)",
     "color": "#07731b",
-    "vendor": "dmc",
     "meta": {
       "number": "700",
       "name": "Green Bright",
@@ -2450,9 +2205,8 @@
     }
   },
   {
-    "label": "Green (DMC 699)",
+    "name": "Green (DMC 699)",
     "color": "#056517",
-    "vendor": "dmc",
     "meta": {
       "number": "699",
       "name": "Green",
@@ -2460,9 +2214,8 @@
     }
   },
   {
-    "label": "Parrot Green Lt (DMC 907)",
+    "name": "Parrot Green Lt (DMC 907)",
     "color": "#c7e666",
-    "vendor": "dmc",
     "meta": {
       "number": "907",
       "name": "Parrot Green Lt",
@@ -2470,9 +2223,8 @@
     }
   },
   {
-    "label": "Parrot Green Md (DMC 906)",
+    "name": "Parrot Green Md (DMC 906)",
     "color": "#7fb335",
-    "vendor": "dmc",
     "meta": {
       "number": "906",
       "name": "Parrot Green Md",
@@ -2480,9 +2232,8 @@
     }
   },
   {
-    "label": "Parrot Green Dk (DMC 905)",
+    "name": "Parrot Green Dk (DMC 905)",
     "color": "#628a28",
-    "vendor": "dmc",
     "meta": {
       "number": "905",
       "name": "Parrot Green Dk",
@@ -2490,9 +2241,8 @@
     }
   },
   {
-    "label": "Parrot Green V Dk (DMC 904)",
+    "name": "Parrot Green V Dk (DMC 904)",
     "color": "#557822",
-    "vendor": "dmc",
     "meta": {
       "number": "904",
       "name": "Parrot Green V Dk",
@@ -2500,9 +2250,8 @@
     }
   },
   {
-    "label": "Avocado Grn U Lt (DMC 472)",
+    "name": "Avocado Grn U Lt (DMC 472)",
     "color": "#d8e498",
-    "vendor": "dmc",
     "meta": {
       "number": "472",
       "name": "Avocado Grn U Lt",
@@ -2510,9 +2259,8 @@
     }
   },
   {
-    "label": "Avocado Grn V Lt (DMC 471)",
+    "name": "Avocado Grn V Lt (DMC 471)",
     "color": "#aebf79",
-    "vendor": "dmc",
     "meta": {
       "number": "471",
       "name": "Avocado Grn V Lt",
@@ -2520,9 +2268,8 @@
     }
   },
   {
-    "label": "Avocado Grn Lt (DMC 470)",
+    "name": "Avocado Grn Lt (DMC 470)",
     "color": "#94ab4f",
-    "vendor": "dmc",
     "meta": {
       "number": "470",
       "name": "Avocado Grn Lt",
@@ -2530,9 +2277,8 @@
     }
   },
   {
-    "label": "Avocado Green (DMC 469)",
+    "name": "Avocado Green (DMC 469)",
     "color": "#72843c",
-    "vendor": "dmc",
     "meta": {
       "number": "469",
       "name": "Avocado Green",
@@ -2540,9 +2286,8 @@
     }
   },
   {
-    "label": "Avocado Green Md (DMC 937)",
+    "name": "Avocado Green Md (DMC 937)",
     "color": "#627133",
-    "vendor": "dmc",
     "meta": {
       "number": "937",
       "name": "Avocado Green Md",
@@ -2550,9 +2295,8 @@
     }
   },
   {
-    "label": "Avocado Grn V Dk (DMC 936)",
+    "name": "Avocado Grn V Dk (DMC 936)",
     "color": "#4c5826",
-    "vendor": "dmc",
     "meta": {
       "number": "936",
       "name": "Avocado Grn V Dk",
@@ -2560,9 +2304,8 @@
     }
   },
   {
-    "label": "Avocado Green Dk (DMC 935)",
+    "name": "Avocado Green Dk (DMC 935)",
     "color": "#424d21",
-    "vendor": "dmc",
     "meta": {
       "number": "935",
       "name": "Avocado Green Dk",
@@ -2570,9 +2313,8 @@
     }
   },
   {
-    "label": "Avocado Grn Black (DMC 934)",
+    "name": "Avocado Grn Black (DMC 934)",
     "color": "#313919",
-    "vendor": "dmc",
     "meta": {
       "number": "934",
       "name": "Avocado Grn Black",
@@ -2580,9 +2322,8 @@
     }
   },
   {
-    "label": "Fern Green Lt (DMC 523)",
+    "name": "Fern Green Lt (DMC 523)",
     "color": "#abb197",
-    "vendor": "dmc",
     "meta": {
       "number": "523",
       "name": "Fern Green Lt",
@@ -2590,9 +2331,8 @@
     }
   },
   {
-    "label": "Green Gray (DMC 3053)",
+    "name": "Green Gray (DMC 3053)",
     "color": "#9ca482",
-    "vendor": "dmc",
     "meta": {
       "number": "3053",
       "name": "Green Gray",
@@ -2600,9 +2340,8 @@
     }
   },
   {
-    "label": "Green Gray Md (DMC 3052)",
+    "name": "Green Gray Md (DMC 3052)",
     "color": "#889268",
-    "vendor": "dmc",
     "meta": {
       "number": "3052",
       "name": "Green Gray Md",
@@ -2610,9 +2349,8 @@
     }
   },
   {
-    "label": "Green Gray Dk (DMC 3051)",
+    "name": "Green Gray Dk (DMC 3051)",
     "color": "#5f6648",
-    "vendor": "dmc",
     "meta": {
       "number": "3051",
       "name": "Green Gray Dk",
@@ -2620,9 +2358,8 @@
     }
   },
   {
-    "label": "Fern Green Vy Lt (DMC 524)",
+    "name": "Fern Green Vy Lt (DMC 524)",
     "color": "#c4cdac",
-    "vendor": "dmc",
     "meta": {
       "number": "524",
       "name": "Fern Green Vy Lt",
@@ -2630,9 +2367,8 @@
     }
   },
   {
-    "label": "Fern Green (DMC 522)",
+    "name": "Fern Green (DMC 522)",
     "color": "#969e7e",
-    "vendor": "dmc",
     "meta": {
       "number": "522",
       "name": "Fern Green",
@@ -2640,9 +2376,8 @@
     }
   },
   {
-    "label": "Fern Green Dark (DMC 520)",
+    "name": "Fern Green Dark (DMC 520)",
     "color": "#666d4f",
-    "vendor": "dmc",
     "meta": {
       "number": "520",
       "name": "Fern Green Dark",
@@ -2650,9 +2385,8 @@
     }
   },
   {
-    "label": "Pine Green (DMC 3364)",
+    "name": "Pine Green (DMC 3364)",
     "color": "#83975f",
-    "vendor": "dmc",
     "meta": {
       "number": "3364",
       "name": "Pine Green",
@@ -2660,9 +2394,8 @@
     }
   },
   {
-    "label": "Pine Green Md (DMC 3363)",
+    "name": "Pine Green Md (DMC 3363)",
     "color": "#728256",
-    "vendor": "dmc",
     "meta": {
       "number": "3363",
       "name": "Pine Green Md",
@@ -2670,9 +2403,8 @@
     }
   },
   {
-    "label": "Pine Green Dk (DMC 3362)",
+    "name": "Pine Green Dk (DMC 3362)",
     "color": "#5e6b47",
-    "vendor": "dmc",
     "meta": {
       "number": "3362",
       "name": "Pine Green Dk",
@@ -2680,9 +2412,8 @@
     }
   },
   {
-    "label": "Moss Green Vy Lt (DMC 165)",
+    "name": "Moss Green Vy Lt (DMC 165)",
     "color": "#eff4a4",
-    "vendor": "dmc",
     "meta": {
       "number": "165",
       "name": "Moss Green Vy Lt",
@@ -2690,9 +2421,8 @@
     }
   },
   {
-    "label": "Moss Green Lt (DMC 3819)",
+    "name": "Moss Green Lt (DMC 3819)",
     "color": "#e0e868",
-    "vendor": "dmc",
     "meta": {
       "number": "3819",
       "name": "Moss Green Lt",
@@ -2700,9 +2430,8 @@
     }
   },
   {
-    "label": "Moss Green Md Lt (DMC 166)",
+    "name": "Moss Green Md Lt (DMC 166)",
     "color": "#c0c840",
-    "vendor": "dmc",
     "meta": {
       "number": "166",
       "name": "Moss Green Md Lt",
@@ -2710,9 +2439,8 @@
     }
   },
   {
-    "label": "Moss Green (DMC 581)",
+    "name": "Moss Green (DMC 581)",
     "color": "#a7ae38",
-    "vendor": "dmc",
     "meta": {
       "number": "581",
       "name": "Moss Green",
@@ -2720,9 +2448,8 @@
     }
   },
   {
-    "label": "Moss Green Dk (DMC 580)",
+    "name": "Moss Green Dk (DMC 580)",
     "color": "#888d33",
-    "vendor": "dmc",
     "meta": {
       "number": "580",
       "name": "Moss Green Dk",
@@ -2730,9 +2457,8 @@
     }
   },
   {
-    "label": "Olive Green Lt (DMC 734)",
+    "name": "Olive Green Lt (DMC 734)",
     "color": "#c7c077",
-    "vendor": "dmc",
     "meta": {
       "number": "734",
       "name": "Olive Green Lt",
@@ -2740,9 +2466,8 @@
     }
   },
   {
-    "label": "Olive Green Md (DMC 733)",
+    "name": "Olive Green Md (DMC 733)",
     "color": "#bcb34c",
-    "vendor": "dmc",
     "meta": {
       "number": "733",
       "name": "Olive Green Md",
@@ -2750,9 +2475,8 @@
     }
   },
   {
-    "label": "Olive Green (DMC 732)",
+    "name": "Olive Green (DMC 732)",
     "color": "#948c36",
-    "vendor": "dmc",
     "meta": {
       "number": "732",
       "name": "Olive Green",
@@ -2760,9 +2484,8 @@
     }
   },
   {
-    "label": "Olive Green Dk (DMC 731)",
+    "name": "Olive Green Dk (DMC 731)",
     "color": "#938b37",
-    "vendor": "dmc",
     "meta": {
       "number": "731",
       "name": "Olive Green Dk",
@@ -2770,9 +2493,8 @@
     }
   },
   {
-    "label": "Olive Green V Dk (DMC 730)",
+    "name": "Olive Green V Dk (DMC 730)",
     "color": "#827b30",
-    "vendor": "dmc",
     "meta": {
       "number": "730",
       "name": "Olive Green V Dk",
@@ -2780,9 +2502,8 @@
     }
   },
   {
-    "label": "Khaki Green Lt (DMC 3013)",
+    "name": "Khaki Green Lt (DMC 3013)",
     "color": "#b9b982",
-    "vendor": "dmc",
     "meta": {
       "number": "3013",
       "name": "Khaki Green Lt",
@@ -2790,9 +2511,8 @@
     }
   },
   {
-    "label": "Khaki Green Md (DMC 3012)",
+    "name": "Khaki Green Md (DMC 3012)",
     "color": "#a6a75d",
-    "vendor": "dmc",
     "meta": {
       "number": "3012",
       "name": "Khaki Green Md",
@@ -2800,9 +2520,8 @@
     }
   },
   {
-    "label": "Khaki Green Dk (DMC 3011)",
+    "name": "Khaki Green Dk (DMC 3011)",
     "color": "#898a58",
-    "vendor": "dmc",
     "meta": {
       "number": "3011",
       "name": "Khaki Green Dk",
@@ -2810,9 +2529,8 @@
     }
   },
   {
-    "label": "Mustard Lt (DMC 372)",
+    "name": "Mustard Lt (DMC 372)",
     "color": "#ccb784",
-    "vendor": "dmc",
     "meta": {
       "number": "372",
       "name": "Mustard Lt",
@@ -2820,9 +2538,8 @@
     }
   },
   {
-    "label": "Mustard (DMC 371)",
+    "name": "Mustard (DMC 371)",
     "color": "#bfa671",
-    "vendor": "dmc",
     "meta": {
       "number": "371",
       "name": "Mustard",
@@ -2830,9 +2547,8 @@
     }
   },
   {
-    "label": "Mustard Medium (DMC 370)",
+    "name": "Mustard Medium (DMC 370)",
     "color": "#b89d64",
-    "vendor": "dmc",
     "meta": {
       "number": "370",
       "name": "Mustard Medium",
@@ -2840,9 +2556,8 @@
     }
   },
   {
-    "label": "Golden Olive Vy Lt (DMC 834)",
+    "name": "Golden Olive Vy Lt (DMC 834)",
     "color": "#dbbe7f",
-    "vendor": "dmc",
     "meta": {
       "number": "834",
       "name": "Golden Olive Vy Lt",
@@ -2850,9 +2565,8 @@
     }
   },
   {
-    "label": "Golden Olive Lt (DMC 833)",
+    "name": "Golden Olive Lt (DMC 833)",
     "color": "#c8ab6c",
-    "vendor": "dmc",
     "meta": {
       "number": "833",
       "name": "Golden Olive Lt",
@@ -2860,9 +2574,8 @@
     }
   },
   {
-    "label": "Golden Olive (DMC 832)",
+    "name": "Golden Olive (DMC 832)",
     "color": "#bd9b51",
-    "vendor": "dmc",
     "meta": {
       "number": "832",
       "name": "Golden Olive",
@@ -2870,9 +2583,8 @@
     }
   },
   {
-    "label": "Golden Olive Md (DMC 831)",
+    "name": "Golden Olive Md (DMC 831)",
     "color": "#aa8f56",
-    "vendor": "dmc",
     "meta": {
       "number": "831",
       "name": "Golden Olive Md",
@@ -2880,9 +2592,8 @@
     }
   },
   {
-    "label": "Golden Olive Dk (DMC 830)",
+    "name": "Golden Olive Dk (DMC 830)",
     "color": "#8d784b",
-    "vendor": "dmc",
     "meta": {
       "number": "830",
       "name": "Golden Olive Dk",
@@ -2890,9 +2601,8 @@
     }
   },
   {
-    "label": "Golden Olive Vy Dk (DMC 829)",
+    "name": "Golden Olive Vy Dk (DMC 829)",
     "color": "#7e6b42",
-    "vendor": "dmc",
     "meta": {
       "number": "829",
       "name": "Golden Olive Vy Dk",
@@ -2900,9 +2610,8 @@
     }
   },
   {
-    "label": "Drab Brown V Lt (DMC 613)",
+    "name": "Drab Brown V Lt (DMC 613)",
     "color": "#dcc4aa",
-    "vendor": "dmc",
     "meta": {
       "number": "613",
       "name": "Drab Brown V Lt",
@@ -2910,9 +2619,8 @@
     }
   },
   {
-    "label": "Drab Brown Lt (DMC 612)",
+    "name": "Drab Brown Lt (DMC 612)",
     "color": "#bc9a78",
-    "vendor": "dmc",
     "meta": {
       "number": "612",
       "name": "Drab Brown Lt",
@@ -2920,9 +2628,8 @@
     }
   },
   {
-    "label": "Drab Brown (DMC 611)",
+    "name": "Drab Brown (DMC 611)",
     "color": "#967656",
-    "vendor": "dmc",
     "meta": {
       "number": "611",
       "name": "Drab Brown",
@@ -2930,9 +2637,8 @@
     }
   },
   {
-    "label": "Drab Brown Dk (DMC 610)",
+    "name": "Drab Brown Dk (DMC 610)",
     "color": "#796047",
-    "vendor": "dmc",
     "meta": {
       "number": "610",
       "name": "Drab Brown Dk",
@@ -2940,9 +2646,8 @@
     }
   },
   {
-    "label": "Yellow Beige Lt (DMC 3047)",
+    "name": "Yellow Beige Lt (DMC 3047)",
     "color": "#e7d6c1",
-    "vendor": "dmc",
     "meta": {
       "number": "3047",
       "name": "Yellow Beige Lt",
@@ -2950,9 +2655,8 @@
     }
   },
   {
-    "label": "Yellow Beige Md (DMC 3046)",
+    "name": "Yellow Beige Md (DMC 3046)",
     "color": "#d8bc9a",
-    "vendor": "dmc",
     "meta": {
       "number": "3046",
       "name": "Yellow Beige Md",
@@ -2960,9 +2664,8 @@
     }
   },
   {
-    "label": "Yellow Beige Dk (DMC 3045)",
+    "name": "Yellow Beige Dk (DMC 3045)",
     "color": "#bc966a",
-    "vendor": "dmc",
     "meta": {
       "number": "3045",
       "name": "Yellow Beige Dk",
@@ -2970,9 +2673,8 @@
     }
   },
   {
-    "label": "Yellow Beige V Dk (DMC 167)",
+    "name": "Yellow Beige V Dk (DMC 167)",
     "color": "#a77c49",
-    "vendor": "dmc",
     "meta": {
       "number": "167",
       "name": "Yellow Beige V Dk",
@@ -2980,9 +2682,8 @@
     }
   },
   {
-    "label": "Off White (DMC 746)",
+    "name": "Off White (DMC 746)",
     "color": "#fcfcee",
-    "vendor": "dmc",
     "meta": {
       "number": "746",
       "name": "Off White",
@@ -2990,9 +2691,8 @@
     }
   },
   {
-    "label": "Old Gold Vy Lt (DMC 677)",
+    "name": "Old Gold Vy Lt (DMC 677)",
     "color": "#f5eccb",
-    "vendor": "dmc",
     "meta": {
       "number": "677",
       "name": "Old Gold Vy Lt",
@@ -3000,9 +2700,8 @@
     }
   },
   {
-    "label": "Hazelnut Brown Lt (DMC 422)",
+    "name": "Hazelnut Brown Lt (DMC 422)",
     "color": "#c69f7b",
-    "vendor": "dmc",
     "meta": {
       "number": "422",
       "name": "Hazelnut Brown Lt",
@@ -3010,9 +2709,8 @@
     }
   },
   {
-    "label": "Hazelnut Brown (DMC 3828)",
+    "name": "Hazelnut Brown (DMC 3828)",
     "color": "#b78b61",
-    "vendor": "dmc",
     "meta": {
       "number": "3828",
       "name": "Hazelnut Brown",
@@ -3020,9 +2718,8 @@
     }
   },
   {
-    "label": "Hazelnut Brown Dk (DMC 420)",
+    "name": "Hazelnut Brown Dk (DMC 420)",
     "color": "#a07042",
-    "vendor": "dmc",
     "meta": {
       "number": "420",
       "name": "Hazelnut Brown Dk",
@@ -3030,9 +2727,8 @@
     }
   },
   {
-    "label": "Hazelnut Brown V Dk (DMC 869)",
+    "name": "Hazelnut Brown V Dk (DMC 869)",
     "color": "#835e39",
-    "vendor": "dmc",
     "meta": {
       "number": "869",
       "name": "Hazelnut Brown V Dk",
@@ -3040,9 +2736,8 @@
     }
   },
   {
-    "label": "Topaz (DMC 728)",
+    "name": "Topaz (DMC 728)",
     "color": "#e4b468",
-    "vendor": "dmc",
     "meta": {
       "number": "728",
       "name": "Topaz",
@@ -3050,9 +2745,8 @@
     }
   },
   {
-    "label": "Topaz Medium (DMC 783)",
+    "name": "Topaz Medium (DMC 783)",
     "color": "#ce9124",
-    "vendor": "dmc",
     "meta": {
       "number": "783",
       "name": "Topaz Medium",
@@ -3060,9 +2754,8 @@
     }
   },
   {
-    "label": "Topaz Dark (DMC 782)",
+    "name": "Topaz Dark (DMC 782)",
     "color": "#ae7720",
-    "vendor": "dmc",
     "meta": {
       "number": "782",
       "name": "Topaz Dark",
@@ -3070,9 +2763,8 @@
     }
   },
   {
-    "label": "Topaz Very Dark (DMC 781)",
+    "name": "Topaz Very Dark (DMC 781)",
     "color": "#a26d20",
-    "vendor": "dmc",
     "meta": {
       "number": "781",
       "name": "Topaz Very Dark",
@@ -3080,9 +2772,8 @@
     }
   },
   {
-    "label": "Topaz Ultra Vy Dk (DMC 780)",
+    "name": "Topaz Ultra Vy Dk (DMC 780)",
     "color": "#94631a",
-    "vendor": "dmc",
     "meta": {
       "number": "780",
       "name": "Topaz Ultra Vy Dk",
@@ -3090,9 +2781,8 @@
     }
   },
   {
-    "label": "Old Gold Lt (DMC 676)",
+    "name": "Old Gold Lt (DMC 676)",
     "color": "#e5ce97",
-    "vendor": "dmc",
     "meta": {
       "number": "676",
       "name": "Old Gold Lt",
@@ -3100,9 +2790,8 @@
     }
   },
   {
-    "label": "Old Gold Medium (DMC 729)",
+    "name": "Old Gold Medium (DMC 729)",
     "color": "#d0a53e",
-    "vendor": "dmc",
     "meta": {
       "number": "729",
       "name": "Old Gold Medium",
@@ -3110,9 +2799,8 @@
     }
   },
   {
-    "label": "Old Gold Dark (DMC 680)",
+    "name": "Old Gold Dark (DMC 680)",
     "color": "#bc8d0e",
-    "vendor": "dmc",
     "meta": {
       "number": "680",
       "name": "Old Gold Dark",
@@ -3120,9 +2808,8 @@
     }
   },
   {
-    "label": "Old Gold Vy Dark (DMC 3829)",
+    "name": "Old Gold Vy Dark (DMC 3829)",
     "color": "#a98204",
-    "vendor": "dmc",
     "meta": {
       "number": "3829",
       "name": "Old Gold Vy Dark",
@@ -3130,9 +2817,8 @@
     }
   },
   {
-    "label": "Straw Light (DMC 3822)",
+    "name": "Straw Light (DMC 3822)",
     "color": "#f6dc98",
-    "vendor": "dmc",
     "meta": {
       "number": "3822",
       "name": "Straw Light",
@@ -3140,9 +2826,8 @@
     }
   },
   {
-    "label": "Straw (DMC 3821)",
+    "name": "Straw (DMC 3821)",
     "color": "#f3ce75",
-    "vendor": "dmc",
     "meta": {
       "number": "3821",
       "name": "Straw",
@@ -3150,9 +2835,8 @@
     }
   },
   {
-    "label": "Straw Dark (DMC 3820)",
+    "name": "Straw Dark (DMC 3820)",
     "color": "#dfb65f",
-    "vendor": "dmc",
     "meta": {
       "number": "3820",
       "name": "Straw Dark",
@@ -3160,9 +2844,8 @@
     }
   },
   {
-    "label": "Straw Very Dark (DMC 3852)",
+    "name": "Straw Very Dark (DMC 3852)",
     "color": "#cd9d37",
-    "vendor": "dmc",
     "meta": {
       "number": "3852",
       "name": "Straw Very Dark",
@@ -3170,9 +2853,8 @@
     }
   },
   {
-    "label": "Lemon Light (DMC 445)",
+    "name": "Lemon Light (DMC 445)",
     "color": "#fffb8b",
-    "vendor": "dmc",
     "meta": {
       "number": "445",
       "name": "Lemon Light",
@@ -3180,9 +2862,8 @@
     }
   },
   {
-    "label": "Lemon (DMC 307)",
+    "name": "Lemon (DMC 307)",
     "color": "#fded54",
-    "vendor": "dmc",
     "meta": {
       "number": "307",
       "name": "Lemon",
@@ -3190,9 +2871,8 @@
     }
   },
   {
-    "label": "Canary Bright (DMC 973)",
+    "name": "Canary Bright (DMC 973)",
     "color": "#ffe300",
-    "vendor": "dmc",
     "meta": {
       "number": "973",
       "name": "Canary Bright",
@@ -3200,9 +2880,8 @@
     }
   },
   {
-    "label": "Lemon Dark (DMC 444)",
+    "name": "Lemon Dark (DMC 444)",
     "color": "#ffd600",
-    "vendor": "dmc",
     "meta": {
       "number": "444",
       "name": "Lemon Dark",
@@ -3210,9 +2889,8 @@
     }
   },
   {
-    "label": "Golden Yellow Vy Lt (DMC 3078)",
+    "name": "Golden Yellow Vy Lt (DMC 3078)",
     "color": "#fdf9cd",
-    "vendor": "dmc",
     "meta": {
       "number": "3078",
       "name": "Golden Yellow Vy Lt",
@@ -3220,9 +2898,8 @@
     }
   },
   {
-    "label": "Topaz Vy Lt (DMC 727)",
+    "name": "Topaz Vy Lt (DMC 727)",
     "color": "#fff1af",
-    "vendor": "dmc",
     "meta": {
       "number": "727",
       "name": "Topaz Vy Lt",
@@ -3230,9 +2907,8 @@
     }
   },
   {
-    "label": "Topaz Light (DMC 726)",
+    "name": "Topaz Light (DMC 726)",
     "color": "#fdd755",
-    "vendor": "dmc",
     "meta": {
       "number": "726",
       "name": "Topaz Light",
@@ -3240,9 +2916,8 @@
     }
   },
   {
-    "label": "Topaz Med Lt (DMC 725)",
+    "name": "Topaz Med Lt (DMC 725)",
     "color": "#ffc840",
-    "vendor": "dmc",
     "meta": {
       "number": "725",
       "name": "Topaz Med Lt",
@@ -3250,9 +2925,8 @@
     }
   },
   {
-    "label": "Canary Deep (DMC 972)",
+    "name": "Canary Deep (DMC 972)",
     "color": "#ffb515",
-    "vendor": "dmc",
     "meta": {
       "number": "972",
       "name": "Canary Deep",
@@ -3260,9 +2934,8 @@
     }
   },
   {
-    "label": "Yellow Pale Light (DMC 745)",
+    "name": "Yellow Pale Light (DMC 745)",
     "color": "#ffe9ad",
-    "vendor": "dmc",
     "meta": {
       "number": "745",
       "name": "Yellow Pale Light",
@@ -3270,9 +2943,8 @@
     }
   },
   {
-    "label": "Yellow Pale (DMC 744)",
+    "name": "Yellow Pale (DMC 744)",
     "color": "#ffe793",
-    "vendor": "dmc",
     "meta": {
       "number": "744",
       "name": "Yellow Pale",
@@ -3280,9 +2952,8 @@
     }
   },
   {
-    "label": "Yellow Med (DMC 743)",
+    "name": "Yellow Med (DMC 743)",
     "color": "#fed376",
-    "vendor": "dmc",
     "meta": {
       "number": "743",
       "name": "Yellow Med",
@@ -3290,9 +2961,8 @@
     }
   },
   {
-    "label": "Tangerine Light (DMC 742)",
+    "name": "Tangerine Light (DMC 742)",
     "color": "#ffbf57",
-    "vendor": "dmc",
     "meta": {
       "number": "742",
       "name": "Tangerine Light",
@@ -3300,9 +2970,8 @@
     }
   },
   {
-    "label": "Tangerine Med (DMC 741)",
+    "name": "Tangerine Med (DMC 741)",
     "color": "#ffa32b",
-    "vendor": "dmc",
     "meta": {
       "number": "741",
       "name": "Tangerine Med",
@@ -3310,9 +2979,8 @@
     }
   },
   {
-    "label": "Tangerine (DMC 740)",
+    "name": "Tangerine (DMC 740)",
     "color": "#ff8b00",
-    "vendor": "dmc",
     "meta": {
       "number": "740",
       "name": "Tangerine",
@@ -3320,9 +2988,8 @@
     }
   },
   {
-    "label": "Pumpkin Light (DMC 970)",
+    "name": "Pumpkin Light (DMC 970)",
     "color": "#f78b13",
-    "vendor": "dmc",
     "meta": {
       "number": "970",
       "name": "Pumpkin Light",
@@ -3330,9 +2997,8 @@
     }
   },
   {
-    "label": "Pumpkin (DMC 971)",
+    "name": "Pumpkin (DMC 971)",
     "color": "#f67f00",
-    "vendor": "dmc",
     "meta": {
       "number": "971",
       "name": "Pumpkin",
@@ -3340,9 +3006,8 @@
     }
   },
   {
-    "label": "Burnt Orange (DMC 947)",
+    "name": "Burnt Orange (DMC 947)",
     "color": "#ff7b4d",
-    "vendor": "dmc",
     "meta": {
       "number": "947",
       "name": "Burnt Orange",
@@ -3350,9 +3015,8 @@
     }
   },
   {
-    "label": "Burnt Orange Med (DMC 946)",
+    "name": "Burnt Orange Med (DMC 946)",
     "color": "#eb6307",
-    "vendor": "dmc",
     "meta": {
       "number": "946",
       "name": "Burnt Orange Med",
@@ -3360,9 +3024,8 @@
     }
   },
   {
-    "label": "Burnt Orange Dark (DMC 900)",
+    "name": "Burnt Orange Dark (DMC 900)",
     "color": "#d15807",
-    "vendor": "dmc",
     "meta": {
       "number": "900",
       "name": "Burnt Orange Dark",
@@ -3370,9 +3033,8 @@
     }
   },
   {
-    "label": "Apricot Very Light (DMC 967)",
+    "name": "Apricot Very Light (DMC 967)",
     "color": "#ffded5",
-    "vendor": "dmc",
     "meta": {
       "number": "967",
       "name": "Apricot Very Light",
@@ -3380,9 +3042,8 @@
     }
   },
   {
-    "label": "Apricot Light (DMC 3824)",
+    "name": "Apricot Light (DMC 3824)",
     "color": "#fecdc2",
-    "vendor": "dmc",
     "meta": {
       "number": "3824",
       "name": "Apricot Light",
@@ -3390,9 +3051,8 @@
     }
   },
   {
-    "label": "Apricot (DMC 3341)",
+    "name": "Apricot (DMC 3341)",
     "color": "#fcab98",
-    "vendor": "dmc",
     "meta": {
       "number": "3341",
       "name": "Apricot",
@@ -3400,9 +3060,8 @@
     }
   },
   {
-    "label": "Apricot Med (DMC 3340)",
+    "name": "Apricot Med (DMC 3340)",
     "color": "#ff836f",
-    "vendor": "dmc",
     "meta": {
       "number": "3340",
       "name": "Apricot Med",
@@ -3410,9 +3069,8 @@
     }
   },
   {
-    "label": "Burnt Orange Bright (DMC 608)",
+    "name": "Burnt Orange Bright (DMC 608)",
     "color": "#fd5d35",
-    "vendor": "dmc",
     "meta": {
       "number": "608",
       "name": "Burnt Orange Bright",
@@ -3420,9 +3078,8 @@
     }
   },
   {
-    "label": "Orange Red Bright (DMC 606)",
+    "name": "Orange Red Bright (DMC 606)",
     "color": "#fa3203",
-    "vendor": "dmc",
     "meta": {
       "number": "606",
       "name": "Orange Red Bright",
@@ -3430,9 +3087,8 @@
     }
   },
   {
-    "label": "Tawny Light (DMC 951)",
+    "name": "Tawny Light (DMC 951)",
     "color": "#ffe2cf",
-    "vendor": "dmc",
     "meta": {
       "number": "951",
       "name": "Tawny Light",
@@ -3440,9 +3096,8 @@
     }
   },
   {
-    "label": "Mahogany Ult Vy Lt (DMC 3856)",
+    "name": "Mahogany Ult Vy Lt (DMC 3856)",
     "color": "#ffd3b5",
-    "vendor": "dmc",
     "meta": {
       "number": "3856",
       "name": "Mahogany Ult Vy Lt",
@@ -3450,9 +3105,8 @@
     }
   },
   {
-    "label": "Orange Spice Light (DMC 722)",
+    "name": "Orange Spice Light (DMC 722)",
     "color": "#f7976f",
-    "vendor": "dmc",
     "meta": {
       "number": "722",
       "name": "Orange Spice Light",
@@ -3460,9 +3114,8 @@
     }
   },
   {
-    "label": "Orange Spice Med (DMC 721)",
+    "name": "Orange Spice Med (DMC 721)",
     "color": "#f27842",
-    "vendor": "dmc",
     "meta": {
       "number": "721",
       "name": "Orange Spice Med",
@@ -3470,9 +3123,8 @@
     }
   },
   {
-    "label": "Orange Spice Dark (DMC 720)",
+    "name": "Orange Spice Dark (DMC 720)",
     "color": "#e55c1f",
-    "vendor": "dmc",
     "meta": {
       "number": "720",
       "name": "Orange Spice Dark",
@@ -3480,9 +3132,8 @@
     }
   },
   {
-    "label": "Pumpkin Pale (DMC 3825)",
+    "name": "Pumpkin Pale (DMC 3825)",
     "color": "#fdbd96",
-    "vendor": "dmc",
     "meta": {
       "number": "3825",
       "name": "Pumpkin Pale",
@@ -3490,9 +3141,8 @@
     }
   },
   {
-    "label": "Copper Light (DMC 922)",
+    "name": "Copper Light (DMC 922)",
     "color": "#e27323",
-    "vendor": "dmc",
     "meta": {
       "number": "922",
       "name": "Copper Light",
@@ -3500,9 +3150,8 @@
     }
   },
   {
-    "label": "Copper (DMC 921)",
+    "name": "Copper (DMC 921)",
     "color": "#c66218",
-    "vendor": "dmc",
     "meta": {
       "number": "921",
       "name": "Copper",
@@ -3510,9 +3159,8 @@
     }
   },
   {
-    "label": "Copper Med (DMC 920)",
+    "name": "Copper Med (DMC 920)",
     "color": "#ac5414",
-    "vendor": "dmc",
     "meta": {
       "number": "920",
       "name": "Copper Med",
@@ -3520,9 +3168,8 @@
     }
   },
   {
-    "label": "Red?Copper (DMC 919)",
+    "name": "Red?Copper (DMC 919)",
     "color": "#a64510",
-    "vendor": "dmc",
     "meta": {
       "number": "919",
       "name": "Red?Copper",
@@ -3530,9 +3177,8 @@
     }
   },
   {
-    "label": "Red?Copper Dark (DMC 918)",
+    "name": "Red?Copper Dark (DMC 918)",
     "color": "#82340a",
-    "vendor": "dmc",
     "meta": {
       "number": "918",
       "name": "Red?Copper Dark",
@@ -3540,9 +3186,8 @@
     }
   },
   {
-    "label": "Tawny Vy Light (DMC 3770)",
+    "name": "Tawny Vy Light (DMC 3770)",
     "color": "#ffeee3",
-    "vendor": "dmc",
     "meta": {
       "number": "3770",
       "name": "Tawny Vy Light",
@@ -3550,9 +3195,8 @@
     }
   },
   {
-    "label": "Tawny (DMC 945)",
+    "name": "Tawny (DMC 945)",
     "color": "#fbd5bb",
-    "vendor": "dmc",
     "meta": {
       "number": "945",
       "name": "Tawny",
@@ -3560,9 +3204,8 @@
     }
   },
   {
-    "label": "Mahogany Vy Lt (DMC 402)",
+    "name": "Mahogany Vy Lt (DMC 402)",
     "color": "#f7a777",
-    "vendor": "dmc",
     "meta": {
       "number": "402",
       "name": "Mahogany Vy Lt",
@@ -3570,9 +3213,8 @@
     }
   },
   {
-    "label": "Mahogany Light (DMC 3776)",
+    "name": "Mahogany Light (DMC 3776)",
     "color": "#cf7939",
-    "vendor": "dmc",
     "meta": {
       "number": "3776",
       "name": "Mahogany Light",
@@ -3580,9 +3222,8 @@
     }
   },
   {
-    "label": "Mahogany Med (DMC 301)",
+    "name": "Mahogany Med (DMC 301)",
     "color": "#b35f2b",
-    "vendor": "dmc",
     "meta": {
       "number": "301",
       "name": "Mahogany Med",
@@ -3590,9 +3231,8 @@
     }
   },
   {
-    "label": "Mahogany Dark (DMC 400)",
+    "name": "Mahogany Dark (DMC 400)",
     "color": "#8f430f",
-    "vendor": "dmc",
     "meta": {
       "number": "400",
       "name": "Mahogany Dark",
@@ -3600,9 +3240,8 @@
     }
   },
   {
-    "label": "Mahogany Vy Dk (DMC 300)",
+    "name": "Mahogany Vy Dk (DMC 300)",
     "color": "#6f2f00",
-    "vendor": "dmc",
     "meta": {
       "number": "300",
       "name": "Mahogany Vy Dk",
@@ -3610,9 +3249,8 @@
     }
   },
   {
-    "label": "Yellow Ultra Pale (DMC 3823)",
+    "name": "Yellow Ultra Pale (DMC 3823)",
     "color": "#fffde3",
-    "vendor": "dmc",
     "meta": {
       "number": "3823",
       "name": "Yellow Ultra Pale",
@@ -3620,9 +3258,8 @@
     }
   },
   {
-    "label": "Autumn Gold Lt (DMC 3855)",
+    "name": "Autumn Gold Lt (DMC 3855)",
     "color": "#fad396",
-    "vendor": "dmc",
     "meta": {
       "number": "3855",
       "name": "Autumn Gold Lt",
@@ -3630,9 +3267,8 @@
     }
   },
   {
-    "label": "Autumn Gold Med (DMC 3854)",
+    "name": "Autumn Gold Med (DMC 3854)",
     "color": "#f2af68",
-    "vendor": "dmc",
     "meta": {
       "number": "3854",
       "name": "Autumn Gold Med",
@@ -3640,9 +3276,8 @@
     }
   },
   {
-    "label": "Autumn Gold Dk (DMC 3853)",
+    "name": "Autumn Gold Dk (DMC 3853)",
     "color": "#f29746",
-    "vendor": "dmc",
     "meta": {
       "number": "3853",
       "name": "Autumn Gold Dk",
@@ -3650,9 +3285,8 @@
     }
   },
   {
-    "label": "Golden Brown Pale (DMC 3827)",
+    "name": "Golden Brown Pale (DMC 3827)",
     "color": "#f7bb77",
-    "vendor": "dmc",
     "meta": {
       "number": "3827",
       "name": "Golden Brown Pale",
@@ -3660,9 +3294,8 @@
     }
   },
   {
-    "label": "Golden Brown Light (DMC 977)",
+    "name": "Golden Brown Light (DMC 977)",
     "color": "#dc9c56",
-    "vendor": "dmc",
     "meta": {
       "number": "977",
       "name": "Golden Brown Light",
@@ -3670,9 +3303,8 @@
     }
   },
   {
-    "label": "Golden Brown Med (DMC 976)",
+    "name": "Golden Brown Med (DMC 976)",
     "color": "#c28142",
-    "vendor": "dmc",
     "meta": {
       "number": "976",
       "name": "Golden Brown Med",
@@ -3680,9 +3312,8 @@
     }
   },
   {
-    "label": "Golden Brown (DMC 3826)",
+    "name": "Golden Brown (DMC 3826)",
     "color": "#ad7239",
-    "vendor": "dmc",
     "meta": {
       "number": "3826",
       "name": "Golden Brown",
@@ -3690,9 +3321,8 @@
     }
   },
   {
-    "label": "Golden Brown Dk (DMC 975)",
+    "name": "Golden Brown Dk (DMC 975)",
     "color": "#914f12",
-    "vendor": "dmc",
     "meta": {
       "number": "975",
       "name": "Golden Brown Dk",
@@ -3700,9 +3330,8 @@
     }
   },
   {
-    "label": "Peach Very Light (DMC 948)",
+    "name": "Peach Very Light (DMC 948)",
     "color": "#fee7da",
-    "vendor": "dmc",
     "meta": {
       "number": "948",
       "name": "Peach Very Light",
@@ -3710,9 +3339,8 @@
     }
   },
   {
-    "label": "Peach Light (DMC 754)",
+    "name": "Peach Light (DMC 754)",
     "color": "#f7cbbf",
-    "vendor": "dmc",
     "meta": {
       "number": "754",
       "name": "Peach Light",
@@ -3720,9 +3348,8 @@
     }
   },
   {
-    "label": "Terra Cotta Ult Vy Lt (DMC 3771)",
+    "name": "Terra Cotta Ult Vy Lt (DMC 3771)",
     "color": "#f4bba9",
-    "vendor": "dmc",
     "meta": {
       "number": "3771",
       "name": "Terra Cotta Ult Vy Lt",
@@ -3730,9 +3357,8 @@
     }
   },
   {
-    "label": "Terra Cotta Vy Lt (DMC 758)",
+    "name": "Terra Cotta Vy Lt (DMC 758)",
     "color": "#eeaa9b",
-    "vendor": "dmc",
     "meta": {
       "number": "758",
       "name": "Terra Cotta Vy Lt",
@@ -3740,9 +3366,8 @@
     }
   },
   {
-    "label": "Terra Cotta Light (DMC 3778)",
+    "name": "Terra Cotta Light (DMC 3778)",
     "color": "#d98978",
-    "vendor": "dmc",
     "meta": {
       "number": "3778",
       "name": "Terra Cotta Light",
@@ -3750,9 +3375,8 @@
     }
   },
   {
-    "label": "Terra Cotta Med (DMC 356)",
+    "name": "Terra Cotta Med (DMC 356)",
     "color": "#c56a5b",
-    "vendor": "dmc",
     "meta": {
       "number": "356",
       "name": "Terra Cotta Med",
@@ -3760,9 +3384,8 @@
     }
   },
   {
-    "label": "Terra Cotta (DMC 3830)",
+    "name": "Terra Cotta (DMC 3830)",
     "color": "#b95544",
-    "vendor": "dmc",
     "meta": {
       "number": "3830",
       "name": "Terra Cotta",
@@ -3770,9 +3393,8 @@
     }
   },
   {
-    "label": "Terra Cotta Dark (DMC 355)",
+    "name": "Terra Cotta Dark (DMC 355)",
     "color": "#984436",
-    "vendor": "dmc",
     "meta": {
       "number": "355",
       "name": "Terra Cotta Dark",
@@ -3780,9 +3402,8 @@
     }
   },
   {
-    "label": "Terra Cotta Vy Dk (DMC 3777)",
+    "name": "Terra Cotta Vy Dk (DMC 3777)",
     "color": "#863022",
-    "vendor": "dmc",
     "meta": {
       "number": "3777",
       "name": "Terra Cotta Vy Dk",
@@ -3790,9 +3411,8 @@
     }
   },
   {
-    "label": "Rosewood Ult Vy Lt (DMC 3779)",
+    "name": "Rosewood Ult Vy Lt (DMC 3779)",
     "color": "#f8cac8",
-    "vendor": "dmc",
     "meta": {
       "number": "3779",
       "name": "Rosewood Ult Vy Lt",
@@ -3800,9 +3420,8 @@
     }
   },
   {
-    "label": "Rosewood Light (DMC 3859)",
+    "name": "Rosewood Light (DMC 3859)",
     "color": "#ba8b7c",
-    "vendor": "dmc",
     "meta": {
       "number": "3859",
       "name": "Rosewood Light",
@@ -3810,9 +3429,8 @@
     }
   },
   {
-    "label": "Rosewood Med (DMC 3858)",
+    "name": "Rosewood Med (DMC 3858)",
     "color": "#964a3f",
-    "vendor": "dmc",
     "meta": {
       "number": "3858",
       "name": "Rosewood Med",
@@ -3820,9 +3438,8 @@
     }
   },
   {
-    "label": "Rosewood Dark (DMC 3857)",
+    "name": "Rosewood Dark (DMC 3857)",
     "color": "#68251a",
-    "vendor": "dmc",
     "meta": {
       "number": "3857",
       "name": "Rosewood Dark",
@@ -3830,9 +3447,8 @@
     }
   },
   {
-    "label": "Desert Sand Vy Lt (DMC 3774)",
+    "name": "Desert Sand Vy Lt (DMC 3774)",
     "color": "#f3e1d7",
-    "vendor": "dmc",
     "meta": {
       "number": "3774",
       "name": "Desert Sand Vy Lt",
@@ -3840,9 +3456,8 @@
     }
   },
   {
-    "label": "Desert Sand Light (DMC 950)",
+    "name": "Desert Sand Light (DMC 950)",
     "color": "#eed3c4",
-    "vendor": "dmc",
     "meta": {
       "number": "950",
       "name": "Desert Sand Light",
@@ -3850,9 +3465,8 @@
     }
   },
   {
-    "label": "Desert Sand (DMC 3064)",
+    "name": "Desert Sand (DMC 3064)",
     "color": "#c48e70",
-    "vendor": "dmc",
     "meta": {
       "number": "3064",
       "name": "Desert Sand",
@@ -3860,9 +3474,8 @@
     }
   },
   {
-    "label": "Desert Sand Med (DMC 407)",
+    "name": "Desert Sand Med (DMC 407)",
     "color": "#bb8161",
-    "vendor": "dmc",
     "meta": {
       "number": "407",
       "name": "Desert Sand Med",
@@ -3870,9 +3483,8 @@
     }
   },
   {
-    "label": "Desert Sand Dark (DMC 3773)",
+    "name": "Desert Sand Dark (DMC 3773)",
     "color": "#b67552",
-    "vendor": "dmc",
     "meta": {
       "number": "3773",
       "name": "Desert Sand Dark",
@@ -3880,9 +3492,8 @@
     }
   },
   {
-    "label": "Desert Sand Vy Dk (DMC 3772)",
+    "name": "Desert Sand Vy Dk (DMC 3772)",
     "color": "#a06c50",
-    "vendor": "dmc",
     "meta": {
       "number": "3772",
       "name": "Desert Sand Vy Dk",
@@ -3890,9 +3501,8 @@
     }
   },
   {
-    "label": "Desert Sand Ult Vy Dk (DMC 632)",
+    "name": "Desert Sand Ult Vy Dk (DMC 632)",
     "color": "#875539",
-    "vendor": "dmc",
     "meta": {
       "number": "632",
       "name": "Desert Sand Ult Vy Dk",
@@ -3900,9 +3510,8 @@
     }
   },
   {
-    "label": "Shell Gray Light (DMC 453)",
+    "name": "Shell Gray Light (DMC 453)",
     "color": "#d7cecb",
-    "vendor": "dmc",
     "meta": {
       "number": "453",
       "name": "Shell Gray Light",
@@ -3910,9 +3519,8 @@
     }
   },
   {
-    "label": "Shell Gray Med (DMC 452)",
+    "name": "Shell Gray Med (DMC 452)",
     "color": "#c0b3ae",
-    "vendor": "dmc",
     "meta": {
       "number": "452",
       "name": "Shell Gray Med",
@@ -3920,9 +3528,8 @@
     }
   },
   {
-    "label": "Shell Gray Dark (DMC 451)",
+    "name": "Shell Gray Dark (DMC 451)",
     "color": "#917b73",
-    "vendor": "dmc",
     "meta": {
       "number": "451",
       "name": "Shell Gray Dark",
@@ -3930,9 +3537,8 @@
     }
   },
   {
-    "label": "Cocoa Light (DMC 3861)",
+    "name": "Cocoa Light (DMC 3861)",
     "color": "#a68881",
-    "vendor": "dmc",
     "meta": {
       "number": "3861",
       "name": "Cocoa Light",
@@ -3940,9 +3546,8 @@
     }
   },
   {
-    "label": "Cocoa (DMC 3860)",
+    "name": "Cocoa (DMC 3860)",
     "color": "#7d5d57",
-    "vendor": "dmc",
     "meta": {
       "number": "3860",
       "name": "Cocoa",
@@ -3950,9 +3555,8 @@
     }
   },
   {
-    "label": "Cocoa Dark (DMC 779)",
+    "name": "Cocoa Dark (DMC 779)",
     "color": "#624b45",
-    "vendor": "dmc",
     "meta": {
       "number": "779",
       "name": "Cocoa Dark",
@@ -3960,9 +3564,8 @@
     }
   },
   {
-    "label": "Cream (DMC 712)",
+    "name": "Cream (DMC 712)",
     "color": "#fffbef",
-    "vendor": "dmc",
     "meta": {
       "number": "712",
       "name": "Cream",
@@ -3970,9 +3573,8 @@
     }
   },
   {
-    "label": "Tan Ult Vy Lt (DMC 739)",
+    "name": "Tan Ult Vy Lt (DMC 739)",
     "color": "#f8e4c8",
-    "vendor": "dmc",
     "meta": {
       "number": "739",
       "name": "Tan Ult Vy Lt",
@@ -3980,9 +3582,8 @@
     }
   },
   {
-    "label": "Tan Very Light (DMC 738)",
+    "name": "Tan Very Light (DMC 738)",
     "color": "#eccc9e",
-    "vendor": "dmc",
     "meta": {
       "number": "738",
       "name": "Tan Very Light",
@@ -3990,9 +3591,8 @@
     }
   },
   {
-    "label": "Tan Light (DMC 437)",
+    "name": "Tan Light (DMC 437)",
     "color": "#e4bb8e",
-    "vendor": "dmc",
     "meta": {
       "number": "437",
       "name": "Tan Light",
@@ -4000,9 +3600,8 @@
     }
   },
   {
-    "label": "Tan (DMC 436)",
+    "name": "Tan (DMC 436)",
     "color": "#cb9051",
-    "vendor": "dmc",
     "meta": {
       "number": "436",
       "name": "Tan",
@@ -4010,9 +3609,8 @@
     }
   },
   {
-    "label": "Brown Very Light (DMC 435)",
+    "name": "Brown Very Light (DMC 435)",
     "color": "#b87748",
-    "vendor": "dmc",
     "meta": {
       "number": "435",
       "name": "Brown Very Light",
@@ -4020,9 +3618,8 @@
     }
   },
   {
-    "label": "Brown Light (DMC 434)",
+    "name": "Brown Light (DMC 434)",
     "color": "#985e33",
-    "vendor": "dmc",
     "meta": {
       "number": "434",
       "name": "Brown Light",
@@ -4030,9 +3627,8 @@
     }
   },
   {
-    "label": "Brown Med (DMC 433)",
+    "name": "Brown Med (DMC 433)",
     "color": "#7a451f",
-    "vendor": "dmc",
     "meta": {
       "number": "433",
       "name": "Brown Med",
@@ -4040,9 +3636,8 @@
     }
   },
   {
-    "label": "Coffee Brown Dk (DMC 801)",
+    "name": "Coffee Brown Dk (DMC 801)",
     "color": "#653919",
-    "vendor": "dmc",
     "meta": {
       "number": "801",
       "name": "Coffee Brown Dk",
@@ -4050,9 +3645,8 @@
     }
   },
   {
-    "label": "Coffee Brown Vy Dk (DMC 898)",
+    "name": "Coffee Brown Vy Dk (DMC 898)",
     "color": "#492a13",
-    "vendor": "dmc",
     "meta": {
       "number": "898",
       "name": "Coffee Brown Vy Dk",
@@ -4060,9 +3654,8 @@
     }
   },
   {
-    "label": "Coffee Brown Ult Dk (DMC 938)",
+    "name": "Coffee Brown Ult Dk (DMC 938)",
     "color": "#361f0e",
-    "vendor": "dmc",
     "meta": {
       "number": "938",
       "name": "Coffee Brown Ult Dk",
@@ -4070,9 +3663,8 @@
     }
   },
   {
-    "label": "Black Brown (DMC 3371)",
+    "name": "Black Brown (DMC 3371)",
     "color": "#1e1108",
-    "vendor": "dmc",
     "meta": {
       "number": "3371",
       "name": "Black Brown",
@@ -4080,9 +3672,8 @@
     }
   },
   {
-    "label": "Beige Brown Ult Vy Lt (DMC 543)",
+    "name": "Beige Brown Ult Vy Lt (DMC 543)",
     "color": "#f2e3ce",
-    "vendor": "dmc",
     "meta": {
       "number": "543",
       "name": "Beige Brown Ult Vy Lt",
@@ -4090,9 +3681,8 @@
     }
   },
   {
-    "label": "Mocha Beige Light (DMC 3864)",
+    "name": "Mocha Beige Light (DMC 3864)",
     "color": "#cbb69c",
-    "vendor": "dmc",
     "meta": {
       "number": "3864",
       "name": "Mocha Beige Light",
@@ -4100,9 +3690,8 @@
     }
   },
   {
-    "label": "Mocha Beige Med (DMC 3863)",
+    "name": "Mocha Beige Med (DMC 3863)",
     "color": "#a4835c",
-    "vendor": "dmc",
     "meta": {
       "number": "3863",
       "name": "Mocha Beige Med",
@@ -4110,9 +3699,8 @@
     }
   },
   {
-    "label": "Mocha Beige Dark (DMC 3862)",
+    "name": "Mocha Beige Dark (DMC 3862)",
     "color": "#8a6e4e",
-    "vendor": "dmc",
     "meta": {
       "number": "3862",
       "name": "Mocha Beige Dark",
@@ -4120,9 +3708,8 @@
     }
   },
   {
-    "label": "Mocha Brown Vy Dk (DMC 3031)",
+    "name": "Mocha Brown Vy Dk (DMC 3031)",
     "color": "#4b3c2a",
-    "vendor": "dmc",
     "meta": {
       "number": "3031",
       "name": "Mocha Brown Vy Dk",
@@ -4130,9 +3717,8 @@
     }
   },
   {
-    "label": "Snow White (DMC B5200)",
+    "name": "Snow White (DMC B5200)",
     "color": "#ffffff",
-    "vendor": "dmc",
     "meta": {
       "number": "B5200",
       "name": "Snow White",
@@ -4140,9 +3726,8 @@
     }
   },
   {
-    "label": "White (DMC White)",
+    "name": "White (DMC White)",
     "color": "#fcfbf8",
-    "vendor": "dmc",
     "meta": {
       "number": "White",
       "name": "White",
@@ -4150,9 +3735,8 @@
     }
   },
   {
-    "label": "Winter White (DMC 3865)",
+    "name": "Winter White (DMC 3865)",
     "color": "#f9f7f1",
-    "vendor": "dmc",
     "meta": {
       "number": "3865",
       "name": "Winter White",
@@ -4160,9 +3744,8 @@
     }
   },
   {
-    "label": "Ecru (DMC Ecru)",
+    "name": "Ecru (DMC Ecru)",
     "color": "#f0eada",
-    "vendor": "dmc",
     "meta": {
       "number": "Ecru",
       "name": "Ecru",
@@ -4170,9 +3753,8 @@
     }
   },
   {
-    "label": "Beige Gray Light (DMC 822)",
+    "name": "Beige Gray Light (DMC 822)",
     "color": "#e7e2d3",
-    "vendor": "dmc",
     "meta": {
       "number": "822",
       "name": "Beige Gray Light",
@@ -4180,9 +3762,8 @@
     }
   },
   {
-    "label": "Beige Gray Med (DMC 644)",
+    "name": "Beige Gray Med (DMC 644)",
     "color": "#ddd8cb",
-    "vendor": "dmc",
     "meta": {
       "number": "644",
       "name": "Beige Gray Med",
@@ -4190,9 +3771,8 @@
     }
   },
   {
-    "label": "Beige Gray Dark (DMC 642)",
+    "name": "Beige Gray Dark (DMC 642)",
     "color": "#a49878",
-    "vendor": "dmc",
     "meta": {
       "number": "642",
       "name": "Beige Gray Dark",
@@ -4200,9 +3780,8 @@
     }
   },
   {
-    "label": "Beige Gray Vy Dk (DMC 640)",
+    "name": "Beige Gray Vy Dk (DMC 640)",
     "color": "#857b61",
-    "vendor": "dmc",
     "meta": {
       "number": "640",
       "name": "Beige Gray Vy Dk",
@@ -4210,9 +3789,8 @@
     }
   },
   {
-    "label": "Brown Gray Dark (DMC 3787)",
+    "name": "Brown Gray Dark (DMC 3787)",
     "color": "#625d50",
-    "vendor": "dmc",
     "meta": {
       "number": "3787",
       "name": "Brown Gray Dark",
@@ -4220,9 +3798,8 @@
     }
   },
   {
-    "label": "Brown Gray Vy Dk (DMC 3021)",
+    "name": "Brown Gray Vy Dk (DMC 3021)",
     "color": "#4f4b41",
-    "vendor": "dmc",
     "meta": {
       "number": "3021",
       "name": "Brown Gray Vy Dk",
@@ -4230,9 +3807,8 @@
     }
   },
   {
-    "label": "Brown Gray Vy Lt (DMC 3024)",
+    "name": "Brown Gray Vy Lt (DMC 3024)",
     "color": "#ebeae7",
-    "vendor": "dmc",
     "meta": {
       "number": "3024",
       "name": "Brown Gray Vy Lt",
@@ -4240,9 +3816,8 @@
     }
   },
   {
-    "label": "Brown Gray Light (DMC 3023)",
+    "name": "Brown Gray Light (DMC 3023)",
     "color": "#b1aa97",
-    "vendor": "dmc",
     "meta": {
       "number": "3023",
       "name": "Brown Gray Light",
@@ -4250,9 +3825,8 @@
     }
   },
   {
-    "label": "Brown Gray Med (DMC 3022)",
+    "name": "Brown Gray Med (DMC 3022)",
     "color": "#8e9078",
-    "vendor": "dmc",
     "meta": {
       "number": "3022",
       "name": "Brown Gray Med",
@@ -4260,9 +3834,8 @@
     }
   },
   {
-    "label": "Ash Gray Vy Lt (DMC 535)",
+    "name": "Ash Gray Vy Lt (DMC 535)",
     "color": "#636458",
-    "vendor": "dmc",
     "meta": {
       "number": "535",
       "name": "Ash Gray Vy Lt",
@@ -4270,9 +3843,8 @@
     }
   },
   {
-    "label": "Mocha Brown Vy Lt (DMC 3033)",
+    "name": "Mocha Brown Vy Lt (DMC 3033)",
     "color": "#e3d8cc",
-    "vendor": "dmc",
     "meta": {
       "number": "3033",
       "name": "Mocha Brown Vy Lt",
@@ -4280,9 +3852,8 @@
     }
   },
   {
-    "label": "Mocha Brown Lt (DMC 3782)",
+    "name": "Mocha Brown Lt (DMC 3782)",
     "color": "#d2bca6",
-    "vendor": "dmc",
     "meta": {
       "number": "3782",
       "name": "Mocha Brown Lt",
@@ -4290,9 +3861,8 @@
     }
   },
   {
-    "label": "Mocha Brown Med (DMC 3032)",
+    "name": "Mocha Brown Med (DMC 3032)",
     "color": "#b39f8b",
-    "vendor": "dmc",
     "meta": {
       "number": "3032",
       "name": "Mocha Brown Med",
@@ -4300,9 +3870,8 @@
     }
   },
   {
-    "label": "Beige Gray Ult Dk (DMC 3790)",
+    "name": "Beige Gray Ult Dk (DMC 3790)",
     "color": "#7f6a55",
-    "vendor": "dmc",
     "meta": {
       "number": "3790",
       "name": "Beige Gray Ult Dk",
@@ -4310,9 +3879,8 @@
     }
   },
   {
-    "label": "Mocha Brown Dk (DMC 3781)",
+    "name": "Mocha Brown Dk (DMC 3781)",
     "color": "#6b5743",
-    "vendor": "dmc",
     "meta": {
       "number": "3781",
       "name": "Mocha Brown Dk",
@@ -4320,9 +3888,8 @@
     }
   },
   {
-    "label": "Mocha Brn Ult Vy Lt (DMC 3866)",
+    "name": "Mocha Brn Ult Vy Lt (DMC 3866)",
     "color": "#faf6f0",
-    "vendor": "dmc",
     "meta": {
       "number": "3866",
       "name": "Mocha Brn Ult Vy Lt",
@@ -4330,9 +3897,8 @@
     }
   },
   {
-    "label": "Beige Brown Vy Lt (DMC 842)",
+    "name": "Beige Brown Vy Lt (DMC 842)",
     "color": "#d1baa1",
-    "vendor": "dmc",
     "meta": {
       "number": "842",
       "name": "Beige Brown Vy Lt",
@@ -4340,9 +3906,8 @@
     }
   },
   {
-    "label": "Beige Brown Lt (DMC 841)",
+    "name": "Beige Brown Lt (DMC 841)",
     "color": "#b69b7e",
-    "vendor": "dmc",
     "meta": {
       "number": "841",
       "name": "Beige Brown Lt",
@@ -4350,9 +3915,8 @@
     }
   },
   {
-    "label": "Beige Brown Med (DMC 840)",
+    "name": "Beige Brown Med (DMC 840)",
     "color": "#9a7c5c",
-    "vendor": "dmc",
     "meta": {
       "number": "840",
       "name": "Beige Brown Med",
@@ -4360,9 +3924,8 @@
     }
   },
   {
-    "label": "Beige Brown Dk (DMC 839)",
+    "name": "Beige Brown Dk (DMC 839)",
     "color": "#675541",
-    "vendor": "dmc",
     "meta": {
       "number": "839",
       "name": "Beige Brown Dk",
@@ -4370,9 +3933,8 @@
     }
   },
   {
-    "label": "Beige Brown Vy Dk (DMC 838)",
+    "name": "Beige Brown Vy Dk (DMC 838)",
     "color": "#594937",
-    "vendor": "dmc",
     "meta": {
       "number": "838",
       "name": "Beige Brown Vy Dk",
@@ -4380,9 +3942,8 @@
     }
   },
   {
-    "label": "Beaver Gray Vy Lt (DMC 3072)",
+    "name": "Beaver Gray Vy Lt (DMC 3072)",
     "color": "#e6e8e8",
-    "vendor": "dmc",
     "meta": {
       "number": "3072",
       "name": "Beaver Gray Vy Lt",
@@ -4390,9 +3951,8 @@
     }
   },
   {
-    "label": "Beaver Gray Lt (DMC 648)",
+    "name": "Beaver Gray Lt (DMC 648)",
     "color": "#bcb4ac",
-    "vendor": "dmc",
     "meta": {
       "number": "648",
       "name": "Beaver Gray Lt",
@@ -4400,9 +3960,8 @@
     }
   },
   {
-    "label": "Beaver Gray Med (DMC 647)",
+    "name": "Beaver Gray Med (DMC 647)",
     "color": "#b0a69c",
-    "vendor": "dmc",
     "meta": {
       "number": "647",
       "name": "Beaver Gray Med",
@@ -4410,9 +3969,8 @@
     }
   },
   {
-    "label": "Beaver Gray Dk (DMC 646)",
+    "name": "Beaver Gray Dk (DMC 646)",
     "color": "#877d73",
-    "vendor": "dmc",
     "meta": {
       "number": "646",
       "name": "Beaver Gray Dk",
@@ -4420,9 +3978,8 @@
     }
   },
   {
-    "label": "Beaver Gray Vy Dk (DMC 645)",
+    "name": "Beaver Gray Vy Dk (DMC 645)",
     "color": "#6e655c",
-    "vendor": "dmc",
     "meta": {
       "number": "645",
       "name": "Beaver Gray Vy Dk",
@@ -4430,9 +3987,8 @@
     }
   },
   {
-    "label": "Beaver Gray Ult Dk (DMC 844)",
+    "name": "Beaver Gray Ult Dk (DMC 844)",
     "color": "#484848",
-    "vendor": "dmc",
     "meta": {
       "number": "844",
       "name": "Beaver Gray Ult Dk",
@@ -4440,9 +3996,8 @@
     }
   },
   {
-    "label": "Pearl Gray Vy Lt (DMC 762)",
+    "name": "Pearl Gray Vy Lt (DMC 762)",
     "color": "#ececec",
-    "vendor": "dmc",
     "meta": {
       "number": "762",
       "name": "Pearl Gray Vy Lt",
@@ -4450,9 +4005,8 @@
     }
   },
   {
-    "label": "Pearl Gray (DMC 415)",
+    "name": "Pearl Gray (DMC 415)",
     "color": "#d3d3d6",
-    "vendor": "dmc",
     "meta": {
       "number": "415",
       "name": "Pearl Gray",
@@ -4460,9 +4014,8 @@
     }
   },
   {
-    "label": "Steel Gray Lt (DMC 318)",
+    "name": "Steel Gray Lt (DMC 318)",
     "color": "#ababab",
-    "vendor": "dmc",
     "meta": {
       "number": "318",
       "name": "Steel Gray Lt",
@@ -4470,9 +4023,8 @@
     }
   },
   {
-    "label": "Steel Gray Dk (DMC 414)",
+    "name": "Steel Gray Dk (DMC 414)",
     "color": "#8c8c8c",
-    "vendor": "dmc",
     "meta": {
       "number": "414",
       "name": "Steel Gray Dk",
@@ -4480,9 +4032,8 @@
     }
   },
   {
-    "label": "Pewter Very Light (DMC 168)",
+    "name": "Pewter Very Light (DMC 168)",
     "color": "#d1d1d1",
-    "vendor": "dmc",
     "meta": {
       "number": "168",
       "name": "Pewter Very Light",
@@ -4490,9 +4041,8 @@
     }
   },
   {
-    "label": "Pewter Light (DMC 169)",
+    "name": "Pewter Light (DMC 169)",
     "color": "#848484",
-    "vendor": "dmc",
     "meta": {
       "number": "169",
       "name": "Pewter Light",
@@ -4500,9 +4050,8 @@
     }
   },
   {
-    "label": "Pewter Gray (DMC 317)",
+    "name": "Pewter Gray (DMC 317)",
     "color": "#6c6c6c",
-    "vendor": "dmc",
     "meta": {
       "number": "317",
       "name": "Pewter Gray",
@@ -4510,9 +4059,8 @@
     }
   },
   {
-    "label": "Pewter Gray Dark (DMC 413)",
+    "name": "Pewter Gray Dark (DMC 413)",
     "color": "#565656",
-    "vendor": "dmc",
     "meta": {
       "number": "413",
       "name": "Pewter Gray Dark",
@@ -4520,9 +4068,8 @@
     }
   },
   {
-    "label": "Pewter Gray Vy Dk (DMC 3799)",
+    "name": "Pewter Gray Vy Dk (DMC 3799)",
     "color": "#424242",
-    "vendor": "dmc",
     "meta": {
       "number": "3799",
       "name": "Pewter Gray Vy Dk",
@@ -4530,9 +4077,8 @@
     }
   },
   {
-    "label": "Black (DMC 310)",
+    "name": "Black (DMC 310)",
     "color": "#000000",
-    "vendor": "dmc",
     "meta": {
       "number": "310",
       "name": "Black",

@@ -8,22 +8,23 @@ import {
 	useCoverGeneratorContext,
 } from './CoverGeneratorContext';
 import { Stepper } from './Stepper';
-import { COVER_GENERATOR_STEPS, COVER_GENERATOR_STEPS_ORDER } from './config';
+import { CoverGeneratorSteps, CoverGeneratorStepOrder } from './CoverGeneratorSteps';
 import { useDisclosure } from '@/lib/hooks/useDisclosure';
+import { RendererProvider } from '@/components/context/RendererContext';
 
 export const CoverGeneratorDialogContent = () => {
 	const {
 		stepper: { step, setStep },
 	} = useCoverGeneratorContext();
-	const { component: StepComponent } = COVER_GENERATOR_STEPS[step];
+	const { component: StepComponent } = CoverGeneratorSteps[step];
 	return (
 		<DialogContent className="flex max-w-5xl p-0 gap-0">
 			<div className="flex col-span-2 bg-muted p-6 rounded-md rounded-r-none">
 				<Stepper
 					onStepClick={(key) => setStep(key)}
 					value={step}
-					steps={COVER_GENERATOR_STEPS_ORDER.map((key) => {
-						const config = COVER_GENERATOR_STEPS[key];
+					steps={CoverGeneratorStepOrder.map((key) => {
+						const config = CoverGeneratorSteps[key];
 						return {
 							key: config.key,
 							title: config.title,
@@ -50,12 +51,10 @@ export const CoverGeneratorDialog = () => {
 					<span>{'Cover generator'}</span>
 				</Button>
 			</DialogTrigger>
-			<CoverGeneratorProvider
-				product={product}
-				pattern={pattern}
-				onClose={close}
-			>
-				<CoverGeneratorDialogContent />
+			<CoverGeneratorProvider product={product} onClose={close}>
+				<RendererProvider>
+					<CoverGeneratorDialogContent />
+				</RendererProvider>
 			</CoverGeneratorProvider>
 		</Dialog>
 	);
