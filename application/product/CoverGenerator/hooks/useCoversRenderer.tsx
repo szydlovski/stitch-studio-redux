@@ -2,7 +2,7 @@
 import { useRendererContext } from '@/components/context/RendererContext';
 import isEqual from 'lodash.isequal';
 import { useCallback, useEffect, useState } from 'react';
-import { STITCHFAIRYCO_COVER_TEMPLATE_CONFIG } from '../COVER_TEMPLATES';
+import { StitchFairyCoCover } from '@/brand/StitchFairyCo';
 import { useCoverGeneratorContext } from '../CoverGeneratorContext';
 import { CoverGeneratorActions, CoverRenderState } from '../reducer';
 
@@ -20,7 +20,7 @@ export const useCoversRenderer = () => {
 		const configChanged = !isEqual(state.coverConfig, state.lastCoverConfig);
 		if (!configChanged) return;
 		setRendersLoading(true);
-		STITCHFAIRYCO_COVER_TEMPLATE_CONFIG.renderCovers({
+		StitchFairyCoCover.renderCovers({
 			pattern: product.pattern,
 			config: state.coverConfig,
 			context: rendererContext,

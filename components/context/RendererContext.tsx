@@ -13,7 +13,7 @@ import {
 	pinterest1Template,
 	squareCoverTemplate,
 	wideCoverTemplate,
-} from '@/lib/template/templates';
+} from '@/brand/StitchFairyCo/cover/templates';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 export interface RendererContextType {

@@ -1,4 +1,3 @@
-import { DataSet } from '../components/DataSet';
 import { Page } from '../components/Page';
 import { PdfPageProps } from '../types';
 

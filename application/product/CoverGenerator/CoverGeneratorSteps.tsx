@@ -8,7 +8,7 @@ import {
 	DialogTitle,
 } from '@/components/ui/dialog';
 import { useCallback } from 'react';
-import { STITCHFAIRYCO_COVER_TEMPLATE_CONFIG } from './COVER_TEMPLATES';
+import { StitchFairyCoCover } from '@/brand/StitchFairyCo';
 import { useCoverGeneratorContext } from './CoverGeneratorContext';
 import { CoverConfig } from './coverConfigReducer';
 import { CoverGeneratorActions } from './reducer';
@@ -52,7 +52,7 @@ export const CoverGeneratorSteps: Record<
 						pattern={pattern}
 						initialState={coverConfig}
 						onChange={handleCoverConfigChange}
-						template={STITCHFAIRYCO_COVER_TEMPLATE_CONFIG}
+						template={StitchFairyCoCover}
 					/>
 					<DialogFooter className="mt-6 flex">
 						<Button type="submit" disabled={!hasNext} onClick={nextStep}>

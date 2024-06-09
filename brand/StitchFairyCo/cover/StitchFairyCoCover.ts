@@ -9,11 +9,11 @@ import {
 	pinterest1Template,
 	squareCoverTemplate,
 	wideCoverTemplate,
-} from '@/lib/template/templates';
+} from './templates';
 import {
 	CustomizableCoverTemplate,
 	RenderCoverProps,
-} from '../CoverCustomizer/types';
+} from '@/application/product/CoverCustomizer/types';
 
 const targetDim = { width: 877, height: 941 };
 
@@ -24,34 +24,34 @@ const renderStitchFairyCommons = ({
 }: RenderCoverProps) => {
 	const { colors, scale } = config;
 	const side = Math.max(pattern.width, pattern.height);
-	const embroideryMockup = crossStitchRenderer.renderEmbroideryOnFabricMockup(
-		pattern,
-		5,
-		{
-			top: side,
-			bottom: side,
-			left: side,
-			right: side,
-		},
-		colors.background
-	);
-	const render = templateRenderer.renderTemplate.bind(templateRenderer);
-
-	const croppedEmbroidery = createCanvas(targetDim, (ctx) => {
+	
+	const embroideryMockup = createCanvas(targetDim, (ctx) => {
 		const renderScale = 1 + scale * 2;
 		const width = targetDim.width * renderScale;
 		const height = targetDim.height * renderScale;
 		ctx.drawImage(
-			embroideryMockup,
+			crossStitchRenderer.renderEmbroideryOnFabricMockup(
+				pattern,
+				5,
+				{
+					top: side,
+					bottom: side,
+					left: side,
+					right: side,
+				},
+				colors.background
+			),
 			-width / 2 + targetDim.width / 2 + (config.xOffset / 1000) * width,
 			-height / 2 + targetDim.height / 2 + (config.yOffset / 1000) * height,
 			width,
 			height
 		);
-	});
+	})
+
+	const render = templateRenderer.renderTemplate.bind(templateRenderer);
 
 	const loopMockup = render(loopMockupTemplate, {
-		patternRender: croppedEmbroidery,
+		patternRender: embroideryMockup,
 	});
 
 	const flossMockup = render(flossMockupTemplate, {
@@ -69,7 +69,7 @@ const renderStitchFairyCommons = ({
 	return { embroideryMockup, loopMockup, flossMockup, fabricMockup };
 };
 
-export const STITCHFAIRYCO_COVER_TEMPLATE_CONFIG: CustomizableCoverTemplate = {
+export const StitchFairyCoCover: CustomizableCoverTemplate = {
 	name: 'StitchFairyCo',
 	renderPreview: (props: RenderCoverProps, ctx: CanvasRenderingContext2D) => {
 		const { templateRenderer } = props.context;
