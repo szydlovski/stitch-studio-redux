@@ -1,6 +1,5 @@
 import { DashboardLayout } from '@/components/layout/dashboard/DashboardLayout';
-import { SingleProductContent } from './content';
-import { ProductContextProvider } from '@/components/context/ProductContext';
+import { ProductView } from './view';
 
 export default function ProductPage({
 	params: { productId },
@@ -9,16 +8,7 @@ export default function ProductPage({
 }) {
 	return (
 		<DashboardLayout>
-			<ProductContextProvider
-				productId={productId}
-				loadingContent={
-					<div className="w-full h-full flex justify-center items-center">
-						Loading product...
-					</div>
-				}
-			>
-				<SingleProductContent />
-			</ProductContextProvider>
+			<ProductView productId={productId} />
 		</DashboardLayout>
 	);
 }
