@@ -18,3 +18,8 @@ export interface PaddingOptions {
 	xOffset: number;
 	yOffset: number;
 }
+
+export interface RenderedProductImage {
+	canvas: HTMLCanvasElement;
+	key: string;
+}

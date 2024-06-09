@@ -1,15 +1,15 @@
 import { createCanvas, maskCanvas, repeatTile } from '../canvas';
 import { resolvePaddingOpts } from './helpers';
-import { Pattern } from './pattern';
+import { CrossStitchPattern } from './CrossStitchPattern';
 import {
 	StylizedPatternTextureDictionary,
 	StylizedPatternLayers,
 	PaddingOpts,
 } from './types';
 
-export class PatternRenderer {
+export class CrossStitchRenderer {
 	constructor(private textures: StylizedPatternTextureDictionary) {}
-	renderFlat(pattern: Pattern, scale: number): HTMLCanvasElement {
+	renderFlat(pattern: CrossStitchPattern, scale: number): HTMLCanvasElement {
 		const targetWidth = pattern.width * scale;
 		const targetHeight = pattern.height * scale;
 		return createCanvas([targetWidth, targetHeight], (ctx) => {
@@ -22,7 +22,7 @@ export class PatternRenderer {
 		});
 	}
 	public renderEmbroideryMockup(
-		pattern: Pattern,
+		pattern: CrossStitchPattern,
 		scale: number
 	): HTMLCanvasElement {
 		const targetWidth = pattern.width * scale;
@@ -63,7 +63,7 @@ export class PatternRenderer {
 		});
 	}
 	public renderEmbroideryOnFabricMockup(
-		pattern: Pattern,
+		pattern: CrossStitchPattern,
 		scale: number,
 		paddingOptions: PaddingOpts = 0,
 		fabricColor: string = '#fef'

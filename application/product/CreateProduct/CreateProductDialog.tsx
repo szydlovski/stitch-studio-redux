@@ -14,22 +14,20 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
 import { selectFile } from '@/lib';
-import { PatternRenderer } from '@/lib/pattern/PatternRenderer';
-import { loadStitchTextureDictionary } from '@/lib/pattern/helpers';
-import { Pattern } from '@/lib/pattern/pattern';
+import { CrossStitchPattern, CrossStitchRenderer, loadStitchTextureDictionary } from '@/lib/cross-stitch';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { ReactNode, useCallback, useState } from 'react';
 
 export interface FilePatternPayload {
-	pattern: Pattern;
+	pattern: CrossStitchPattern;
 	src: string;
 	filename: string;
 }
 
 const formatPayload = async (file: File): Promise<FilePatternPayload> => {
-	const pattern = await Pattern.fromFile(file);
+	const pattern = await CrossStitchPattern.fromFile(file);
 	const textures = await loadStitchTextureDictionary();
-	const renderer = new PatternRenderer(textures);
+	const renderer = new CrossStitchRenderer(textures);
 	const img = renderer.renderEmbroideryMockup(pattern, 4);
 	const dataUrl = img.toDataURL();
 
@@ -81,7 +79,6 @@ export const CreateProductDialogContent = ({
 			thumbnail: dataUrlToXataBase64(state.src),
 			data: JSON.stringify(state.pattern.toData()),
 		});
-		console.log(product);
 
 		await queryClient.invalidateQueries({ queryKey: ['listProducts'] });
 		onSuccess?.();

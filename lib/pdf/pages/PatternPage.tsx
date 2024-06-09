@@ -1,47 +1,137 @@
+import { RGBTuple } from '@/lib/cross-stitch';
 import { Page } from '../components/Page';
 import { PdfPageProps } from '../types';
 
-export const PatternPage = ({ pattern }: PdfPageProps) => (
-	<Page>
-		<div className="pattern-page-container">
-			<div className="pattern-footer">
-				<img className="pattern-footer-logo" src="/logo_3x.png" />
+const symbolDictionary =
+	'/❤１✖○２★▼３◐☁４●◪５♡✽６◆♛７V◭８\\◉９✚!◼$ʌ◧⬟✦ABCDEFGHIJKLMNOPQRSTUWXYZ';
+
+const hexToRgb = (hex: string): RGBTuple => {
+	const [r, g, b] = hex
+		.replace(/^#/, '')
+		.match(/.{1,2}/g)!
+		.map((comp) => parseInt(comp, 16));
+	return [r, g, b];
+};
+
+const getContrastColor = (color: RGBTuple) => {
+	const [r, g, b] = color;
+	const value = r * 0.299 + g * 0.587 + b * 0.114;
+	return value > 200 ? '#000000' : '#ffffff';
+};
+
+const GRID_WIDTH = 60;
+const GRID_HEIGHT = 80;
+
+export const SinglePatternPage = ({
+	index,
+	product: { pattern },
+	xOffset = 0,
+	yOffset = 0,
+}: PdfPageProps & { index: number; xOffset?: number; yOffset?: number }) => {
+	return (
+		<Page>
+			<div className="pattern-page-container">
+				<div className="pattern-footer">
+					<img className="pattern-footer-logo" src="/logo_3x.png" />
+				</div>
+				<table className="pattern-table">
+					{Array(80)
+						.fill(0)
+						.map((_, row) => {
+							return (
+								<tr key={row}>
+									{Array(60)
+										.fill(0)
+										.map((_, column) => {
+											const colorGroup = pattern.getColorGroup(
+												xOffset + column,
+												yOffset + row
+											);
+											return (
+												<td
+													key={column}
+													style={
+														{
+															'--c': colorGroup?.hex,
+															'--t':
+																colorGroup &&
+																getContrastColor(hexToRgb(colorGroup.hex)),
+														} as any
+													}
+												>
+													{colorGroup && (
+														<a>
+															{
+																symbolDictionary[
+																	pattern.getGroupIndex(colorGroup)
+																]
+															}
+														</a>
+													)}
+													<GridNumber
+														row={row}
+														column={column}
+														maxRow={80}
+														maxColumn={60}
+													/>
+												</td>
+											);
+										})}
+								</tr>
+							);
+						})}
+				</table>
 			</div>
-			<table className="pattern-table">
-				{Array(80)
-					.fill(0)
-					.map((_, row) => {
-						return (
-							<tr key={row}>
-								{Array(60)
-									.fill(0)
-									.map((_, column) => {
-										return (
-											<td
-												key={column}
-												style={
-													{
-														'--c': pattern.getPixelColor(column, row),
-													} as any
-												}
-											>
-												❤
-												<GridNumber
-													row={row}
-													column={column}
-													maxRow={80}
-													maxColumn={60}
-												/>
-											</td>
-										);
-									})}
-							</tr>
-						);
-					})}
-			</table>
-		</div>
-	</Page>
-);
+		</Page>
+	);
+};
+
+interface PatternPagesOptions {
+	align: PatternAlignment;
+}
+
+interface PatternPagesProps extends PdfPageProps {
+	options?: PatternPagesOptions;
+}
+
+export const PatternPages = ({
+	product,
+	options = { align: 'top-left' },
+}: PatternPagesProps) => {
+	const { width, height } = product.pattern;
+	const pageCols = Math.ceil(width / GRID_WIDTH);
+	const pageRows = Math.ceil(height / GRID_HEIGHT);
+	const [xOffset, yOffset] =
+		options.align === 'center'
+			? [
+					-Math.round((GRID_WIDTH * pageCols - width) / 2),
+					-Math.round((GRID_HEIGHT * pageRows - height) / 2),
+			  ]
+			: [0, 0];
+
+	const pageCount = pageCols * pageRows;
+	return (
+		<>
+			{Array(pageRows)
+				.fill(0)
+				.map((_, row) =>
+					Array(pageCols)
+						.fill(0)
+						.map((_, col) => (
+							<SinglePatternPage
+								key={`${col}-${row}`}
+								index={col * pageRows + row}
+								product={product}
+								xOffset={xOffset + col * GRID_WIDTH}
+								yOffset={yOffset + row * GRID_HEIGHT}
+							/>
+						))
+				)}
+		</>
+	);
+};
+
+type PatternAlignment = 'center' | 'top-left';
 
 export const GridNumber = ({
 	row,

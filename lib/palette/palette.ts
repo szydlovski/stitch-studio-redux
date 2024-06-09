@@ -2,14 +2,20 @@ export enum PaletteUrls {
 	DMC = '/palettes/dmc.json',
 }
 
-export interface PaletteColor {
-	label: string;
+export interface DMCMeta {
+	number: string;
+	name: string;
+	row: string;
+}
+
+export interface PaletteColor<Meta = Record<string, string>> {
+	name: string;
 	color: string;
-	vendor: string;
-	meta: Record<string, string>;
+	meta: Meta;
 }
 
 export interface PaletteManifest {
+	name: string;
 	colors: PaletteColor[];
 }
 

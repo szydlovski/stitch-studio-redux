@@ -39,15 +39,15 @@ export const ProductCard = () => {
 					<DataSet label="Colors">{pattern.colorCount}</DataSet>
 					<DataSet label="Palette">
 						<div className="flex gap-1">
-							{pattern.groups.map(({ hex }) => (
-								<Tooltip>
+							{pattern.groups.map(({ hex }, i) => (
+								<Tooltip key={i}>
 									<TooltipTrigger asChild>
 										<div
 											className="h-6 w-6 rounded-sm border"
 											style={{ backgroundColor: hex }}
 										/>
 									</TooltipTrigger>
-									<TooltipContent side='bottom'>{hex}</TooltipContent>
+									<TooltipContent side="bottom">{hex}</TooltipContent>
 								</Tooltip>
 							))}
 						</div>

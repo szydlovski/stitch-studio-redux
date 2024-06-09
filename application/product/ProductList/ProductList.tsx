@@ -10,7 +10,6 @@ export const ProductList = () => {
 		queryKey: ['listProducts'],
 		queryFn: () => new ProductApiClient().list(),
 	});
-	console.log('products', data, status);
 	
 	return status === 'error' ? (
 		<div className="py-6">

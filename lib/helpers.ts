@@ -1,5 +1,5 @@
-import { Pattern } from './pattern/pattern';
-import { Padding } from './pattern/types';
+import { CrossStitchPattern } from './cross-stitch/CrossStitchPattern';
+import { Padding } from './cross-stitch/types';
 
 export const readImageFileAsDataURL = (file: Blob): Promise<string> =>
 	new Promise((resolve, reject) => {
@@ -28,7 +28,7 @@ export const canvasToBlob = (canvas: HTMLCanvasElement): Promise<Blob> =>
 		canvas.toBlob((blob) => (blob === null ? reject() : resolve(blob)))
 	);
 
-export const getSquarePadding = (pattern: Pattern, scale = 0.1): Padding => {
+export const getSquarePadding = (pattern: CrossStitchPattern, scale = 0.1): Padding => {
 	const size = Math.round(
 		Math.max(pattern.width, pattern.height) * (1 + scale)
 	);

@@ -24,6 +24,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@reduxjs/toolkit": "^2.2.5",
+    "@serwist/next": "^9.0.2",
     "@tanstack/react-query": "^5.40.0",
     "@types/lodash.isequal": "^4.5.8",
     "@xata.io/client": "^0.29.5",
@@ -54,6 +55,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
+    "serwist": "^9.0.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
