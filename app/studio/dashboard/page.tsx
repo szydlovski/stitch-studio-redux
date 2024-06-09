@@ -11,7 +11,6 @@ import {
 } from '@/components/ui';
 import { StatsCard } from '@/components/StatsCard';
 import { DashboardViewLayout } from '@/components/DashboardViewLayout';
-import { WorkerExample } from './WorkerExample';
 
 interface ChangelogEntry {
 	version: string;
@@ -57,7 +56,6 @@ export default function Home() {
 					{'Development Updates'}
 				</h1>
 				<div className="grid gap-4">
-					<WorkerExample />
 					{CHANGELOG.map((entry) => (
 						<Card key={entry.version}>
 							<CardHeader>
