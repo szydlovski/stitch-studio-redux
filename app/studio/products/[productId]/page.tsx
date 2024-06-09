@@ -14,7 +14,7 @@ export default function ProductPage({
 				productId={productId}
 				loadingContent={
 					<div className="w-full h-full flex justify-center items-center">
-						<Loader />
+						Loading product...
 					</div>
 				}
 			>
