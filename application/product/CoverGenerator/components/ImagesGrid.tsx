@@ -1,7 +1,7 @@
 'use client';
-import { Checkbox } from '@/components/ui/checkbox';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Checkbox } from '@/presentation/components/ui/checkbox';
+import { ScrollArea } from '@/presentation/components/ui/scroll-area';
+import { Skeleton } from '@/presentation/components/ui/skeleton';
 import { cn } from '@/lib';
 import { CheckIcon } from 'lucide-react';
 

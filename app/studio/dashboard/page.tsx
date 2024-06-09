@@ -8,9 +8,9 @@ import {
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui';
-import { StatsCard } from '@/components/StatsCard';
-import { DashboardViewLayout } from '@/components/DashboardViewLayout';
+} from '@/presentation/components/ui';
+import { StatsCard } from '@/presentation/components/StatsCard';
+import { DashboardViewLayout } from '@/presentation/components/DashboardViewLayout';
 
 interface ChangelogEntry {
 	version: string;

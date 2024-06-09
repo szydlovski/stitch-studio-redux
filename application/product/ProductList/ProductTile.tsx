@@ -5,8 +5,8 @@ import {
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui';
-import { Skeleton } from '@/components/ui/skeleton';
+} from '@/presentation/components/ui';
+import { Skeleton } from '@/presentation/components/ui/skeleton';
 import { ProductItem } from '@/domain/product/ProductItem';
 import Image from 'next/image';
 import Link from 'next/link';

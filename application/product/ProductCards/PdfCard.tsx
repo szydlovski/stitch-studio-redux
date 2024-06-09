@@ -1,12 +1,12 @@
 'use client';
-import { useProductContext } from '@/components/context/ProductContext';
+import { useProductContext } from '@/presentation/components/context/ProductContext';
 import {
 	Button,
 	Card,
 	CardContent,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui';
+} from '@/presentation/components/ui';
 import { useDisclosure } from '@/lib/hooks/useDisclosure';
 import { BookOpenTextIcon, ExternalLinkIcon } from 'lucide-react';
 import Link from 'next/link';

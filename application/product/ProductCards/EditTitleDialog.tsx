@@ -1,9 +1,9 @@
 'use client';
-import { useProductContext } from '@/components/context/ProductContext';
+import { useProductContext } from '@/presentation/components/context/ProductContext';
 import {
 	Button,
 	Input
-} from '@/components/ui';
+} from '@/presentation/components/ui';
 import {
 	Dialog,
 	DialogContent,
@@ -11,7 +11,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger
-} from '@/components/ui/dialog';
+} from '@/presentation/components/ui/dialog';
 import { useDisclosure } from '@/lib/hooks/useDisclosure';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { PencilIcon } from 'lucide-react';

@@ -1,10 +1,10 @@
 import { SinglePageLayout } from '@/presentation/layout';
-import { UserPageContent } from './UserPageContent';
+import { UserSettingsView } from '@/presentation/views';
 
 export default function UserPage() {
 	return (
 		<SinglePageLayout header={'User Settings'}>
-			<UserPageContent />
+			<UserSettingsView />
 		</SinglePageLayout>
 	);
 }

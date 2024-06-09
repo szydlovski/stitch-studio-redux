@@ -5,7 +5,7 @@ import {
 	TableHead,
 	TableHeader,
 	TableRow,
-} from '@/components/ui/table';
+} from '@/presentation/components/ui/table';
 import { FC, ReactNode } from 'react';
 
 interface ColumnConfig<T> {

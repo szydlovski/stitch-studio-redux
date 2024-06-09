@@ -1,4 +1,4 @@
-import { useRendererContext } from '@/components/context/RendererContext';
+import { useRendererContext } from '@/presentation/components/context/RendererContext';
 import { CrossStitchPattern } from '@/lib/cross-stitch';
 import debounce from 'lodash.debounce';
 import { RefObject, useEffect, useMemo } from 'react';

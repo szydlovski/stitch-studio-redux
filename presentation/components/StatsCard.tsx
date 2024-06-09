@@ -8,7 +8,7 @@ import {
 	CardHeader,
 	CardTitle,
 	Progress,
-} from '@/components/ui';
+} from '@/presentation/components/ui';
 
 export interface StatsCardProps {
 	description: string;

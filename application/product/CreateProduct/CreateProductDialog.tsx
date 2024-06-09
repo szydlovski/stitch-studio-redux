@@ -1,6 +1,6 @@
 'use client';
-import { DataSet } from '@/components/DataSet';
-import { Button } from '@/components/ui/button';
+import { DataSet } from '@/presentation/components/DataSet';
+import { Button } from '@/presentation/components/ui/button';
 import {
 	Dialog,
 	DialogContent,
@@ -9,9 +9,9 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+} from '@/presentation/components/ui/dialog';
+import { Input } from '@/presentation/components/ui/input';
+import { Label } from '@/presentation/components/ui/label';
 import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
 import { selectFile } from '@/lib';
 import { CrossStitchPattern, CrossStitchRenderer, loadStitchTextureDictionary } from '@/lib/cross-stitch';

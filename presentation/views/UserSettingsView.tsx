@@ -9,11 +9,11 @@ import {
 	CardHeader,
 	CardTitle,
 	Input,
-} from '@/components/ui';
+} from '@/presentation/components/ui';
 import { cn } from '@/lib';
 import Link from 'next/link';
 import { FC, ReactNode, useState } from 'react';
-import { ProfileCard } from '../../../components/UserCards/ProfileCard';
+import { ProfileCard } from '@/presentation/components/UserCards/ProfileCard';
 
 enum UserPreferencesTab {
 	Profile = 'profile',
@@ -66,7 +66,7 @@ const USER_PREFERENCES_TABS: Record<
 	},
 };
 
-export const UserPageContent = () => {
+export const UserSettingsView = () => {
 	const [activeTab, setActiveTab] = useState<UserPreferencesTab>(
 		UserPreferencesTab.Profile
 	);

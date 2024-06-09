@@ -1,4 +1,4 @@
-import { LoginScreen } from '@/components/auth/LoginScreen';
+import { LoginScreen } from '@/presentation/components/auth/LoginScreen';
 import { auth } from '@/app/auth';
 import { redirect } from 'next/navigation';
 

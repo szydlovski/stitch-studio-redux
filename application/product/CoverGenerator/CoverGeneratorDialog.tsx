@@ -1,8 +1,8 @@
 'use client';
-import { Button } from '@/components/ui';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/presentation/components/ui';
+import { Dialog, DialogContent, DialogTrigger } from '@/presentation/components/ui/dialog';
 import { WandSparklesIcon } from 'lucide-react';
-import { useProductContext } from '@/components/context/ProductContext';
+import { useProductContext } from '@/presentation/components/context/ProductContext';
 import {
 	CoverGeneratorProvider,
 	useCoverGeneratorContext,
@@ -10,7 +10,7 @@ import {
 import { Stepper } from './Stepper';
 import { CoverGeneratorSteps, CoverGeneratorStepOrder } from './CoverGeneratorSteps';
 import { useDisclosure } from '@/lib/hooks/useDisclosure';
-import { RendererProvider } from '@/components/context/RendererContext';
+import { RendererProvider } from '@/presentation/components/context/RendererContext';
 
 export const CoverGeneratorDialogContent = () => {
 	const {

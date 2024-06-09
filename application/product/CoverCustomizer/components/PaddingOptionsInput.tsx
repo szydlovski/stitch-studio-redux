@@ -1,6 +1,6 @@
-import { Button, Input } from '@/components/ui';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
+import { Button, Input } from '@/presentation/components/ui';
+import { Label } from '@/presentation/components/ui/label';
+import { Slider } from '@/presentation/components/ui/slider';
 import { MinusIcon, PlusIcon } from 'lucide-react';
 import { PaddingOptions } from '../../CoverGenerator/types';
 

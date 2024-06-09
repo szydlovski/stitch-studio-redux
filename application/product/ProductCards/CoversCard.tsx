@@ -6,16 +6,16 @@ import {
 	CardContent,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui';
+} from '@/presentation/components/ui';
 import {
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
-} from '@/components/ui/popover';
+} from '@/presentation/components/ui/popover';
 import { useDisclosure } from '@/lib/hooks/useDisclosure';
 import { useQuery } from '@tanstack/react-query';
 import { HexColorPicker } from 'react-colorful';
-import { useProductContext } from '@/components/context/ProductContext';
+import { useProductContext } from '@/presentation/components/context/ProductContext';
 
 export const CoverColorPicker = ({
 	color,

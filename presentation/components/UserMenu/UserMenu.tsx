@@ -1,7 +1,7 @@
 'use client';
 import { CircleUser } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/presentation/components/ui/button';
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -9,8 +9,8 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+} from '@/presentation/components/ui/dropdown-menu';
+import { Avatar, AvatarFallback, AvatarImage } from '@/presentation/components/ui/avatar';
 import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';

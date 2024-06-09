@@ -9,8 +9,8 @@ import {
 	CardHeader,
 	CardTitle,
 	Input,
-} from '@/components/ui';
-import { Label } from '@/components/ui/label';
+} from '@/presentation/components/ui';
+import { Label } from '@/presentation/components/ui/label';
 import { useSession } from 'next-auth/react';
 
 export const ProfileCard = () => {

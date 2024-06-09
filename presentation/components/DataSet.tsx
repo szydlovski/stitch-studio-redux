@@ -1,4 +1,4 @@
-import { Label } from '@/components/ui/label';
+import { Label } from '@/presentation/components/ui/label';
 import { cn } from '@/lib';
 import { ReactNode } from 'react';
 

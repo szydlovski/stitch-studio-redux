@@ -1,4 +1,4 @@
-import { DashboardViewLayout } from '@/components/DashboardViewLayout';
+import { DashboardViewLayout } from '@/presentation/components/DashboardViewLayout';
 import { DashboardLayout } from '@/presentation/layout';
 
 export default function PalettesPage() {

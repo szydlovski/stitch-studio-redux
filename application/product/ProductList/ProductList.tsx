@@ -1,5 +1,5 @@
 'use client';
-import { ErrorAlert } from '@/components/ErrorAlert';
+import { ErrorAlert } from '@/presentation/components/ErrorAlert';
 import { ProductTile, ProductTileSkeleton } from './ProductTile';
 import { ProductItem } from '@/domain/product/ProductItem';
 import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';

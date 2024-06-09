@@ -1,4 +1,4 @@
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollArea } from '@/presentation/components/ui/scroll-area';
 import { HexColorPicker } from 'react-colorful';
 
 export const ColorPicker = ({

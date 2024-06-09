@@ -1,14 +1,14 @@
 'use client';
-import { DataSet } from '@/components/DataSet';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
-import { useProductContext } from '@/components/context/ProductContext';
+import { DataSet } from '@/presentation/components/DataSet';
+import { Card, CardContent, CardHeader, CardTitle } from '@/presentation/components/ui';
+import { useProductContext } from '@/presentation/components/context/ProductContext';
 import { EditTitleDialog } from './EditTitleDialog';
 import Image from 'next/image';
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from '@/presentation/components/ui/tooltip';
 
 export const ProductCard = () => {
 	const { product, pattern } = useProductContext();

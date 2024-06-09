@@ -1,5 +1,5 @@
 'use client';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Alert, AlertDescription, AlertTitle } from '@/presentation/components/ui/alert';
 import { CircleAlertIcon } from 'lucide-react';
 
 export const ErrorAlert = ({

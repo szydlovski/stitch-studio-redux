@@ -4,7 +4,7 @@ import {
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui';
+} from '@/presentation/components/ui';
 import { cn } from '@/lib';
 import { CircleXIcon, LucideProps } from 'lucide-react';
 import { FC, ReactNode } from 'react';

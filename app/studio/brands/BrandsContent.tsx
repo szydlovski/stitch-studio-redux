@@ -1,8 +1,8 @@
 import { MoreHorizontal } from 'lucide-react';
 
 import { ListBrandRecord } from './listBrands';
-import { DataTable } from '@/components/DataTable';
-import { Button } from '@/components/ui/button';
+import { DataTable } from '@/presentation/components/DataTable';
+import { Button } from '@/presentation/components/ui/button';
 import {
 	Card,
 	CardContent,
@@ -10,14 +10,14 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui/card';
+} from '@/presentation/components/ui/card';
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuLabel,
 	DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '@/presentation/components/ui/dropdown-menu';
 import Image from 'next/image';
 
 export const BrandsContent = ({ brands }: { brands: ListBrandRecord[] }) => {

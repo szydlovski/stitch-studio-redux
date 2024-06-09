@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui';
+import { Button } from '@/presentation/components/ui';
 import { CreateProductDialog } from '@/application/product/CreateProduct/CreateProductDialog';
 import { ProductList } from '@/application/product/ProductList/ProductList';
 import { WandSparklesIcon } from 'lucide-react';
 
-export const ListProductsContent = () => {
+export const ProductListView = () => {
 	return (
 		<div className="p-6 bg-muted/40 h-full">
 			<div className="flex">

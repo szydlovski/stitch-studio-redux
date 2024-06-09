@@ -6,16 +6,16 @@ import {
 	BreadcrumbList,
 	BreadcrumbPage,
 	BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from '@/presentation/components/ui/breadcrumb';
 import {
 	ProductContextProvider,
 	useProductContext,
-} from '@/components/context/ProductContext';
+} from '@/presentation/components/context/ProductContext';
 import { CoversCard } from '@/application/product/ProductCards/CoversCard';
 import { DangerZoneCard } from '@/application/product/ProductCards/DangerZoneCard';
 import { ProductCard } from '@/application/product/ProductCards/ProductCard';
 import { PdfCard } from '@/application/product/ProductCards/PdfCard';
-import { Loader } from '@/components/Spinner';
+import { Loader } from '@/presentation/components/Spinner';
 
 const ProductViewContent = () => {
 	const { product } = useProductContext();

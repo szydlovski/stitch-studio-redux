@@ -1,10 +1,10 @@
 'use client';
 
-import { UserMenu } from '@/components/UserMenu/UserMenu';
+import { UserMenu } from '@/presentation/components/UserMenu/UserMenu';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 
-import { Button } from '@/components/ui';
+import { Button } from '@/presentation/components/ui';
 import { ArrowLeftIcon } from 'lucide-react';
 import Link from 'next/link';
 import { ReactNode, useEffect } from 'react';

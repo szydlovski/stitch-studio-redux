@@ -1,5 +1,5 @@
 'use client';
-import { Button } from '@/components/ui';
+import { Button } from '@/presentation/components/ui';
 import { cn } from '@/lib';
 import { CSSProperties } from 'react';
 

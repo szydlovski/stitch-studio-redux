@@ -1,12 +1,12 @@
 'use client';
 import { CoverCustomizer } from '@/application/product/CoverCustomizer';
-import { Button } from '@/components/ui';
+import { Button } from '@/presentation/components/ui';
 import {
 	DialogDescription,
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
-} from '@/components/ui/dialog';
+} from '@/presentation/components/ui/dialog';
 import { useCallback } from 'react';
 import { StitchFairyCoCover } from '@/brand/StitchFairyCo';
 import { useCoverGeneratorContext } from './CoverGeneratorContext';

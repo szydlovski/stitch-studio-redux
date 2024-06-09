@@ -5,10 +5,10 @@ import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 import { MobileMenu } from './components/MobileMenu';
 import { Sidebar } from './components/Sidebar';
-import { UserMenu } from '@/components/UserMenu/UserMenu';
+import { UserMenu } from '@/presentation/components/UserMenu/UserMenu';
 
 import React from 'react';
-import { CommandToolbarItem } from '@/components/CommandMenu';
+import { CommandToolbarItem } from '@/presentation/components/CommandMenu';
 
 export const Header = () => (
 	<header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">

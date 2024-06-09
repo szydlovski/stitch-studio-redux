@@ -5,7 +5,7 @@ import {
 	CardContent,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui';
+} from '@/presentation/components/ui';
 import { TrashIcon } from 'lucide-react';
 import {
 	AlertDialog,
@@ -17,12 +17,12 @@ import {
 	AlertDialogHeader,
 	AlertDialogTitle,
 	AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
+} from '@/presentation/components/ui/alert-dialog';
 import { useMutation } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
-import { useProductContext } from '@/components/context/ProductContext';
+import { useProductContext } from '@/presentation/components/context/ProductContext';
 
 export const DangerZoneCard = () => {
 	const { product } = useProductContext();

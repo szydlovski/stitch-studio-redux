@@ -1,7 +1,7 @@
 import { CrossStitchPattern } from '@/lib/cross-stitch';
 import { CSSProperties } from 'react';
 import { CoverConfig } from '../CoverGenerator/coverConfigReducer';
-import { RendererContextType } from '@/components/context/RendererContext';
+import { RendererContextType } from '@/presentation/components/context/RendererContext';
 import { RenderedProductImage } from '../CoverGenerator/types';
 
 export type CoverColorPickerConfig = {

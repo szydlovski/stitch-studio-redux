@@ -1,5 +1,5 @@
 'use client';
-import { useRendererContext } from '@/components/context/RendererContext';
+import { useRendererContext } from '@/presentation/components/context/RendererContext';
 import isEqual from 'lodash.isequal';
 import { useCallback, useEffect, useState } from 'react';
 import { StitchFairyCoCover } from '@/brand/StitchFairyCo';

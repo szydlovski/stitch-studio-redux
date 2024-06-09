@@ -1,7 +1,7 @@
 'use client';
 import { BrushIcon, SearchIcon } from 'lucide-react';
 
-import { Input } from '@/components/ui/input';
+import { Input } from '@/presentation/components/ui/input';
 import { useRouter } from 'next/navigation';
 
 import {
@@ -11,10 +11,10 @@ import {
 	CommandInput,
 	CommandItem,
 	CommandList,
-} from '@/components/ui/command';
+} from '@/presentation/components/ui/command';
 import React from 'react';
 import { MENU_LINKS } from '@/presentation/layout/links';
-import { Dialog } from '@/components/ui/dialog';
+import { Dialog } from '@/presentation/components/ui/dialog';
 import {
 	CreateProductDialogContent,
 	FilePatternPayload,
