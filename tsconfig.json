@@ -4,7 +4,6 @@
       "dom",
       "dom.iterable",
       "esnext",
-      "WebWorker"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,9 +16,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": [
-      "@serwist/next/typings"
-    ],
     "plugins": [
       {
         "name": "next"
@@ -38,7 +34,6 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "public/sw.js"
+    "node_modules"
   ]
 }
