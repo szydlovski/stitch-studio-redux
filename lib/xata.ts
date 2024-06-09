@@ -16,6 +16,7 @@ const tables = [
       { name: "thumbnail", type: "file" },
       { name: "data", type: "json", notNull: true, defaultValue: "{}" },
       { name: "deleted", type: "bool", notNull: true, defaultValue: "false" },
+      { name: "attributes", type: "json", notNull: true, defaultValue: "{}" },
     ],
     revLinks: [{ column: "product", table: "productImage" }],
   },
