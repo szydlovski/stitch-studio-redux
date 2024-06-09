@@ -15,7 +15,7 @@ import { CoversCard } from '@/application/product/ProductCards/CoversCard';
 import { DangerZoneCard } from '@/application/product/ProductCards/DangerZoneCard';
 import { ProductCard } from '@/application/product/ProductCards/ProductCard';
 import { PdfCard } from '@/application/product/ProductCards/PdfCard';
-import { Loader } from '@/components/Loader';
+import { Loader } from '@/components/AnotherModule';
 
 const ProductViewContent = () => {
 	const { product } = useProductContext();
