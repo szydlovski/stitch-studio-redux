@@ -1,21 +1,23 @@
 'use client';
 
-import { ContainerProps } from '@/lib/types';
+import { UserMenu } from '@/components/UserMenu/UserMenu';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
-import { UserMenu } from '../../UserMenu/UserMenu';
 
 import { Button } from '@/components/ui';
 import { ArrowLeftIcon } from 'lucide-react';
-import { ReactNode, useEffect } from 'react';
 import Link from 'next/link';
+import { ReactNode, useEffect } from 'react';
 
 export interface SinglePageLayoutProps {
 	header: string;
 	children: ReactNode;
 }
 
-export const SinglePageLayout = ({ header, children }: SinglePageLayoutProps) => {
+export const SinglePageLayout = ({
+	header,
+	children,
+}: SinglePageLayoutProps) => {
 	const pathname = usePathname();
 	const router = useRouter();
 	const session = useSession();

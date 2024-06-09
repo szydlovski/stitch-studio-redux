@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib';
 import { usePathname } from 'next/navigation';
-import { MENU_LINKS } from '../links';
+import { MENU_LINKS } from '../../links';
 
 export const MobileMenu = () => {
 	const pathname = usePathname();

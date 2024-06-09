@@ -3,12 +3,12 @@
 import { ContainerProps } from '@/lib/types';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
-import { MobileMenu } from './MobileMenu';
-import { Sidebar } from './Sidebar';
-import { UserMenu } from '../../UserMenu/UserMenu';
+import { MobileMenu } from './components/MobileMenu';
+import { Sidebar } from './components/Sidebar';
+import { UserMenu } from '@/components/UserMenu/UserMenu';
 
 import React from 'react';
-import { CommandToolbarItem } from '../../CommandMenu';
+import { CommandToolbarItem } from '@/components/CommandMenu';
 
 export const Header = () => (
 	<header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">

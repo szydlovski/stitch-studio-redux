@@ -13,13 +13,13 @@ import {
 	CommandList,
 } from '@/components/ui/command';
 import React from 'react';
-import { MENU_LINKS } from './layout/links';
+import { MENU_LINKS } from '@/presentation/layout/links';
 import { Dialog } from '@/components/ui/dialog';
 import {
 	CreateProductDialogContent,
 	FilePatternPayload,
 } from '@/application/product/CreateProduct/CreateProductDialog';
-import { globalSearch } from '../lib/globalSearch';
+import { globalSearch } from '@/lib/globalSearch';
 import debounce from 'lodash.debounce';
 import { ProductRecord } from '@/lib/xata';
 import Image from 'next/image';

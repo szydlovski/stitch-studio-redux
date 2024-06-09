@@ -1,5 +1,5 @@
 import { RGBTuple } from '@/lib/cross-stitch';
-import { Page } from '../components/Page';
+import { Page } from '@/lib/pdf/Page';
 import { PdfPageProps } from '../types';
 
 const symbolDictionary =

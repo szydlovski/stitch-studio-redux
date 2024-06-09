@@ -1,4 +1,4 @@
-import { DashboardLayout } from '@/components/layout/dashboard/DashboardLayout';
+import { DashboardLayout } from '@/presentation/layout';
 import { BrandsContent } from './BrandsContent';
 import { listBrands } from './listBrands';
 

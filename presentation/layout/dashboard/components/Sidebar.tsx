@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { cn } from '@/lib';
 import { usePathname } from 'next/navigation';
-import { MENU_LINKS } from '../links';
+import { MENU_LINKS } from '../../links';
 import Image from 'next/image';
 
 export const Sidebar = () => {

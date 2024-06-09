@@ -1,4 +1,4 @@
-import { Page } from '../components/Page';
+import { Page } from '@/lib/pdf/Page';
 import { PdfPageProps } from '../types';
 
 export const ColorChartPage = ({ product: { pattern } }: PdfPageProps) => (

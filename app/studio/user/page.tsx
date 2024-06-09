@@ -1,4 +1,4 @@
-import { SinglePageLayout } from '@/components/layout/dashboard/SinglePageLayout';
+import { SinglePageLayout } from '@/presentation/layout';
 import { UserPageContent } from './UserPageContent';
 
 export default function UserPage() {

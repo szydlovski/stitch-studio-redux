@@ -7,14 +7,14 @@ export const DocumentContainer = ({
 }: {
 	title: string;
 	children: ReactNode;
-	cssStyles: string;
+	cssStyles?: string;
 }) => (
 	<html lang="en">
 		<head>
 			<meta charSet="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<title>{title}</title>
-			<style>{cssStyles}</style>
+			{cssStyles && <style>{cssStyles}</style>}
 			<link rel="preconnect" href="https://fonts.googleapis.com" />
 			<link
 				rel="preconnect"

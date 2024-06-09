@@ -1,5 +1,5 @@
-import { DashboardLayout } from '@/components/layout/dashboard/DashboardLayout';
-import { ProductView } from './view';
+import { DashboardLayout } from '@/presentation/layout';
+import { ProductView } from '@/presentation/views';
 
 export default function ProductPage({
 	params: { productId },

@@ -1,5 +1,5 @@
 import { DashboardViewLayout } from '@/components/DashboardViewLayout';
-import { DashboardLayout } from '@/components/layout/dashboard/DashboardLayout';
+import { DashboardLayout } from '@/presentation/layout';
 
 export default function PalettesPage() {
 	return (
