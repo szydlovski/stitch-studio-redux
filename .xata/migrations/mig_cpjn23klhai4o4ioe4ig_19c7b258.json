@@ -1,0 +1,12 @@
+{
+  "id": "mig_cpjn23klhai4o4ioe4ig",
+  "parentID": "mig_cpjkcc20796lbsbev44g",
+  "checksum": "1:19c7b25827458f5cfa8e5e4b732102ea4dd50341e53e02b6f2228ef44d347053",
+  "operations": [
+    {
+      "addTable": {
+        "table": "etsyListing"
+      }
+    }
+  ]
+}

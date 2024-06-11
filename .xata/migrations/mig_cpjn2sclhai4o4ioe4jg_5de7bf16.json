@@ -1,0 +1,18 @@
+{
+  "id": "mig_cpjn2sclhai4o4ioe4jg",
+  "parentID": "mig_cpjn2744pfsffuh0ci6g",
+  "checksum": "1:5de7bf16671be4ec53b928f728c6a185ada08eaf0e062078b72f36c64a79ee97",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "data",
+          "type": "json",
+          "notNull": true,
+          "defaultValue": "{}"
+        },
+        "table": "etsyListing"
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import { CrossStitchPattern } from './cross-stitch/CrossStitchPattern';
-import { Padding } from './cross-stitch/types';
+import { CrossStitchPattern } from '../domain/cross-stitch/CrossStitchPattern';
+import { Padding } from '../domain/cross-stitch/types';
 
 export const readImageFileAsDataURL = (file: Blob): Promise<string> =>
 	new Promise((resolve, reject) => {

@@ -5,6 +5,9 @@ const nextConfig = {
 			{
 				hostname: 'eu-central-1.xata.sh',
 			},
+			{
+				hostname: 'i.etsystatic.com',
+			},
 		],
 	},
 };

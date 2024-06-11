@@ -1,7 +1,7 @@
 'use client';
 import { ProductDetails } from '@/domain/product/ProductDetails';
 import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
-import { CrossStitchPattern } from '@/lib/cross-stitch';
+import { CrossStitchPattern } from '@/domain/cross-stitch';
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode, createContext, useContext } from 'react';
 
@@ -38,7 +38,7 @@ export const ProductContextProvider = ({
 				loadingContent
 			) : (
 				<ProductContext.Provider
-					value={{ product: data, pattern: CrossStitchPattern.fromData(data.data) }}
+					value={{ product: data, pattern: CrossStitchPattern.fromAttributes(data.data) }}
 				>
 					{children}
 				</ProductContext.Provider>

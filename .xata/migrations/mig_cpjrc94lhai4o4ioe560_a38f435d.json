@@ -1,0 +1,18 @@
+{
+  "id": "mig_cpjrc94lhai4o4ioe560",
+  "parentID": "mig_cpjrc0klhai4o4ioe550",
+  "checksum": "1:a38f435dd6c193c1c64c2a151d3fcdeefddd030fdd3bf5ceb286a65ea368f9d1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "payload",
+          "type": "json",
+          "notNull": true,
+          "defaultValue": "{}"
+        },
+        "table": "event"
+      }
+    }
+  ]
+}

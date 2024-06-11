@@ -1,4 +1,4 @@
-import { CrossStitchPattern, CrossStitchPatternData } from '@/lib/cross-stitch';
+import { CrossStitchPattern, CrossStitchPatternData } from '@/domain/cross-stitch';
 import { ProductAuthor, ProductBrand, ProductThumbnail } from './types';
 
 export interface ProductDetailsAttributes {
@@ -30,6 +30,6 @@ export class ProductDetails {
 		);
 	}
 	get pattern(): CrossStitchPattern {
-		return CrossStitchPattern.fromData(this.data);
+		return CrossStitchPattern.fromAttributes(this.data);
 	}
 }

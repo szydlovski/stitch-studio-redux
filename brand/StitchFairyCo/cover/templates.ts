@@ -1,6 +1,8 @@
-import { LayerType } from '@/lib/template/layer';
-import { TemplatePropType } from '@/lib/template/props';
-import { TemplateManifest } from '@/lib/template/types';
+import {
+	LayerType,
+	TemplateManifest,
+	TemplatePropType,
+} from '@/infrastructure/product-image/types';
 
 export const loopMockupTemplate: TemplateManifest = {
 	props: [

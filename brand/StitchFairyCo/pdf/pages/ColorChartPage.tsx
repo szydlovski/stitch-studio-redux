@@ -7,12 +7,14 @@ export const ColorChartPage = ({ product: { pattern } }: PdfPageProps) => (
 			<div className="header">
 				<span>Color Chart</span>
 			</div>
-			<table>
-				{pattern.groups.map((group, index) => (
-					<tr key={index}>
-						<td style={{ backgroundColor: group.hex }}>{group.hex}</td>
-					</tr>
-				))}
+			<table className="w-full">
+				<tbody>
+					{pattern.groups.map((group, index) => (
+						<tr key={index}>
+							<td style={{ backgroundColor: group.hex }}>{group.hex}</td>
+						</tr>
+					))}
+				</tbody>
 			</table>
 		</div>
 	</Page>

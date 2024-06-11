@@ -1,4 +1,12 @@
 'use client';
+import { CrossStitchPattern } from '@/domain/cross-stitch';
+import {
+	CrossStitchPatternRenderer,
+	loadStitchTextureDictionary,
+} from '@/infrastructure/cross-stitch';
+import { CrossStitchPatternParser } from '@/infrastructure/cross-stitch/CrossStitchPatternParser';
+import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
+import { selectFile } from '@/lib';
 import { DataSet } from '@/presentation/components/DataSet';
 import { Button } from '@/presentation/components/ui/button';
 import {
@@ -12,9 +20,6 @@ import {
 } from '@/presentation/components/ui/dialog';
 import { Input } from '@/presentation/components/ui/input';
 import { Label } from '@/presentation/components/ui/label';
-import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
-import { selectFile } from '@/lib';
-import { CrossStitchPattern, CrossStitchRenderer, loadStitchTextureDictionary } from '@/lib/cross-stitch';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { ReactNode, useCallback, useState } from 'react';
 
@@ -25,9 +30,9 @@ export interface FilePatternPayload {
 }
 
 const formatPayload = async (file: File): Promise<FilePatternPayload> => {
-	const pattern = await CrossStitchPattern.fromFile(file);
+	const pattern = await CrossStitchPatternParser.parseImageFile(file);
 	const textures = await loadStitchTextureDictionary();
-	const renderer = new CrossStitchRenderer(textures);
+	const renderer = new CrossStitchPatternRenderer(textures);
 	const img = renderer.renderEmbroideryMockup(pattern, 4);
 	const dataUrl = img.toDataURL();
 

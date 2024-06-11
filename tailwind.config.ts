@@ -7,6 +7,8 @@ const config = {
 		'./presentation/**/*.{ts,tsx}',
 		'./app/**/*.{ts,tsx}',
 		'./src/**/*.{ts,tsx}',
+		'./lib/**/*.{ts,tsx}',
+		'./brand/**/*.{ts,tsx}',
 	],
 	prefix: '',
 	theme: {
@@ -72,6 +74,9 @@ const config = {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
+			aspectRatio: {
+				'etsy': '170 / 135'
+			}
 		},
 	},
 	plugins: [require('tailwindcss-animate')],

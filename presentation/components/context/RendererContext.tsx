@@ -1,9 +1,4 @@
 import {
-	CrossStitchRenderer,
-	loadStitchTextureDictionary,
-} from '@/lib/cross-stitch';
-import { TemplateRenderer } from '@/lib/template/TemplateRenderer';
-import {
 	etsyCoverTemplate,
 	fabricMockupTemplate,
 	flossMockupTemplate,
@@ -14,11 +9,16 @@ import {
 	squareCoverTemplate,
 	wideCoverTemplate,
 } from '@/brand/StitchFairyCo/cover/templates';
+import {
+	CrossStitchPatternRenderer,
+	loadStitchTextureDictionary,
+} from '@/infrastructure/cross-stitch';
+import { ImageTemplateRenderer } from '@/infrastructure/product-image/ImageTemplateRenderer';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 export interface RendererContextType {
-	templateRenderer: TemplateRenderer;
-	crossStitchRenderer: CrossStitchRenderer;
+	templateRenderer: ImageTemplateRenderer;
+	crossStitchRenderer: CrossStitchPatternRenderer;
 }
 
 const RendererContext = createContext<RendererContextType>(undefined as any);
@@ -33,10 +33,10 @@ export const RendererProvider = ({
 		() =>
 			void (async () => {
 				const stitchTextureDictionary = await loadStitchTextureDictionary();
-				const crossStitchRenderer = new CrossStitchRenderer(
+				const crossStitchRenderer = new CrossStitchPatternRenderer(
 					stitchTextureDictionary
 				);
-				const templateRenderer = new TemplateRenderer();
+				const templateRenderer = new ImageTemplateRenderer();
 
 				// TODO this is temp for StitchFairy
 				await templateRenderer.preloadTemplateTextures(loopMockupTemplate);

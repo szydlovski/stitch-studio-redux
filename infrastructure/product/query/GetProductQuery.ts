@@ -13,7 +13,8 @@ export class GetProductQuery extends XataQuery<ProductDetailsAttributes> {
 				'author.email',
 			])
 			.filter({ id })
-			.getFirstOrThrow({ fetchOptions: { next: { revalidate: 0 } } });
+			.getFirstOrThrow();
+			// .getFirstOrThrow({ fetchOptions: { next: { revalidate: 0 } } });
 		const { title, thumbnail, brand, author, data } = product;
 		if (!brand || !author) throw new Error();
 		return {

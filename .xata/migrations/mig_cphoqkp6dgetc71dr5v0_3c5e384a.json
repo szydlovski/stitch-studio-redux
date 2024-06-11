@@ -1,0 +1,12 @@
+{
+  "id": "mig_cphoqkp6dgetc71dr5v0",
+  "parentID": "mig_cpgvtpk6n76u7nmmbhug",
+  "checksum": "1:3c5e384a6432f0644da8f3f57cedd978c5f43be0926a4bd626a709a2834e3fa2",
+  "operations": [
+    {
+      "addTable": {
+        "table": "crossStitchPalette"
+      }
+    }
+  ]
+}

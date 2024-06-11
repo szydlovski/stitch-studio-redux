@@ -10,6 +10,7 @@ import { Skeleton } from '@/presentation/components/ui/skeleton';
 import { ProductItem } from '@/domain/product/ProductItem';
 import Image from 'next/image';
 import Link from 'next/link';
+import { transformImage } from '@xata.io/client';
 
 interface ProductTileProps {
 	product: ProductItem;
@@ -24,7 +25,7 @@ export const ProductTile = ({
 				<CardContent className="p-0 bg-neutral-100 aspect-square">
 					<div className="h-full w-full flex justify-center items-center p-2 md:p-4">
 						<Image
-							src={thumbnail.src}
+							src={transformImage(thumbnail.src, { height: 100 })}
 							alt={title}
 							width={thumbnail.width}
 							height={thumbnail.height}

@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpjkc44lhai4o4ioe3og",
+  "parentID": "mig_cpjk64clhai4o4ioe3l0",
+  "checksum": "1:0a72f20f7cdca05423fa59e70232ba5ecce2737f33d719958b2ea13e565ee758",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "key",
+        "table": "productFile"
+      }
+    }
+  ]
+}

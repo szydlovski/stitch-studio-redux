@@ -1,0 +1,19 @@
+{
+  "id": "mig_cpjk3ia0796lbsbev410",
+  "parentID": "mig_cpjk32a0796lbsbev400",
+  "checksum": "1:5882c05e6a77e3c1c3316ea060bc703c3cc3fde868ce9ea719086ec45cebe49b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "product",
+          "type": "link",
+          "link": {
+            "table": "product"
+          }
+        },
+        "table": "productFile"
+      }
+    }
+  ]
+}

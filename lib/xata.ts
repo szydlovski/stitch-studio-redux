@@ -17,8 +17,12 @@ const tables = [
       { name: "data", type: "json", notNull: true, defaultValue: "{}" },
       { name: "deleted", type: "bool", notNull: true, defaultValue: "false" },
       { name: "attributes", type: "json", notNull: true, defaultValue: "{}" },
+      { name: "type", type: "string", notNull: true, defaultValue: "unknown" },
     ],
-    revLinks: [{ column: "product", table: "productImage" }],
+    revLinks: [
+      { column: "product", table: "productImage" },
+      { column: "product", table: "productFile" },
+    ],
   },
   {
     name: "user",
@@ -29,6 +33,7 @@ const tables = [
     revLinks: [
       { column: "author", table: "product" },
       { column: "owner", table: "brand" },
+      { column: "user", table: "event" },
     ],
   },
   {
@@ -38,7 +43,10 @@ const tables = [
       { name: "logo", type: "file" },
       { name: "owner", type: "link", link: { table: "user" } },
     ],
-    revLinks: [{ column: "brand", table: "product" }],
+    revLinks: [
+      { column: "brand", table: "product" },
+      { column: "brand", table: "etsyListing" },
+    ],
   },
   {
     name: "productImage",
@@ -46,7 +54,39 @@ const tables = [
       { name: "image", type: "file" },
       { name: "product", type: "link", link: { table: "product" } },
       { name: "attributes", type: "json", notNull: true, defaultValue: "{}" },
-      { name: "key", type: "string", notNull: true, defaultValue: "" },
+      { name: "tags", type: "multiple" },
+    ],
+  },
+  {
+    name: "crossStitchPalette",
+    columns: [
+      { name: "colors", type: "json", notNull: true, defaultValue: "[]" },
+      { name: "name", type: "string", notNull: true, defaultValue: "" },
+    ],
+  },
+  {
+    name: "productFile",
+    columns: [
+      { name: "product", type: "link", link: { table: "product" } },
+      { name: "file", type: "file" },
+      { name: "tags", type: "multiple" },
+    ],
+  },
+  {
+    name: "etsyListing",
+    columns: [
+      { name: "title", type: "string", notNull: true, defaultValue: "" },
+      { name: "data", type: "json", notNull: true, defaultValue: "{}" },
+      { name: "brand", type: "link", link: { table: "brand" } },
+    ],
+  },
+  {
+    name: "event",
+    columns: [
+      { name: "table", type: "string", notNull: true, defaultValue: "unknown" },
+      { name: "type", type: "string", notNull: true, defaultValue: "" },
+      { name: "user", type: "link", link: { table: "user" } },
+      { name: "payload", type: "json", notNull: true, defaultValue: "{}" },
     ],
   },
 ] as const;
@@ -66,11 +106,27 @@ export type BrandRecord = Brand & XataRecord;
 export type ProductImage = InferredTypes["productImage"];
 export type ProductImageRecord = ProductImage & XataRecord;
 
+export type CrossStitchPalette = InferredTypes["crossStitchPalette"];
+export type CrossStitchPaletteRecord = CrossStitchPalette & XataRecord;
+
+export type ProductFile = InferredTypes["productFile"];
+export type ProductFileRecord = ProductFile & XataRecord;
+
+export type EtsyListing = InferredTypes["etsyListing"];
+export type EtsyListingRecord = EtsyListing & XataRecord;
+
+export type Event = InferredTypes["event"];
+export type EventRecord = Event & XataRecord;
+
 export type DatabaseSchema = {
   product: ProductRecord;
   user: UserRecord;
   brand: BrandRecord;
   productImage: ProductImageRecord;
+  crossStitchPalette: CrossStitchPaletteRecord;
+  productFile: ProductFileRecord;
+  etsyListing: EtsyListingRecord;
+  event: EventRecord;
 };
 
 const DatabaseClient = buildClient();

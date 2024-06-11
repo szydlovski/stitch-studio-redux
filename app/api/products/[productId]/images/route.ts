@@ -1,27 +1,12 @@
+import { GetProductImagesQuery } from '@/infrastructure/product/query/GetProductImagesQuery';
+import { routeHandler } from '@/lib/routeHandler';
 import { getXataClient } from '@/lib/xata';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(
-	req: NextRequest,
-	{ params: { productId } }: { params: { productId: string } }
-) {
-	const images = await getXataClient()
-		.db.productImage.select(['*', 'image.signedUrl']).filter({
-			product: productId,
-		})
-		.getAll()
-		.then((images) =>
-			images.map(({ id, image, attributes, key }) => ({
-				id,
-				key,
-				attributes,
-				src: image?.signedUrl ?? '',
-				width: image?.attributes?.width,
-				height: image?.attributes?.height,
-			}))
-		);
+export const GET = routeHandler<{ productId: string }>(async ({ params: { productId } }) => {
+	const images = await new GetProductImagesQuery().execute(productId);
 	return NextResponse.json({ images });
-}
+});
 
 export async function POST(
 	req: NextRequest,
@@ -30,7 +15,7 @@ export async function POST(
 	const parsedBody = await req.json();
 	const result = await getXataClient().db.productImage.create({
 		product: productId,
-		key: parsedBody.key,
+		tags: [parsedBody.key],
 		image: {
 			mediaType: 'image/png',
 			base64Content: parsedBody.image,

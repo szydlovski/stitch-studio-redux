@@ -29,6 +29,11 @@ export const MENU_LINKS: MenuLink[] = [
 		label: 'Brands',
 	},
 	{
+		href: '/studio/etsy',
+		icon: StoreIcon,
+		label: 'Etsy',
+	},
+	{
 		href: '/studio/palettes',
 		icon: SwatchBookIcon,
 		label: 'Palettes',

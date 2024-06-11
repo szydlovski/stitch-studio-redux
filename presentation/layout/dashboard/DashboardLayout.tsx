@@ -11,7 +11,7 @@ import React from 'react';
 import { CommandToolbarItem } from '@/presentation/components/CommandMenu';
 
 export const Header = () => (
-	<header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+	<header className="flex h-14 shrink-0 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
 		<CommandToolbarItem />
 		<UserMenu />
 		<MobileMenu />
@@ -33,9 +33,9 @@ export const DashboardLayout = ({ children }: ContainerProps) => {
 	) : (
 		<div className="grid h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
 			<Sidebar />
-			<div className="flex flex-col max-h-full overflow-auto">
+			<div className="flex flex-col max-h-screen">
 				<Header />
-				<main className="flex-1 h-full overflow-auto">{children}</main>
+				<main className="flex-1">{children}</main>
 			</div>
 		</div>
 	);

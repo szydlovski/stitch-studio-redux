@@ -13,7 +13,7 @@ import {
 import {
 	CustomizableCoverTemplate,
 	RenderCoverProps,
-} from '@/application/product/CoverCustomizer/types';
+} from '@/application/product-image/CoverCustomizer/types';
 
 const targetDim = { width: 877, height: 941 };
 

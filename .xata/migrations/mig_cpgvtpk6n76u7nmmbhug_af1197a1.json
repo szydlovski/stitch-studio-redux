@@ -1,0 +1,18 @@
+{
+  "id": "mig_cpgvtpk6n76u7nmmbhug",
+  "parentID": "mig_cpgvrmk6n76u7nmmbht0",
+  "checksum": "1:af1197a1b1c51880efbf56f7b6153f772c658d68db15c71254866fe3492ec069",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "type",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "unknown"
+        },
+        "table": "product"
+      }
+    }
+  ]
+}

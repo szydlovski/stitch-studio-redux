@@ -1,12 +1,14 @@
 import { ProductRepository } from '@/domain/product/ProductRepository';
 import { ProductItem } from '@/domain/product/ProductItem';
 import { ProductDetails } from '@/domain/product/ProductDetails';
+import { ProductImageItem } from '@/domain/product-image/ProductImageItem';
 
 export class ProductApiClient implements ProductRepository {
 	private async fetch(input: string | URL, init?: RequestInit): Promise<any> {
 		const response = await fetch(input, init);
 		return response.json();
 	}
+
 	async list(): Promise<ProductItem[]> {
 		return this.fetch('/api/products').then((data) =>
 			data.products.map(ProductItem.fromAttributes)
@@ -16,6 +18,12 @@ export class ProductApiClient implements ProductRepository {
 	async get(productId: string): Promise<ProductDetails> {
 		return this.fetch(`/api/products/${productId}`).then(
 			ProductDetails.fromAttributes
+		);
+	}
+
+	async getImages(productId: string): Promise<ProductImageItem[]> {
+		return this.fetch(`/api/products/${productId}/images`).then((data) =>
+			data.images.map(ProductImageItem.fromAttributes)
 		);
 	}
 

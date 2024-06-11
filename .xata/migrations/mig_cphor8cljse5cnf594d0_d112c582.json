@@ -1,0 +1,18 @@
+{
+  "id": "mig_cphor8cljse5cnf594d0",
+  "parentID": "mig_cphor116dgetc71dr600",
+  "checksum": "1:d112c582f57e8c2a3405137fc809a4dbbe994111d6140ec4d7d30e4a731688a8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": ""
+        },
+        "table": "crossStitchPalette"
+      }
+    }
+  ]
+}

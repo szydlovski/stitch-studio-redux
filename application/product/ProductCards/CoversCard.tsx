@@ -1,5 +1,5 @@
 'use client';
-import { CoverGeneratorDialog } from '@/application/product/CoverGenerator/CoverGeneratorDialog';
+import { CoverGeneratorDialog } from '@/application/product-image/CoverGenerator/CoverGeneratorDialog';
 import {
 	Button,
 	Card,
@@ -16,6 +16,12 @@ import { useDisclosure } from '@/lib/hooks/useDisclosure';
 import { useQuery } from '@tanstack/react-query';
 import { HexColorPicker } from 'react-colorful';
 import { useProductContext } from '@/presentation/components/context/ProductContext';
+import {
+	ProductImageItem,
+	ProductImageItemAttributes,
+} from '@/domain/product-image/ProductImageItem';
+import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
+import { transformImage } from '@xata.io/client';
 
 export const CoverColorPicker = ({
 	color,
@@ -54,25 +60,19 @@ export const CoverColorPicker = ({
 	);
 };
 
-interface ProductImageItem {
-	id: string;
-	key: string;
-	src: string;
-	width: number;
-	height: number;
-	attributes: any;
-}
+export const GetProductImagesQueryKey = (productId: string) => ['productImages', productId];
+
+export const useGetProductImages = (productId: string) => {
+	return useQuery({
+		queryKey: GetProductImagesQueryKey(productId),
+		queryFn: () => new ProductApiClient().getImages(productId),
+		select: (images) => images.map(ProductImageItem.fromAttributes),
+	});
+};
 
 export const CoversCard = () => {
 	const { product } = useProductContext();
-	const { data: images } = useQuery({
-		queryKey: ['covers', product.id],
-		queryFn: () =>
-			fetch(`/api/products/${product.id}/images`).then(
-				(res) => res.json() as Promise<{ images: ProductImageItem[] }>
-			),
-		select: (data) => data.images,
-	});
+	const { data: images } = useGetProductImages(product.id);
 	return (
 		<Card>
 			<CardHeader>
@@ -85,12 +85,20 @@ export const CoversCard = () => {
 			</CardHeader>
 			<CardContent>
 				<div className="grid grid-cols-4 gap-4">
-					{images?.map(({ src }, i) => (
+					{images?.map(({ src, tags }, i) => (
 						<div
 							key={i}
 							className="h-full aspect-square border rounded-md flex justify-center items-center"
 						>
-							<img className="max-h-full max-w-full" src={src} />
+							<img
+								className="max-h-full max-w-full flex-1 w-auto"
+								src={transformImage(src, { height: 100 })}
+							/>
+							<div>
+								<ul>
+									{tags.map(tag => <li key={tag}>{tag}</li>)}
+								</ul>
+							</div>
 						</div>
 					))}
 				</div>

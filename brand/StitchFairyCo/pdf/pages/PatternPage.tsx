@@ -1,6 +1,7 @@
-import { RGBTuple } from '@/lib/cross-stitch';
+import { RGBTuple } from '@/domain/cross-stitch';
 import { Page } from '@/lib/pdf/Page';
 import { PdfPageProps } from '../types';
+import { stitchTableCss } from '../css';
 
 const symbolDictionary =
 	'/❤１✖○２★▼３◐☁４●◪５♡✽６◆♛７V◭８\\◉９✚!◼$ʌ◧⬟✦ABCDEFGHIJKLMNOPQRSTUWXYZ';
@@ -30,56 +31,55 @@ export const SinglePatternPage = ({
 }: PdfPageProps & { index: number; xOffset?: number; yOffset?: number }) => {
 	return (
 		<Page>
-			<div className="pattern-page-container">
-				<div className="pattern-footer">
-					<img className="pattern-footer-logo" src="/logo_3x.png" />
-				</div>
+			<div className="flex flex-col gap-4 h-full">
 				<table className="pattern-table">
-					{Array(80)
-						.fill(0)
-						.map((_, row) => {
-							return (
-								<tr key={row}>
-									{Array(60)
-										.fill(0)
-										.map((_, column) => {
-											const colorGroup = pattern.getColorGroup(
-												xOffset + column,
-												yOffset + row
-											);
-											return (
-												<td
-													key={column}
-													style={
-														{
-															'--c': colorGroup?.hex,
-															'--t':
-																colorGroup &&
-																getContrastColor(hexToRgb(colorGroup.hex)),
-														} as any
-													}
-												>
-													{colorGroup && (
-														<a>
+					<tbody>
+						{Array(80)
+							.fill(0)
+							.map((_, row) => {
+								return (
+									<tr key={row}>
+										{Array(60)
+											.fill(0)
+											.map((_, column) => {
+												const colorGroup = pattern.getColorGroup(
+													xOffset + column,
+													yOffset + row
+												);
+												return (
+													<td
+														key={column}
+														style={
 															{
-																symbolDictionary[
-																	pattern.getGroupIndex(colorGroup)
-																]
-															}
-														</a>
-													)}
-													<GridNumber
-														row={row}
-														column={column}
-														maxRow={80}
-														maxColumn={60}
-													/>
-												</td>
-											);
-										})}
-								</tr>
-							);
-						})}
+																'--c': colorGroup?.hex,
+																'--t':
+																	colorGroup &&
+																	getContrastColor(hexToRgb(colorGroup.hex)),
+															} as any
+														}
+													>
+														{colorGroup && (
+															<a>
+																{
+																	symbolDictionary[
+																		pattern.getGroupIndex(colorGroup)
+																	]
+																}
+															</a>
+														)}
+														<GridNumber
+															row={row}
+															column={column}
+															maxRow={80}
+															maxColumn={60}
+														/>
+													</td>
+												);
+											})}
+									</tr>
+								);
+							})}
+					</tbody>
 				</table>
 			</div>
 		</Page>
@@ -112,6 +112,7 @@ export const PatternPages = ({
 	const pageCount = pageCols * pageRows;
 	return (
 		<>
+			<style>{stitchTableCss}</style>
 			{Array(pageRows)
 				.fill(0)
 				.map((_, row) =>

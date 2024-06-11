@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpjkc6slhai4o4ioe3pg",
+  "parentID": "mig_cpjkc44lhai4o4ioe3og",
+  "checksum": "1:9f59d46bcaec3f40dc457e9422b4444d445bace45077291a0ba35de40739ccd7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "tags",
+          "type": "multiple"
+        },
+        "table": "productFile"
+      }
+    }
+  ]
+}
