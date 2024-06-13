@@ -22,6 +22,7 @@ const tables = [
     revLinks: [
       { column: "product", table: "productImage" },
       { column: "product", table: "productFile" },
+      { column: "product", table: "etsyListing" },
     ],
   },
   {
@@ -78,6 +79,7 @@ const tables = [
       { name: "title", type: "string", notNull: true, defaultValue: "" },
       { name: "data", type: "json", notNull: true, defaultValue: "{}" },
       { name: "brand", type: "link", link: { table: "brand" } },
+      { name: "product", type: "link", link: { table: "product" } },
     ],
   },
   {

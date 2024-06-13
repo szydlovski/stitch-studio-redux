@@ -1,5 +1,5 @@
 import { DashboardLayout } from '@/presentation/layout';
-import { ProductView } from '@/presentation/views';
+import { ProductDetailsView } from '@/presentation/views';
 
 export default function ProductPage({
 	params: { productId },
@@ -8,7 +8,7 @@ export default function ProductPage({
 }) {
 	return (
 		<DashboardLayout>
-			<ProductView productId={productId} />
+			<ProductDetailsView productId={productId} />
 		</DashboardLayout>
 	);
 }

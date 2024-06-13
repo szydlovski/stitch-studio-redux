@@ -11,7 +11,7 @@ export const ProductList = () => {
 		queryFn: () => new ProductApiClient().list(),
 	});
 	console.log('elo');
-	
+
 	return status === 'error' ? (
 		<div className="py-6">
 			<ErrorAlert
@@ -22,7 +22,7 @@ export const ProductList = () => {
 			/>
 		</div>
 	) : (
-		<div className="grid grid-cols-2 gap-4 py-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+		<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 			{status === 'pending'
 				? Array(12)
 						.fill(0)

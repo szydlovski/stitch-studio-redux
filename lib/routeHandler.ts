@@ -21,9 +21,11 @@ export const routeHandler = <Params, T = any>(
 	const xata = getXataClient();
 	return async function handleRoute(
 		req: Request,
-		{ params }: { params: Params }
+		{ params, ...others }: { params: Params }
 	) {
 		const session = await getSession();
+		console.log('OTHERS', others);
+		
 		if (options?.auth && !session) {
 			return NextResponse.json(
 				{ error: true, message: 'Unauthorized' },

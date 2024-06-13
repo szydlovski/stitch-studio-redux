@@ -2,6 +2,7 @@ import {
 	GaugeIcon,
 	LucideProps,
 	Package,
+	ShoppingBagIcon,
 	StoreIcon,
 	SwatchBookIcon,
 } from 'lucide-react';
@@ -30,7 +31,7 @@ export const MENU_LINKS: MenuLink[] = [
 	},
 	{
 		href: '/studio/etsy',
-		icon: StoreIcon,
+		icon: ShoppingBagIcon,
 		label: 'Etsy',
 	},
 	{

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cpkf19f1pfru7ce9m6eg",
+  "parentID": "mig_cpjrc94lhai4o4ioe560",
+  "checksum": "1:4074952a2cb412e12239aa81fc193bc4589717e6bfba49c88041140f863c8a5c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "product",
+          "type": "link",
+          "link": {
+            "table": "product"
+          }
+        },
+        "table": "etsyListing"
+      }
+    }
+  ]
+}

@@ -1,66 +1,29 @@
 'use client';
 import { CoverGeneratorDialog } from '@/application/product-image/CoverGenerator/CoverGeneratorDialog';
+import { ProductImageItem } from '@/domain/product-image/ProductImageItem';
+import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
+import { useProductContext } from '@/presentation/components/context/ProductContext';
 import {
+	Badge,
 	Button,
 	Card,
 	CardContent,
 	CardHeader,
 	CardTitle,
+	DropdownMenu,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+	DropdownMenuContent,
 } from '@/presentation/components/ui';
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from '@/presentation/components/ui/popover';
-import { useDisclosure } from '@/lib/hooks/useDisclosure';
 import { useQuery } from '@tanstack/react-query';
-import { HexColorPicker } from 'react-colorful';
-import { useProductContext } from '@/presentation/components/context/ProductContext';
-import {
-	ProductImageItem,
-	ProductImageItemAttributes,
-} from '@/domain/product-image/ProductImageItem';
-import { ProductApiClient } from '@/infrastructure/product/ProductApiClient';
 import { transformImage } from '@xata.io/client';
+import { EllipsisIcon } from 'lucide-react';
+import Link from 'next/link';
 
-export const CoverColorPicker = ({
-	color,
-	onChange,
-}: {
-	color: string;
-	onChange: (color: string) => void;
-}) => {
-	const { pattern } = useProductContext();
-	const { state: isOpen, open, close, set: setOpen } = useDisclosure();
-	return (
-		<Popover open={isOpen} onOpenChange={setOpen}>
-			<PopoverTrigger>
-				<Button
-					className="w-10 rounded-full"
-					style={{ backgroundColor: color }}
-				/>
-			</PopoverTrigger>
-			<PopoverContent className="p-0 w-4xl">
-				<HexColorPicker
-					style={{ width: '100%' }}
-					color={color}
-					onChange={() => onChange(color)}
-				/>
-				<div className="p-2 grid grid-cols-6 gap-2 mt-0">
-					{pattern.groups.map((color, i) => (
-						<Button
-							className="w-full rounded-full"
-							style={{ backgroundColor: color.hex }}
-							onClick={() => onChange(color.hex)}
-						/>
-					))}
-				</div>
-			</PopoverContent>
-		</Popover>
-	);
-};
-
-export const GetProductImagesQueryKey = (productId: string) => ['productImages', productId];
+export const GetProductImagesQueryKey = (productId: string) => [
+	'productImages',
+	productId,
+];
 
 export const useGetProductImages = (productId: string) => {
 	return useQuery({
@@ -74,35 +37,41 @@ export const CoversCard = () => {
 	const { product } = useProductContext();
 	const { data: images } = useGetProductImages(product.id);
 	return (
-		<Card>
-			<CardHeader>
-				<CardTitle className="flex items-center">
-					<span>{'Covers'}</span>
-					<div className="ml-auto">
-						<CoverGeneratorDialog />
+		<div className="flex flex-wrap gap-4">
+			{images&& [...images,...images,...images,...images,...images,...images].map(({ src, tags }, i) => (
+				<div
+					key={i}
+					className="flex flex-col gap-2 border rounded-md p-2 group relative"
+				>
+					<img
+						className="object-cover"
+						src={transformImage(src, { height: 150 })}
+					/>
+					<div className="">
+						<ul>
+							{tags.map((tag) => (
+								<li key={tag}>
+									<Badge variant="outline">{tag}</Badge>
+								</li>
+							))}
+						</ul>
 					</div>
-				</CardTitle>
-			</CardHeader>
-			<CardContent>
-				<div className="grid grid-cols-4 gap-4">
-					{images?.map(({ src, tags }, i) => (
-						<div
-							key={i}
-							className="h-full aspect-square border rounded-md flex justify-center items-center"
-						>
-							<img
-								className="max-h-full max-w-full flex-1 w-auto"
-								src={transformImage(src, { height: 100 })}
-							/>
-							<div>
-								<ul>
-									{tags.map(tag => <li key={tag}>{tag}</li>)}
-								</ul>
-							</div>
-						</div>
-					))}
+					<div className="absolute top-0 right-0 p-1 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all">
+						<DropdownMenu>
+							<DropdownMenuTrigger asChild>
+								<Button className="flex py-0.5 px-1 h-auto bg-transparent hover:bg-foreground/10 text-foreground">
+									<EllipsisIcon size={16} />
+								</Button>
+							</DropdownMenuTrigger>
+							<DropdownMenuContent>
+								<DropdownMenuItem>
+									<Link href={'#'}>{'Test item'}</Link>
+								</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
+					</div>
 				</div>
-			</CardContent>
-		</Card>
+			))}
+		</div>
 	);
 };
