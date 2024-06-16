@@ -1,6 +1,6 @@
 import { Drawable } from '@/lib/canvas';
 import { v4 as uuid } from 'uuid';
-import { readImageFromFile } from '@/lib/helpers';
+import { readImageFromFile } from '@presentation/utils';
 import { CrossStitchPattern, ColorGroup } from '@domain/cross-stitch';
 import { rgbToHex } from '@/lib/color';
 

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { ProductContextProvider } from './ProductContext';
 import {
 	ProductViewContent,
@@ -6,11 +7,13 @@ import {
 
 export const ProductDetailsView = ({ productId }: { productId: string }) => {
 	return (
-		<ProductContextProvider
-			productId={productId}
-			loadingContent={<ProductViewContentSkeleton />}
-		>
-			<ProductViewContent />
-		</ProductContextProvider>
+		<Suspense>
+			<ProductContextProvider
+				productId={productId}
+				loadingContent={<ProductViewContentSkeleton />}
+			>
+				<ProductViewContent />
+			</ProductContextProvider>
+		</Suspense>
 	);
 };
