@@ -1,13 +1,4 @@
-export interface UserIdentity {
-	email: string;
-	id: string;
-	name: string;
-	xata: {
-		createdAt: string;
-		updatedAt: string;
-		version: number;
-	};
-}
+import { UserIdentity } from "@domain/user";
 
 declare module 'next-auth' {
 	/**

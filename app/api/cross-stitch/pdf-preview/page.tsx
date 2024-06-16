@@ -1,6 +1,6 @@
 import { StitchFairyCoPdf } from '@/brand/StitchFairyCo/pdf/StitchFairyCoPdf';
-import { ProductDetails } from '@/domain/product/ProductDetails';
-import { GetProductQuery } from '@/infrastructure/product/query/GetProductQuery';
+import { ProductDetails } from '@domain/product/ProductDetails';
+import { GetProductQuery } from '@infrastructure/product/GetProductQuery';
 import { Metadata } from 'next';
 
 type PageProps = {

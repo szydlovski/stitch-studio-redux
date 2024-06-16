@@ -1,6 +1,6 @@
-import { GetEtsyListingQuery } from '@/infrastructure/etsy/query/GetEtsyListing';
-import { DashboardLayout } from '@/presentation/layout';
-import { EtsyListingView } from '@/presentation/views/EtsyListingView';
+import { GetEtsyListingQuery } from '@infrastructure/etsy/query/GetEtsyListing';
+import { DashboardLayout } from '@presentation/layout';
+import { EtsyListingView } from '@presentation/views/EtsyListingView';
 
 export default async function EtsyListingPage({
 	params: { listingId },

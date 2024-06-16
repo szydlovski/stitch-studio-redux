@@ -1,4 +1,3 @@
-'use client';
 export type Drawable = HTMLImageElement | HTMLCanvasElement;
 type DrawCallback = (ctx: CanvasRenderingContext2D) => any;
 type SizeSource =

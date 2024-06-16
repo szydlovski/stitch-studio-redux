@@ -1,8 +1,8 @@
 import { StitchFairyCoPdf } from '@/brand/StitchFairyCo/pdf/StitchFairyCoPdf';
-import { ProductDetails } from '@/domain/product/ProductDetails';
-import { GetProductQuery } from '@/infrastructure/product/query/GetProductQuery';
-import { DocumentContainer } from '@/lib/pdf/DocumentContainer';
-import { routeHandler } from '@/lib/routeHandler';
+import { ProductDetails } from '@domain/product/ProductDetails';
+import { GetProductQuery } from '@infrastructure/product/GetProductQuery';
+import { DocumentContainer } from '@components/pdf';
+import { routeHandler } from '@/lib/api/routeHandler';
 import { NextResponse } from 'next/server';
 
 const renderPatternFileHtml = async (product: ProductDetails) => {

@@ -1,5 +1,5 @@
-import { SinglePageLayout } from '@/presentation/layout';
-import { UserSettingsView } from '@/presentation/views';
+import { SinglePageLayout } from '@presentation/layout';
+import { UserSettingsView } from '@presentation/views';
 
 export default function UserPage() {
 	return (

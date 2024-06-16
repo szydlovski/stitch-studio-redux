@@ -1,6 +1,6 @@
 import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
-import { Button } from '@/presentation/components/ui';
-import { DashboardLayout } from '@/presentation/layout';
+import { Button } from '@components/ui';
+import { DashboardLayout } from '@presentation/layout';
 
 export default async function EtsyListingsDirectoryPage() {
 	return (

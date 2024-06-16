@@ -1,8 +1,10 @@
 'use client';
-import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SessionProvider } from 'next-auth/react';
 import { useMemo } from 'react';
+import NextAdapterApp from 'next-query-params/app';
+import { QueryParamProvider } from 'use-query-params';
+import { TooltipProvider } from '@components/ui';
 
 export const ClientProviders = ({
 	children,
@@ -11,10 +13,12 @@ export const ClientProviders = ({
 }) => {
 	const queryClient = useMemo(() => new QueryClient(), []);
 	return (
-		<QueryClientProvider client={queryClient}>
-			<SessionProvider>
-				<TooltipProvider>{children}</TooltipProvider>
-			</SessionProvider>
-		</QueryClientProvider>
+		<QueryParamProvider adapter={NextAdapterApp}>
+			<QueryClientProvider client={queryClient}>
+				<SessionProvider>
+					<TooltipProvider>{children}</TooltipProvider>
+				</SessionProvider>
+			</QueryClientProvider>
+		</QueryParamProvider>
 	);
 };

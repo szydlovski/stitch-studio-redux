@@ -1,16 +1,13 @@
 // import Image from 'next/image';
 
-import { DashboardLayout } from '@/presentation/layout';
 import {
-	Button,
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from '@/presentation/components/ui';
-import { StatsCard } from '@/presentation/components/StatsCard';
-import { DashboardViewLayout } from '@/presentation/components/DashboardViewLayout';
+} from '@components/ui';
+import { DashboardLayout } from '@presentation/layout';
 
 interface ChangelogEntry {
 	version: string;
@@ -20,6 +17,20 @@ interface ChangelogEntry {
 }
 
 const CHANGELOG: ChangelogEntry[] = [
+	{
+		version: '0.3.0',
+		date: '16.06.2024',
+		changes: [
+			'Added product cover generation',
+			'Added cross stitch pdf preview',
+			'Added brand view',
+			'Etsy integration',
+			'Revamped product details view',
+			'Revamped sidebar',
+			'Various fixes and small additions',
+			'Major codebase cleanup'
+		],
+	},
 	{
 		version: '0.2.0',
 		date: '03.06.2024',

@@ -1,18 +1,11 @@
-import { RGBTuple } from '@/domain/cross-stitch';
-import { Page } from '@/lib/pdf/Page';
+import { RGBTuple } from '@/lib/color';
+import { Page } from '@components/pdf/Page';
 import { PdfPageProps } from '../types';
 import { stitchTableCss } from '../css';
+import { hexToRgb } from '@/lib/color';
 
 const symbolDictionary =
 	'/❤１✖○２★▼３◐☁４●◪５♡✽６◆♛７V◭８\\◉９✚!◼$ʌ◧⬟✦ABCDEFGHIJKLMNOPQRSTUWXYZ';
-
-const hexToRgb = (hex: string): RGBTuple => {
-	const [r, g, b] = hex
-		.replace(/^#/, '')
-		.match(/.{1,2}/g)!
-		.map((comp) => parseInt(comp, 16));
-	return [r, g, b];
-};
 
 const getContrastColor = (color: RGBTuple) => {
 	const [r, g, b] = color;
@@ -108,8 +101,6 @@ export const PatternPages = ({
 					-Math.round((GRID_HEIGHT * pageRows - height) / 2),
 			  ]
 			: [0, 0];
-
-	const pageCount = pageCols * pageRows;
 	return (
 		<>
 			<style>{stitchTableCss}</style>

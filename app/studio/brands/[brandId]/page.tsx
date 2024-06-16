@@ -1,6 +1,6 @@
-import { GetBrandQuery } from '@/infrastructure/brand/GetBrandQuery';
-import { DashboardLayout } from '@/presentation/layout';
-import { BrandView } from '@/presentation/views/BrandView';
+import { GetBrandQuery } from '@infrastructure/brand/GetBrandQuery';
+import { DashboardLayout } from '@presentation/layout';
+import { BrandView } from '@presentation/views/BrandView';
 
 export default async function BrandDetailsPage({
 	params: { brandId },

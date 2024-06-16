@@ -1,4 +1,4 @@
-import { Page } from '@/lib/pdf/Page';
+import { Page } from '@components/pdf/Page';
 import { PdfPageProps } from '../types';
 
 export const CoverPageHeader = ({ title }: { title: string }) => {

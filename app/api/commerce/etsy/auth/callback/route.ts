@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import { NextRequest, NextResponse } from 'next/server';
 import { getXataClient } from '@/lib/xata';
-import { EncryptionService } from '@/lib/EncryptionService';
+import { EncryptionService } from '@infrastructure/encryption';
 
 interface EtsyTokenResponse {
 	access_token: string;
@@ -86,7 +86,7 @@ export const GET = async (req: NextRequest) => {
 		),
 	});
 
-	const brandId = account.brand?.id
+	const brandId = account.brand?.id;
 
 	redirect(`/studio/brands/${brandId}`);
 };
