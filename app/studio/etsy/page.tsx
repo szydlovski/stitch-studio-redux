@@ -1,17 +1,20 @@
 import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
-import { ListEtsyListingByBrandQuery } from '@/infrastructure/etsy/query/ListEtsyListingByBrandQuery';
+import { Button } from '@/presentation/components/ui';
 import { DashboardLayout } from '@/presentation/layout';
-import { EtsyListingsDirectoryView } from '@/presentation/views/EtsyListingsDirectoryView';
 
 export default async function EtsyListingsDirectoryPage() {
-	const listings = await new ListEtsyListingByBrandQuery().execute(
-		STITCH_FAIRY_CO_RECORD_ID,
-		40,
-		0
-	);
 	return (
 		<DashboardLayout>
-			<EtsyListingsDirectoryView listings={listings} />
+			<div className="p-6">
+				<div>Etsy</div>
+				<div>
+					<Button asChild variant="etsy">
+						<a href={`/api/commerce/etsy/auth/init?brandId=${STITCH_FAIRY_CO_RECORD_ID}`} target="_blank">
+							Connect Etsy shop
+						</a>
+					</Button>
+				</div>
+			</div>
 		</DashboardLayout>
 	);
 }

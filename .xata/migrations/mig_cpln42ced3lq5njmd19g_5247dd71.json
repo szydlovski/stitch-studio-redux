@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpln42ced3lq5njmd19g",
+  "parentID": "mig_cplmpqced3lq5njmd16g",
+  "checksum": "1:5247dd71e7a49891dfcf7e6a7265ad086c14312ca90884f60f94f17182f9fa41",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "verifier",
+          "type": "string"
+        },
+        "table": "etsyAccount"
+      }
+    }
+  ]
+}

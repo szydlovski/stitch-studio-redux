@@ -3,10 +3,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { useCoverGeneratorContext } from '../CoverGeneratorContext';
 import { CoverGeneratorActions, CoverRenderState } from '../reducer';
-
-const dataUrlToXataBase64 = (dataUrl: string) => {
-	return dataUrl.split(',')[1];
-};
+import { useUploadProductImage } from '../../uploadProductImage';
 
 export const useCoversUploader = () => {
 	const {
@@ -25,24 +22,12 @@ export const useCoversUploader = () => {
 		[dispatch]
 	);
 
-	const { mutateAsync } = useMutation({
-		mutationKey: ['uploadProductImage'],
-		mutationFn: async ({ src, key }: { src: string; key: string }) => {
-			const response = await fetch(`/api/products/${product.id}/images`, {
-				method: 'POST',
-				body: JSON.stringify({ image: dataUrlToXataBase64(src), key }),
-			});
-			if (!response.ok) {
-				throw new Error('Failed to upload image');
-			}
-			return response.json();
-		},
-	});
+	const { mutateAsync } = useUploadProductImage();
 
 	const handleSave = useCallback(async () => {
 		for (const { src, key } of renders) {
 			setRenders(renders.map((render) => ({ ...render, uploading: true })));
-			await mutateAsync({ src, key });
+			await mutateAsync({ productId: product.id, src, key });
 			setRenders(
 				renders.map((render) => ({
 					...render,

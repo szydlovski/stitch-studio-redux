@@ -1,12 +1,10 @@
 import { DashboardLayout } from '@/presentation/layout';
-import { BrandsContent } from './BrandsContent';
-import { listBrands } from './listBrands';
+import { BrandsView } from '@/presentation/views/BrandsView';
 
 export default async function BrandsPage() {
-	const brands = await listBrands();
 	return (
 		<DashboardLayout>
-			<BrandsContent brands={brands} />
+			<BrandsView />
 		</DashboardLayout>
 	);
 }

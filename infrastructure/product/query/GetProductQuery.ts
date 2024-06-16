@@ -17,6 +17,7 @@ export class GetProductQuery extends XataQuery<ProductDetailsAttributes> {
 			// .getFirstOrThrow({ fetchOptions: { next: { revalidate: 0 } } });
 		const { title, thumbnail, brand, author, data } = product;
 		if (!brand || !author) throw new Error();
+		
 		return {
 			id,
 			title,

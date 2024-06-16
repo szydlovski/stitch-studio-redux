@@ -4,24 +4,27 @@ import { Button } from '@/presentation/components/ui';
 import {
 	View,
 	ViewActions,
+	ViewBreadcrumbs,
 	ViewContent,
 	ViewHeader,
 	ViewTitle,
 } from '@/presentation/components/ui/view';
 import { RefreshCwIcon } from 'lucide-react';
-import { EtsyListingTile } from './components/EtsyListingTile';
 import { useSyncEtsyListing } from '../EtsyListingView/components/useSyncEtsyListing';
-import { useQueryClient } from '@tanstack/react-query';
+import { EtsyListingTile } from './components/EtsyListingTile';
 
 export const EtsyListingsDirectoryView = ({
 	listings,
 }: {
 	listings: EtsyListingAttributes[];
 }) => {
-	const queryClient = useQueryClient();
 	const { data, mutateAsync, status } = useSyncEtsyListing();
 	return (
 		<View className="bg-muted/40">
+			<ViewBreadcrumbs
+				items={[{ label: 'Etsy', href: '/studio/etsy' }]}
+				page={'Listings'}
+			/>
 			<ViewHeader>
 				<ViewTitle>{'Etsy Listings'}</ViewTitle>
 				<ViewActions>

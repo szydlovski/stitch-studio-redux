@@ -47,6 +47,21 @@ const dataUrlToXataBase64 = (dataUrl: string) => {
 	return dataUrl.split(',')[1];
 };
 
+export const useCreateProduct = () => {
+	return useMutation({
+		mutationKey: ['createProduct'],
+		mutationFn: ({
+			title,
+			thumbnail,
+			data,
+		}: {
+			title: string;
+			thumbnail: string;
+			data: string;
+		}) => new ProductApiClient().create(title, thumbnail, data),
+	});
+};
+
 export const CreateProductDialogContent = ({
 	state,
 	setState,
@@ -65,18 +80,7 @@ export const CreateProductDialogContent = ({
 		const file = await selectFile();
 		setState(await formatPayload(file));
 	}, [setState]);
-	const { mutateAsync, status } = useMutation({
-		mutationKey: ['createProduct'],
-		mutationFn: ({
-			title,
-			thumbnail,
-			data,
-		}: {
-			title: string;
-			thumbnail: string;
-			data: string;
-		}) => new ProductApiClient().create(title, thumbnail, data),
-	});
+	const { mutateAsync } = useCreateProduct();
 	const handleSave = async () => {
 		if (!state) return;
 		const product = await mutateAsync({

@@ -95,7 +95,7 @@ export const ProductListView = () => {
 					/>
 				</div>
 			</ViewHeader>
-			<ViewContent className="bg-muted">
+			<ViewContent fullWidth className="bg-muted">
 				<div className="p-6">
 					<ProductList />
 				</div>

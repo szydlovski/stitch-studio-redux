@@ -4,6 +4,11 @@ import {
 	TemplatePropType,
 } from '@/infrastructure/product-image/types';
 
+const etsyCoverKeys = [
+	'etsy_cover',
+	'etsy_image'
+]
+
 export const loopMockupTemplate: TemplateManifest = {
 	props: [
 		{

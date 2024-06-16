@@ -23,3 +23,9 @@ export interface RenderedProductImage {
 	canvas: HTMLCanvasElement;
 	key: string;
 }
+
+export enum ProductImageTag {
+	EtsyCover = 'EtsyCover',
+	EtsyImage = 'EtsyImage',
+	Pinterest = 'Pinterest',
+}

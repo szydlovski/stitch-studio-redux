@@ -1,6 +1,3 @@
-import { MoreHorizontal } from 'lucide-react';
-
-import { ListBrandRecord } from './listBrands';
 import { DataTable } from '@/presentation/components/DataTable';
 import { Button } from '@/presentation/components/ui/button';
 import {
@@ -18,9 +15,14 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuTrigger,
 } from '@/presentation/components/ui/dropdown-menu';
+import { MoreHorizontal } from 'lucide-react';
 import Image from 'next/image';
 
-export const BrandsContent = ({ brands }: { brands: ListBrandRecord[] }) => {
+import { BrandItem } from '@/domain/brand/BrandItem';
+import { Badge } from '@/presentation/components/ui';
+import Link from 'next/link';
+
+export const BrandsContent = ({ brands }: { brands: BrandItem[] }) => {
 	return (
 		<div className="bg-muted/40 p-6 min-h-full">
 			<Card>
@@ -37,21 +39,33 @@ export const BrandsContent = ({ brands }: { brands: ListBrandRecord[] }) => {
 							{
 								key: 'image',
 								className: 'w-[100px]',
-								cell: ({ row: { name, logo } }) => (
+								cell: ({ row: { id, name, logo } }) => (
 									// <Skeleton className="w-[64px] h-[64px] rounded-md" />
-									<Image
-										src={logo}
-										alt={name}
-										width={64}
-										height={64}
-										className="rounded-md"
-									/>
+
+									<Link href={`/studio/brands/${id}`}>
+										<Image
+											src={logo}
+											alt={name}
+											width={64}
+											height={64}
+											className="rounded-md"
+										/>
+									</Link>
 								),
 							},
 							{
 								key: 'name',
 								label: 'Name',
-								cell: ({ row: { name } }) => <>{name}</>,
+								cell: ({ row: { id, name, etsy } }) => (
+									<div className="flex gap-2">
+										<Link href={`/studio/brands/${id}`}>{name}</Link>
+										{etsy && (
+											<Badge className="bg-orange-500 pointer-events-none">
+												Etsy
+											</Badge>
+										)}
+									</div>
+								),
 							},
 							{
 								key: 'totalSales',
@@ -65,7 +79,7 @@ export const BrandsContent = ({ brands }: { brands: ListBrandRecord[] }) => {
 							},
 							{
 								key: 'actions',
-								cell: () => (
+								cell: ({ row: { id, name } }) => (
 									<DropdownMenu>
 										<DropdownMenuTrigger asChild>
 											<Button aria-haspopup="true" size="icon" variant="ghost">
@@ -74,9 +88,10 @@ export const BrandsContent = ({ brands }: { brands: ListBrandRecord[] }) => {
 											</Button>
 										</DropdownMenuTrigger>
 										<DropdownMenuContent align="end">
-											<DropdownMenuLabel>Actions</DropdownMenuLabel>
-											<DropdownMenuItem>Edit</DropdownMenuItem>
-											<DropdownMenuItem>Delete</DropdownMenuItem>
+											<DropdownMenuLabel>{name}</DropdownMenuLabel>
+											<DropdownMenuItem asChild>
+												<Link href={`/studio/brands/${id}`}>View</Link>
+											</DropdownMenuItem>
 										</DropdownMenuContent>
 									</DropdownMenu>
 								),

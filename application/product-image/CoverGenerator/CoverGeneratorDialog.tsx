@@ -1,6 +1,10 @@
 'use client';
 import { Button } from '@/presentation/components/ui';
-import { Dialog, DialogContent, DialogTrigger } from '@/presentation/components/ui/dialog';
+import {
+	Dialog,
+	DialogContent,
+	DialogTrigger,
+} from '@/presentation/components/ui/dialog';
 import { WandSparklesIcon } from 'lucide-react';
 import { useProductContext } from '@/presentation/components/context/ProductContext';
 import {
@@ -8,7 +12,10 @@ import {
 	useCoverGeneratorContext,
 } from './CoverGeneratorContext';
 import { Stepper } from './Stepper';
-import { CoverGeneratorSteps, CoverGeneratorStepOrder } from './CoverGeneratorSteps';
+import {
+	CoverGeneratorSteps,
+	CoverGeneratorStepOrder,
+} from './CoverGeneratorSteps';
 import { useDisclosure } from '@/lib/hooks/useDisclosure';
 import { RendererProvider } from '@/presentation/components/context/RendererContext';
 
@@ -46,7 +53,7 @@ export const CoverGeneratorDialog = () => {
 	return (
 		<Dialog open={isOpen} onOpenChange={setOpen}>
 			<DialogTrigger asChild>
-				<Button size="xs" variant="outline" className="flex gap-1">
+				<Button variant="outline">
 					<WandSparklesIcon size={16} />
 					<span>{'Cover generator'}</span>
 				</Button>

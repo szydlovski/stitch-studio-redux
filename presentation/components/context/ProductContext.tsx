@@ -38,7 +38,10 @@ export const ProductContextProvider = ({
 				loadingContent
 			) : (
 				<ProductContext.Provider
-					value={{ product: data, pattern: CrossStitchPattern.fromAttributes(data.data) }}
+					value={{
+						product: data,
+						pattern: CrossStitchPattern.fromAttributes(data.data),
+					}}
 				>
 					{children}
 				</ProductContext.Provider>

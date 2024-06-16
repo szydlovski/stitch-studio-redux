@@ -8,10 +8,11 @@ export class GetProductImagesQuery extends XataQuery<
 		productId: string
 	): Promise<ProductImageItemAttributes[]> {
 		const images = await this.xata.db.productImage
-			.select(['*', 'image.signedUrl'])
+			.select(['*', 'image.*', 'image.signedUrl'])
 			.filter({
 				product: productId,
 			})
+			.sort('xata.createdAt', 'desc')
 			.getAll()
 			.then((images) =>
 				images.map(

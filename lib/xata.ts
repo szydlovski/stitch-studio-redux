@@ -47,6 +47,7 @@ const tables = [
     revLinks: [
       { column: "brand", table: "product" },
       { column: "brand", table: "etsyListing" },
+      { column: "brand", table: "etsyAccount" },
     ],
   },
   {
@@ -91,6 +92,17 @@ const tables = [
       { name: "payload", type: "json", notNull: true, defaultValue: "{}" },
     ],
   },
+  {
+    name: "etsyAccount",
+    columns: [
+      { name: "token", type: "string" },
+      { name: "brand", type: "link", link: { table: "brand" } },
+      { name: "verifier", type: "string" },
+      { name: "shopId", type: "string" },
+      { name: "userId", type: "string" },
+      { name: "data", type: "json" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -120,6 +132,9 @@ export type EtsyListingRecord = EtsyListing & XataRecord;
 export type Event = InferredTypes["event"];
 export type EventRecord = Event & XataRecord;
 
+export type EtsyAccount = InferredTypes["etsyAccount"];
+export type EtsyAccountRecord = EtsyAccount & XataRecord;
+
 export type DatabaseSchema = {
   product: ProductRecord;
   user: UserRecord;
@@ -129,6 +144,7 @@ export type DatabaseSchema = {
   productFile: ProductFileRecord;
   etsyListing: EtsyListingRecord;
   event: EventRecord;
+  etsyAccount: EtsyAccountRecord;
 };
 
 const DatabaseClient = buildClient();
