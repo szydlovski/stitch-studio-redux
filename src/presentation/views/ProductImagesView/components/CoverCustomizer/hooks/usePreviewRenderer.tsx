@@ -33,7 +33,7 @@ export const usePreviewRenderer = ({
 					ctx
 				);
 			}, wait),
-		[]
+		[canvasRef, pattern, render, rendererContext, wait]
 	);
-	useEffect(() => debouncedRender(state), [state]);
+	useEffect(() => debouncedRender(state), [state, debouncedRender]);
 };

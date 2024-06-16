@@ -2,6 +2,7 @@
 import { Checkbox, ScrollArea, Skeleton } from '@components/ui';
 import { cn } from '@/lib';
 import { CheckIcon } from 'lucide-react';
+import Image from 'next/image';
 
 interface ImageItem {
 	src: string;
@@ -10,6 +11,8 @@ interface ImageItem {
 	uploaded?: boolean;
 	error?: boolean;
 	errorMessage?: string;
+	width: number;
+	height: number;
 }
 
 interface ImageGridProps {
@@ -21,7 +24,7 @@ export const ImagesGrid = ({ images }: ImageGridProps) => {
 		<ScrollArea className="pr-4">
 			<div className="w-full max-w-full flex-1 max-h-[410px]">
 				<div className="grid grid-cols-4 gap-4 h-full">
-					{images.map(({ src, uploaded, uploading }, i) => (
+					{images.map(({ src, uploaded, uploading, width, height }, i) => (
 						<div
 							key={i}
 							className={cn(
@@ -43,7 +46,13 @@ export const ImagesGrid = ({ images }: ImageGridProps) => {
 									</div>
 								</div>
 							)}
-							<img src={src} className="max-h-full" alt={'Generated cover'} />
+							<Image
+								src={src}
+								width={width}
+								height={height}
+								className="max-h-full"
+								alt={'Generated cover'}
+							/>
 						</div>
 					))}
 				</div>

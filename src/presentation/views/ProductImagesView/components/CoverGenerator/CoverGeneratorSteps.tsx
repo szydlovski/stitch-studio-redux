@@ -24,7 +24,7 @@ export const CoverGeneratorSteps: Record<
 	[CoverGeneratorStep.AdjustColors]: {
 		key: CoverGeneratorStep.AdjustColors,
 		title: 'Customize',
-		component: () => {
+		Component: () => {
 			const {
 				product: { pattern },
 				state: { coverConfig },
@@ -35,7 +35,7 @@ export const CoverGeneratorSteps: Record<
 			const handleCoverConfigChange = useCallback(
 				(value: Partial<CoverConfig>) =>
 					dispatch(CoverGeneratorActions.updateCoverConfig(value)),
-				[]
+				[dispatch]
 			);
 
 			return (
@@ -66,7 +66,7 @@ export const CoverGeneratorSteps: Record<
 	[CoverGeneratorStep.ReviewImages]: {
 		key: CoverGeneratorStep.ReviewImages,
 		title: 'Preview',
-		component: () => {
+		Component: () => {
 			const {
 				state: { renders },
 			} = useCoverGeneratorContext();

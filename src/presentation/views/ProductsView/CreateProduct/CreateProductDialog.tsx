@@ -22,11 +22,14 @@ import {
 } from '@components/ui';
 import { useQueryClient } from '@tanstack/react-query';
 import { ReactNode, useCallback, useState } from 'react';
+import Image from 'next/image';
 
 export interface FilePatternPayload {
 	pattern: CrossStitchPattern;
 	src: string;
 	filename: string;
+	width: number;
+	height: number;
 }
 
 const formatPayload = async (file: File): Promise<FilePatternPayload> => {
@@ -37,6 +40,8 @@ const formatPayload = async (file: File): Promise<FilePatternPayload> => {
 	const dataUrl = img.toDataURL();
 
 	return {
+		width: img.width,
+		height: img.height,
 		pattern,
 		src: dataUrl,
 		filename: file.name,
@@ -117,7 +122,12 @@ export const CreateProductDialogContent = ({
 					</div>
 					<div className="flex p-4 justify-center items-center aspect-square bg-neutral-100 rounded-md">
 						{state ? (
-							<img src={state.src} alt="Preview" />
+							<Image
+								src={state.src}
+								width={state.width}
+								height={state.height}
+								alt="Preview"
+							/>
 						) : (
 							<span className="text-sm text-neutral-400">
 								Preview will appear here.

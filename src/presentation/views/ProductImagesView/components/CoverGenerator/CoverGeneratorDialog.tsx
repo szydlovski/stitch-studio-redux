@@ -18,7 +18,7 @@ export const CoverGeneratorDialogContent = () => {
 	const {
 		stepper: { step, setStep },
 	} = useCoverGeneratorContext();
-	const { component: StepComponent } = CoverGeneratorSteps[step];
+	const { Component: StepComponent } = CoverGeneratorSteps[step];
 	return (
 		<DialogContent className="flex max-w-5xl p-0 gap-0">
 			<div className="flex col-span-2 bg-muted p-6 rounded-md rounded-r-none">

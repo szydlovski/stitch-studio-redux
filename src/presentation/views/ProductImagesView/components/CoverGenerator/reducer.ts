@@ -1,9 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import {
-	CoverConfig,
-	CoverConfigAction,
-	coverConfigReducer,
-} from './coverConfigReducer';
+import { CoverConfig } from './coverConfigReducer';
 
 export interface CoverRenderState {
 	key: string;

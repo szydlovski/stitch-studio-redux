@@ -1,40 +1,18 @@
 'use client';
-import { selectFile } from '@presentation/utils';
-import { useUploadProductImage } from '@application/product-image/uploadProductImage';
-import { LoadingButton, ViewContent } from '@components/ui';
 import {
-	ProductImageItem,
-	ProductImageItemAttributes,
-} from '@domain/product-image/ProductImageItem';
+	getProductImagesQueryKey,
+	useGetProductImages,
+	useUploadProductImage,
+} from '@application/product-image';
+import { LoadingButton, ViewContent } from '@components/ui';
+import { selectFile } from '@presentation/utils';
 import { useProductContext } from '@presentation/views/ProductView/ProductContext';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import { BoxSelectIcon } from 'lucide-react';
 import { MouseEvent, forwardRef, useCallback, useState } from 'react';
 import { ProductImageTile, ProductImageTileSkeleton } from './ProductImageTile';
 import { SelectionBar } from './SelectionBar';
 import { CoverGeneratorDialog } from './components/CoverGenerator/CoverGeneratorDialog';
-
-interface GetProductImagesResponse {
-	images: ProductImageItemAttributes[];
-}
-
-export const getProductImagesQueryKey = (productId: string) => [
-	'productImages',
-	productId,
-];
-
-const getProductImages = (productId: string) => {
-	return fetch(`/api/products/${productId}/images`)
-		.then((res): Promise<GetProductImagesResponse> => res.json())
-		.then(({ images }) => images.map(ProductImageItem.fromAttributes));
-};
-
-export const useGetProductImages = (productId: string) => {
-	return useQuery({
-		queryKey: getProductImagesQueryKey(productId),
-		queryFn: () => getProductImages(productId),
-	});
-};
 
 const readFileAsDataURL = (file: File) => {
 	return new Promise<string>((resolve) => {
@@ -90,7 +68,7 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 		await queryClient.invalidateQueries({
 			queryKey: getProductImagesQueryKey(product.id),
 		});
-	}, []);
+	}, [mutateAsync, product.id, queryClient]);
 
 	return (
 		<ViewContent ref={ref} fullWidth className="flex-1 bg-muted relative">
@@ -153,3 +131,5 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 		</ViewContent>
 	);
 });
+
+ImagesTabContent.displayName = 'ImagesTabContent';

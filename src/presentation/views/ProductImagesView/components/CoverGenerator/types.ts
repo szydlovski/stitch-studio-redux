@@ -10,7 +10,7 @@ export interface CoverGeneratorStepConfig {
 	key: CoverGeneratorStep;
 	title: string;
 	description?: string;
-	component: FC;
+	Component: FC;
 }
 
 export interface PaddingOptions {

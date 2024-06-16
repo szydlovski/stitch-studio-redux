@@ -38,7 +38,15 @@ export const useCoversRenderer = () => {
 				CoverGeneratorActions.setState({ lastCoverConfig: state.coverConfig })
 			);
 		});
-	}, [product, state.coverConfig]);
+	}, [
+		product,
+		state.coverConfig,
+		dispatch,
+		rendererContext,
+		setRenders,
+		setRendersLoading,
+		state.lastCoverConfig,
+	]);
 
 	return { rendersLoading };
 };

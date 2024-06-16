@@ -167,11 +167,11 @@ export const useGlobalModal = (
 			onOpenChange
 				? onOpenChange(value)
 				: dispatch(modalProviderActions.setModalOpen({ id, value })),
-		[]
+		[dispatch, onOpenChange, id]
 	);
 
-	const open = useCallback(() => handleOpenChange(true), []);
-	const close = useCallback(() => handleOpenChange(false), []);
+	const open = useCallback(() => handleOpenChange(true), [handleOpenChange]);
+	const close = useCallback(() => handleOpenChange(false), [handleOpenChange]);
 
 	useEffect(() => {
 		if (controlledOpen !== undefined) {
@@ -179,7 +179,7 @@ export const useGlobalModal = (
 				modalProviderActions.setModalOpen({ id, value: controlledOpen })
 			);
 		}
-	}, [controlledOpen]);
+	}, [controlledOpen, dispatch, id]);
 
 	useEffect(() => {
 		dispatch(
@@ -188,10 +188,11 @@ export const useGlobalModal = (
 		return () => {
 			dispatch(modalProviderActions.removeModal(id));
 		};
-	}, []);
+	}, [children, dispatch, id, initialOpen]);
 
 	useEffect(() => {
 		dispatch(modalProviderActions.updateModal({ id, children }));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, deps);
 
 	return {
@@ -225,14 +226,14 @@ const ConsumerModalContent = () => {
 							<Button onClick={() => setCount((count) => count + 1)}>
 								Increment
 							</Button>
-							<p>It's very long.</p>
-							<p>It's very long.</p>
-							<p>It's very long.</p>
-							<p>It's very long.</p>
-							<p>It's very long.</p>
-							<p>It's very long.</p>
-							<p>It's very long.</p>
-							<p>It's very long.</p>
+							<p>{`It's very long.`}</p>
+							<p>{`It's very long.`}</p>
+							<p>{`It's very long.`}</p>
+							<p>{`It's very long.`}</p>
+							<p>{`It's very long.`}</p>
+							<p>{`It's very long.`}</p>
+							<p>{`It's very long.`}</p>
+							<p>{`It's very long.`}</p>
 							<button>elo</button>
 						</div>
 					</DialogContent>

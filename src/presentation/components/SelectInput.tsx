@@ -50,3 +50,5 @@ export const SelectInput = React.forwardRef<
 		</Select>
 	);
 });
+
+SelectInput.displayName = 'SelectInput';

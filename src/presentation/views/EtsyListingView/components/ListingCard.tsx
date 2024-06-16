@@ -14,6 +14,7 @@ import {
 import { EtsyListingAttributes } from '@domain/etsy/types';
 import { GetListingResponse } from '@infrastructure/etsy/EtsyV3OpenApiClient';
 import { Link2Icon, SquareArrowOutUpRightIcon, ZoomInIcon } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const TagList = ({ tags }: { tags: string[] }) => (
@@ -68,7 +69,12 @@ export const ListingCard = ({
 							key={image.listing_image_id}
 							className="relative w-32 aspect-square bg-muted border flex items-center p-2"
 						>
-							<img src={image.url_170x135} />
+							<Image
+								src={image.url_170x135}
+								width={170}
+								height={135}
+								alt={`Image ${i + 1}`}
+							/>
 							<div className="absolute right-0 bottom-0 p-2">
 								<Button
 									variant="secondary"
@@ -94,7 +100,13 @@ export const ListingCard = ({
 			<Dialog open={isOpen} onOpenChange={setOpen}>
 				<DialogContent className="max-w-full max-h-full sm:max-w-[calc(100vw-40px)] sm:max-h-[calc(100vh-40px)] flex flex-col justify-center items-center">
 					<div className="bg-red-300 p-4">
-						<img className="max-h-full" src={images[imageIdx].url_fullxfull} />
+						<Image
+							className="max-h-full"
+							alt={`Image ${imageIdx + 1}`}
+							src={images[imageIdx].url_fullxfull}
+							width={images[imageIdx].full_width}
+							height={images[imageIdx].full_height}
+						/>
 					</div>
 				</DialogContent>
 			</Dialog>

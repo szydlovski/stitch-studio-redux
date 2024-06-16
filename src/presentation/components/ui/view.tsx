@@ -63,6 +63,8 @@ export const ViewContent = forwardRef<HTMLDivElement, ViewContentProps>(
 	)
 );
 
+ViewContent.displayName = 'ViewContent';
+
 export const View = ({ children, className }: ContainerProps) => (
 	<div className={cn('flex flex-1 flex-col h-full', className)}>{children}</div>
 );

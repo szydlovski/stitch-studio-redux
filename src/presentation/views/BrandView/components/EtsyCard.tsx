@@ -8,6 +8,7 @@ import {
 	Separator,
 } from '@components/ui';
 import { useBrandViewContext } from '../BrandViewContext';
+import Image from 'next/image';
 
 interface EtsyShopPayload {
 	icon_url_fullxfull: string;
@@ -66,10 +67,12 @@ const EtsyAccountCard = () => {
 			<CardContent>
 				<div className="grid grid-cols-[250px_1fr] gap-6">
 					<div className="">
-						<img
+						<Image
 							className="rounded-full border w-[250px]"
 							src={account.payload.icon_url_fullxfull}
 							alt={account.payload.title}
+							width={250}
+							height={250}
 						/>
 					</div>
 					<EtsyShopSummary shop={account.payload} />

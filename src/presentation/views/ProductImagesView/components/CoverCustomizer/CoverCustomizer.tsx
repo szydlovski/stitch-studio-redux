@@ -34,7 +34,7 @@ export const CoverCustomizer = <ColorKey extends string = string>({
 
 	const [state, dispatch] = useReducer(coverConfigReducer, initialState);
 	const { scale, xOffset, yOffset } = state;
-	useEffect(() => onChange?.(state), [state]);
+	useEffect(() => onChange?.(state), [state, onChange]);
 
 	const [activeColorKey, setActiveColorKey] = useState<ColorKey>();
 	const updateActiveColor = useCallback(
@@ -53,7 +53,7 @@ export const CoverCustomizer = <ColorKey extends string = string>({
 			...((activeColorKey && pickersConfig[activeColorKey]?.palette) ?? []),
 			...pattern.groups.map((color) => color.hex),
 		],
-		[activeColorKey]
+		[activeColorKey, pattern.groups, pickersConfig]
 	);
 
 	const pickerEntries = Object.entries(pickersConfig) as [

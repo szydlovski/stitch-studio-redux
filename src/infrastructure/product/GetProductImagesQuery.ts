@@ -1,4 +1,4 @@
-import { ProductImageItemAttributes } from '@domain/product-image/ProductImageItem';
+import { ProductImageItemAttributes } from '@domain/product-image';
 import { XataQuery } from '@/lib/api/XataQuery';
 
 export class GetProductImagesQuery extends XataQuery<

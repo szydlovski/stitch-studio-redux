@@ -13,7 +13,7 @@ import {
 	DropdownMenuTrigger,
 	Skeleton,
 } from '@components/ui';
-import { ProductImageItem } from '@domain/product-image/ProductImageItem';
+import { ProductImageItem } from '@domain/product-image';
 import { transformImage } from '@xata.io/client';
 import {
 	CheckIcon,

@@ -40,6 +40,13 @@ export const useCoversUploader = () => {
 			});
 			closeGenerator();
 		}
-	}, [mutateAsync, renders]);
+	}, [
+		mutateAsync,
+		renders,
+		setRenders,
+		queryClient,
+		product.id,
+		closeGenerator,
+	]);
 	return handleSave;
 };
