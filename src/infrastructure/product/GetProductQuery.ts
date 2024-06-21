@@ -1,8 +1,8 @@
 import { XataQuery } from '@/lib/api/XataQuery';
-import { ProductDetailsAttributes } from '@domain/product/ProductDetails';
+import { FullProductAttributes } from '@domain/product';
 
-export class GetProductQuery extends XataQuery<ProductDetailsAttributes> {
-	public async execute(id: string): Promise<ProductDetailsAttributes> {
+export class GetProductQuery extends XataQuery<FullProductAttributes> {
+	public async execute(id: string): Promise<FullProductAttributes> {
 		const product = await this.xata.db.product
 			.select([
 				'*',
@@ -18,13 +18,14 @@ export class GetProductQuery extends XataQuery<ProductDetailsAttributes> {
 			.filter({ id })
 			.getFirstOrThrow();
 		// .getFirstOrThrow({ fetchOptions: { next: { revalidate: 0 } } });
-		const { title, thumbnail, brand, author, data } = product;
+		const { title, thumbnail, brand, author, data, attributes } = product;
 		if (!brand || !author) throw new Error();
 
 		return {
 			id,
 			title,
 			data,
+			attributes,
 			thumbnail: {
 				src: thumbnail?.signedUrl ?? '',
 				width: thumbnail?.attributes?.width,

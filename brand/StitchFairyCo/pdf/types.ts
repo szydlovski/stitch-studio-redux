@@ -1,5 +1,5 @@
-import { ProductDetails } from '@domain/product/ProductDetails';
+import { FullProductObject } from '@domain/product';
 
 export interface PdfPageProps {
-	product: ProductDetails;
+	product: FullProductObject;
 }

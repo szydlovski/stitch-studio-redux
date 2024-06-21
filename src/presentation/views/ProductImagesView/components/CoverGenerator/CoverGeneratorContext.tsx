@@ -1,5 +1,5 @@
 'use client';
-import { ProductDetails } from '@domain/product/ProductDetails';
+import { FullProductObject } from '@domain/product';
 import { CrossStitchPattern } from '@domain/cross-stitch';
 import { UseStepper, useStepper } from '@/lib/hooks/useStepper';
 import {
@@ -19,7 +19,7 @@ import { CoverGeneratorStep } from './types';
 
 
 interface CoverGeneratorContextValue {
-	product: ProductDetails;
+	product: FullProductObject;
 	state: CoverGeneratorState;
 	dispatch: (action: CoverGeneratorAction) => void;
 	reset: () => void;
@@ -63,7 +63,7 @@ export const CoverGeneratorProvider = ({
 	children,
 	onClose,
 }: {
-	product: ProductDetails;
+	product: FullProductObject;
 	children: React.ReactNode;
 	onClose: () => void;
 }) => {

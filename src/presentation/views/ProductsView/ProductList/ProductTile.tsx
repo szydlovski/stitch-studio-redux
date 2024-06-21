@@ -17,7 +17,7 @@ import {
 	DropdownMenuTrigger,
 	Skeleton,
 } from '@components/ui';
-import { ProductItem } from '@domain/product/ProductItem';
+import { BaseProductObject } from '@domain/product';
 import { BrandHoverCard } from '@presentation/views/ProductView/BrandHoverCard';
 import { transformImage } from '@xata.io/client';
 import {
@@ -33,7 +33,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 interface ProductTileProps {
-	product: ProductItem;
+	product: BaseProductObject;
 }
 
 interface DropdownMenuItemConfig {
@@ -76,7 +76,7 @@ const DropdownMenuItemsFromConfig = ({
 );
 
 const getProductMenuItems = (
-	product: ProductItem
+	product: BaseProductObject
 ): DropdownMenuItemConfig[] => [
 	{
 		icon: SquareArrowOutUpRightIcon,

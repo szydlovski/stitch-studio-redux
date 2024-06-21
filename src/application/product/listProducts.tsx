@@ -1,13 +1,13 @@
 import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
 import {
-	ProductItem,
-	ProductItemAttributes,
-} from '@domain/product/ProductItem';
+	BaseProductObject,
+	BaseProductAttributes,
+} from '@domain/product';
 import { ListProductsParameters } from '@infrastructure/product/ListProductsQuery';
 import { useQuery } from '@tanstack/react-query';
 
 interface ListProductsResponse {
-	products: ProductItemAttributes[];
+	products: BaseProductAttributes[];
 }
 
 export const TEST_BRAND_RECORD_ID = 'rec_cppes4rjpt8uffogljgg';
@@ -29,10 +29,10 @@ const encodeQueryParams = (params: Record<string, any | any[]>) => {
 
 export const listProducts = async (
 	params: ListProductsParameters = {}
-): Promise<ProductItem[]> => {
+): Promise<BaseProductObject[]> => {
 	return fetch(`/api/products?${encodeQueryParams(params)}`)
 		.then((res): Promise<ListProductsResponse> => res.json())
-		.then(({ products }) => products.map(ProductItem.fromAttributes));
+		.then(({ products }) => products.map(BaseProductObject.fromAttributes));
 };
 
 export const useListProducts = (params?: ListProductsParameters) => {

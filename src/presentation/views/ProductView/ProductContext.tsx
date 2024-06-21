@@ -2,11 +2,11 @@
 import { useGetProduct } from '@application/product';
 import { QueryStatusGuard } from '@components/guard';
 import { CrossStitchPattern } from '@domain/cross-stitch';
-import { ProductDetails } from '@domain/product/ProductDetails';
+import { FullProductObject } from '@domain/product';
 import { ReactNode, createContext, useContext } from 'react';
 
 interface ProductContextType {
-	product: ProductDetails;
+	product: FullProductObject;
 	pattern: CrossStitchPattern;
 }
 

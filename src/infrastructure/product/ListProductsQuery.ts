@@ -1,4 +1,4 @@
-import { ProductItemAttributes } from '@domain/product/ProductItem';
+import { BaseProductAttributes } from '@domain/product';
 import { XataQuery } from '@/lib/api/XataQuery';
 
 export interface ListProductsParameters {
@@ -7,11 +7,13 @@ export interface ListProductsParameters {
 	brand?: string[];
 }
 
-export class ListProductsQuery extends XataQuery<ProductItemAttributes[]> {
+export class ListProductsQuery extends XataQuery<BaseProductAttributes[]> {
 	public async execute({ offset, limit, brand }: ListProductsParameters) {
 		const products = await this.xata.db.product
 			.select([
-				'*',
+				'id',
+				'title',
+				'attributes',
 				'thumbnail.*',
 				'thumbnail.signedUrl',
 				'brand.name',
@@ -36,11 +38,12 @@ export class ListProductsQuery extends XataQuery<ProductItemAttributes[]> {
 			});
 
 		return products.map(
-			({ id, title, thumbnail, brand, author }): ProductItemAttributes => {
+			({ id, title, thumbnail, brand, author, attributes }): BaseProductAttributes => {
 				if (!brand || !author) throw new Error();
 				return {
 					id,
 					title,
+					attributes,
 					thumbnail: {
 						src: thumbnail?.signedUrl ?? '',
 						width: thumbnail?.attributes?.width,

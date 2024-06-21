@@ -1,5 +1,5 @@
 import { StitchFairyCoPdf } from '@/brand/StitchFairyCo/pdf/StitchFairyCoPdf';
-import { ProductDetails } from '@domain/product/ProductDetails';
+import { FullProductObject } from '@domain/product';
 import { GetProductQuery } from '@infrastructure/product/GetProductQuery';
 import { Metadata } from 'next';
 
@@ -14,7 +14,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
 	if (!productId) throw new Error('');
 	const attrs = await new GetProductQuery().execute(productId);
-	const product = ProductDetails.fromAttributes(attrs);
+	const product = FullProductObject.fromAttributes(attrs);
 	return {
 		title: product.title,
 	};
@@ -31,7 +31,7 @@ export default async function Page({
 		return <div>Error, no product provided</div>;
 	}
 	const attrs = await new GetProductQuery().execute(productId);
-	const product = ProductDetails.fromAttributes(attrs);
+	const product = FullProductObject.fromAttributes(attrs);
 	return (
 		<div className='flex flex-col items-center gap-24 print:gap-0 p-24 print:p-0 bg-neutral-900 print:bg-transparent'>
 			<StitchFairyCoPdf product={product} />

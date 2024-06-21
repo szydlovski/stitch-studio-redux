@@ -36,4 +36,6 @@ export interface ProductAttributes {
 	hoopConfig?: any;
 	coverConfig?: any;
 	printableConfig?: any;
+	etsyPublishedListingPayload?: any;
+	dismissedFromBoard?: boolean;
 }
