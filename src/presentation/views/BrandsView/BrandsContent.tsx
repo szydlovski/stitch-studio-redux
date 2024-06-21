@@ -1,3 +1,4 @@
+import { AppViews } from '@/app/routes';
 import { DataTable } from '@components/DataTable';
 import {
 	Badge,
@@ -25,7 +26,7 @@ export const BrandsContent = ({ brands }: { brands: BrandItem[] }) => {
 						cell: ({ row: { id, name, logo } }) => (
 							// <Skeleton className="w-[64px] h-[64px] rounded-md" />
 
-							<Link href={`/studio/brands/${id}`}>
+							<Link href={AppViews.Brand(id)}>
 								<Image
 									src={logo.src}
 									alt={name}
@@ -41,7 +42,7 @@ export const BrandsContent = ({ brands }: { brands: BrandItem[] }) => {
 						label: 'Name',
 						cell: ({ row: { id, name, etsy } }) => (
 							<div className="flex gap-2">
-								<Link href={`/studio/brands/${id}`}>{name}</Link>
+								<Link href={AppViews.Brand(id)}>{name}</Link>
 								{etsy && (
 									<Badge className="bg-orange-500 pointer-events-none">
 										Etsy
@@ -68,7 +69,7 @@ export const BrandsContent = ({ brands }: { brands: BrandItem[] }) => {
 								<DropdownMenuContent align="end">
 									<DropdownMenuLabel>{name}</DropdownMenuLabel>
 									<DropdownMenuItem asChild>
-										<Link href={`/studio/brands/${id}`}>View</Link>
+										<Link href={AppViews.Brand(id)}>View</Link>
 									</DropdownMenuItem>
 								</DropdownMenuContent>
 							</DropdownMenu>

@@ -14,6 +14,18 @@ export class GetProductQuery extends XataQuery<FullProductAttributes> {
 				'brand.owner.*',
 				'author.name',
 				'author.email',
+				{
+					// TODO check if we can get image/file size here
+					name: '<-productImage.product',
+					as: 'images',
+					columns: ['*'],
+				},
+				{
+					// TODO check if we can get image/file size here
+					name: '<-productFile.product',
+					as: 'files',
+					columns: ['*'],
+				},
 			])
 			.filter({ id })
 			.getFirstOrThrow();

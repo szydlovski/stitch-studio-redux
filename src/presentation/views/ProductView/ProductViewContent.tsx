@@ -24,6 +24,7 @@ import { StringParam, useQueryParam, withDefault } from 'use-query-params';
 import { ImagesTabContent } from '../ProductImagesView/ImagesTabContent';
 import { ProductViewHeader } from './ProductViewHeader';
 import { LaunchChecklistCard } from './ProductCards/LaunchChecklistCard';
+import { AppViews } from '@/app/routes';
 
 enum ProductViewTab {
 	Properties = 'properties',
@@ -44,7 +45,7 @@ export const ProductViewContent = () => {
 		<Tabs asChild value={tab} onValueChange={(value) => setTab(value)}>
 			<View>
 				<ViewBreadcrumbs
-					items={[{ label: 'Products', href: '/studio/products' }]}
+					items={[{ label: 'Products', href: AppViews.Products() }]}
 					page={product.title}
 				/>
 				<div className="flex flex-col border-b bg-muted/40">
@@ -130,8 +131,8 @@ export const ProductViewContentSkeleton = () => {
 		<Tabs asChild defaultValue="properties">
 			<View>
 				<ViewBreadcrumbs
-					items={[{ label: 'Products', href: '/studio/products' }]}
-					page={<Skeleton className='w-[140px] h-[20px]' />}
+					items={[{ label: 'Products', href: AppViews.Products() }]}
+					page={<Skeleton className="w-[140px] h-[20px]" />}
 				/>
 				<div className="flex flex-col border-b bg-muted/40">
 					<div className="flex gap-4 p-6">
