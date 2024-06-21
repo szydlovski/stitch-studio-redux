@@ -1,4 +1,4 @@
-import { RGBTuple } from '@/lib/color';
+import { ColorTuple } from '@/lib/color';
 import { Page } from '@components/pdf/Page';
 import { PdfPageProps } from '../types';
 import { stitchTableCss } from '../css';
@@ -7,7 +7,7 @@ import { hexToRgb } from '@/lib/color';
 const symbolDictionary =
 	'/❤１✖○２★▼３◐☁４●◪５♡✽６◆♛７V◭８\\◉９✚!◼$ʌ◧⬟✦ABCDEFGHIJKLMNOPQRSTUWXYZ';
 
-const getContrastColor = (color: RGBTuple) => {
+const getContrastColor = (color: ColorTuple) => {
 	const [r, g, b] = color;
 	const value = r * 0.299 + g * 0.587 + b * 0.114;
 	return value > 200 ? '#000000' : '#ffffff';

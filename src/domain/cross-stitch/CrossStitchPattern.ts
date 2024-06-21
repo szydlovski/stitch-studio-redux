@@ -1,4 +1,11 @@
+import { DrawnStitch } from '@presentation/views/CrossStitchEdit/editor/crossStitchEditorReducer';
 import { ColorGroup, CrossStitchPatternData } from './types';
+
+export interface FlossColor {
+	name: string;
+	color: string;
+	palette: string;
+}
 
 export class CrossStitchPattern {
 	private constructor(
@@ -12,6 +19,38 @@ export class CrossStitchPattern {
 		groups,
 	}: CrossStitchPatternData): CrossStitchPattern {
 		return new CrossStitchPattern(width, height, groups);
+	}
+	private getDataArrayIndex({ x, y }: { x: number; y: number }): number {
+		return y * this.width + x;
+	}
+	public getStitches(): DrawnStitch[] {
+		const stitches: DrawnStitch[] = [];
+		for (const [index, { pixels }] of Object.entries(this.groups)) {
+			const colorNumber = Number(index);
+			for (const { x, y } of pixels) {
+				stitches.push({ x, y, color: colorNumber });
+			}
+		}
+		return stitches;
+	}
+	public getColors(): FlossColor[] {
+		return this.groups.map(({ hex }, index) => ({
+			name: `Color ${index}`,
+			color: hex,
+			palette: 'custom',
+		}));
+	}
+	public getRawArray(): (number | undefined)[] {
+		const data: (number | undefined)[] = Array(this.width * this.height).fill(
+			undefined
+		);
+		for (const [index, { pixels }] of Object.entries(this.groups)) {
+			const colorNumber = Number(index);
+			for (const pixel of pixels) {
+				data[this.getDataArrayIndex(pixel)] = colorNumber;
+			}
+		}
+		return data;
 	}
 	public getGroupIndex(group: ColorGroup): number {
 		return this.groups.findIndex(({ id }) => id === group.id);

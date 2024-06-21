@@ -1,3 +1,4 @@
+import { getXataClient } from '@/lib/xata';
 import { UserIdentity } from '@domain/user';
 import { GetUserByEmailQuery } from '@infrastructure/user';
 import NextAuth from 'next-auth';
@@ -16,7 +17,24 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 				const email = user.email;
 				if (!email) throw new Error('No email returned from Google');
 				try {
-					const userRecord = await new GetUserByEmailQuery().execute(email);
+					let userRecord = await new GetUserByEmailQuery().execute(email);
+					if (userRecord.avatar === null) {
+						console.log('User has no avatar!');
+						if (user.image) {
+							const fetchedImage = await fetch(user.image).then((res) =>
+								res.blob()
+							);
+							await getXataClient().files.upload(
+								{
+									table: 'user',
+									column: 'avatar',
+									record: userRecord.id,
+								},
+								fetchedImage
+							);
+							userRecord = await new GetUserByEmailQuery().execute(email);
+						}
+					}
 					token.identity = userRecord;
 				} catch (error) {
 					throw new Error('User not found');

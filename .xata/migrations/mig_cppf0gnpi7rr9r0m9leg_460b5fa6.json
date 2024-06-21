@@ -1,0 +1,18 @@
+{
+  "id": "mig_cppf0gnpi7rr9r0m9leg",
+  "parentID": "mig_cplns3ced3lq5njmd1tg",
+  "checksum": "1:460b5fa6befd4c731bff9a3e8142963d9c37dcb2cf668c5be5706c16bb3d70cf",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "attributes",
+          "type": "json",
+          "notNull": true,
+          "defaultValue": "{}"
+        },
+        "table": "brand"
+      }
+    }
+  ]
+}

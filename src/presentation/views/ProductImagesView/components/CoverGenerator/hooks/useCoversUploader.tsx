@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { useCoverGeneratorContext } from '../CoverGeneratorContext';
 import { CoverGeneratorActions, CoverRenderState } from '../reducer';
 import { useUploadProductImage } from '@application/product-image/uploadProductImage';
+import { getProductImagesQueryKey } from '@application/product-image';
 
 export const useCoversUploader = () => {
 	const {
@@ -36,7 +37,7 @@ export const useCoversUploader = () => {
 				}))
 			);
 			await queryClient.invalidateQueries({
-				queryKey: ['covers', product.id],
+				queryKey: getProductImagesQueryKey(product.id),
 			});
 			closeGenerator();
 		}

@@ -1,11 +1,15 @@
 'use client';
-import { ViewContent } from '@components/ui';
+import { CardStack, ViewContent } from '@components/ui';
 import { EtsyCard } from './components/EtsyCard';
+import { AttributesCard } from './components/AttributesCard';
 
 export const BrandViewContent = () => {
 	return (
-		<ViewContent className="p-6 bg-muted">
-			<EtsyCard />
+		<ViewContent className="bg-muted">
+			<CardStack>
+				<EtsyCard />
+				<AttributesCard />
+			</CardStack>
 		</ViewContent>
 	);
 };

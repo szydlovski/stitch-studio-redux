@@ -1,19 +1,16 @@
 'use client';
 
+import { cn } from '@/lib';
+import { ProfileCard } from './ProfileCard';
 import {
 	Button,
 	Card,
-	CardContent,
-	CardDescription,
 	CardFooter,
 	CardHeader,
 	CardTitle,
-	Input,
 } from '@components/ui';
-import { cn } from '@/lib';
 import Link from 'next/link';
-import { FC, ReactNode, useState } from 'react';
-import { ProfileCard } from '@components/UserCards/ProfileCard';
+import { FC, useState } from 'react';
 
 enum UserPreferencesTab {
 	Profile = 'profile',

@@ -10,6 +10,7 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from './breadcrumb';
+import Link from 'next/link';
 
 interface ContainerProps {
 	children?: ReactNode;
@@ -57,7 +58,7 @@ export const ViewContent = forwardRef<HTMLDivElement, ViewContentProps>(
 				})}
 			>
 				<div className="h-1">{children}</div>
-				{scrollX && <ScrollBar orientation='horizontal' />}
+				{scrollX && <ScrollBar orientation="horizontal" />}
 			</ScrollArea>
 		</div>
 	)
@@ -75,7 +76,7 @@ interface BreadcrumbItem {
 }
 interface ViewBreadcrumbsProps {
 	items: BreadcrumbItem[];
-	page: string;
+	page: ReactNode;
 }
 
 export const ViewBreadcrumbs = ({ items, page }: ViewBreadcrumbsProps) => {
@@ -86,7 +87,9 @@ export const ViewBreadcrumbs = ({ items, page }: ViewBreadcrumbsProps) => {
 					{items.map(({ label, href }, index) => (
 						<Fragment key={index}>
 							<BreadcrumbItem>
-								<BreadcrumbLink href={href}>{label}</BreadcrumbLink>
+								<BreadcrumbLink asChild>
+									<Link href={href}>{label}</Link>
+								</BreadcrumbLink>
 							</BreadcrumbItem>
 							<BreadcrumbSeparator />
 						</Fragment>

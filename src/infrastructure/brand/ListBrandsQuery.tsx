@@ -8,7 +8,6 @@ export class ListBrandsQuery extends XataQuery<BrandItemAttributes[]> {
 				'*',
 				'owner.name',
 				'logo.signedUrl',
-				'logo.signedUrlTimeout',
 				{
 					name: '<-etsyAccount.brand',
 					as: 'etsyAccount',
@@ -24,9 +23,16 @@ export class ListBrandsQuery extends XataQuery<BrandItemAttributes[]> {
 					return {
 						id: brand.id,
 						name: brand.name ?? 'Unknown name',
-						totalProducts: 25,
-						owner: brand.owner?.name ?? 'Unknown owner',
-						logo: brand.logo?.signedUrl!,
+						owner: {
+							name: brand.owner!.name!,
+							id: brand.owner!.id,
+						},
+						logo: {
+							src: brand.logo?.signedUrl ?? '',
+							width: brand.logo?.attributes?.width,
+							height: brand.logo?.attributes?.height,
+						},
+						attributes: brand.attributes!,
 						etsy: etsyAccount
 							? {
 									id: etsyAccount.id,

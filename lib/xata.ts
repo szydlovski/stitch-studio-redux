@@ -30,6 +30,7 @@ const tables = [
     columns: [
       { name: "email", type: "email", unique: true },
       { name: "name", type: "string", defaultValue: "" },
+      { name: "avatar", type: "file" },
     ],
     revLinks: [
       { column: "author", table: "product" },
@@ -43,6 +44,7 @@ const tables = [
       { name: "name", type: "string", unique: true },
       { name: "logo", type: "file" },
       { name: "owner", type: "link", link: { table: "user" } },
+      { name: "attributes", type: "json", notNull: true, defaultValue: "{}" },
     ],
     revLinks: [
       { column: "brand", table: "product" },

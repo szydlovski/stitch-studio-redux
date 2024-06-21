@@ -1,4 +1,5 @@
-import { ProductThumbnail, ProductBrand, ProductAuthor } from './types';
+import { BrandItem, BrandItemAttributes } from '@domain/brand';
+import { ProductAuthor, ProductBrand, ProductThumbnail } from './types';
 
 export interface ProductItemAttributes {
 	id: string;

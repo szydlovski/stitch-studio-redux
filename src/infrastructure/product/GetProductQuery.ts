@@ -9,15 +9,18 @@ export class GetProductQuery extends XataQuery<ProductDetailsAttributes> {
 				'thumbnail.*',
 				'thumbnail.signedUrl',
 				'brand.name',
+				'brand.attributes',
+				'brand.logo.signedUrl',
+				'brand.owner.*',
 				'author.name',
 				'author.email',
 			])
 			.filter({ id })
 			.getFirstOrThrow();
-			// .getFirstOrThrow({ fetchOptions: { next: { revalidate: 0 } } });
+		// .getFirstOrThrow({ fetchOptions: { next: { revalidate: 0 } } });
 		const { title, thumbnail, brand, author, data } = product;
 		if (!brand || !author) throw new Error();
-		
+
 		return {
 			id,
 			title,
@@ -30,6 +33,16 @@ export class GetProductQuery extends XataQuery<ProductDetailsAttributes> {
 			brand: {
 				id: brand.id,
 				name: brand.name!,
+				attributes: brand.attributes,
+				owner: {
+					id: brand.owner!.id,
+					name: brand.owner!.name!,
+				},
+				logo: {
+					src: brand.logo?.signedUrl ?? '',
+					width: brand.logo?.attributes?.width,
+					height: brand.logo?.attributes?.height,
+				},
 			},
 			author: {
 				id: author.id,

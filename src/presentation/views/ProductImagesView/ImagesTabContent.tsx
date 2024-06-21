@@ -8,7 +8,7 @@ import { LoadingButton, ViewContent } from '@components/ui';
 import { selectFile } from '@presentation/utils';
 import { useProductContext } from '@presentation/views/ProductView/ProductContext';
 import { useQueryClient } from '@tanstack/react-query';
-import { BoxSelectIcon } from 'lucide-react';
+import { BoxSelectIcon, ConstructionIcon } from 'lucide-react';
 import { MouseEvent, forwardRef, useCallback, useState } from 'react';
 import { ProductImageTile, ProductImageTileSkeleton } from './ProductImageTile';
 import { SelectionBar } from './SelectionBar';
@@ -100,9 +100,20 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 						</div>
 					) : images.length === 0 ? (
 						<div className="flex flex-col gap-4 items-center py-12 px-6">
-							<div className="bg-muted/40 w-1/2 max-w-[600px] p-12 rounded-xl flex flex-col items-center gap-6">
-								<BoxSelectIcon size={48} className="text-foreground/50" />
-								<span>This product has no images.</span>
+							<div className="bg-muted/40 w-full max-w-lg p-6 rounded-xl flex flex-col items-center gap-6">
+								<ConstructionIcon
+									size={48}
+									className="text-foreground opacity-25"
+								/>
+								<div className="grid gap-1 text-center">
+									<span className="font-bold text-lg">
+										No images.
+									</span>
+									<span className="text-foreground/40 text-sm">
+										Create mockups using the Cover Generator or upload images
+										directly.
+									</span>
+								</div>
 							</div>
 						</div>
 					) : (

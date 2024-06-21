@@ -5,6 +5,7 @@ import {
 	Button,
 	Card,
 	CardHeader,
+	CardStack,
 	CardTitle,
 	Skeleton,
 	Tabs,
@@ -22,6 +23,7 @@ import { useProductContext } from '@presentation/views/ProductView/ProductContex
 import { StringParam, useQueryParam, withDefault } from 'use-query-params';
 import { ImagesTabContent } from '../ProductImagesView/ImagesTabContent';
 import { ProductViewHeader } from './ProductViewHeader';
+import { LaunchChecklistCard } from './ProductCards/LaunchChecklistCard';
 
 enum ProductViewTab {
 	Properties = 'properties',
@@ -68,9 +70,10 @@ export const ProductViewContent = () => {
 				</div>
 				<TabsContent asChild value="properties">
 					<ViewContent>
-						<div className="flex flex-col gap-4 p-6">
+						<CardStack>
+							<LaunchChecklistCard />
 							<PatternCard />
-						</div>
+						</CardStack>
 					</ViewContent>
 				</TabsContent>
 
@@ -80,23 +83,23 @@ export const ProductViewContent = () => {
 
 				<TabsContent asChild value="files">
 					<ViewContent>
-						<div className="flex flex-col gap-4 p-6">
+						<CardStack>
 							<PdfCard />
-						</div>
+						</CardStack>
 					</ViewContent>
 				</TabsContent>
 
 				<TabsContent asChild value="advanced">
 					<ViewContent>
-						<div className="flex flex-col gap-4 p-6">
+						<CardStack>
 							<DangerZoneCard />
-						</div>
+						</CardStack>
 					</ViewContent>
 				</TabsContent>
 
 				<TabsContent asChild value="cross-stitch">
 					<ViewContent>
-						<div className="flex flex-col gap-4 p-6">
+						<CardStack>
 							<PdfCard />
 							<Card>
 								<CardHeader>
@@ -106,7 +109,7 @@ export const ProductViewContent = () => {
 									</CardTitle>
 								</CardHeader>
 							</Card>
-						</div>
+						</CardStack>
 					</ViewContent>
 				</TabsContent>
 
@@ -128,7 +131,7 @@ export const ProductViewContentSkeleton = () => {
 			<View>
 				<ViewBreadcrumbs
 					items={[{ label: 'Products', href: '/studio/products' }]}
-					page={'product.title'}
+					page={<Skeleton className='w-[140px] h-[20px]' />}
 				/>
 				<div className="flex flex-col border-b bg-muted/40">
 					<div className="flex gap-4 p-6">

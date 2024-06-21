@@ -4,13 +4,13 @@ import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 import { MobileMenu } from './components/MobileMenu';
 import { Sidebar } from './components/Sidebar';
-import { UserMenu } from '@components/UserMenu/UserMenu';
+import { UserMenu } from '../UserMenu/UserMenu';
 
 import React from 'react';
 import { CommandToolbarItem } from '@components/CommandMenu';
 
 export const Header = () => (
-	<header className="flex h-14 shrink-0 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+	<header className="flex h-14 shrink-0 items-center gap-4 border-b bg-muted/40 px-6">
 		<CommandToolbarItem />
 		<UserMenu />
 		<MobileMenu />
@@ -20,6 +20,8 @@ export const Header = () => (
 interface ContainerProps {
 	children?: React.ReactNode;
 }
+
+
 
 export const DashboardLayout = ({ children }: ContainerProps) => {
 	const pathname = usePathname();
@@ -35,7 +37,7 @@ export const DashboardLayout = ({ children }: ContainerProps) => {
 		<>Loading</>
 	) : (
 		<div className="grid h-screen w-full sm:grid-cols-[56px_1fr]">
-		{/* <div className="grid h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]"> */}
+			{/* <div className="grid h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]"> */}
 			<Sidebar />
 			<div className="flex flex-col max-h-screen">
 				<Header />

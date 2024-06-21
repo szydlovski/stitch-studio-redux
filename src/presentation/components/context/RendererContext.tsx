@@ -54,12 +54,12 @@ export const RendererProvider = ({
 		[]
 	);
 
-	return value ? (
+	if (!value) return null;
+
+	return (
 		<RendererContext.Provider value={value}>
 			{children}
 		</RendererContext.Provider>
-	) : (
-		<>Initializing renderer</>
 	);
 };
 

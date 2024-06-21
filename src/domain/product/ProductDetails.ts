@@ -1,5 +1,9 @@
-import { CrossStitchPattern, CrossStitchPatternData } from '@domain/cross-stitch';
+import {
+	CrossStitchPattern,
+	CrossStitchPatternData,
+} from '@domain/cross-stitch';
 import { ProductAuthor, ProductBrand, ProductThumbnail } from './types';
+import { BrandItem } from '@domain/brand';
 
 export interface ProductDetailsAttributes {
 	id: string;

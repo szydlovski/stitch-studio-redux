@@ -1,6 +1,6 @@
 'use client';
 
-import { UserMenu } from '@components/UserMenu/UserMenu';
+import { UserMenu } from '../UserMenu/UserMenu';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -30,9 +30,9 @@ export const SinglePageLayout = ({
 		<>Loading...</>
 	) : (
 		<div className="flex h-screen flex-col max-h-full">
-			<header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+			<header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4">
 				<Button asChild variant="ghost" size="icon" className="rounded-full">
-					<Link href="/studio">
+					<Link href={'#'} onClick={() => history.back()}>
 						<ArrowLeftIcon />
 					</Link>
 				</Button>

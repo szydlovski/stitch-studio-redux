@@ -1,15 +1,17 @@
 import { cn } from '@/lib';
-import { StarIcon } from 'lucide-react';
-import { CSSProperties } from 'react';
+import { LucideProps, StarIcon } from 'lucide-react';
+import { CSSProperties, ReactNode } from 'react';
 
 const VariableStar = ({
 	value = 1,
 	className,
 	style,
+	Icon,
 }: {
 	value?: number;
 	className?: string;
 	style?: CSSProperties;
+	Icon: (props: LucideProps) => ReactNode;
 }) => {
 	const size = 20;
 	const offset = size * value;
@@ -17,7 +19,7 @@ const VariableStar = ({
 	return (
 		<div className={cn('relative', className)} style={style}>
 			<div>
-				<StarIcon
+				<Icon
 					fill="transparent"
 					size={size}
 					strokeWidth={1}
@@ -28,13 +30,19 @@ const VariableStar = ({
 				className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
 				style={{ clipPath }}
 			>
-				<StarIcon fill="currentColor" size={18} className="text-amber-500" />
+				<Icon fill="currentColor" size={18} className="text-amber-500" />
 			</div>
 		</div>
 	);
 };
 
-export const StarRating = ({ value }: { value: number }) => {
+export const Rating = ({
+	value,
+	Icon = StarIcon,
+}: {
+	value: number;
+	Icon?: (props: LucideProps) => ReactNode;
+}) => {
 	return (
 		<div className="flex group">
 			{Array(5)
@@ -42,8 +50,12 @@ export const StarRating = ({ value }: { value: number }) => {
 				.map((_, i) => (
 					<VariableStar
 						key={i}
+						Icon={Icon}
 						className="group-hover:animate-bounce"
-						style={{ animationDelay: `${i * 100}ms`, animationDuration: '600ms' }}
+						style={{
+							animationDelay: `${i * 100}ms`,
+							animationDuration: '600ms',
+						}}
 						value={value - i}
 					/>
 				))}

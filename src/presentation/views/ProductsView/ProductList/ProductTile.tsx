@@ -1,5 +1,8 @@
 'use client';
 import {
+	Avatar,
+	AvatarFallback,
+	AvatarImage,
 	Button,
 	Card,
 	CardContent,
@@ -15,8 +18,10 @@ import {
 	Skeleton,
 } from '@components/ui';
 import { ProductItem } from '@domain/product/ProductItem';
+import { BrandHoverCard } from '@presentation/views/ProductView/BrandHoverCard';
 import { transformImage } from '@xata.io/client';
 import {
+	CircleUserIcon,
 	CopyIcon,
 	EllipsisIcon,
 	LucideProps,
@@ -106,7 +111,7 @@ export const ProductDropdownMenuContent = ({ product }: ProductTileProps) => {
 };
 
 export const ProductTile = ({ product }: ProductTileProps) => {
-	const { id, title, author, thumbnail } = product;
+	const { id, title, author, thumbnail, brand } = product;
 	return (
 		<Card className="group relative">
 			<Link key={id} href={`/studio/products/${id}`}>
@@ -126,9 +131,45 @@ export const ProductTile = ({ product }: ProductTileProps) => {
 							{title}
 						</span>
 					</CardTitle>
-					<CardDescription className="text-xs">
-						Author: {author.name}
-					</CardDescription>
+					<div className="flex flex-wrap text-[0.6rem] gap-2">
+						<BrandHoverCard brand={brand}>
+							<span
+								className="rounded-full font-bold flex items-center"
+								style={{
+									backgroundColor: brand.attributes.color,
+									color: brand.attributes.textColor,
+								}}
+							>
+								<Avatar className="h-5 w-5">
+									<AvatarImage
+										className="h-full"
+										src={transformImage(brand.logo.src, { height: 20 })}
+									/>
+									<AvatarFallback>
+										<CircleUserIcon className="h-3 w-3" />
+									</AvatarFallback>
+								</Avatar>
+								<span className="pl-1 pr-2">{brand.name}</span>
+							</span>
+						</BrandHoverCard>
+						<div className="rounded-full bg-muted">
+							<div className="flex items-center">
+								<Avatar className="h-5 w-5">
+									<AvatarImage
+										className="h-full"
+										src={transformImage(author.avatar!.src, { height: 20 })}
+									/>
+									<AvatarFallback>
+										<CircleUserIcon className="h-3 w-3" />
+									</AvatarFallback>
+								</Avatar>
+								<span className="pl-1 pr-2 font-semibold">{author.name}</span>
+							</div>
+						</div>
+						<span className="rounded-full px-2 inline-block font-bold bg-muted">
+							{'Cross Stitch'}
+						</span>
+					</div>
 				</CardHeader>
 			</Link>
 			<div className="absolute top-0 right-0 p-1 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all">

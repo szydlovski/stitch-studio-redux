@@ -18,6 +18,8 @@ export class CrossStitchPatternParser {
 		const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
 		ctx.drawImage(image, 0, 0);
 		const imgData = ctx.getImageData(0, 0, image.width, image.height);
+		const 
+		e: any[] = [];
 		const colors: Record<string, ColorGroup> = {};
 
 		for (let y = 0; y < image.height; y++) {

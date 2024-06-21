@@ -22,7 +22,7 @@ export const PdfCard = () => {
 					<div className="ml-auto flex gap-2">
 						<Button variant='outline' size="xs" asChild>
 							<Link
-								href={`/api/products/${product.id}/pdf-preview`}
+								href={`/api/cross-stitch/pdf-preview?productId=${product.id}`}
 								className="flex gap-1"
 								target="_blank"
 							>

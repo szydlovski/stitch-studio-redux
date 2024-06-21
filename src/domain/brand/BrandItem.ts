@@ -1,32 +1,46 @@
+import {
+	BrandAttributes,
+	BrandEtsyAccount,
+	BrandLogo,
+	BrandOwner,
+} from './types';
+
 export interface BrandItemAttributes {
-	id: string;
-	name: string;
-	totalProducts: number;
-	owner: string;
-	logo: string;
-	etsy?: {
-		id: string;
-		payload: any;
-	};
+	readonly id: string;
+	readonly name: string;
+	readonly owner: BrandOwner;
+	readonly logo: BrandLogo;
+	readonly etsy?: BrandEtsyAccount;
+	readonly attributes: BrandAttributes;
 }
 
-export class BrandItem {
-	private constructor(
-		public readonly id: string,
-		public readonly name: string,
-		public readonly totalProducts: number,
-		public readonly owner: string,
-		public readonly logo: string,
-		public readonly etsy?: { id: string; payload: any }
-	) {}
-	public static fromAttributes(attributes: BrandItemAttributes): BrandItem {
-		return new BrandItem(
-			attributes.id,
-			attributes.name,
-			attributes.totalProducts,
-			attributes.owner,
-			attributes.logo,
-			attributes.etsy
-		);
+export class BrandItem implements BrandItemAttributes {
+	public readonly id: string;
+	public readonly name: string;
+	public readonly owner: BrandOwner;
+	public readonly logo: BrandLogo;
+	public readonly etsy?: BrandEtsyAccount;
+	public readonly attributes: BrandAttributes;
+	protected constructor(attrs: BrandItemAttributes) {
+		this.id = attrs.id;
+		this.name = attrs.name;
+		this.owner = attrs.owner;
+		this.logo = attrs.logo;
+		this.etsy = attrs.etsy;
+		this.attributes = attrs.attributes;
+	}
+	public static fromAttributes(attrs: BrandItemAttributes): BrandItem {
+		return new BrandItem(attrs);
+	}
+}
+
+export interface BrandDetailsAttributes extends BrandItemAttributes {}
+
+export class BrandDetails extends BrandItem {
+	protected constructor(attrs: BrandDetailsAttributes) {
+		super(attrs);
+	}
+	public static fromAttributes(attrs: BrandDetailsAttributes): BrandDetails {
+		return new BrandDetails(attrs);
 	}
 }

@@ -1,4 +1,4 @@
-import { StarRating } from '@components/StarRating';
+import { Rating } from '@components/ui';
 import {
 	Button,
 	Card,
@@ -39,7 +39,7 @@ const EtsyShopSummary = ({ shop }: { shop: EtsyShopPayload }) => {
 			<p className="-mt-1 italic">{shop.title}</p>
 
 			<div className="flex gap-2 items-center">
-				<StarRating value={shop.review_average} />
+				<Rating value={shop.review_average} />
 				<span className="font-semibold">({shop.review_count})</span>
 			</div>
 			<Separator className="w-[200px] my-2" />
@@ -65,16 +65,14 @@ const EtsyAccountCard = () => {
 				)}
 			</CardHeader>
 			<CardContent>
-				<div className="grid grid-cols-[250px_1fr] gap-6">
-					<div className="">
-						<Image
-							className="rounded-full border w-[250px]"
-							src={account.payload.icon_url_fullxfull}
-							alt={account.payload.title}
-							width={250}
-							height={250}
-						/>
-					</div>
+				<div className="grid grid-cols-[150px_1fr] gap-6">
+					<Image
+						className="rounded-full border w-[150px]"
+						src={account.payload.icon_url_fullxfull}
+						alt={account.payload.title}
+						width={150}
+						height={150}
+					/>
 					<EtsyShopSummary shop={account.payload} />
 				</div>
 			</CardContent>

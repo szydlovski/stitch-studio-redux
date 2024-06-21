@@ -25,8 +25,35 @@ import {
 import { CreateProductDialog } from './CreateProduct/CreateProductDialog';
 import { ProductList } from './ProductList/ProductList';
 import { WandSparklesIcon } from 'lucide-react';
+import { MultiSelect } from './MultiSelect';
+import { useState } from 'react';
+import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
+import {
+	STITCH_COVEN_RECORD_ID,
+	TEST_BRAND_RECORD_ID,
+} from '@application/product';
+import { QueryParamConfig, useQueryParam } from 'use-query-params';
+
+export const ArrayParam: QueryParamConfig<string[] | undefined> = {
+	encode: (value) => {
+		if (!value || value.length === 0) return null;
+		return value;
+	},
+	decode: (input) => {
+		if (input === null || input === undefined) return undefined;
+		if (typeof input === 'string') {
+			if (input === '') return undefined;
+			return [input];
+		}
+		if (input.length === 0) return undefined;
+		return input.filter<string>((i): i is string => typeof i === 'string');
+	},
+};
 
 export const ProductListView = () => {
+	const [brands = [], setBrands] = useQueryParam('brand', ArrayParam);
+	// const [brands, setBrands] = useState<string[]>([]);
+	const [crafts, setCrafts] = useState<string[]>([]);
 	return (
 		<View className="bg-muted/40">
 			<ViewHeader>
@@ -38,36 +65,45 @@ export const ProductListView = () => {
 							Create product
 						</Button>
 					</CreateProductDialog>
-					<CreateProductDialog>
-						<Button className="flex gap-2" size="xs">
-							<WandSparklesIcon size={16} />
-							Create product
-						</Button>
-					</CreateProductDialog>
 				</ViewActions>
 			</ViewHeader>
 			<ViewHeader className="py-2 md:py-4 px-6">
 				<div className="flex gap-2">
-					<SelectInput
-						disabled
-						placeholder="Type"
-						value="cross-stitch"
-						groups={[
+					<MultiSelect
+						values={crafts}
+						onValuesChange={setCrafts}
+						placeholder="Product Type"
+						options={[
 							{
-								options: [
-									{
-										label: 'Cross Stitch',
-										value: 'cross-stitch',
-									},
-									{
-										label: 'Seamless',
-										value: 'seamless',
-									},
-								],
+								label: 'Cross Stitch',
+								value: 'cross-stitch',
+							},
+							{
+								label: 'Seamless',
+								value: 'seamless',
 							},
 						]}
 					/>
-					<SelectInput
+					<MultiSelect
+						values={brands}
+						onValuesChange={setBrands}
+						placeholder="Brand"
+						options={[
+							{
+								label: 'StitchFairyCo',
+								value: STITCH_FAIRY_CO_RECORD_ID,
+							},
+							{
+								label: 'StitchCoven',
+								value: STITCH_COVEN_RECORD_ID,
+							},
+							{
+								label: 'Test Brand',
+								value: TEST_BRAND_RECORD_ID,
+							},
+						]}
+					/>
+					{/* <SelectInput
 						disabled
 						placeholder="Brand"
 						value="stitchfairyco"
@@ -85,12 +121,12 @@ export const ProductListView = () => {
 								],
 							},
 						]}
-					/>
+					/> */}
 				</div>
 			</ViewHeader>
 			<ViewContent fullWidth className="bg-muted">
 				<div className="p-6">
-					<ProductList />
+					<ProductList brand={brands} />
 				</div>
 			</ViewContent>
 			<ViewFooter>

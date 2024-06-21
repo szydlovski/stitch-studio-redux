@@ -6,7 +6,10 @@ import { useBrandViewContext } from './BrandViewContext';
 
 export const BrandViewHeader = () => {
 	const {
-		brand: { name, src },
+		brand: {
+			name,
+			logo: { src },
+		},
 	} = useBrandViewContext();
 	return (
 		<>

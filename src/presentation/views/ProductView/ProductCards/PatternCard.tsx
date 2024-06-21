@@ -20,9 +20,6 @@ export const PatternCard = () => {
 			<CardHeader>
 				<CardTitle className="flex items-center">
 					<span>{'About this pattern'}</span>
-					<div className="ml-auto">
-						<EditTitleDialog initialValue={product.title} />
-					</div>
 				</CardTitle>
 			</CardHeader>
 			<CardContent className="grid grid-cols-2">

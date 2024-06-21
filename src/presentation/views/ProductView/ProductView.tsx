@@ -11,6 +11,7 @@ export const ProductDetailsView = ({ productId }: { productId: string }) => {
 			<ProductContextProvider
 				productId={productId}
 				loadingContent={<ProductViewContentSkeleton />}
+				errorContent={<div>Failed to load product</div>}
 			>
 				<ProductViewContent />
 			</ProductContextProvider>

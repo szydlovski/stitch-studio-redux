@@ -9,11 +9,29 @@ import {
 	DialogTitle,
 	DialogTrigger,
 	Input,
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
 } from '@components/ui';
 import { useProductContext } from '@presentation/views/ProductView/ProductContext';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { PencilIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
+
+const useKeyPress = (key: string, callback: () => void) => {
+	useEffect(() => {
+		const handleKeyPress = (e: KeyboardEvent) => {
+			if (e.key === key) {
+				callback();
+			}
+		};
+
+		document.addEventListener('keydown', handleKeyPress);
+		return () => {
+			document.removeEventListener('keydown', handleKeyPress);
+		};
+	}, [callback, key]);
+};
 
 export const EditTitleDialog = ({
 	initialValue = '',
@@ -38,6 +56,9 @@ export const EditTitleDialog = ({
 		close();
 	};
 
+	// useKeyPress('Escape', close);
+	useKeyPress('Enter', () => title !== initialValue && handleSave());
+
 	useEffect(() => {
 		setTitle(initialValue);
 		reset();
@@ -45,12 +66,16 @@ export const EditTitleDialog = ({
 
 	return (
 		<Dialog open={isOpen} onOpenChange={setOpen}>
-			<DialogTrigger asChild>
-				<Button variant="outline" size="xs" className="flex gap-1">
-					<PencilIcon size={16} />
-					<span>{'Change title'}</span>
-				</Button>
-			</DialogTrigger>
+			<Tooltip delayDuration={0}>
+				<DialogTrigger asChild>
+					<TooltipTrigger asChild>
+						<Button variant="ghost" size="icon-xs">
+							<PencilIcon size={12} />
+						</Button>
+					</TooltipTrigger>
+				</DialogTrigger>
+				<TooltipContent>Change title</TooltipContent>
+			</Tooltip>
 			<DialogContent className="sm:max-w-[425px]">
 				<DialogHeader>
 					<DialogTitle>{`Change title for ${product.title}`}</DialogTitle>
@@ -71,7 +96,7 @@ export const EditTitleDialog = ({
 						onClick={handleSave}
 					>
 						{status === 'idle'
-							? 'Save changes'
+							? 'Save'
 							: status === 'pending'
 							? 'Saving...'
 							: 'Saved!'}

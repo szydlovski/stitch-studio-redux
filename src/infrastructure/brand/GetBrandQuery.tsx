@@ -1,4 +1,4 @@
-import { BrandDetailsAttributes } from '@domain/brand/BrandDetails';
+import { BrandDetailsAttributes } from '@domain/brand';
 import { XataQuery } from '@/lib/api/XataQuery';
 
 export class GetBrandQuery extends XataQuery<BrandDetailsAttributes> {
@@ -9,6 +9,8 @@ export class GetBrandQuery extends XataQuery<BrandDetailsAttributes> {
 				'*',
 				'logo.*',
 				'logo.signedUrl',
+				'attributes',
+				'owner.*',
 				{
 					name: '<-etsyAccount.brand',
 					as: 'etsyAccount',
@@ -22,7 +24,16 @@ export class GetBrandQuery extends XataQuery<BrandDetailsAttributes> {
 				return {
 					id: record.id,
 					name: record.name!,
-					src: record.logo?.signedUrl ?? '',
+					attributes: record.attributes!,
+					owner: {
+						id: record.owner!.id,
+						name: record.owner!.name!,
+					},
+					logo: {
+						src: record.logo?.signedUrl ?? '',
+						width: record.logo?.attributes?.width,
+						height: record.logo?.attributes?.height,
+					},
 					etsy: etsyAccount
 						? {
 								id: etsyAccount.id,

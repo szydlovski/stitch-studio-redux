@@ -1,5 +1,6 @@
 'use client';
 import { useGetProduct } from '@application/product';
+import { QueryStatusGuard } from '@components/guard';
 import { CrossStitchPattern } from '@domain/cross-stitch';
 import { ProductDetails } from '@domain/product/ProductDetails';
 import { ReactNode, createContext, useContext } from 'react';
@@ -27,12 +28,13 @@ export const ProductContextProvider = ({
 	const { data, status } = useGetProduct(productId);
 
 	return (
-		<>
-			{status === 'error' ? (
-				errorContent ?? <>Error</>
-			) : status === 'pending' ? (
-				loadingContent
-			) : (
+		<QueryStatusGuard
+			status={status}
+			props={data}
+			loadingContent={loadingContent}
+			errorContent={errorContent}
+		>
+			{(data) => (
 				<ProductContext.Provider
 					value={{
 						product: data,
@@ -42,7 +44,7 @@ export const ProductContextProvider = ({
 					{children}
 				</ProductContext.Provider>
 			)}
-		</>
+		</QueryStatusGuard>
 	);
 };
 

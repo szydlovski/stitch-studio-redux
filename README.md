@@ -129,3 +129,12 @@ export const useAddReaction = () => useMutation({ mutationFn: addReaction });
 ```
 
 ## Installing new components with `shadcn/ui`
+
+You can install new `shadcn/ui` components [using the CLI](https://ui.shadcn.com/docs/cli):
+```bash
+npx shadcn-ui@latest add [component]
+```
+For example:
+```bash
+npx shadcn-ui@latest add tabs
+```

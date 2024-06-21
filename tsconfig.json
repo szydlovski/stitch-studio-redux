@@ -22,9 +22,6 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ],
       "@components/*": [
         "./src/presentation/components/*"
       ],
@@ -39,6 +36,9 @@
       ],
       "@presentation/*": [
         "./src/presentation/*"
+      ],
+      "@/*": [
+        "./*"
       ],
     }
   },
