@@ -18,6 +18,16 @@ interface ChangelogEntry {
 
 const CHANGELOG: ChangelogEntry[] = [
 	{
+		version: '0.4.0',
+		date: '23.06.2024',
+		changes: [
+			'Added Launch Checklist',
+			'Added Cross Stitch Editor',
+			'Added brand attributes editor',
+			'Various fixes and improvements',
+		],
+	},
+	{
 		version: '0.3.0',
 		date: '16.06.2024',
 		changes: [
@@ -28,7 +38,7 @@ const CHANGELOG: ChangelogEntry[] = [
 			'Revamped product details view',
 			'Revamped sidebar',
 			'Various fixes and small additions',
-			'Major codebase cleanup'
+			'Major codebase cleanup',
 		],
 	},
 	{
