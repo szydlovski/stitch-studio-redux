@@ -3,28 +3,28 @@ import { CrossStitchPattern } from '@domain/cross-stitch';
 import debounce from 'lodash.debounce';
 import { RefObject, useEffect, useMemo } from 'react';
 import { CoverConfig } from '../../CoverGenerator/coverConfigReducer';
+import { renderHoopMockup } from '@brand/StitchFairyCo';
+import { HoopMockupConfig } from '@domain/product/types';
 
-export const usePreviewRenderer = ({
+export const useHoopRenderer = ({
 	pattern,
 	state,
 	canvasRef,
-	render,
-	debounce: wait = 50,
+	debounce: wait = 200,
 }: {
 	pattern: CrossStitchPattern;
-	state: CoverConfig;
+	state: HoopMockupConfig;
 	canvasRef: RefObject<HTMLCanvasElement>;
-	render: (props: any, ctx: CanvasRenderingContext2D) => void;
 	debounce?: number;
 }) => {
 	const rendererContext = useRendererContext();
 	const debouncedRender = useMemo(
 		() =>
-			debounce((config: CoverConfig) => {
+			debounce((config: HoopMockupConfig) => {
 				const ctx = canvasRef.current?.getContext('2d');
 				if (!ctx) return;
 
-				render(
+				renderHoopMockup(
 					{
 						pattern,
 						config,
@@ -33,7 +33,7 @@ export const usePreviewRenderer = ({
 					ctx
 				);
 			}, wait),
-		[canvasRef, pattern, render, rendererContext, wait]
+		[canvasRef, pattern, rendererContext, wait]
 	);
 	useEffect(() => debouncedRender(state), [state, debouncedRender]);
 };

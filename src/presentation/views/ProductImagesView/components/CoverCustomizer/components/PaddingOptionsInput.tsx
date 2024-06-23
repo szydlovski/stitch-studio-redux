@@ -47,7 +47,7 @@ const OffsetInput = ({
 
 export const PaddingOptionsInput = ({
 	value: { scale, xOffset, yOffset },
-	onValueChange: updateOptions,
+	onValueChange,
 }: {
 	value: PaddingOptions;
 	onValueChange: (options: Partial<PaddingOptions>) => void;
@@ -60,7 +60,7 @@ export const PaddingOptionsInput = ({
 					<Button
 						variant="ghost"
 						size="xs"
-						onClick={() => updateOptions({ scale: scale - SCALE_STEP * 20 })}
+						onClick={() => onValueChange({ scale: scale - SCALE_STEP * 20 })}
 					>
 						<MinusIcon size={12} />
 					</Button>
@@ -68,12 +68,12 @@ export const PaddingOptionsInput = ({
 						value={[scale]}
 						max={1}
 						step={SCALE_STEP}
-						onValueChange={([value]) => updateOptions({ scale: value })}
+						onValueChange={([value]) => onValueChange({ scale: value })}
 					/>
 					<Button
 						variant="ghost"
 						size="xs"
-						onClick={() => updateOptions({ scale: scale + SCALE_STEP * 20 })}
+						onClick={() => onValueChange({ scale: scale + SCALE_STEP * 20 })}
 					>
 						<PlusIcon size={12} />
 					</Button>
@@ -82,12 +82,12 @@ export const PaddingOptionsInput = ({
 			<OffsetInput
 				label="X Offset"
 				value={xOffset}
-				onValueChange={(value) => updateOptions({ xOffset: value })}
+				onValueChange={(value) => onValueChange({ xOffset: value })}
 			/>
 			<OffsetInput
 				label="Y Offset"
 				value={yOffset}
-				onValueChange={(value) => updateOptions({ yOffset: value })}
+				onValueChange={(value) => onValueChange({ yOffset: value })}
 			/>
 		</div>
 	);

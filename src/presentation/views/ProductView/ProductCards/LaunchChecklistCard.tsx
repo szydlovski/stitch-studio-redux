@@ -17,6 +17,7 @@ import { CheckIcon } from 'lucide-react';
 import { cn } from '@lib/utils';
 import { VariantProps, cva } from 'class-variance-authority';
 import { ReactNode } from 'react';
+import { MockupSettingsModal } from './MockupSettingsModal';
 
 export const checklistNumberVariants = cva(
 	'w-6 h-6 border rounded-full flex justify-center items-center text-sm font-semibold',
@@ -123,7 +124,9 @@ export const LaunchChecklistCard = () => {
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 							</p>
 							<div>
-								<Button variant="outline">Open mockup settings</Button>
+								<MockupSettingsModal>
+									<Button variant="outline">Open mockup settings</Button>
+								</MockupSettingsModal>
 							</div>
 						</div>
 					</ActiveChecklistItem>

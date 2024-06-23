@@ -1,2 +1,1 @@
-export * from './CoverCustomizer';
-export * from './types';
+export * from './MockupCustomizer';
