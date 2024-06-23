@@ -1,4 +1,4 @@
-import { Consumer, ModalHostProvider } from '@/src/presentation/features/modals/ModalProvider';
+import { Consumer, ModalHostProvider } from '@presentation/features/modals/ModalProvider';
 import { DashboardLayout } from '@presentation/layout';
 
 export default function PalettesPage() {

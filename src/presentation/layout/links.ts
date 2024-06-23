@@ -1,3 +1,4 @@
+import { AppViews } from '@/app/routes';
 import {
 	GaugeIcon,
 	LucideProps,
@@ -15,28 +16,18 @@ interface MenuLink {
 
 export const MENU_LINKS: MenuLink[] = [
 	{
-		href: '/studio/dashboard',
+		href: AppViews.Dashboard(),
 		icon: GaugeIcon,
 		label: 'Dashboard',
 	},
 	{
-		href: '/studio/products',
+		href: AppViews.Products(),
 		icon: Package,
 		label: 'Products',
 	},
 	{
-		href: '/studio/brands',
+		href: AppViews.Brands(),
 		icon: StoreIcon,
 		label: 'Brands',
-	},
-	{
-		href: '/studio/etsy',
-		icon: ShoppingBagIcon,
-		label: 'Etsy',
-	},
-	{
-		href: '/studio/palettes',
-		icon: SwatchBookIcon,
-		label: 'Palettes',
 	},
 ];

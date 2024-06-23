@@ -1,4 +1,4 @@
-import { getXataClient } from '@/lib/xata';
+import { getXataClient } from '@lib/xata';
 import { UserIdentity } from '@domain/user';
 import { GetUserByEmailQuery } from '@infrastructure/user';
 import NextAuth from 'next-auth';

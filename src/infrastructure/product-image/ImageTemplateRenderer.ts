@@ -5,7 +5,7 @@ import {
 	maskCanvas,
 	rotateImage,
 	trimCanvas,
-} from '@/lib/canvas';
+} from '@lib/canvas';
 import {
 	TemplateManifest,
 	TemplateProps,

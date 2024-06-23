@@ -2,7 +2,7 @@
 import { useRendererContext } from '@components/context/RendererContext';
 import isEqual from 'lodash.isequal';
 import { useCallback, useEffect, useState } from 'react';
-import { StitchFairyCoCover } from '@/brand/StitchFairyCo';
+import { StitchFairyCoCover } from '@brand/StitchFairyCo';
 import { useCoverGeneratorContext } from '../CoverGeneratorContext';
 import { CoverGeneratorActions, CoverRenderState } from '../reducer';
 

@@ -1,5 +1,5 @@
 import { Page } from '@components/pdf/Page';
-import { PdfPageProps } from '../types';
+import { CrossStitchPdfPageProps } from '@infrastructure/pdf/types';
 
 export const CoverPageHeader = ({ title }: { title: string }) => {
 	return (
@@ -39,7 +39,7 @@ const Details = ({
 	</div>
 );
 
-export const CoverPage = ({ product: { pattern, title } }: PdfPageProps) => {
+export const CoverPage = ({ product: { pattern, title } }: CrossStitchPdfPageProps) => {
 	const dimensions = {
 		14: pattern.getFinishedDimensions(14),
 		16: pattern.getFinishedDimensions(16),

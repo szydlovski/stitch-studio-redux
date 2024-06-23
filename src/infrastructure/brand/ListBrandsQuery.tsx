@@ -1,5 +1,5 @@
 import { BrandItemAttributes } from '@domain/brand/BrandItem';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export class ListBrandsQuery extends XataQuery<BrandItemAttributes[]> {
 	public execute() {

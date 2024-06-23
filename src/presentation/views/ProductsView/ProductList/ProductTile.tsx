@@ -1,4 +1,5 @@
 'use client';
+import { AppViews } from '@/app/routes';
 import {
 	Avatar,
 	AvatarFallback,
@@ -81,7 +82,7 @@ const getProductMenuItems = (
 	{
 		icon: SquareArrowOutUpRightIcon,
 		label: 'View details',
-		href: `/studio/products/${product.id}`,
+		href: AppViews.Product(product.id),
 	},
 	{
 		icon: CopyIcon,
@@ -114,7 +115,7 @@ export const ProductTile = ({ product }: ProductTileProps) => {
 	const { id, title, author, thumbnail, brand } = product;
 	return (
 		<Card className="group relative">
-			<Link key={id} href={`/studio/products/${id}`}>
+			<Link key={id} href={AppViews.Product(id)}>
 				<CardContent className="p-0 bg-muted/75 border-b aspect-square">
 					<div className="h-full w-full flex justify-center items-center p-2 md:p-4">
 						<Image

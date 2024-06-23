@@ -4,7 +4,7 @@ import { ErrorAlert } from '@components/ErrorAlert';
 import { ProductTile, ProductTileSkeleton } from './ProductTile';
 import { QueryStatusGuard } from '@/src/presentation/components/guard';
 import { ReactNode } from 'react';
-import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
+import { STITCH_FAIRY_CO_RECORD_ID } from '@brand/StitchFairyCo';
 
 export const ProductTileGrid = ({ children }: { children: ReactNode }) => {
 	return (

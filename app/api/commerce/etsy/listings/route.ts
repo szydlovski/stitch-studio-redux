@@ -1,6 +1,6 @@
 import { GetEtsyListingQuery } from '@infrastructure/etsy/query/GetEtsyListing';
 import { ListEtsyListingByBrandQuery } from '@infrastructure/etsy/query/ListEtsyListingByBrandQuery';
-import { routeHandler } from '@/lib/api/routeHandler';
+import { routeHandler } from '@lib/api/routeHandler';
 import { NextResponse } from 'next/server';
 
 export const GET = routeHandler<{ listingId: string }>(

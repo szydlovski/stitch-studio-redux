@@ -1,4 +1,4 @@
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export interface UpdateProductTitleQueryResult {
 	id: string;

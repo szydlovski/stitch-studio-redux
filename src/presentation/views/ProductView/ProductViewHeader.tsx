@@ -28,6 +28,7 @@ import Link from 'next/link';
 import { BrandHoverCard } from './BrandHoverCard';
 import { EditTitleDialog } from './ProductCards/EditTitleDialog';
 import { DropdownMenu } from '@components/DropdownMenu';
+import { AppViews } from '@/app/routes';
 
 export const ProductViewHeader = () => {
 	const { product } = useProductContext();
@@ -96,7 +97,7 @@ export const ProductViewHeader = () => {
 						<BrandHoverCard brand={product.brand}>
 							<Link
 								className="text-sm"
-								href={`/studio/brands/${product.brand.id}`}
+								href={AppViews.Brand(product.brand?.id)}
 							>
 								{product.brand?.name}
 							</Link>

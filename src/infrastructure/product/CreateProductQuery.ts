@@ -1,5 +1,5 @@
-import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { STITCH_FAIRY_CO_RECORD_ID } from '@brand/StitchFairyCo';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export interface CreateProductQueryResult {
 	id: string;

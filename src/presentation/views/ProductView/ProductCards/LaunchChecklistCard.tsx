@@ -14,7 +14,7 @@ import { useProductContext } from '@presentation/views/ProductView/ProductContex
 import Image from 'next/image';
 import { EditTitleDialog } from './EditTitleDialog';
 import { CheckIcon } from 'lucide-react';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { VariantProps, cva } from 'class-variance-authority';
 import { ReactNode } from 'react';
 

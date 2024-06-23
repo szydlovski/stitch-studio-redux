@@ -11,7 +11,7 @@ import {
 	CoverGeneratorSteps,
 	CoverGeneratorStepOrder,
 } from './CoverGeneratorSteps';
-import { useDisclosure } from '@/lib/hooks/useDisclosure';
+import { useDisclosure } from '@lib/hooks/useDisclosure';
 import { RendererProvider } from '@components/context/RendererContext';
 
 export const CoverGeneratorDialogContent = () => {

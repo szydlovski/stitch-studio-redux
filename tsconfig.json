@@ -37,6 +37,12 @@
       "@presentation/*": [
         "./src/presentation/*"
       ],
+      "@lib/*": [
+        "./lib/*"
+      ],
+      "@brand/*": [
+        "./brand/*"
+      ],
       "@/*": [
         "./*"
       ],

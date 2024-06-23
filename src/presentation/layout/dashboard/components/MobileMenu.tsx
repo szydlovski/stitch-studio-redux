@@ -3,7 +3,7 @@ import { Menu } from 'lucide-react';
 import Link from 'next/link';
 
 import { Sheet, SheetContent, SheetTrigger, Button } from '@components/ui';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { usePathname } from 'next/navigation';
 import { MENU_LINKS } from '../../links';
 

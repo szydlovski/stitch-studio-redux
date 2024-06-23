@@ -3,6 +3,7 @@ import { ViewBreadcrumbs, ViewHeader, ViewTitle } from '@components/ui';
 import { transformImage } from '@xata.io/client';
 import Image from 'next/image';
 import { useBrandViewContext } from './BrandViewContext';
+import { AppViews } from '@/app/routes';
 
 export const BrandViewHeader = () => {
 	const {
@@ -17,7 +18,7 @@ export const BrandViewHeader = () => {
 				items={[
 					{
 						label: 'Brands',
-						href: '/studio/brands',
+						href: AppViews.Brands(),
 					},
 				]}
 				page={name}

@@ -1,5 +1,5 @@
-import { getXataClient } from '@/lib/xata';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { getXataClient } from '@lib/xata';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export class GetUserByEmailQuery extends XataQuery<any> {
 	public execute(email: string) {

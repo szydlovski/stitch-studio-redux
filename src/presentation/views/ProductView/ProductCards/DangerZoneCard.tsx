@@ -20,6 +20,7 @@ import { useProductContext } from '../ProductContext';
 import { TrashIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
+import { AppViews } from '@/app/routes';
 
 export const DangerZoneCard = () => {
 	const { product } = useProductContext();
@@ -27,7 +28,7 @@ export const DangerZoneCard = () => {
 	const { status, mutateAsync } = useDeleteProduct();
 	const handleDelete = useCallback(async () => {
 		await mutateAsync(product.id);
-		router.push('/studio/products');
+		router.push(AppViews.Products());
 	}, [mutateAsync, router, product.id]);
 	return (
 		<Card>

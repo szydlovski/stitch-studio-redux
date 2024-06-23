@@ -1,5 +1,5 @@
 import { EtsyListingAttributes } from '@domain/etsy/types';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export class ListEtsyListingByBrandQuery extends XataQuery<
 	EtsyListingAttributes[]

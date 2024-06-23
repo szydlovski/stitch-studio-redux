@@ -1,4 +1,4 @@
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export class GlobalSearchQuery extends XataQuery<any> {
 	public execute(searchTerm: string): Promise<any> {

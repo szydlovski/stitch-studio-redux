@@ -1,4 +1,4 @@
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 type ProductAttributes = any;
 

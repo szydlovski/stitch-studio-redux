@@ -1,5 +1,5 @@
 import { EtsyV3OpenApiClient } from '@infrastructure/etsy/EtsyV3OpenApiClient';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export class SyncEtsyListingsByShopUseCase extends XataQuery {
 	async execute(shopId: number, brandId: string) {

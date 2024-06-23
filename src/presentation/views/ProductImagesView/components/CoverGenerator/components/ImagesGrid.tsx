@@ -1,6 +1,6 @@
 'use client';
 import { Checkbox, ScrollArea, Skeleton } from '@components/ui';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { CheckIcon } from 'lucide-react';
 import Image from 'next/image';
 

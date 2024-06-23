@@ -31,7 +31,7 @@ import {
 	DropdownMenuTrigger,
 } from '@components/ui/dropdown-menu';
 import { VariantProps, cva } from 'class-variance-authority';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import Link from 'next/link';
 
 const TEST_ITEMS: DropdownMenuEntry[] = [

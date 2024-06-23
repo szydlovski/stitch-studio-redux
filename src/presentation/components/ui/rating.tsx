@@ -1,4 +1,4 @@
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { LucideProps, StarIcon } from 'lucide-react';
 import { CSSProperties, ReactNode } from 'react';
 

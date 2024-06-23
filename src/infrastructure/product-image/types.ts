@@ -1,4 +1,4 @@
-import { Drawable } from '@/lib/canvas';
+import { Drawable } from '@lib/canvas';
 
 // core
 

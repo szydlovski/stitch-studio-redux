@@ -1,4 +1,4 @@
-import { createCanvas, maskCanvas, repeatTile } from '@/lib/canvas';
+import { createCanvas, maskCanvas, repeatTile } from '@lib/canvas';
 import { CrossStitchPattern } from '@domain/cross-stitch/CrossStitchPattern';
 import {
 	StylizedPatternTextureDictionary,

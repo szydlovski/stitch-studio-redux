@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { Badge, Tooltip, TooltipContent, TooltipTrigger } from '@components/ui';
 import { Building2Icon } from 'lucide-react';
 import Image from 'next/image';

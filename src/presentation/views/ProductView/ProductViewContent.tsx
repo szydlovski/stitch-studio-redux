@@ -1,5 +1,6 @@
 'use client';
-import { StitchFairyCoPdf } from '@/brand/StitchFairyCo/pdf/StitchFairyCoPdf';
+import { AppViews } from '@/app/routes';
+import { StitchFairyCoModule } from '@brand/StitchFairyCo';
 import { Loader } from '@components/Spinner';
 import {
 	Button,
@@ -22,8 +23,9 @@ import { PdfCard } from '@presentation/views/ProductView/ProductCards/PdfCard';
 import { useProductContext } from '@presentation/views/ProductView/ProductContext';
 import { StringParam, useQueryParam, withDefault } from 'use-query-params';
 import { ImagesTabContent } from '../ProductImagesView/ImagesTabContent';
-import { ProductViewHeader } from './ProductViewHeader';
 import { LaunchChecklistCard } from './ProductCards/LaunchChecklistCard';
+import { ProductViewHeader } from './ProductViewHeader';
+import { CrossStitchPdf } from '@infrastructure/pdf/CrossStitchPdf';
 
 enum ProductViewTab {
 	Properties = 'properties',
@@ -44,7 +46,7 @@ export const ProductViewContent = () => {
 		<Tabs asChild value={tab} onValueChange={(value) => setTab(value)}>
 			<View>
 				<ViewBreadcrumbs
-					items={[{ label: 'Products', href: '/studio/products' }]}
+					items={[{ label: 'Products', href: AppViews.Products() }]}
 					page={product.title}
 				/>
 				<div className="flex flex-col border-b bg-muted/40">
@@ -116,7 +118,10 @@ export const ProductViewContent = () => {
 				<TabsContent asChild value="printable">
 					<ViewContent fullWidth scrollX className="bg-muted">
 						<div className="flex flex-col gap-12 px-6 py-12 items-center">
-							<StitchFairyCoPdf product={product} />
+							<CrossStitchPdf
+								product={product}
+								config={StitchFairyCoModule.pdf}
+							/>
 						</div>
 					</ViewContent>
 				</TabsContent>
@@ -130,8 +135,8 @@ export const ProductViewContentSkeleton = () => {
 		<Tabs asChild defaultValue="properties">
 			<View>
 				<ViewBreadcrumbs
-					items={[{ label: 'Products', href: '/studio/products' }]}
-					page={<Skeleton className='w-[140px] h-[20px]' />}
+					items={[{ label: 'Products', href: AppViews.Products() }]}
+					page={<Skeleton className="w-[140px] h-[20px]" />}
 				/>
 				<div className="flex flex-col border-b bg-muted/40">
 					<div className="flex gap-4 p-6">

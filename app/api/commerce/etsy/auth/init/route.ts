@@ -7,7 +7,7 @@ import {
 	randomBytes,
 	scryptSync,
 } from 'node:crypto';
-import { getXataClient } from '@/lib/xata';
+import { getXataClient } from '@lib/xata';
 import { encode } from 'node:querystring';
 
 const sha256 = (input: string) => {
