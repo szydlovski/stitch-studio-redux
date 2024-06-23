@@ -20,7 +20,7 @@ export const PdfCard = () => {
 				<CardTitle className="flex items-center">
 					<span>{'Files'}</span>
 					<div className="ml-auto flex gap-2">
-						<Button variant='outline' size="xs" asChild>
+						<Button variant="outline" size="xs" asChild>
 							<Link
 								href={`/api/cross-stitch/pdf-preview?productId=${product.id}`}
 								className="flex gap-1"
@@ -40,7 +40,7 @@ export const PdfCard = () => {
 			<CardContent>
 				{show && (
 					<iframe
-						src={`/api/products/${product.id}/pdf-preview`}
+						src={`/api/cross-stitch/pdf-preview?productId=${product.id}`}
 						className="w-full h-[600px]"
 					/>
 				)}

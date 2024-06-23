@@ -1,5 +1,7 @@
 'use client';
-import { StitchFairyCoPdf } from '@/brand/StitchFairyCo/pdf/StitchFairyCoPdf';
+import { AppViews } from '@/app/routes';
+import { SFC_MODULE } from '@/brand/StitchFairyCo/pdf';
+import { CrossStitchPdf } from '@/brand/StitchFairyCo/pdf/CrossStitchPdf';
 import { Loader } from '@components/Spinner';
 import {
 	Button,
@@ -22,9 +24,8 @@ import { PdfCard } from '@presentation/views/ProductView/ProductCards/PdfCard';
 import { useProductContext } from '@presentation/views/ProductView/ProductContext';
 import { StringParam, useQueryParam, withDefault } from 'use-query-params';
 import { ImagesTabContent } from '../ProductImagesView/ImagesTabContent';
-import { ProductViewHeader } from './ProductViewHeader';
 import { LaunchChecklistCard } from './ProductCards/LaunchChecklistCard';
-import { AppViews } from '@/app/routes';
+import { ProductViewHeader } from './ProductViewHeader';
 
 enum ProductViewTab {
 	Properties = 'properties',
@@ -117,7 +118,7 @@ export const ProductViewContent = () => {
 				<TabsContent asChild value="printable">
 					<ViewContent fullWidth scrollX className="bg-muted">
 						<div className="flex flex-col gap-12 px-6 py-12 items-center">
-							<StitchFairyCoPdf product={product} />
+							<CrossStitchPdf product={product} config={SFC_MODULE} />
 						</div>
 					</ViewContent>
 				</TabsContent>
