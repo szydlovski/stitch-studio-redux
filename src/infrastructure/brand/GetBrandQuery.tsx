@@ -1,5 +1,5 @@
 import { BrandDetailsAttributes } from '@domain/brand';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export class GetBrandQuery extends XataQuery<BrandDetailsAttributes> {
 	public async execute(id: string): Promise<BrandDetailsAttributes> {

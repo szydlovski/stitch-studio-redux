@@ -1,8 +1,8 @@
-import { Drawable } from '@/lib/canvas';
+import { Drawable } from '@lib/canvas';
 import { v4 as uuid } from 'uuid';
 import { readImageFromFile } from '@presentation/utils';
 import { CrossStitchPattern, ColorGroup } from '@domain/cross-stitch';
-import { rgbToHex } from '@/lib/color';
+import { rgbToHex } from '@lib/color';
 
 export class CrossStitchPatternParser {
 	static async parseImageFile(file: File): Promise<CrossStitchPattern> {

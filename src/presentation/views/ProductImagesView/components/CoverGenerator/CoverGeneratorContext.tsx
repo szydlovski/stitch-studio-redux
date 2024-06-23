@@ -1,7 +1,7 @@
 'use client';
 import { FullProductObject } from '@domain/product';
 import { CrossStitchPattern } from '@domain/cross-stitch';
-import { UseStepper, useStepper } from '@/lib/hooks/useStepper';
+import { UseStepper, useStepper } from '@lib/hooks/useStepper';
 import {
 	createContext,
 	useCallback,

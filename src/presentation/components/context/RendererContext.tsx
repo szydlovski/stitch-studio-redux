@@ -8,7 +8,7 @@ import {
 	pinterest1Template,
 	squareCoverTemplate,
 	wideCoverTemplate,
-} from '@/brand/StitchFairyCo/cover/templates';
+} from '@brand/StitchFairyCo/cover/templates';
 import {
 	CrossStitchPatternRenderer,
 	loadStitchTextureDictionary,

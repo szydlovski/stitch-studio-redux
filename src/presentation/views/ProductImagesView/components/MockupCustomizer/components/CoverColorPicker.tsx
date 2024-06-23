@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@components/ui';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { CSSProperties } from 'react';
 
 export const CoverColorPicker = ({

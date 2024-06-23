@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { NextRequest, NextResponse } from 'next/server';
-import { getXataClient } from '@/lib/xata';
+import { getXataClient } from '@lib/xata';
 import { EncryptionService } from '@infrastructure/encryption';
 import { AppViews } from '@/app/routes';
 

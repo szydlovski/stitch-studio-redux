@@ -1,5 +1,5 @@
 'use client';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { Fragment, ReactNode, forwardRef } from 'react';
 import { ScrollArea, ScrollBar } from './scroll-area';
 import {

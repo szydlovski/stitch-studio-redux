@@ -1,5 +1,5 @@
 'use client';
-import { useDisclosure } from '@/lib/hooks/useDisclosure';
+import { useDisclosure } from '@lib/hooks/useDisclosure';
 import {
 	Badge,
 	Button,

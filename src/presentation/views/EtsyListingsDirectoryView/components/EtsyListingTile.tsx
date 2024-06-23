@@ -1,6 +1,6 @@
 'use client';
 import { EtsyListingAttributes } from '@domain/etsy/types';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { Button, Card } from '@components/ui';
 import { CheckIcon, RefreshCwIcon } from 'lucide-react';
 import Image from 'next/image';

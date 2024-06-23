@@ -1,4 +1,4 @@
-import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
+import { STITCH_FAIRY_CO_RECORD_ID } from '@brand/StitchFairyCo';
 import {
 	BaseProductObject,
 	BaseProductAttributes,

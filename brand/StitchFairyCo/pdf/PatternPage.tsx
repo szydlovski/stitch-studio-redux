@@ -1,8 +1,8 @@
-import { ColorTuple } from '@/lib/color';
+import { ColorTuple } from '@lib/color';
 import { Page } from '@components/pdf/Page';
-import { CrossStitchPdfPageProps, CrossStitchPdfPatternPageProps } from '../types';
-import { stitchTableCss } from '../css';
-import { hexToRgb } from '@/lib/color';
+import { CrossStitchPdfPageProps, CrossStitchPdfPatternPageProps } from '@infrastructure/pdf/types';
+import { stitchTableCss } from './css';
+import { hexToRgb } from '@lib/color';
 
 const symbolDictionary =
 	'/❤１✖○２★▼３◐☁４●◪５♡✽６◆♛７V◭８\\◉９✚!◼$ʌ◧⬟✦ABCDEFGHIJKLMNOPQRSTUWXYZ';

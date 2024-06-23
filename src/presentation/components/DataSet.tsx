@@ -1,5 +1,5 @@
 import { Label } from '@components/ui';
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { ReactNode } from 'react';
 
 interface DataSetProps {

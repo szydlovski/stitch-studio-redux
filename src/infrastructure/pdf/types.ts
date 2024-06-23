@@ -11,13 +11,19 @@ export interface CrossStitchPdfPatternPageProps
 	yOffset?: number;
 }
 
-export interface CrossStitchPdfConfig {
-	front: CrossStitchPdfPageTemplate[];
-	back: CrossStitchPdfPageTemplate[];
-	pattern: (props: CrossStitchPdfPatternPageProps) => JSX.Element;
-}
-
 export interface CrossStitchPdfPageTemplate {
 	name: string;
 	render: (props: CrossStitchPdfPageProps) => JSX.Element;
+}
+
+export interface CrossStitchPdfConfig {
+	grid: {
+		width: number;
+		height: number;
+	};
+	pages: {
+		pattern: (props: CrossStitchPdfPatternPageProps) => JSX.Element;
+		front?: CrossStitchPdfPageTemplate[];
+		back?: CrossStitchPdfPageTemplate[];
+	};
 }

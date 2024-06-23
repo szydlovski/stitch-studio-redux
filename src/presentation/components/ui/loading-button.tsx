@@ -1,4 +1,4 @@
-import { cn } from '@/lib';
+import { cn } from '@lib/utils';
 import { Loader2Icon } from 'lucide-react';
 import { Button, ButtonProps } from './button';
 

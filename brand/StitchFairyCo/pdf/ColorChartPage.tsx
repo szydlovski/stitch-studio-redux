@@ -1,5 +1,5 @@
 import { Page } from '@components/pdf/Page';
-import { CrossStitchPdfPageProps } from '../types';
+import { CrossStitchPdfPageProps } from '@infrastructure/pdf/types';
 
 export const ColorChartPage = ({ product: { pattern } }: CrossStitchPdfPageProps) => (
 	<Page>

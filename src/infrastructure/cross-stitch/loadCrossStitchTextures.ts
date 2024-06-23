@@ -1,4 +1,4 @@
-import { loadImage } from '@/lib/canvas';
+import { loadImage } from '@lib/canvas';
 import { StylizedPatternTextureDictionary } from '@domain/cross-stitch';
 
 export const loadStitchTextureDictionary =

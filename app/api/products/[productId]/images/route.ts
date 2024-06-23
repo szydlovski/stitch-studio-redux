@@ -1,6 +1,6 @@
 import { GetProductImagesQuery } from '@infrastructure/product/GetProductImagesQuery';
-import { routeHandler } from '@/lib/api/routeHandler';
-import { getXataClient } from '@/lib/xata';
+import { routeHandler } from '@lib/api/routeHandler';
+import { getXataClient } from '@lib/xata';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const GET = routeHandler<{ productId: string }>(async ({ params: { productId } }) => {

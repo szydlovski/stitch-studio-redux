@@ -1,4 +1,4 @@
-import { routeHandler } from '@/lib/api/routeHandler';
+import { routeHandler } from '@lib/api/routeHandler';
 import { GetBrandQuery } from '@infrastructure/brand/GetBrandQuery';
 import { NextResponse } from 'next/server';
 

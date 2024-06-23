@@ -1,9 +1,7 @@
 import { FullProductObject } from '@domain/product';
 import { CrossStitchPdfConfig } from './types';
-import { stitchTableCss } from './css';
-
-const GRID_WIDTH = 60;
-const GRID_HEIGHT = 80;
+// TODO get rid of this monstrosity
+import { stitchTableCss } from '@brand/StitchFairyCo/pdf/css';
 
 interface CrossStitchPdfProps {
 	config: CrossStitchPdfConfig;
@@ -11,7 +9,10 @@ interface CrossStitchPdfProps {
 }
 
 export const CrossStitchPdf = ({
-	config: { front: frontPages, back: backPages, pattern: PatternPage },
+	config: {
+		pages: { front: frontPages, back: backPages, pattern: PatternPage },
+		grid: { width: GRID_WIDTH, height: GRID_HEIGHT },
+	},
 	product,
 }: CrossStitchPdfProps) => {
 	const { width, height } = product.pattern;
@@ -28,7 +29,7 @@ export const CrossStitchPdf = ({
 	return (
 		<>
 			<style>{stitchTableCss}</style>
-			{frontPages.map(({ render: Page }, index) => (
+			{frontPages?.map(({ render: Page }, index) => (
 				<Page key={index} product={product} />
 			))}
 			{Array(pageRows)
@@ -46,7 +47,7 @@ export const CrossStitchPdf = ({
 							/>
 						))
 				)}
-			{backPages.map(({ render: Page }, index) => (
+			{backPages?.map(({ render: Page }, index) => (
 				<Page key={index} product={product} />
 			))}
 		</>

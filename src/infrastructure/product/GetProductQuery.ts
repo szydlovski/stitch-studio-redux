@@ -1,4 +1,4 @@
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 import { FullProductAttributes } from '@domain/product';
 
 export class GetProductQuery extends XataQuery<FullProductAttributes> {

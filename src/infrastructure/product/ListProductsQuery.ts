@@ -1,5 +1,5 @@
 import { BaseProductAttributes } from '@domain/product';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export interface ListProductsParameters {
 	offset?: number;

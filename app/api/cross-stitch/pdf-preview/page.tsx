@@ -1,6 +1,6 @@
-import { SFC_MODULE } from '@/brand/StitchFairyCo/pdf';
-import { CrossStitchPdf } from '@/brand/StitchFairyCo/pdf/CrossStitchPdf';
+import { StitchFairyCoModule } from '@brand/StitchFairyCo';
 import { FullProductObject } from '@domain/product';
+import { CrossStitchPdf } from '@infrastructure/pdf/CrossStitchPdf';
 import { GetProductQuery } from '@infrastructure/product/GetProductQuery';
 import { Metadata } from 'next';
 
@@ -35,7 +35,7 @@ export default async function Page({
 	const product = FullProductObject.fromAttributes(attrs);
 	return (
 		<div className="flex flex-col items-center gap-24 print:gap-0 p-24 print:p-0 bg-neutral-900 print:bg-transparent">
-			<CrossStitchPdf product={product} config={SFC_MODULE} />
+			<CrossStitchPdf product={product} config={StitchFairyCoModule.pdf} />
 		</div>
 	);
 }

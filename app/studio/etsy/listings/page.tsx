@@ -1,4 +1,4 @@
-import { STITCH_FAIRY_CO_RECORD_ID } from '@/brand/StitchFairyCo';
+import { STITCH_FAIRY_CO_RECORD_ID } from '@brand/StitchFairyCo';
 import { ListEtsyListingByBrandQuery } from '@infrastructure/etsy/query/ListEtsyListingByBrandQuery';
 import { DashboardLayout } from '@presentation/layout';
 import { EtsyListingsDirectoryView } from '@presentation/views/EtsyListingsDirectoryView';

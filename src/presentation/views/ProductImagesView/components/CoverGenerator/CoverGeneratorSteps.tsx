@@ -8,7 +8,7 @@ import {
 	DialogTitle,
 } from '@components/ui';
 import { useCallback } from 'react';
-import { StitchFairyCoCover } from '@/brand/StitchFairyCo';
+import { StitchFairyCoCover } from '@brand/StitchFairyCo';
 import { useCoverGeneratorContext } from './CoverGeneratorContext';
 import { CoverConfig } from './coverConfigReducer';
 import { CoverGeneratorActions } from './reducer';

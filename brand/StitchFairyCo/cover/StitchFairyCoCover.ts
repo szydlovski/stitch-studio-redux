@@ -1,4 +1,4 @@
-import { createCanvas } from '@/lib/canvas';
+import { createCanvas } from '@lib/canvas';
 import {
 	etsyCoverTemplate,
 	fabricMockupTemplate,

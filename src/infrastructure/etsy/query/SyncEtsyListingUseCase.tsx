@@ -1,5 +1,5 @@
 import { EtsyV3OpenApiClient } from '@infrastructure/etsy/EtsyV3OpenApiClient';
-import { XataQuery } from '@/lib/api/XataQuery';
+import { XataQuery } from '@lib/api/XataQuery';
 
 export class SyncEtsyListingUseCase extends XataQuery {
 	async execute(listingId: number) {

@@ -7,7 +7,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@components/ui';
-import { useDisclosure } from '@/lib/hooks/useDisclosure';
+import { useDisclosure } from '@lib/hooks/useDisclosure';
 import { BookOpenTextIcon, ExternalLinkIcon } from 'lucide-react';
 import Link from 'next/link';
 
