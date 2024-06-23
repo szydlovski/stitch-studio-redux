@@ -1,7 +1,7 @@
-import { DeleteProductQuery } from '@/infrastructure/product/query/DeleteProductQuery';
-import { GetProductQuery } from '@/infrastructure/product/query/GetProductQuery';
-import { UpdateProductTitleQuery } from '@/infrastructure/product/query/UpdateProductTitleQuery';
-import { routeHandler } from '@/lib/routeHandler';
+import { DeleteProductQuery } from '@infrastructure/product/DeleteProductQuery';
+import { GetProductQuery } from '@infrastructure/product/GetProductQuery';
+import { UpdateProductTitleQuery } from '@infrastructure/product/UpdateProductTitleQuery';
+import { routeHandler } from '@lib/api/routeHandler';
 import { NextResponse } from 'next/server';
 
 export const GET = routeHandler<{ productId: string }>(

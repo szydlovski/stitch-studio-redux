@@ -1,0 +1,13 @@
+{
+  "id": "mig_cplnrrced3lq5njmd1sg",
+  "parentID": "mig_cplnrp9vaf4gruau4pfg",
+  "checksum": "1:35266e14fc2fdac6f5702f3bf86aa91bf1dd55b039f4f6cd99f3a70cb2923ae8",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "data",
+        "table": "etsyAccount"
+      }
+    }
+  ]
+}

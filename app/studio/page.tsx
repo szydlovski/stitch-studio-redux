@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
+import { AppViews } from '../routes';
 
 export default function Home() {
-	return redirect('/studio/dashboard');
+	return redirect(AppViews.Dashboard());
 }

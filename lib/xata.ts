@@ -22,6 +22,7 @@ const tables = [
     revLinks: [
       { column: "product", table: "productImage" },
       { column: "product", table: "productFile" },
+      { column: "product", table: "etsyListing" },
     ],
   },
   {
@@ -29,6 +30,7 @@ const tables = [
     columns: [
       { name: "email", type: "email", unique: true },
       { name: "name", type: "string", defaultValue: "" },
+      { name: "avatar", type: "file" },
     ],
     revLinks: [
       { column: "author", table: "product" },
@@ -42,10 +44,12 @@ const tables = [
       { name: "name", type: "string", unique: true },
       { name: "logo", type: "file" },
       { name: "owner", type: "link", link: { table: "user" } },
+      { name: "attributes", type: "json", notNull: true, defaultValue: "{}" },
     ],
     revLinks: [
       { column: "brand", table: "product" },
       { column: "brand", table: "etsyListing" },
+      { column: "brand", table: "etsyAccount" },
     ],
   },
   {
@@ -78,6 +82,7 @@ const tables = [
       { name: "title", type: "string", notNull: true, defaultValue: "" },
       { name: "data", type: "json", notNull: true, defaultValue: "{}" },
       { name: "brand", type: "link", link: { table: "brand" } },
+      { name: "product", type: "link", link: { table: "product" } },
     ],
   },
   {
@@ -87,6 +92,17 @@ const tables = [
       { name: "type", type: "string", notNull: true, defaultValue: "" },
       { name: "user", type: "link", link: { table: "user" } },
       { name: "payload", type: "json", notNull: true, defaultValue: "{}" },
+    ],
+  },
+  {
+    name: "etsyAccount",
+    columns: [
+      { name: "token", type: "string" },
+      { name: "brand", type: "link", link: { table: "brand" } },
+      { name: "verifier", type: "string" },
+      { name: "shopId", type: "string" },
+      { name: "userId", type: "string" },
+      { name: "data", type: "json" },
     ],
   },
 ] as const;
@@ -118,6 +134,9 @@ export type EtsyListingRecord = EtsyListing & XataRecord;
 export type Event = InferredTypes["event"];
 export type EventRecord = Event & XataRecord;
 
+export type EtsyAccount = InferredTypes["etsyAccount"];
+export type EtsyAccountRecord = EtsyAccount & XataRecord;
+
 export type DatabaseSchema = {
   product: ProductRecord;
   user: UserRecord;
@@ -127,6 +146,7 @@ export type DatabaseSchema = {
   productFile: ProductFileRecord;
   etsyListing: EtsyListingRecord;
   event: EventRecord;
+  etsyAccount: EtsyAccountRecord;
 };
 
 const DatabaseClient = buildClient();

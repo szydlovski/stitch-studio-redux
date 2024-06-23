@@ -1,5 +1,5 @@
-import { UpdateProductAttributesQuery } from '@/infrastructure/product/query/UpdateProductAttributesQuery';
-import { routeHandler } from '@/lib/routeHandler';
+import { UpdateProductAttributesQuery } from '@infrastructure/product/UpdateProductAttributesQuery';
+import { routeHandler } from '@lib/api/routeHandler';
 import { NextResponse } from 'next/server';
 
 export const PATCH = routeHandler<{ productId: string }>(

@@ -1,11 +1,14 @@
-import { routeHandler } from '@/lib/routeHandler';
+import { routeHandler } from '@lib/api/routeHandler';
 import { NextResponse } from 'next/server';
-import { ListProductsQuery } from '@/infrastructure/product/query/ListProductsQuery';
-import { CreateProductQuery } from '@/infrastructure/product/query/CreateProductQuery';
+import { ListProductsQuery } from '@infrastructure/product/ListProductsQuery';
+import { CreateProductQuery } from '@infrastructure/product/CreateProductQuery';
 
 export const GET = routeHandler(
-	async ({ xata }) => {
-		const products = await new ListProductsQuery(xata).execute();
+	async ({ req, xata }) => {
+		const searchParams = new URL(req.url).searchParams;
+		const products = await new ListProductsQuery(xata).execute({
+			brand: searchParams.getAll('brand'),
+		});
 		return NextResponse.json({ products });
 	},
 	{

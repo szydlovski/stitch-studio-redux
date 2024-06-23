@@ -35,6 +35,7 @@ In addition to that core, the app needs a way to manage products in bulk (listin
 In the prototype phase, Stitch Studio will use a global brand - our existing shop, StitchFairyCo. Full support for multiple brands is complex, as product files and images need to be deeply customized as well.
 
 In the future, Stitch Studio is intended to expand in multiple directions:
+
 - Marketing automation (Pinterest)
 - New product types (i.e. seamless patterns)
 - New commerce integrations (Shopify?)
@@ -47,4 +48,93 @@ On the frontend, it uses `shadcn/ui` components and Tailwind for custom styling.
 
 On the backend, the API is built using the `app` router and route handlers. It uses [Xata](https://xata.io) as a database.
 
-The code structure is inspired by DDD principles.
+The code is structured in layers. Here's a brief overview of the top level directories:
+- `app` - Next.js app router
+- `src` - core app source
+  - `presentation` - ui & views
+  - `application` - connect ui to infra
+  - `domain` - define models
+  - `infrastructure` - facilitate backend operations
+- `lib` - low level utilities
+- `brand` - custom templates for brands
+
+# How-to's
+
+## Adding a new API action
+
+Adding a new API action consists of four steps:
+
+1. Define domain models
+2. Implement infrastructure query/command
+3. Implement API route
+4. Exposing application function and hook
+
+Let's say I wanted to add reactions to products. I would start by defining the DTO:
+
+```ts
+// src/domain/product/Reaction.ts
+export interface AddReactionDto {
+	// ...
+}
+
+export interface AddReactionResult {
+	// ...
+}
+```
+
+Then I would implement the command:
+
+```ts
+// src/infrastructure/product/AddReactionToProductCommand.ts
+export class AddReactionToProductCommand extends XataQuery<AddReactionResult> {
+	execute(productId: string, body: AddReactionDto): Promise<AddReactionResult> {
+		// ...
+	}
+}
+```
+
+Then the route handler:
+
+```ts
+// app/api/products/[productId]/reactions/route.ts
+export const PUT = routeHandler<{ productId: string }>(
+	async ({ params: { productId }, req }) => {
+		const body = await req.json();
+		const result = await new AddReactionToProductCommand().execute(
+			productId,
+			body
+		);
+		return NextResponse.json(result);
+	},
+	{
+		auth: true,
+	}
+);
+```
+
+And finally, the application layer function and hook
+
+```ts
+// src/application/product/addReaction.ts
+export const addReaction = (
+	productId: string,
+	body: AddReactionDto
+): Promise<AddReactionResult> => {
+	return fetch(`/api/products/${productId}/reactions`, {
+		method: 'PUT',
+	}).then((res) => res.json());
+};
+
+export const useAddReaction = () => useMutation({ mutationFn: addReaction });
+```
+
+## Installing new components with `shadcn/ui`
+
+You can install new `shadcn/ui` components [using the CLI](https://ui.shadcn.com/docs/cli):
+```bash
+npx shadcn-ui@latest add [component]
+```
+For example:
+```bash
+npx shadcn-ui@latest add tabs
+```

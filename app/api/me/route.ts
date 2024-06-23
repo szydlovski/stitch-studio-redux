@@ -1,5 +1,5 @@
 import { auth } from '@/app/auth';
-import { getUserByEmail } from '@/lib/getUserByEmail';
+import { GetUserByEmailQuery } from '@infrastructure/user';
 import { NextResponse } from 'next/server';
 
 const createErrorResponse = (message: string, status = 400) => {
@@ -12,9 +12,9 @@ export async function GET() {
 	if (!session?.user?.email) {
 		return createErrorResponse('No active session', 401);
 	}
-	const user = await getUserByEmail(session.user.email);
+	const user = await new GetUserByEmailQuery().execute(session.user.email);
 	if (!user) {
 		return createErrorResponse('User not found', 401);
 	}
-	return NextResponse.json({ identity: user.toSerializable() });
+	return NextResponse.json({ identity: user });
 }

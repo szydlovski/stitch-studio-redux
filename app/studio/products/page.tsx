@@ -1,5 +1,5 @@
-import { DashboardLayout } from '@/presentation/layout';
-import { ProductListView } from '@/presentation/views';
+import { DashboardLayout } from '@presentation/layout';
+import { ProductListView } from '@presentation/views';
 
 export default function ProductsPage() {
 	return (

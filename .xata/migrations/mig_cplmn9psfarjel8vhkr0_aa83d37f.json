@@ -1,0 +1,12 @@
+{
+  "id": "mig_cplmn9psfarjel8vhkr0",
+  "parentID": "mig_cpkf19f1pfru7ce9m6eg",
+  "checksum": "1:aa83d37f1f0ee1ed95a6f5f8dc5665445f7eefe336587f54e8b59a099a16829b",
+  "operations": [
+    {
+      "addTable": {
+        "table": "etsyAccount"
+      }
+    }
+  ]
+}

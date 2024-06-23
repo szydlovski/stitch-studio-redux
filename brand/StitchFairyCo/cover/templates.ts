@@ -2,7 +2,12 @@ import {
 	LayerType,
 	TemplateManifest,
 	TemplatePropType,
-} from '@/infrastructure/product-image/types';
+} from '@infrastructure/product-image/types';
+
+const etsyCoverKeys = [
+	'etsy_cover',
+	'etsy_image'
+]
 
 export const loopMockupTemplate: TemplateManifest = {
 	props: [

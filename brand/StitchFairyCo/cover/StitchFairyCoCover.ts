@@ -1,4 +1,4 @@
-import { createCanvas } from '@/lib/canvas';
+import { createCanvas } from '@lib/canvas';
 import {
 	etsyCoverTemplate,
 	fabricMockupTemplate,
@@ -13,7 +13,7 @@ import {
 import {
 	CustomizableCoverTemplate,
 	RenderCoverProps,
-} from '@/application/product-image/CoverCustomizer/types';
+} from '@presentation/views/ProductImagesView/components/CoverCustomizer/types';
 
 const targetDim = { width: 877, height: 941 };
 
