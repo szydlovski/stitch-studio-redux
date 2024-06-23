@@ -31,7 +31,7 @@ export const EditorInner = () => {
 		console.log('rendered');
 
 		setReady(true);
-	}, [state]);
+	}, [state, canvasRef]);
 	return (
 		<>
 			<div ref={containerRef} className="h-[calc(100vh-56px)]">

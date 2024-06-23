@@ -62,7 +62,7 @@ export const EditorCanvas = () => {
 				])
 			);
 		},
-		[state]
+		[state, dispatch]
 	);
 
 	const handleMouseDown = useCallback(
@@ -90,7 +90,7 @@ export const EditorCanvas = () => {
 				return;
 			}
 		},
-		[state]
+		[state, dispatch]
 	);
 
 	const handleMouseMove = useCallback(
@@ -126,7 +126,7 @@ export const EditorCanvas = () => {
 				}
 			}
 		},
-		[state]
+		[state, dispatch, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY]
 	);
 
 	const handleMouseUp = useCallback((_: MouseEvent) => {
@@ -141,7 +141,7 @@ export const EditorCanvas = () => {
 		return () => {
 			canvas.removeEventListener('wheel', handleWheel);
 		};
-	}, [handleWheel]);
+	}, [handleWheel, canvasRef]);
 	return (
 		<canvas
 			ref={canvasRef}

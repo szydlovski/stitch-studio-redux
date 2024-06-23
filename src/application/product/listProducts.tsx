@@ -1,7 +1,6 @@
-import { STITCH_FAIRY_CO_RECORD_ID } from '@brand/StitchFairyCo';
 import {
-	BaseProductObject,
 	BaseProductAttributes,
+	BaseProductObject,
 } from '@domain/product';
 import { ListProductsParameters } from '@infrastructure/product/ListProductsQuery';
 import { useQuery } from '@tanstack/react-query';

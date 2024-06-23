@@ -1,4 +1,4 @@
-import { STITCH_FAIRY_CO_RECORD_ID } from '@brand/StitchFairyCo';
+import { StitchFairyCoModule } from '@brand/StitchFairyCo';
 import { XataQuery } from '@lib/api/XataQuery';
 
 export interface CreateProductQueryResult {
@@ -13,7 +13,7 @@ export class CreateProductQuery extends XataQuery<CreateProductQueryResult> {
 		thumbnail: string,
 		data: any,
 		// TODO remove hardcoded brand, add brand selection
-		brand = STITCH_FAIRY_CO_RECORD_ID
+		brand = StitchFairyCoModule.brandId
 	): Promise<CreateProductQueryResult> {
 		const product = await this.xata.db.product.create({
 			author: userId,

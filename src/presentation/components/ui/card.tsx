@@ -82,6 +82,7 @@ const CardStack = React.forwardRef<
 		{...props}
 	/>
 ));
+CardStack.displayName = 'CardStack';
 
 export {
 	Card,

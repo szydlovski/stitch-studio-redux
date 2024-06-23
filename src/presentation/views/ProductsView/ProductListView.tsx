@@ -1,5 +1,11 @@
 'use client';
-import { SelectInput } from '@components/SelectInput';
+import {
+	STITCH_COVEN_RECORD_ID,
+	TEST_BRAND_RECORD_ID,
+} from '@application/product';
+import {
+	StitchFairyCoModule
+} from '@brand/StitchFairyCo';
 import {
 	Button,
 	Pagination,
@@ -22,17 +28,12 @@ import {
 	ViewHeader,
 	ViewTitle,
 } from '@components/ui';
-import { CreateProductDialog } from './CreateProduct/CreateProductDialog';
-import { ProductList } from './ProductList/ProductList';
 import { WandSparklesIcon } from 'lucide-react';
-import { MultiSelect } from './MultiSelect';
 import { useState } from 'react';
-import { STITCH_FAIRY_CO_RECORD_ID } from '@brand/StitchFairyCo';
-import {
-	STITCH_COVEN_RECORD_ID,
-	TEST_BRAND_RECORD_ID,
-} from '@application/product';
 import { QueryParamConfig, useQueryParam } from 'use-query-params';
+import { CreateProductDialog } from './CreateProduct/CreateProductDialog';
+import { MultiSelect } from './MultiSelect';
+import { ProductList } from './ProductList/ProductList';
 
 export const ArrayParam: QueryParamConfig<string[] | undefined> = {
 	encode: (value) => {
@@ -91,7 +92,7 @@ export const ProductListView = () => {
 						options={[
 							{
 								label: 'StitchFairyCo',
-								value: STITCH_FAIRY_CO_RECORD_ID,
+								value: StitchFairyCoModule.brandId,
 							},
 							{
 								label: 'StitchCoven',
