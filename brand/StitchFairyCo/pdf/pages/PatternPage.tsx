@@ -1,6 +1,6 @@
 import { ColorTuple } from '@/lib/color';
 import { Page } from '@components/pdf/Page';
-import { PdfPageProps } from '../types';
+import { CrossStitchPdfPageProps, CrossStitchPdfPatternPageProps } from '../types';
 import { stitchTableCss } from '../css';
 import { hexToRgb } from '@/lib/color';
 
@@ -16,12 +16,14 @@ const getContrastColor = (color: ColorTuple) => {
 const GRID_WIDTH = 60;
 const GRID_HEIGHT = 80;
 
+
+
 export const SinglePatternPage = ({
 	index,
 	product: { pattern },
 	xOffset = 0,
 	yOffset = 0,
-}: PdfPageProps & { index: number; xOffset?: number; yOffset?: number }) => {
+}: CrossStitchPdfPatternPageProps) => {
 	return (
 		<Page>
 			<div className="flex flex-col gap-4 h-full">
@@ -83,7 +85,7 @@ interface PatternPagesOptions {
 	align: PatternAlignment;
 }
 
-interface PatternPagesProps extends PdfPageProps {
+interface PatternPagesProps extends CrossStitchPdfPageProps {
 	options?: PatternPagesOptions;
 }
 
