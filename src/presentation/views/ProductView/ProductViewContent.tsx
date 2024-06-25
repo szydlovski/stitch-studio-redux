@@ -17,15 +17,16 @@ import {
 	ViewBreadcrumbs,
 	ViewContent,
 } from '@components/ui';
-import { DangerZoneCard } from '@presentation/views/ProductView/ProductCards/DangerZoneCard';
-import { PatternCard } from '@presentation/views/ProductView/ProductCards/PatternCard';
-import { PdfCard } from '@presentation/views/ProductView/ProductCards/PdfCard';
+import { DangerZoneCard } from '@presentation/views/ProductView/cards/DangerZoneCard';
+import { PatternCard } from '@presentation/views/ProductView/cards/PatternCard';
+import { PdfCard } from '@presentation/views/ProductView/cards/PdfCard';
 import { useProductContext } from '@presentation/views/ProductView/ProductContext';
 import { StringParam, useQueryParam, withDefault } from 'use-query-params';
 import { ImagesTabContent } from '../ProductImagesView/ImagesTabContent';
-import { LaunchChecklistCard } from './ProductCards/LaunchChecklistCard';
+import { LaunchChecklistCard } from './cards/LaunchChecklistCard';
 import { ProductViewHeader } from './ProductViewHeader';
 import { CrossStitchPdf } from '@infrastructure/pdf/CrossStitchPdf';
+import { AttributesCard } from './cards/AttributesCard';
 
 enum ProductViewTab {
 	Properties = 'properties',
@@ -95,6 +96,7 @@ export const ProductViewContent = () => {
 					<ViewContent>
 						<CardStack>
 							<DangerZoneCard />
+							<AttributesCard />
 						</CardStack>
 					</ViewContent>
 				</TabsContent>

@@ -31,6 +31,7 @@
     "@react-hook/resize-observer": "^2.0.1",
     "@reduxjs/toolkit": "^2.2.5",
     "@tanstack/react-query": "^5.40.0",
+    "@tanstack/react-table": "^8.17.3",
     "@types/lodash.isequal": "^4.5.8",
     "@uiw/react-json-view": "^2.0.0-alpha.24",
     "@xata.io/client": "^0.29.5",

@@ -26,7 +26,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { BrandHoverCard } from './BrandHoverCard';
-import { EditTitleDialog } from './ProductCards/EditTitleDialog';
+import { EditTitleDialog } from './cards/EditTitleDialog';
 import { DropdownMenu } from '@components/DropdownMenu';
 import { AppViews } from '@/app/routes';
 

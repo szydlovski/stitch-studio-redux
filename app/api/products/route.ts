@@ -6,10 +6,16 @@ import { CreateProductQuery } from '@infrastructure/product/CreateProductQuery';
 export const GET = routeHandler(
 	async ({ req, xata }) => {
 		const searchParams = new URL(req.url).searchParams;
-		const products = await new ListProductsQuery(xata).execute({
+		const result = await new ListProductsQuery(xata).execute({
 			brand: searchParams.getAll('brand'),
+			limit: searchParams.get('limit')
+				? parseInt(searchParams.get('limit') as string)
+				: undefined,
+			offset: searchParams.get('offset')
+				? parseInt(searchParams.get('offset') as string)
+				: undefined,
 		});
-		return NextResponse.json({ products });
+		return NextResponse.json(result);
 	},
 	{
 		auth: true,

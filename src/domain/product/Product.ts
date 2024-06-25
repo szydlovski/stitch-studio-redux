@@ -2,17 +2,13 @@ import {
 	CrossStitchPattern,
 	CrossStitchPatternData,
 } from '@domain/cross-stitch';
-import {
-	ProductAttributes,
-	ProductAuthor,
-	ProductBrand,
-	ProductThumbnail,
-} from './types';
+import { StaticImageData } from 'next/image';
+import { ProductAttributes, ProductAuthor, ProductBrand } from './types';
 
 export interface BaseProductAttributes {
 	readonly id: string;
 	readonly title: string;
-	readonly thumbnail: ProductThumbnail;
+	readonly thumbnail: StaticImageData;
 	readonly brand: ProductBrand;
 	readonly author: ProductAuthor;
 	readonly attributes: ProductAttributes;
@@ -21,7 +17,7 @@ export interface BaseProductAttributes {
 export class BaseProductObject implements BaseProductAttributes {
 	public readonly id: string;
 	public readonly title: string;
-	public readonly thumbnail: ProductThumbnail;
+	public readonly thumbnail: StaticImageData;
 	public readonly brand: ProductBrand;
 	public readonly author: ProductAuthor;
 	public readonly attributes: ProductAttributes;
