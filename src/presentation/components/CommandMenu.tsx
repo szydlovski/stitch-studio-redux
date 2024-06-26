@@ -9,6 +9,7 @@ import {
 	CommandList,
 	Dialog,
 	Input,
+	ScrollArea,
 } from '@components/ui';
 import { useRouter } from 'next/navigation';
 
@@ -20,6 +21,7 @@ import {
 import debounce from 'lodash.debounce';
 import Link from 'next/link';
 import React from 'react';
+import { useSearchContext } from '@presentation/features/search/SearchContext';
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
 	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -28,6 +30,7 @@ type ArrayElement<ArrayType extends readonly unknown[]> =
 type SearchResult = ArrayElement<any>;
 
 export function CommandToolbarItem() {
+	const { items: customItems } = useSearchContext();
 	const [searchTerm, setSearchTerm] = React.useState('');
 	const [searchResults, setSearchResults] = React.useState<SearchResult[]>();
 	const [searching, setSearching] = React.useState(false);
@@ -63,7 +66,7 @@ export function CommandToolbarItem() {
 			<CommandDialog open={open} onOpenChange={setOpen}>
 				<CommandInput
 					value={searchTerm}
-					className='ml-auto'
+					className="ml-auto"
 					placeholder="Type a command or search..."
 					onChangeCapture={async (evt) => {
 						const searchTerm = evt.currentTarget.value;
@@ -73,13 +76,38 @@ export function CommandToolbarItem() {
 				/>
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
+					{customItems.length > 0 && (
+						<CommandGroup heading="Custom">
+							{customItems.map(({ id, label, onClick, href, icon: Icon }) => {
+								const content = (
+									<>
+										{Icon && <Icon size={10} />}
+										{label}
+									</>
+								);
+								return (
+									<CommandItem
+										key={id}
+										value={label}
+										onSelect={() => {
+											onClick?.();
+											setOpen(false);
+										}}
+										asChild={!!href}
+									>
+										{href ? <Link href={href}>{content}</Link> : content}
+									</CommandItem>
+								);
+							})}
+						</CommandGroup>
+					)}
 					<CommandSearchResults
 						searchTerm={searchTerm}
 						searchResults={searchResults ?? []}
 						searching={searching}
 					/>
 					<NavigationCommands />
-					<CommandGroup heading="Actions">
+					<CommandGroup heading="Workflows">
 						<CommandItem
 							className="flex gap-2"
 							value={'createProduct'}

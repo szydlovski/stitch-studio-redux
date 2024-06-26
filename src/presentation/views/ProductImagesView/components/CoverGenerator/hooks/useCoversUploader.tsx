@@ -6,6 +6,10 @@ import { CoverGeneratorActions, CoverRenderState } from '../reducer';
 import { useUploadProductImage } from '@application/product-image/uploadProductImage';
 import { getProductImagesQueryKey } from '@application/product-image';
 
+const dataUrlToXataBase64 = (dataUrl: string) => {
+	return dataUrl.split(',')[1];
+};
+
 export const useCoversUploader = () => {
 	const {
 		product,
@@ -28,7 +32,11 @@ export const useCoversUploader = () => {
 	const handleSave = useCallback(async () => {
 		for (const { src, key } of renders) {
 			setRenders(renders.map((render) => ({ ...render, uploading: true })));
-			await mutateAsync({ productId: product.id, src, key });
+			await mutateAsync({
+				productId: product.id,
+				imageBase64: dataUrlToXataBase64(src),
+				tags: [key],
+			});
 			setRenders(
 				renders.map((render) => ({
 					...render,

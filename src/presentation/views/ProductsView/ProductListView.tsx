@@ -148,7 +148,7 @@ export const ProductListView = () => {
 	const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1));
 	const [pageSize, setPageSize] = useQueryParam(
 		'pageSize',
-		withDefault(NumberParam, 3)
+		withDefault(NumberParam, 12)
 	);
 	const [total, setTotal] = useState(0);
 	const maxPage = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
@@ -166,6 +166,12 @@ export const ProductListView = () => {
 		limit: pageSize,
 		offset: (page - 1) * pageSize,
 	});
+
+	// reset page when brand changes
+	useEffect(() => {
+		setPage(1);
+	}, [brand, setPage]);
+	
 	useEffect(() => {
 		if (data?.total === undefined) return;
 		setTotal(data.total);

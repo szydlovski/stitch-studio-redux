@@ -33,6 +33,7 @@ import {
 import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@lib/utils';
 import Link from 'next/link';
+import { HTMLAttributeAnchorTarget } from 'react';
 
 const TEST_ITEMS: DropdownMenuEntry[] = [
 	{
@@ -125,6 +126,7 @@ interface MyMenuItemConfig {
 	children?: MyMenuItemConfig[];
 	shortcut?: string;
 	href?: string;
+	target?: HTMLAttributeAnchorTarget;
 	onClick?: () => void;
 }
 
@@ -138,7 +140,16 @@ interface MyMenuLabelConfig {
 }
 
 const MyMenuItem = ({
-	item: { children, label, shortcut, icon: Icon, disabled, href, onClick },
+	item: {
+		children,
+		label,
+		shortcut,
+		icon: Icon,
+		disabled,
+		href,
+		onClick,
+		target,
+	},
 }: {
 	item: MyMenuItemConfig;
 }) => {
@@ -163,7 +174,7 @@ const MyMenuItem = ({
 		</DropdownMenuSub>
 	) : href ? (
 		<DropdownMenuItem disabled={disabled} asChild>
-			<Link href={href}>
+			<Link href={href} target={target}>
 				{content}
 				{shortcut && <DropdownMenuShortcut>{shortcut}</DropdownMenuShortcut>}
 			</Link>

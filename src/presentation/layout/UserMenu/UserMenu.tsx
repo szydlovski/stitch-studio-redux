@@ -9,6 +9,9 @@ import {
 	DropdownMenuItem,
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
+	DropdownMenuSub,
+	DropdownMenuSubContent,
+	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
 } from '@components/ui';
 import { CircleUser, Moon, Sun } from 'lucide-react';
@@ -18,30 +21,30 @@ import Link from 'next/link';
 
 export const UserDropdownMenuContent = () => {
 	const { data } = useSession();
-	const { setTheme } = useTheme();
+	const { theme, setTheme, systemTheme } = useTheme();
 
 	return (
 		<DropdownMenuContent align="end">
 			<DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
 			<DropdownMenuSeparator />
-			<DropdownMenuItem>Test</DropdownMenuItem>
+			<DropdownMenuSub>
+				<DropdownMenuSubTrigger>{`Theme: ${
+					theme === 'light' ? 'Light' : 'Dark'
+				}`}</DropdownMenuSubTrigger>
+				<DropdownMenuSubContent>
+					<DropdownMenuItem onClick={() => setTheme('light')}>
+						Light
+					</DropdownMenuItem>
+					<DropdownMenuItem onClick={() => setTheme('dark')}>
+						Dark
+					</DropdownMenuItem>
+					<DropdownMenuItem onClick={() => setTheme('system')}>
+						System
+					</DropdownMenuItem>
+				</DropdownMenuSubContent>
+			</DropdownMenuSub>
 			<DropdownMenuItem asChild>
 				<Link href="/studio/user">Settings</Link>
-			</DropdownMenuItem>
-			<DropdownMenuSeparator />
-			<DropdownMenuItem onClick={() => setTheme('light')}>
-				<Button variant="outline" size="icon">
-					<Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-					<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-					<span className="sr-only">Toggle theme</span>
-				</Button>
-			</DropdownMenuItem>
-			<DropdownMenuItem onClick={() => setTheme('light')}>
-				Light
-			</DropdownMenuItem>
-			<DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
-			<DropdownMenuItem onClick={() => setTheme('system')}>
-				System
 			</DropdownMenuItem>
 			<DropdownMenuSeparator />
 			<DropdownMenuItem onClick={() => signOut({ callbackUrl: '/login' })}>
@@ -53,6 +56,7 @@ export const UserDropdownMenuContent = () => {
 
 export const UserMenu = () => {
 	const { data } = useSession();
+	const { theme, setTheme } = useTheme();
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>

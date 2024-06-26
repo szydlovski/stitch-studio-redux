@@ -4,10 +4,11 @@ import { StitchFairyCoModule } from '@brand/StitchFairyCo';
 import { Loader } from '@components/Spinner';
 import {
 	Button,
-	Card,
-	CardHeader,
 	CardStack,
-	CardTitle,
+	Dialog,
+	DialogContent,
+	DialogTrigger,
+	ScrollArea,
 	Skeleton,
 	Tabs,
 	TabsContent,
@@ -17,24 +18,21 @@ import {
 	ViewBreadcrumbs,
 	ViewContent,
 } from '@components/ui';
+import { CrossStitchPdf } from '@infrastructure/pdf/CrossStitchPdf';
+import { useProductContext } from '@presentation/views/ProductView/ProductContext';
 import { DangerZoneCard } from '@presentation/views/ProductView/cards/DangerZoneCard';
 import { PatternCard } from '@presentation/views/ProductView/cards/PatternCard';
-import { PdfCard } from '@presentation/views/ProductView/cards/PdfCard';
-import { useProductContext } from '@presentation/views/ProductView/ProductContext';
 import { StringParam, useQueryParam, withDefault } from 'use-query-params';
 import { ImagesTabContent } from '../ProductImagesView/ImagesTabContent';
-import { LaunchChecklistCard } from './cards/LaunchChecklistCard';
 import { ProductViewHeader } from './ProductViewHeader';
-import { CrossStitchPdf } from '@infrastructure/pdf/CrossStitchPdf';
 import { AttributesCard } from './cards/AttributesCard';
+import { LaunchChecklistCard } from './cards/LaunchChecklistCard';
 
 enum ProductViewTab {
 	Properties = 'properties',
 	Images = 'images',
 	Files = 'files',
-	CrossStitch = 'cross-stitch',
 	Advanced = 'advanced',
-	Printable = 'printable',
 }
 
 export const ProductViewContent = () => {
@@ -59,14 +57,8 @@ export const ProductViewContent = () => {
 							</TabsTrigger>
 							<TabsTrigger value={ProductViewTab.Images}>Images</TabsTrigger>
 							<TabsTrigger value={ProductViewTab.Files}>Files</TabsTrigger>
-							<TabsTrigger value={ProductViewTab.CrossStitch}>
-								Cross Stitch
-							</TabsTrigger>
 							<TabsTrigger value={ProductViewTab.Advanced}>
 								Advanced
-							</TabsTrigger>
-							<TabsTrigger value={ProductViewTab.Printable}>
-								Printable
 							</TabsTrigger>
 						</TabsList>
 					</div>
@@ -86,9 +78,7 @@ export const ProductViewContent = () => {
 
 				<TabsContent asChild value="files">
 					<ViewContent>
-						<CardStack>
-							<PdfCard />
-						</CardStack>
+						<div>Hello world</div>
 					</ViewContent>
 				</TabsContent>
 
@@ -98,33 +88,6 @@ export const ProductViewContent = () => {
 							<DangerZoneCard />
 							<AttributesCard />
 						</CardStack>
-					</ViewContent>
-				</TabsContent>
-
-				<TabsContent asChild value="cross-stitch">
-					<ViewContent>
-						<CardStack>
-							<PdfCard />
-							<Card>
-								<CardHeader>
-									<CardTitle className="flex gap-2">
-										<span>PDF Settings</span>
-										<Button className="ml-auto">Generate PDF</Button>
-									</CardTitle>
-								</CardHeader>
-							</Card>
-						</CardStack>
-					</ViewContent>
-				</TabsContent>
-
-				<TabsContent asChild value="printable">
-					<ViewContent fullWidth scrollX className="bg-muted">
-						<div className="flex flex-col gap-12 px-6 py-12 items-center">
-							<CrossStitchPdf
-								product={product}
-								config={StitchFairyCoModule.pdf}
-							/>
-						</div>
 					</ViewContent>
 				</TabsContent>
 			</View>
