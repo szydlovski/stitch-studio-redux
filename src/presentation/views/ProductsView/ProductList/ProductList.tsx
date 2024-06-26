@@ -4,6 +4,7 @@ import { useListProducts } from '@application/product';
 import { ErrorAlert } from '@components/ErrorAlert';
 import { ReactNode } from 'react';
 import { ProductTile, ProductTileSkeleton } from './ProductTile';
+import { BaseProductObject } from '@domain/product';
 
 export const ProductTileGrid = ({ children }: { children: ReactNode }) => {
 	return (
@@ -13,39 +14,26 @@ export const ProductTileGrid = ({ children }: { children: ReactNode }) => {
 	);
 };
 
-export const ProductList = ({ brand }: { brand: string[] }) => {
-	const { data, status } = useListProducts({ brand });
+export const ProductListSkeleton = () => (
+	<ProductTileGrid>
+		{Array(24)
+			.fill(0)
+			.map((_, i) => {
+				return <ProductTileSkeleton key={i} />;
+			})}
+	</ProductTileGrid>
+);
 
-	// return <DataGuard></DataGuard>
+export const ProductList = ({
+	products,
+}: {
+	products: BaseProductObject[];
+}) => {
 	return (
-		<QueryStatusGuard
-			props={data}
-			status={status}
-			loadingContent={
-				<ProductTileGrid>
-					{Array(24)
-						.fill(0)
-						.map((_, i) => {
-							return <ProductTileSkeleton key={i} />;
-						})}
-				</ProductTileGrid>
-			}
-			errorContent={
-				<ErrorAlert
-					title={'Error'}
-					description={
-						'An error occurred while fetching products. Please try again later.'
-					}
-				/>
-			}
-		>
-			{(products) => (
-				<ProductTileGrid>
-					{products.map((product) => (
-						<ProductTile key={product.id} product={product} />
-					))}
-				</ProductTileGrid>
-			)}
-		</QueryStatusGuard>
+		<ProductTileGrid>
+			{products.map((product) => (
+				<ProductTile key={product.id} product={product} />
+			))}
+		</ProductTileGrid>
 	);
 };

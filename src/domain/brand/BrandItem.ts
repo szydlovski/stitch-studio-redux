@@ -1,15 +1,11 @@
-import {
-	BrandAttributes,
-	BrandEtsyAccount,
-	BrandLogo,
-	BrandOwner,
-} from './types';
+import { StaticImageData } from 'next/image';
+import { BrandAttributes, BrandEtsyAccount, BrandOwner } from './types';
 
 export interface BrandItemAttributes {
 	readonly id: string;
 	readonly name: string;
 	readonly owner: BrandOwner;
-	readonly logo: BrandLogo;
+	readonly logo: StaticImageData;
 	readonly etsy?: BrandEtsyAccount;
 	readonly attributes: BrandAttributes;
 }
@@ -18,7 +14,7 @@ export class BrandItem implements BrandItemAttributes {
 	public readonly id: string;
 	public readonly name: string;
 	public readonly owner: BrandOwner;
-	public readonly logo: BrandLogo;
+	public readonly logo: StaticImageData;
 	public readonly etsy?: BrandEtsyAccount;
 	public readonly attributes: BrandAttributes;
 	protected constructor(attrs: BrandItemAttributes) {

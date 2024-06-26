@@ -8,6 +8,7 @@ import {
 	CreditCard,
 	EllipsisIcon,
 	EllipsisVerticalIcon,
+	FileTextIcon,
 	Keyboard,
 	LifeBuoy,
 	LogOut,
@@ -18,6 +19,7 @@ import {
 	Plus,
 	PlusCircle,
 	Settings,
+	SheetIcon,
 	User,
 	UserPlus,
 	UserRoundCogIcon,
@@ -26,12 +28,25 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { BrandHoverCard } from './BrandHoverCard';
-import { EditTitleDialog } from './ProductCards/EditTitleDialog';
+import { EditTitleDialog } from './cards/EditTitleDialog';
 import { DropdownMenu } from '@components/DropdownMenu';
 import { AppViews } from '@/app/routes';
+import { useCustomSearchItems } from '@presentation/features/search/SearchContext';
+import { useMemo } from 'react';
 
 export const ProductViewHeader = () => {
 	const { product } = useProductContext();
+	const items = useMemo(
+		() => [
+			{
+				id: 'change-product-title',
+				label: 'Change title',
+				icon: PencilIcon,
+			},
+		],
+		[]
+	);
+	useCustomSearchItems(items);
 	return (
 		<div className="flex gap-4 p-6">
 			<div className="h-full">
@@ -119,6 +134,13 @@ export const ProductViewHeader = () => {
 							label: 'Edit design',
 							href: `/studio/cross-stitch/editor?productId=${product.id}`,
 							icon: PaintbrushIcon,
+						},
+						{
+							type: 'item',
+							label: 'Preview PDF',
+							href: `/api/cross-stitch/pdf-preview?productId=${product.id}`,
+							target: '_blank',
+							icon: FileTextIcon,
 						},
 						{
 							type: 'separator',

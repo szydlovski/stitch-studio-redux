@@ -72,10 +72,10 @@ export const MultiSelect = <ValueType extends string = string>({
 					<CommandList>
 						<CommandEmpty>No options found.</CommandEmpty>
 						<CommandGroup>
-							{options.map((framework) => (
+							{options.map((option) => (
 								<CommandItem
-									key={framework.value}
-									value={framework.value}
+									key={option.value}
+									value={option.value}
 									onSelect={(rawCurrentValue) => {
 										const currentValue = rawCurrentValue as ValueType;
 										onValuesChange(
@@ -88,12 +88,12 @@ export const MultiSelect = <ValueType extends string = string>({
 									<Check
 										className={cn(
 											'mr-2 h-4 w-4',
-											values.includes(framework.value)
+											values.includes(option.value)
 												? 'opacity-100'
 												: 'opacity-0'
 										)}
 									/>
-									{framework.label}
+									{option.label}
 								</CommandItem>
 							))}
 						</CommandGroup>

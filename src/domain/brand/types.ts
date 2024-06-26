@@ -12,9 +12,3 @@ export interface BrandAttributes {
 	color: string;
 	textColor: string;
 }
-
-export interface BrandLogo {
-	src: string;
-	width: number;
-	height: number;
-}

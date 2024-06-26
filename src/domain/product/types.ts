@@ -5,11 +5,7 @@ import {
 } from '@presentation/views/ProductImagesView/components/CoverGenerator/coverConfigReducer';
 import { z } from 'zod';
 
-export interface ProductThumbnail {
-	src: string;
-	width: number;
-	height: number;
-}
+import { StaticImageData } from 'next/image';
 
 export interface ProductBrand {
 	id: string;
@@ -19,22 +15,14 @@ export interface ProductBrand {
 		id: string;
 		name: string;
 	};
-	logo: {
-		src: string;
-		width: number;
-		height: number;
-	};
+	logo: StaticImageData;
 }
 
 export interface ProductAuthor {
 	id: string;
 	name: string;
 	email: string;
-	avatar?: {
-		src: string;
-		width: number;
-		height: number;
-	};
+	avatar?: StaticImageData;
 }
 
 export interface HoopMockupConfig {
