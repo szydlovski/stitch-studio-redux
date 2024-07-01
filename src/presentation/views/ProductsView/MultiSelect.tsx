@@ -32,6 +32,8 @@ interface MultiSelectProps<ValueType extends string = string> {
 	placeholder?: string;
 	searchable?: boolean;
 	searchPlaceholder?: string;
+	disabled?: boolean;
+	className?: string;
 }
 
 export const MultiSelect = <ValueType extends string = string>({
@@ -42,6 +44,8 @@ export const MultiSelect = <ValueType extends string = string>({
 	placeholder = 'Select options...',
 	searchable = false,
 	searchPlaceholder = 'Search options...',
+	disabled = false,
+	className,
 }: MultiSelectProps<ValueType>) => {
 	const [open, setOpen] = React.useState(false);
 	const selectedOptions = options.filter((framework) =>
@@ -55,7 +59,11 @@ export const MultiSelect = <ValueType extends string = string>({
 					variant="outline"
 					role="combobox"
 					aria-expanded={open}
-					className="relative group overflow-hidden w-[200px] justify-between"
+					disabled={disabled}
+					className={cn(
+						'relative group overflow-hidden w-[200px] justify-between',
+						className
+					)}
 				>
 					<span className="text-left flex-1 text-ellipsis overflow-hidden whitespace-nowrap">
 						{values.length > 0

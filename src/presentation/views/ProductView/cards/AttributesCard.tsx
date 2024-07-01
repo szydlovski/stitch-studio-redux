@@ -6,27 +6,39 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
 } from '@components/ui';
-import { useProductContext } from '../ProductContext';
+import { useProductViewContext } from '../ProductViewContext';
 import JsonView from '@uiw/react-json-view';
 import { useTheme } from 'next-themes';
 import { githubLightTheme } from '@uiw/react-json-view/githubLight';
 import { githubDarkTheme } from '@uiw/react-json-view/githubDark';
+import { CircleHelpIcon, LucideProps } from 'lucide-react';
+
+const ExplainerIcon = (props: LucideProps & { tooltip: string }) => {
+	return (
+		<Tooltip>
+			<TooltipTrigger asChild>
+				<CircleHelpIcon className="opacity-50" size={18} />
+			</TooltipTrigger>
+			<TooltipContent className="w-[300px] text-sm">
+				{props.tooltip}
+			</TooltipContent>
+		</Tooltip>
+	);
+};
 
 export const AttributesCard = () => {
-	const { product } = useProductContext();
+	const { product } = useProductViewContext();
 	const { theme } = useTheme();
 
 	return (
 		<Card>
-			<CardHeader>
-				<CardTitle>Attributes</CardTitle>
-				<CardDescription>
-					<span>
-						Use this tool to directly edit the payload of your product attributes.
-						This is an advanced feature, but it can help you in a pinch.
-					</span>
-				</CardDescription>
+			<CardHeader className='flex flex-row items-center gap-2'>
+				<CardTitle className="flex items-center gap-2">Attributes</CardTitle>
+				<ExplainerIcon tooltip="Use this tool to directly edit the payload of your product attributes. This is an advanced feature, but it can help you in a pinch." />
 			</CardHeader>
 			<CardContent>
 				<div className="rounded-md p-4 border">

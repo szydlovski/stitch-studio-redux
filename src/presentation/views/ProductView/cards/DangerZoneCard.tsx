@@ -16,14 +16,14 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@components/ui';
-import { useProductContext } from '../ProductContext';
+import { useProductViewContext } from '../ProductViewContext';
 import { TrashIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { AppViews } from '@/app/routes';
 
 export const DangerZoneCard = () => {
-	const { product } = useProductContext();
+	const { product } = useProductViewContext();
 	const router = useRouter();
 	const { status, mutateAsync } = useDeleteProduct();
 	const handleDelete = useCallback(async () => {

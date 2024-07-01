@@ -8,7 +8,7 @@ import { BaseProductObject } from '@domain/product';
 
 export const ProductTileGrid = ({ children }: { children: ReactNode }) => {
 	return (
-		<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+		<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 			{children}
 		</div>
 	);
@@ -34,6 +34,7 @@ export const ProductList = ({
 			{products.map((product) => (
 				<ProductTile key={product.id} product={product} />
 			))}
+			
 		</ProductTileGrid>
 	);
 };

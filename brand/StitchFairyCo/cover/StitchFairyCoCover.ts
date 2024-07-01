@@ -13,7 +13,7 @@ import {
 import {
 	CustomizableCoverTemplate,
 	RenderCoverProps,
-} from '@presentation/views/ProductImagesView/components/CoverCustomizer/types';
+} from '@presentation/views/ProductView/tabs/images/components/CoverCustomizer/types';
 import { CrossStitchPattern } from '@domain/cross-stitch';
 import { HoopMockupConfig } from '@domain/product/types';
 import { RendererContextType } from '@components/context/RendererContext';

@@ -1,7 +1,7 @@
 'use client';
 import { Button, Dialog, DialogContent, DialogTrigger } from '@components/ui';
 import { WandSparklesIcon } from 'lucide-react';
-import { useProductContext } from '@presentation/views/ProductView/ProductContext';
+import { useProductViewContext } from '@presentation/views/ProductView/ProductViewContext';
 import {
 	CoverGeneratorProvider,
 	useCoverGeneratorContext,
@@ -43,7 +43,7 @@ export const CoverGeneratorDialogContent = () => {
 };
 
 export const CoverGeneratorDialog = () => {
-	const { product, pattern } = useProductContext();
+	const { product, pattern } = useProductViewContext();
 	const { state: isOpen, set: setOpen, close } = useDisclosure();
 	return (
 		<Dialog open={isOpen} onOpenChange={setOpen}>

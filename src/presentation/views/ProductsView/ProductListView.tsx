@@ -9,13 +9,10 @@ import { ErrorAlert } from '@components/ErrorAlert';
 import { QueryStatusGuard } from '@components/guard';
 import {
 	Button,
-	Pagination,
-	PaginationContent,
-	PaginationEllipsis,
 	PaginationItem,
-	PaginationLink,
-	PaginationNext,
-	PaginationPrevious,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
 	Select,
 	SelectContent,
 	SelectGroup,
@@ -37,8 +34,12 @@ import {
 	ArrowLeft,
 	ArrowLeftIcon,
 	ArrowRightIcon,
+	ChevronLeft,
+	ChevronRight,
+	FilterIcon,
 	Grid2X2Icon,
 	LucideIcon,
+	PlayIcon,
 	Rows3Icon,
 	SkipBackIcon,
 	WandSparklesIcon,
@@ -75,7 +76,10 @@ export const ArrayParam: QueryParamConfig<string[] | undefined> = {
 	},
 };
 
-const generatePagination = (page: number, maxPage: number) => {
+const generatePagination = (
+	page: number,
+	maxPage: number
+): (number | '...')[] => {
 	return Array.from(
 		new Set([
 			1,
@@ -148,12 +152,20 @@ export const ProductListView = () => {
 	const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1));
 	const [pageSize, setPageSize] = useQueryParam(
 		'pageSize',
-		withDefault(NumberParam, 12)
+		withDefault(NumberParam, 16)
 	);
-	const [total, setTotal] = useState(0);
-	const maxPage = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
+	const [type, setTypes] = useState<string[]>([]);
 	const [brand, setBrands] = useQueryParam('brand', ArrayParam);
-	const [crafts, setCrafts] = useState<string[]>([]);
+
+	const { data, status } = useListProducts({
+		brand,
+		limit: pageSize,
+		offset: (page - 1) * pageSize,
+	});
+
+	const total = data?.total ?? 0;
+
+	const maxPage = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
 	const [viewMode, setViewMode] = useQueryParam(
 		'mode',
 		withDefault(
@@ -161,21 +173,12 @@ export const ProductListView = () => {
 			ProductsViewMode.Grid
 		)
 	);
-	const { data, status } = useListProducts({
-		brand,
-		limit: pageSize,
-		offset: (page - 1) * pageSize,
-	});
 
 	// reset page when brand changes
 	useEffect(() => {
 		setPage(1);
 	}, [brand, setPage]);
-	
-	useEffect(() => {
-		if (data?.total === undefined) return;
-		setTotal(data.total);
-	}, [data?.total, setTotal]);
+
 	const { Loading, Content } = VIEW_MODE_CONFIG[viewMode];
 	return (
 		<Tabs
@@ -183,54 +186,46 @@ export const ProductListView = () => {
 			onValueChange={(value) => setViewMode(value as ProductsViewMode)}
 			asChild
 		>
-			<View className="bg-muted/40">
-				<ViewHeader>
-					<ViewTitle>{'Products'}</ViewTitle>
-					<ViewActions>
-						<CreateProductDialog>
-							<Button className="flex gap-2" size="xs">
-								<WandSparklesIcon size={16} />
-								Create product
-							</Button>
-						</CreateProductDialog>
-					</ViewActions>
-				</ViewHeader>
-				<ViewHeader className="py-2 md:py-4 px-6">
+			<View className="">
+				<ViewHeader className="">
 					<div className="flex gap-2 w-full">
-						{/* <MultiSelect
-							values={crafts}
-							onValuesChange={setCrafts}
-							placeholder="Product Type"
-							options={[
-								{
-									label: 'Cross Stitch',
-									value: 'cross_stitch',
-								},
-								{
-									label: 'Seamless',
-									value: 'seamless',
-								},
-							]}
-						/> */}
-						<MultiSelect
-							values={brand ?? []}
-							onValuesChange={setBrands}
-							placeholder="All brands"
-							options={[
-								{
-									label: 'StitchFairyCo',
-									value: StitchFairyCoModule.brandId,
-								},
-								{
-									label: 'StitchCoven',
-									value: STITCH_COVEN_RECORD_ID,
-								},
-								{
-									label: 'Test Brand',
-									value: TEST_BRAND_RECORD_ID,
-								},
-							]}
-						/>
+						<div className="hidden md:flex gap-2">
+							<MultiSelect
+								values={type ?? []}
+								onValuesChange={setTypes}
+								placeholder="All types"
+								disabled
+								options={[
+									{
+										label: 'Cross Stitch',
+										value: 'cross_stitch',
+									},
+									{
+										label: 'Seamless',
+										value: 'seamless',
+									},
+								]}
+							/>
+							<MultiSelect
+								values={brand ?? []}
+								onValuesChange={setBrands}
+								placeholder="All brands"
+								options={[
+									{
+										label: 'StitchFairyCo',
+										value: StitchFairyCoModule.brandId,
+									},
+									{
+										label: 'StitchCoven',
+										value: STITCH_COVEN_RECORD_ID,
+									},
+									{
+										label: 'Test Brand',
+										value: TEST_BRAND_RECORD_ID,
+									},
+								]}
+							/>
+						</div>
 						<TabsList className="ml-auto">
 							{Object.entries(VIEW_MODE_CONFIG).map(
 								([mode, { icon: Icon }]) => (
@@ -240,6 +235,59 @@ export const ProductListView = () => {
 								)
 							)}
 						</TabsList>
+						<Popover>
+							<PopoverTrigger asChild>
+								<Button className="gap-2 flex md:hidden">
+									<FilterIcon size={16} />
+									<span className="hidden md:inline">Filter</span>
+								</Button>
+							</PopoverTrigger>
+							<PopoverContent className="flex flex-col gap-2">
+								<MultiSelect
+									values={type ?? []}
+									onValuesChange={setTypes}
+									placeholder="All types"
+									disabled
+									className="w-full"
+									options={[
+										{
+											label: 'Cross Stitch',
+											value: 'cross_stitch',
+										},
+										{
+											label: 'Seamless',
+											value: 'seamless',
+										},
+									]}
+								/>
+								<MultiSelect
+									values={brand ?? []}
+									onValuesChange={setBrands}
+									placeholder="All brands"
+									className="w-full"
+									options={[
+										{
+											label: 'StitchFairyCo',
+											value: StitchFairyCoModule.brandId,
+										},
+										{
+											label: 'StitchCoven',
+											value: STITCH_COVEN_RECORD_ID,
+										},
+										{
+											label: 'Test Brand',
+											value: TEST_BRAND_RECORD_ID,
+										},
+									]}
+								/>
+							</PopoverContent>
+						</Popover>
+						<CreateProductDialog>
+							<Button className="flex gap-2">
+								<WandSparklesIcon size={16} />
+								<span className="hidden md:inline">Create product</span>
+							</Button>
+						</CreateProductDialog>
 					</div>
 				</ViewHeader>
 				<ViewContent fullWidth scrollX className="bg-muted">
@@ -259,64 +307,99 @@ export const ProductListView = () => {
 						{({ products }) => <Content products={products} />}
 					</QueryStatusGuard>
 				</ViewContent>
-				<ViewFooter>
-					<div>
-						<span>{`Showing ${(page - 1) * pageSize + 1} to ${Math.min(
-							page * pageSize,
-							total
-						)} of ${total}`}</span>
+				<ViewFooter className="flex flex-row">
+					<div className="basis-2/12 flex items-center">
+						<span className="text-sm">
+							{status === 'pending'
+								? 'Loading...'
+								: `Showing ${(page - 1) * pageSize + 1}-${Math.min(
+										page * pageSize,
+										total
+								  )} of ${total} products`}
+						</span>
 					</div>
-					<div className="ml-auto flex">
+					<div className="flex-1 flex justify-center">
 						<Button
 							size="xs"
 							variant="ghost"
 							disabled={page === 1}
 							onClick={() => setPage(page - 1)}
 						>
-							<ArrowLeftIcon size={16} />
+							<ChevronLeft size={16} />
 						</Button>
-						<div className="flex gap-1 items-center">
-							{generatePagination(page, maxPage).map((p, index) => (
-								<button
-								key={'' + p + index}
-								disabled={typeof p !== 'number'}
-								onClick={() => typeof p === 'number' && setPage(p)}
-									className={cn(
-										'h-6 w-8 flex justify-center items-center text-muted-foreground',
-										{
-											'border bg-background font-semibold': p === page,
-										}
-									)}
-								>
-									{p}
-								</button>
-							))}
+						<div>
+							{generatePagination(page, maxPage).map((p) => {
+								if (p === '...') return null;
+								return <PaginationItem></PaginationItem>;
+							})}
 						</div>
+						{/* <MyPagination page={page} maxPage={maxPage} onPageChange={setPage} /> */}
 						<Button
 							size="xs"
 							variant="ghost"
 							disabled={!data?.total || page * pageSize >= data.total}
 							onClick={() => setPage(page + 1)}
 						>
-							<ArrowRightIcon size={16} />
+							<ChevronRight size={16} />
 						</Button>
 					</div>
-					{/* <div className="ml-auto">
-						<Select defaultValue="16" disabled>
-							<SelectTrigger className="w-[65px]">
+					<div className="basis-2/12 flex justify-end">
+						<Select
+							value={pageSize.toString()}
+							onValueChange={(value) => setPageSize(Number(value))}
+						>
+							<SelectTrigger className="h-[30px] w-[65px]">
 								<SelectValue placeholder="Products per page" />
 							</SelectTrigger>
 							<SelectContent>
 								<SelectGroup>
-									<SelectItem value="16">16</SelectItem>
-									<SelectItem value="32">32</SelectItem>
-									<SelectItem value="64">64</SelectItem>
+									{[16, 24, 32, 64].map((size) => (
+										<SelectItem key={size} value={size.toString()}>
+											{size}
+										</SelectItem>
+									))}
 								</SelectGroup>
 							</SelectContent>
 						</Select>
-					</div> */}
+					</div>
 				</ViewFooter>
 			</View>
 		</Tabs>
+	);
+};
+
+export const MyPagination = ({
+	page,
+	maxPage,
+	onPageChange,
+}: {
+	page: number;
+	maxPage: number;
+	onPageChange: (page: number) => void;
+}) => {
+	return (
+		<div className="flex gap-1 items-center">
+			{generatePagination(page, maxPage).map((p, index) => {
+				const classNames =
+					'h-7 w-7 text-xs flex justify-center items-center text-muted-foreground rounded-full font-semibold';
+				if (p === '...')
+					return (
+						<div key={index} className={classNames}>
+							{'...'}
+						</div>
+					);
+				return (
+					<button
+						key={index}
+						onClick={() => onPageChange(p)}
+						className={cn(classNames, {
+							'border bg-foreground text-background': p === page,
+						})}
+					>
+						{p}
+					</button>
+				);
+			})}
+		</div>
 	);
 };

@@ -17,13 +17,14 @@ import {
 	View,
 	ViewBreadcrumbs,
 	ViewContent,
+	ViewHeader,
 } from '@components/ui';
 import { CrossStitchPdf } from '@infrastructure/pdf/CrossStitchPdf';
-import { useProductContext } from '@presentation/views/ProductView/ProductContext';
+import { useProductViewContext } from '@presentation/views/ProductView/ProductViewContext';
 import { DangerZoneCard } from '@presentation/views/ProductView/cards/DangerZoneCard';
 import { PatternCard } from '@presentation/views/ProductView/cards/PatternCard';
 import { StringParam, useQueryParam, withDefault } from 'use-query-params';
-import { ImagesTabContent } from '../ProductImagesView/ImagesTabContent';
+import { ImagesTabContent } from './tabs/images/ImagesTabContent';
 import { ProductViewHeader } from './ProductViewHeader';
 import { AttributesCard } from './cards/AttributesCard';
 import { LaunchChecklistCard } from './cards/LaunchChecklistCard';
@@ -36,7 +37,7 @@ enum ProductViewTab {
 }
 
 export const ProductViewContent = () => {
-	const { product } = useProductContext();
+	const { product } = useProductViewContext();
 	const [tab, setTab] = useQueryParam(
 		'tab',
 		withDefault(StringParam, ProductViewTab.Properties)
@@ -48,23 +49,19 @@ export const ProductViewContent = () => {
 					items={[{ label: 'Products', href: AppViews.Products() }]}
 					page={product.title}
 				/>
-				<div className="flex flex-col border-b bg-muted/40">
+				<ViewHeader>
 					<ProductViewHeader />
-					<div className="flex">
-						<TabsList className="rounded-none w-full px-6 gap-4 justify-start">
-							<TabsTrigger value={ProductViewTab.Properties}>
-								Product
-							</TabsTrigger>
-							<TabsTrigger value={ProductViewTab.Images}>Images</TabsTrigger>
-							<TabsTrigger value={ProductViewTab.Files}>Files</TabsTrigger>
-							<TabsTrigger value={ProductViewTab.Advanced}>
-								Advanced
-							</TabsTrigger>
-						</TabsList>
-					</div>
-				</div>
+				</ViewHeader>
+				<ViewHeader className='bg-muted'>
+					<TabsList className="rounded-none w-full px-6 gap-4 justify-center">
+						<TabsTrigger value={ProductViewTab.Properties}>Product</TabsTrigger>
+						<TabsTrigger value={ProductViewTab.Images}>Images</TabsTrigger>
+						<TabsTrigger value={ProductViewTab.Files}>Files</TabsTrigger>
+						<TabsTrigger value={ProductViewTab.Advanced}>Advanced</TabsTrigger>
+					</TabsList>
+				</ViewHeader>
 				<TabsContent asChild value="properties">
-					<ViewContent>
+					<ViewContent className="bg-muted">
 						<CardStack>
 							<LaunchChecklistCard />
 							<PatternCard />

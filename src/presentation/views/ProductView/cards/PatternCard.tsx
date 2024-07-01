@@ -9,12 +9,12 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from '@components/ui';
-import { useProductContext } from '@presentation/views/ProductView/ProductContext';
+import { useProductViewContext } from '@presentation/views/ProductView/ProductViewContext';
 import Image from 'next/image';
-import { EditTitleDialog } from './EditTitleDialog';
+import { LegacyChangeProductTitleDialog } from './ChangeProductTitleDialog';
 
 export const PatternCard = () => {
-	const { product, pattern } = useProductContext();
+	const { product, pattern } = useProductViewContext();
 	return (
 		<Card>
 			<CardHeader>

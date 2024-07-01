@@ -10,9 +10,9 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from '@components/ui';
-import { useProductContext } from '@presentation/views/ProductView/ProductContext';
+import { useProductViewContext } from '@presentation/views/ProductView/ProductViewContext';
 import Image from 'next/image';
-import { EditTitleDialog } from './EditTitleDialog';
+import { LegacyChangeProductTitleDialog } from './ChangeProductTitleDialog';
 import { CheckIcon } from 'lucide-react';
 import { cn } from '@lib/utils';
 import { VariantProps, cva } from 'class-variance-authority';
@@ -177,7 +177,7 @@ const getActiveItem = (product: FullProductObject) => {
 };
 
 export const LaunchChecklistCard = () => {
-	const { product, pattern } = useProductContext();
+	const { product, pattern } = useProductViewContext();
 	const activeItem = getActiveItem(product);
 	const activeIndex = items.findIndex((item) => item.key === activeItem);
 	return (

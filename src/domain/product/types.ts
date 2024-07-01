@@ -2,7 +2,7 @@ import { BrandAttributes } from '@domain/brand';
 import {
 	CoverConfig,
 	CoverConfigSchema,
-} from '@presentation/views/ProductImagesView/components/CoverGenerator/coverConfigReducer';
+} from '@presentation/views/ProductView/tabs/images/components/CoverGenerator/coverConfigReducer';
 import { z } from 'zod';
 
 import { StaticImageData } from 'next/image';

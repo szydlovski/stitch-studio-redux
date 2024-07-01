@@ -8,15 +8,15 @@ import {
 	DialogHeader,
 	DialogTrigger,
 } from '@components/ui';
-import { MockupCustomizer } from '@presentation/views/ProductImagesView/components/MockupCustomizer';
+import { MockupCustomizer } from '@presentation/views/ProductView/tabs/images/components/MockupCustomizer';
 import {
 	MockupCustomizerActions,
 	getMockupCustomizerInitialState,
 	mockupCustomizerReducer,
-} from '@presentation/views/ProductImagesView/components/MockupCustomizer/mockupCustomizerReducer';
+} from '@presentation/views/ProductView/tabs/images/components/MockupCustomizer/mockupCustomizerReducer';
 import isEqual from 'lodash.isequal';
 import { useCallback, useMemo, useReducer, useState } from 'react';
-import { useProductContext } from '../ProductContext';
+import { useProductViewContext } from '../ProductViewContext';
 import { useQueryClient } from '@tanstack/react-query';
 import { getProductQueryKey } from '@application/product';
 
@@ -26,7 +26,7 @@ export const MockupSettingsModal = ({
 	children: JSX.Element;
 }) => {
 	const queryClient = useQueryClient();
-	const { product } = useProductContext();
+	const { product } = useProductViewContext();
 	const [initialState, setInitialState] = useState(
 		product.attributes.hoopConfig ?? getMockupCustomizerInitialState()
 	);

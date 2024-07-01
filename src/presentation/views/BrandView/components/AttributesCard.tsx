@@ -12,16 +12,19 @@ import JsonView from '@uiw/react-json-view';
 import { useTheme } from 'next-themes';
 import { githubLightTheme } from '@uiw/react-json-view/githubLight';
 import { githubDarkTheme } from '@uiw/react-json-view/githubDark';
+import { CircleHelpIcon } from 'lucide-react';
 
 export const AttributesCard = () => {
 	const { brand } = useBrandViewContext();
 	const { theme } = useTheme();
-	console.log(theme);
 
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>Attributes</CardTitle>
+				<CardTitle>
+					Attributes
+					<CircleHelpIcon size={24} className="mr-2" />
+				</CardTitle>
 				<CardDescription>
 					<span>
 						Use this tool to directly edit the payload of your brand attributes.

@@ -5,8 +5,8 @@ import {
 	useUploadProductImage,
 } from '@application/product-image';
 import { LoadingButton, ViewContent } from '@components/ui';
-import { selectFile } from '@presentation/utils';
-import { useProductContext } from '@presentation/views/ProductView/ProductContext';
+import { dataUrlToXataBase64, selectFile } from '@presentation/utils';
+import { useProductViewContext } from '@presentation/views/ProductView/ProductViewContext';
 import { useQueryClient } from '@tanstack/react-query';
 import { BoxSelectIcon, ConstructionIcon } from 'lucide-react';
 import { MouseEvent, forwardRef, useCallback, useState } from 'react';
@@ -23,7 +23,7 @@ const readFileAsDataURL = (file: File) => {
 };
 
 export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
-	const { product } = useProductContext();
+	const { product } = useProductViewContext();
 	const { data: images, status } = useGetProductImages(product.id);
 	const [selectedImages, setSelectedImages] = useState<string[]>([]);
 	const [lastSelectedIndex, setLastSelectedIndex] = useState<number>();
@@ -62,8 +62,10 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 		const file = await selectFile();
 		await mutateAsync({
 			productId: product.id,
-			src: await readFileAsDataURL(file),
-			key: 'test',
+			imageBase64: await readFileAsDataURL(file).then((dataUrl) =>
+				dataUrlToXataBase64(dataUrl)
+			),
+			tags: ['manual-upload'],
 		});
 		await queryClient.invalidateQueries({
 			queryKey: getProductImagesQueryKey(product.id),
@@ -106,9 +108,7 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 									className="text-foreground opacity-25"
 								/>
 								<div className="grid gap-1 text-center">
-									<span className="font-bold text-lg">
-										No images.
-									</span>
+									<span className="font-bold text-lg">No images.</span>
 									<span className="text-foreground/40 text-sm">
 										Create mockups using the Cover Generator or upload images
 										directly.

@@ -127,6 +127,7 @@ interface MyMenuItemConfig {
 	shortcut?: string;
 	href?: string;
 	target?: HTMLAttributeAnchorTarget;
+	isDangerous?: boolean;
 	onClick?: () => void;
 }
 
@@ -147,6 +148,7 @@ const MyMenuItem = ({
 		icon: Icon,
 		disabled,
 		href,
+		isDangerous,
 		onClick,
 		target,
 	},
@@ -155,8 +157,12 @@ const MyMenuItem = ({
 }) => {
 	const content = (
 		<>
-			<Icon className="mr-2 h-4 w-4" />
-			<span>{label}</span>
+			<Icon
+				className={cn('mr-2 h-4 w-4 opacity-80', {
+					'text-red-600': isDangerous,
+				})}
+			/>
+			<span className={cn({ 'text-red-600': isDangerous })}>{label}</span>
 		</>
 	);
 	return children ? (
@@ -228,7 +234,13 @@ export const DropdownMenu = ({
 							return <MyMenuItem key={index} item={item} />;
 						case 'label':
 							return (
-								<DropdownMenuLabel key={index}>{item.label}</DropdownMenuLabel>
+								<DropdownMenuLabel
+									className="uppercase text-[0.6rem] opacity-50 flex items-center gap-2"
+									key={index}
+								>
+									{item.label}
+									<DropdownMenuSeparator className="flex-1 mr-2" />
+								</DropdownMenuLabel>
 							);
 					}
 				})}
