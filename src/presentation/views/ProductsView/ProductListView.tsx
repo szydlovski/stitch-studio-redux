@@ -149,7 +149,10 @@ const VIEW_MODE_CONFIG: Record<
 };
 
 export const ProductListView = () => {
-	const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1));
+	const [currentPage, setCurrentPage] = useQueryParam(
+		'page',
+		withDefault(NumberParam, 1)
+	);
 	const [pageSize, setPageSize] = useQueryParam(
 		'pageSize',
 		withDefault(NumberParam, 16)
@@ -160,7 +163,7 @@ export const ProductListView = () => {
 	const { data, status } = useListProducts({
 		brand,
 		limit: pageSize,
-		offset: (page - 1) * pageSize,
+		offset: (currentPage - 1) * pageSize,
 	});
 
 	const total = data?.total ?? 0;
@@ -176,8 +179,8 @@ export const ProductListView = () => {
 
 	// reset page when brand changes
 	useEffect(() => {
-		setPage(1);
-	}, [brand, setPage]);
+		setCurrentPage(1);
+	}, [brand, setCurrentPage]);
 
 	const { Loading, Content } = VIEW_MODE_CONFIG[viewMode];
 	return (
@@ -312,8 +315,8 @@ export const ProductListView = () => {
 						<span className="text-sm">
 							{status === 'pending'
 								? 'Loading...'
-								: `Showing ${(page - 1) * pageSize + 1}-${Math.min(
-										page * pageSize,
+								: `Showing ${(currentPage - 1) * pageSize + 1}-${Math.min(
+										currentPage * pageSize,
 										total
 								  )} of ${total} products`}
 						</span>
@@ -322,23 +325,23 @@ export const ProductListView = () => {
 						<Button
 							size="xs"
 							variant="ghost"
-							disabled={page === 1}
-							onClick={() => setPage(page - 1)}
+							disabled={currentPage === 1}
+							onClick={() => setCurrentPage(currentPage - 1)}
 						>
 							<ChevronLeft size={16} />
 						</Button>
 						<div>
-							{generatePagination(page, maxPage).map((p) => {
-								if (p === '...') return null;
-								return <PaginationItem></PaginationItem>;
+							{generatePagination(currentPage, maxPage).map((page, index) => {
+								if (page === '...') return null;
+								return <PaginationItem key={index}>...</PaginationItem>;
 							})}
 						</div>
 						{/* <MyPagination page={page} maxPage={maxPage} onPageChange={setPage} /> */}
 						<Button
 							size="xs"
 							variant="ghost"
-							disabled={!data?.total || page * pageSize >= data.total}
-							onClick={() => setPage(page + 1)}
+							disabled={!data?.total || currentPage * pageSize >= data.total}
+							onClick={() => setCurrentPage(currentPage + 1)}
 						>
 							<ChevronRight size={16} />
 						</Button>

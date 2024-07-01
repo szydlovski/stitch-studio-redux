@@ -22,7 +22,7 @@ interface HostedDialogProps {
 
 type HostedDialog = (props: HostedDialogProps) => ReactNode;
 
-const createDialogHost = <K extends string>(
+const useDialogHost = <K extends string>(
 	config: Record<K, HostedDialog>
 ) => {
 	const { state: isOpen, set: onOpenChange, open, close } = useDisclosure();
