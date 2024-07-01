@@ -30,16 +30,20 @@ export const ViewActions = ({ children, className }: ContainerProps) => (
 export const ViewHeader = ({ children, className }: ContainerProps) => (
 	<div
 		className={cn(
-			'flex justify-between items-center px-6 py-2 md:py-6 border-b',
+			'flex justify-between items-center border-b bg-background',
 			className
 		)}
 	>
-		{children}
+		<div className="max-w-screen-2xl w-full mx-auto">{children}</div>
 	</div>
 );
 
 export const ViewFooter = ({ children, className }: ContainerProps) => (
-	<div className={cn('flex px-6 py-2 border-t', className)}>{children}</div>
+	<div className={cn('flex border-t bg-background', className)}>
+		<div className="max-w-screen-2xl w-full mx-auto px-6 py-2 flex">
+			{children}
+		</div>
+	</div>
 );
 
 interface ViewContentProps {
@@ -51,13 +55,18 @@ interface ViewContentProps {
 
 export const ViewContent = forwardRef<HTMLDivElement, ViewContentProps>(
 	({ children, className, fullWidth, scrollX }, ref) => (
-		<div ref={ref} className={cn('flex-1', className)}>
-			<ScrollArea
-				className={cn('flex flex-col h-full', {
-					'max-w-screen-md mx-auto': !fullWidth,
-				})}
-			>
-				<div className="h-1">{children}</div>
+		<div
+			ref={ref}
+			className={cn('max-w-screen-2xl w-full mx-auto flex-1', className)}
+		>
+			<ScrollArea className={cn('flex flex-col h-full')}>
+				<div
+					className={cn('h-1', {
+						'max-w-screen-md mx-auto': !fullWidth,
+					})}
+				>
+					{children}
+				</div>
 				{scrollX && <ScrollBar orientation="horizontal" />}
 			</ScrollArea>
 		</div>
@@ -67,7 +76,9 @@ export const ViewContent = forwardRef<HTMLDivElement, ViewContentProps>(
 ViewContent.displayName = 'ViewContent';
 
 export const View = ({ children, className }: ContainerProps) => (
-	<div className={cn('flex flex-1 flex-col h-full', className)}>{children}</div>
+	<div className={cn('flex flex-1 flex-col h-full bg-muted', className)}>
+		{children}
+	</div>
 );
 
 interface BreadcrumbItem {
@@ -81,24 +92,26 @@ interface ViewBreadcrumbsProps {
 
 export const ViewBreadcrumbs = ({ items, page }: ViewBreadcrumbsProps) => {
 	return (
-		<div className="flex flex-col py-3 px-6 gap-4 border-b">
-			<Breadcrumb>
-				<BreadcrumbList>
-					{items.map(({ label, href }, index) => (
-						<Fragment key={index}>
-							<BreadcrumbItem>
-								<BreadcrumbLink asChild>
-									<Link href={href}>{label}</Link>
-								</BreadcrumbLink>
-							</BreadcrumbItem>
-							<BreadcrumbSeparator />
-						</Fragment>
-					))}
-					<BreadcrumbItem>
-						<BreadcrumbPage>{page}</BreadcrumbPage>
-					</BreadcrumbItem>
-				</BreadcrumbList>
-			</Breadcrumb>
+		<div className="flex flex-col py-3 px-6 gap-4 border-b bg-background">
+			<div className='max-w-screen-2xl w-full mx-auto px-6'>
+				<Breadcrumb>
+					<BreadcrumbList>
+						{items.map(({ label, href }, index) => (
+							<Fragment key={index}>
+								<BreadcrumbItem>
+									<BreadcrumbLink asChild>
+										<Link href={href}>{label}</Link>
+									</BreadcrumbLink>
+								</BreadcrumbItem>
+								<BreadcrumbSeparator />
+							</Fragment>
+						))}
+						<BreadcrumbItem>
+							<BreadcrumbPage>{page}</BreadcrumbPage>
+						</BreadcrumbItem>
+					</BreadcrumbList>
+				</Breadcrumb>
+			</div>
 		</div>
 	);
 };

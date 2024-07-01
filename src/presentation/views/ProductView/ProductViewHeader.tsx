@@ -1,37 +1,45 @@
 'use client';
-import { useProductContext } from '@presentation/views/ProductView/ProductContext';
+import { useProductViewContext } from '@presentation/views/ProductView/ProductViewContext';
 import Image from 'next/image';
 
+import { AppViews } from '@/app/routes';
+import { DropdownMenu } from '@components/DropdownMenu';
 import { Button, Dialog, DialogContent, DialogTrigger } from '@components/ui';
+import { useCustomSearchItems } from '@presentation/features/search/SearchContext';
 import {
-	Cloud,
-	CreditCard,
-	EllipsisIcon,
+	CopyIcon,
 	EllipsisVerticalIcon,
-	Keyboard,
-	LifeBuoy,
-	LogOut,
-	Mail,
-	MessageSquare,
+	FileTextIcon,
 	PaintbrushIcon,
 	PencilIcon,
-	Plus,
-	PlusCircle,
-	Settings,
-	User,
-	UserPlus,
+	PrinterIcon,
+	Settings2Icon,
+	SettingsIcon,
+	Trash2Icon,
+	TrashIcon,
+	UploadIcon,
 	UserRoundCogIcon,
-	Users,
+	WandSparklesIcon,
 	ZoomInIcon,
 } from 'lucide-react';
 import Link from 'next/link';
+import { useMemo } from 'react';
 import { BrandHoverCard } from './BrandHoverCard';
-import { EditTitleDialog } from './ProductCards/EditTitleDialog';
-import { DropdownMenu } from '@components/DropdownMenu';
-import { AppViews } from '@/app/routes';
+import { LegacyChangeProductTitleDialog } from './cards/ChangeProductTitleDialog';
 
 export const ProductViewHeader = () => {
-	const { product } = useProductContext();
+	const { product } = useProductViewContext();
+	const items = useMemo(
+		() => [
+			{
+				id: 'change-product-title',
+				label: 'Change title',
+				icon: PencilIcon,
+			},
+		],
+		[]
+	);
+	useCustomSearchItems(items);
 	return (
 		<div className="flex gap-4 p-6">
 			<div className="h-full">
@@ -40,11 +48,9 @@ export const ProductViewHeader = () => {
 						<DialogTrigger asChild>
 							<div>
 								<Image
-									className="h-[100px] w-[100px]"
-									width={100}
-									height={100}
+									className="h-32 w-32 object-contain"
 									alt={product.title}
-									src={product.thumbnail.src}
+									src={product.thumbnail}
 								/>
 								<div className="flex flex-col absolute w-full h-full top-0 left-0 opacity-0 group-hover:opacity-100 transition-all bg-foreground/20 dark:bg-foreground/40 cursor-zoom-in">
 									<div className="flex-1 flex justify-center items-center opacity-90 text-background">
@@ -79,7 +85,7 @@ export const ProductViewHeader = () => {
 						<span className="text-xs text-muted-foreground">Title</span>
 						<div className="flex gap-2 items-center">
 							<h2 className="text-xl font-semibold">{product.title}</h2>
-							<EditTitleDialog initialValue={product.title} />
+							<LegacyChangeProductTitleDialog initialValue={product.title} />
 						</div>
 					</div>
 				</div>
@@ -111,23 +117,77 @@ export const ProductViewHeader = () => {
 						{
 							type: 'item',
 							label: 'Change title',
-							disabled: true,
 							icon: PencilIcon,
 						},
 						{
 							type: 'item',
-							label: 'Edit design',
+							label: 'Transfer',
+							icon: UserRoundCogIcon,
+						},
+						{
+							type: 'item',
+							label: 'Duplicate',
+							icon: CopyIcon,
+						},
+						{
+							type: 'label',
+							label: 'Cross Stitch',
+						},
+						{
+							type: 'item',
+							label: 'Edit stitches',
 							href: `/studio/cross-stitch/editor?productId=${product.id}`,
 							icon: PaintbrushIcon,
 						},
 						{
-							type: 'separator',
+							type: 'item',
+							label: 'Edit mockup settings',
+							icon: Settings2Icon,
 						},
 						{
 							type: 'item',
-							label: 'Transfer ownership',
-							disabled: true,
-							icon: UserRoundCogIcon,
+							label: 'Preview printable',
+							href: `/api/cross-stitch/pdf-preview?productId=${product.id}`,
+							target: '_blank',
+							icon: PrinterIcon,
+						},
+						{
+							type: 'label',
+							label: 'Covers',
+						},
+						{
+							type: 'item',
+							label: 'Generate covers',
+							icon: WandSparklesIcon,
+						},
+						{
+							type: 'item',
+							label: 'Upload covers',
+							icon: UploadIcon,
+						},
+						{
+							type: 'label',
+							label: 'Files',
+						},
+						{
+							type: 'item',
+							label: 'Generate PDF',
+							icon: PrinterIcon,
+						},
+						{
+							type: 'item',
+							label: 'Upload files',
+							icon: UploadIcon,
+						},
+						{
+							type: 'label',
+							label: 'Danger Zone',
+						},
+						{
+							type: 'item',
+							label: 'Delete',
+							isDangerous: true,
+							icon: Trash2Icon,
 						},
 					]}
 				>

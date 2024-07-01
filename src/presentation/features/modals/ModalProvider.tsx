@@ -4,20 +4,25 @@ import {
 	Dispatch,
 	Fragment,
 	ReactNode,
+	SetStateAction,
 	createContext,
 	useCallback,
 	useContext,
 	useEffect,
 	useMemo,
 	useReducer,
+	useRef,
 	useState,
 } from 'react';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Dialog, DialogContent, Button } from '@components/ui';
+import { createPortal } from 'react-dom';
+import { useDisclosure } from '@lib/hooks/useDisclosure';
 
 interface ModalHostContextType {
 	state: ModalHostProviderState;
 	dispatch: Dispatch<ModalHostProviderAction>;
+	containerRef: React.RefObject<HTMLDivElement>;
 }
 
 const ModalContext = createContext<ModalHostContextType | undefined>(undefined);
@@ -36,7 +41,6 @@ interface ModalInstanceProps {
 
 interface ModalInstanceState {
 	id: string;
-	children: ReactNode;
 	open: boolean;
 }
 
@@ -115,20 +119,11 @@ export const ModalHostProvider = ({ children }: ModalHostProviderProps) => {
 		modalProviderReducer,
 		getModalHostProviderInitialState()
 	);
+	const containerRef = useRef<HTMLDivElement>(null);
 	return (
-		<ModalContext.Provider value={{ state, dispatch }}>
+		<ModalContext.Provider value={{ state, dispatch, containerRef }}>
 			{children}
-			{state.instances.map(({ id, children, open }, index) => (
-				<Dialog
-					open={open}
-					key={index}
-					onOpenChange={(value) =>
-						dispatch(modalProviderActions.setModalOpen({ id, value }))
-					}
-				>
-					<Fragment key={index}>{children}</Fragment>
-				</Dialog>
-			))}
+			<div ref={containerRef}></div>
 		</ModalContext.Provider>
 	);
 };
@@ -147,20 +142,21 @@ interface UseGlobalModalOptions {
 	initialOpen?: boolean;
 }
 
-export const useGlobalModal = (
-	children: ReactNode,
-	deps: DependencyList,
+export const useGlobalModal = <Props extends Record<string, any>>(
+	Component: (props: Props) => ReactNode,
+	props: Props,
 	{
 		open: controlledOpen,
 		onOpenChange,
 		initialOpen = false,
 	}: UseGlobalModalOptions = {}
 ) => {
+	const deps = useMemo(() => Object.values(props), [props]);
 	const id = useMemo(
 		() => Number(Math.random().toString().replace('.', '')).toString(36),
 		[]
 	);
-	const { dispatch } = useModalContext();
+	const { dispatch, containerRef } = useModalContext();
 
 	const handleOpenChange = useCallback(
 		(value: boolean) =>
@@ -174,6 +170,8 @@ export const useGlobalModal = (
 	const close = useCallback(() => handleOpenChange(false), [handleOpenChange]);
 
 	useEffect(() => {
+		console.log('controlled open effect');
+
 		if (controlledOpen !== undefined) {
 			dispatch(
 				modalProviderActions.setModalOpen({ id, value: controlledOpen })
@@ -182,18 +180,44 @@ export const useGlobalModal = (
 	}, [controlledOpen, dispatch, id]);
 
 	useEffect(() => {
+		console.log('add modal effect');
+
 		dispatch(
-			modalProviderActions.addModal({ children, id, open: initialOpen })
+			modalProviderActions.addModal({
+				// children: <Component {...props} />,
+				id,
+				open: initialOpen,
+			})
 		);
+		createPortal(
+			<Dialog
+				open={initialOpen}
+				onOpenChange={(value) =>
+					dispatch(modalProviderActions.setModalOpen({ id, value }))
+				}
+			>
+				<Component {...props} />
+			</Dialog>,
+			containerRef.current as HTMLElement
+		);
+		console.log('portalled');
+
 		return () => {
 			dispatch(modalProviderActions.removeModal(id));
 		};
-	}, [children, dispatch, id, initialOpen]);
+	}, []);
 
 	useEffect(() => {
-		dispatch(modalProviderActions.updateModal({ id, children }));
+		console.log('update modal');
+
+		dispatch(
+			modalProviderActions.updateModal({
+				id,
+				// children: <Component {...props} />,
+			})
+		);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, deps);
+	}, [...deps]);
 
 	return {
 		open,
@@ -201,24 +225,91 @@ export const useGlobalModal = (
 	};
 };
 
-const GlobalModal = ({
+export const GlobalModal = <Props extends Record<string, any>>({
 	children,
-	...options
-}: { children: ReactNode } & UseGlobalModalOptions) => {
-	useGlobalModal(children, [children], options);
-	return null;
+	open,
+	onOpenChange,
+	initialOpen = false,
+}: {
+	children: ReactNode;
+	open?: boolean;
+	onOpenChange?: Dispatch<SetStateAction<boolean>>;
+	initialOpen?: boolean;
+}) => {
+	const id = useMemo(
+		() => Number(Math.random().toString().replace('.', '')).toString(36),
+		[]
+	);
+	const { state, dispatch, containerRef } = useModalContext();
+
+	useEffect(() => {
+		console.log('add modal effect');
+
+		dispatch(
+			modalProviderActions.addModal({
+				// children: <Component {...props} />,
+				id,
+				open: initialOpen,
+			})
+		);
+
+		return () => {
+			dispatch(modalProviderActions.removeModal(id));
+		};
+	}, []);
+
+	const instance = state.instances.find((instance) => instance.id === id);
+
+	if (!containerRef.current || !instance) return null;
+
+	return createPortal(
+		<Dialog
+			open={open ?? instance.open}
+			onOpenChange={(value) =>
+				onOpenChange
+					? onOpenChange(value)
+					: dispatch(modalProviderActions.setModalOpen({ id, value }))
+			}
+		>
+			{children}
+		</Dialog>,
+		containerRef.current as HTMLElement
+	);
 };
 
-const ConsumerModalContent = () => {
+const ConsumerChildModal = ({
+	count,
+	setCount,
+}: {
+	count: number;
+	setCount: Dispatch<SetStateAction<number>>;
+}) => {
+	return (
+		<DialogContent className="w-[170px]">
+			<div>
+				<h2>This is a modal {count}</h2>
+				<Button onClick={() => setCount((count) => count + 1)}>
+					Increment
+				</Button>
+				<button>elo</button>
+			</div>
+		</DialogContent>
+	);
+};
+
+const ConsumerModalContent = ({
+	count,
+	setCount,
+}: {
+	count: number;
+	setCount: Dispatch<SetStateAction<number>>;
+}) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const doOpen = useCallback(() => setIsOpen(true), []);
-	// const doClose = useCallback(() => setIsOpen(false), []);
-	const [count, setCount] = useState(0);
 	return (
 		<DialogContent>
 			<div>
 				<h2>This is a modal {count}</h2>
-				<Button onClick={doOpen}>Open secondary modal</Button>
+				<Button onClick={() => setIsOpen(true)}>Open secondary modal</Button>
 				<GlobalModal open={isOpen} onOpenChange={setIsOpen}>
 					<DialogContent className="w-[170px]">
 						<div>
@@ -244,13 +335,18 @@ const ConsumerModalContent = () => {
 };
 
 export const Consumer = () => {
-	const { open } = useGlobalModal(<ConsumerModalContent />, [], {
-		initialOpen: true,
-	});
+	console.log('render consumer');
+
+	const [count, setCount] = useState(0);
+	const { state: isOpen, set: setIsOpen, open } = useDisclosure();
 	return (
 		<div>
 			<h2>Some View</h2>
+			<p>{`count: ${count}`}</p>
 			<Button onClick={open}>Open modal</Button>
+			<GlobalModal open={isOpen} onOpenChange={setIsOpen}>
+				<ConsumerModalContent count={count} setCount={setCount} />
+			</GlobalModal>
 		</div>
 	);
 };

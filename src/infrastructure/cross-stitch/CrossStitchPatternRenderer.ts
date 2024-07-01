@@ -79,7 +79,7 @@ export class CrossStitchPatternRenderer {
 		pattern: CrossStitchPattern,
 		scale: number,
 		paddingOptions: PaddingOpts = 0,
-		fabricColor: string = '#fef'
+		fabricColor: string = '#fff'
 	) {
 		const padding = resolvePaddingOpts(paddingOptions);
 		const fabricWidth = pattern.width + padding.left + padding.right;

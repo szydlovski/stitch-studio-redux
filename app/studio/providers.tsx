@@ -6,6 +6,7 @@ import NextAdapterApp from 'next-query-params/app';
 import { QueryParamProvider } from 'use-query-params';
 import { TooltipProvider } from '@components/ui';
 import { ThemeProvider } from '@components/ThemeProvider';
+import { SearchContextProvider } from '@presentation/features/search/SearchContext';
 
 export const ClientProviders = ({
 	children,
@@ -34,7 +35,9 @@ export const ClientProviders = ({
 				<QueryParamProvider adapter={NextAdapterApp}>
 					<QueryClientProvider client={queryClient}>
 						<SessionProvider>
-							<TooltipProvider>{children}</TooltipProvider>
+							<TooltipProvider>
+								<SearchContextProvider>{children}</SearchContextProvider>
+							</TooltipProvider>
 						</SessionProvider>
 					</QueryClientProvider>
 				</QueryParamProvider>

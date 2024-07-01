@@ -1,10 +1,11 @@
 import { BrandAttributes } from '@domain/brand';
+import {
+	CoverConfig,
+	CoverConfigSchema,
+} from '@presentation/views/ProductView/tabs/images/components/CoverGenerator/coverConfigReducer';
+import { z } from 'zod';
 
-export interface ProductThumbnail {
-	src: string;
-	width: number;
-	height: number;
-}
+import { StaticImageData } from 'next/image';
 
 export interface ProductBrand {
 	id: string;
@@ -14,28 +15,46 @@ export interface ProductBrand {
 		id: string;
 		name: string;
 	};
-	logo: {
-		src: string;
-		width: number;
-		height: number;
-	};
+	logo: StaticImageData;
 }
 
 export interface ProductAuthor {
 	id: string;
 	name: string;
 	email: string;
-	avatar?: {
-		src: string;
-		width: number;
-		height: number;
-	};
+	avatar?: StaticImageData;
 }
 
+export interface HoopMockupConfig {
+	background: string;
+	scale: number;
+	xOffset: number;
+	yOffset: number;
+}
+
+export const HoopMockupConfigSchema = z
+	.object({
+		background: z.string(),
+		scale: z.number().min(0).max(1),
+		xOffset: z.number(),
+		yOffset: z.number(),
+	})
+	.strict();
+
 export interface ProductAttributes {
-	hoopConfig?: any;
-	coverConfig?: any;
+	hoopConfig?: HoopMockupConfig;
+	coverConfig?: CoverConfig;
 	printableConfig?: any;
 	etsyPublishedListingPayload?: any;
 	dismissedFromBoard?: boolean;
 }
+
+export const ProductAttributesSchema = z
+	.object({
+		hoopConfig: HoopMockupConfigSchema.optional(),
+		coverConfig: CoverConfigSchema.optional(),
+		printableConfig: z.any().optional(),
+		etsyPublishedListingPayload: z.any().optional(),
+		dismissedFromBoard: z.boolean().optional(),
+	})
+	.strict();

@@ -18,6 +18,18 @@ const config = {
 			},
 		},
 		extend: {
+			width: {
+				'screen-modal': 'calc(100vw - 2rem)',
+			},
+			maxWidth: {
+				'screen-modal': 'calc(100vw - 2rem)',
+			},
+			height: {
+				'screen-modal': 'calc(100vh - 2rem)',
+			},
+			minHeight: {
+				'screen-modal': 'calc(100vh - 2rem)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
