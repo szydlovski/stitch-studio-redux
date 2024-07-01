@@ -33,6 +33,7 @@ import {
 import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@lib/utils';
 import Link from 'next/link';
+import { HTMLAttributeAnchorTarget } from 'react';
 
 const TEST_ITEMS: DropdownMenuEntry[] = [
 	{
@@ -125,6 +126,8 @@ interface MyMenuItemConfig {
 	children?: MyMenuItemConfig[];
 	shortcut?: string;
 	href?: string;
+	target?: HTMLAttributeAnchorTarget;
+	isDangerous?: boolean;
 	onClick?: () => void;
 }
 
@@ -138,14 +141,28 @@ interface MyMenuLabelConfig {
 }
 
 const MyMenuItem = ({
-	item: { children, label, shortcut, icon: Icon, disabled, href, onClick },
+	item: {
+		children,
+		label,
+		shortcut,
+		icon: Icon,
+		disabled,
+		href,
+		isDangerous,
+		onClick,
+		target,
+	},
 }: {
 	item: MyMenuItemConfig;
 }) => {
 	const content = (
 		<>
-			<Icon className="mr-2 h-4 w-4" />
-			<span>{label}</span>
+			<Icon
+				className={cn('mr-2 h-4 w-4 opacity-80', {
+					'text-red-600': isDangerous,
+				})}
+			/>
+			<span className={cn({ 'text-red-600': isDangerous })}>{label}</span>
 		</>
 	);
 	return children ? (
@@ -163,7 +180,7 @@ const MyMenuItem = ({
 		</DropdownMenuSub>
 	) : href ? (
 		<DropdownMenuItem disabled={disabled} asChild>
-			<Link href={href}>
+			<Link href={href} target={target}>
 				{content}
 				{shortcut && <DropdownMenuShortcut>{shortcut}</DropdownMenuShortcut>}
 			</Link>
@@ -217,7 +234,13 @@ export const DropdownMenu = ({
 							return <MyMenuItem key={index} item={item} />;
 						case 'label':
 							return (
-								<DropdownMenuLabel key={index}>{item.label}</DropdownMenuLabel>
+								<DropdownMenuLabel
+									className="uppercase text-[0.6rem] opacity-50 flex items-center gap-2"
+									key={index}
+								>
+									{item.label}
+									<DropdownMenuSeparator className="flex-1 mr-2" />
+								</DropdownMenuLabel>
 							);
 					}
 				})}

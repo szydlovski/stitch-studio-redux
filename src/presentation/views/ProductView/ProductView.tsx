@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { ProductContextProvider } from './ProductContext';
+import { ProductViewContextProvider } from './ProductViewContext';
 import {
 	ProductViewContent,
 	ProductViewContentSkeleton,
@@ -8,13 +8,13 @@ import {
 export const ProductDetailsView = ({ productId }: { productId: string }) => {
 	return (
 		<Suspense>
-			<ProductContextProvider
+			<ProductViewContextProvider
 				productId={productId}
 				loadingContent={<ProductViewContentSkeleton />}
 				errorContent={<div>Failed to load product</div>}
 			>
 				<ProductViewContent />
-			</ProductContextProvider>
+			</ProductViewContextProvider>
 		</Suspense>
 	);
 };

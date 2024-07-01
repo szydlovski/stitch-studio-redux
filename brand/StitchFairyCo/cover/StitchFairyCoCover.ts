@@ -13,7 +13,10 @@ import {
 import {
 	CustomizableCoverTemplate,
 	RenderCoverProps,
-} from '@presentation/views/ProductImagesView/components/CoverCustomizer/types';
+} from '@presentation/views/ProductView/tabs/images/components/CoverCustomizer/types';
+import { CrossStitchPattern } from '@domain/cross-stitch';
+import { HoopMockupConfig } from '@domain/product/types';
+import { RendererContextType } from '@components/context/RendererContext';
 
 const targetDim = { width: 877, height: 941 };
 
@@ -24,7 +27,7 @@ const renderStitchFairyCommons = ({
 }: RenderCoverProps) => {
 	const { colors, scale } = config;
 	const side = Math.max(pattern.width, pattern.height);
-	
+
 	const embroideryMockup = createCanvas(targetDim, (ctx) => {
 		const renderScale = 1 + scale * 2;
 		const width = targetDim.width * renderScale;
@@ -46,7 +49,7 @@ const renderStitchFairyCommons = ({
 			width,
 			height
 		);
-	})
+	});
 
 	const render = templateRenderer.renderTemplate.bind(templateRenderer);
 
@@ -67,6 +70,55 @@ const renderStitchFairyCommons = ({
 	});
 
 	return { embroideryMockup, loopMockup, flossMockup, fabricMockup };
+};
+
+export interface RenderHoopMockupProps {
+	pattern: CrossStitchPattern;
+	config: HoopMockupConfig;
+	context: RendererContextType;
+}
+
+export const renderHoopMockup = (
+	{
+		pattern,
+		config,
+		context: { templateRenderer, crossStitchRenderer },
+	}: RenderHoopMockupProps,
+	ctx: CanvasRenderingContext2D
+) => {
+	const { background, scale } = config;
+	const side = Math.max(pattern.width, pattern.height);
+
+	const embroideryMockup = createCanvas(targetDim, (ctx) => {
+		const renderScale = 1 + scale * 2;
+		const width = targetDim.width * renderScale;
+		const height = targetDim.height * renderScale;
+		ctx.drawImage(
+			crossStitchRenderer.renderEmbroideryOnFabricMockup(
+				pattern,
+				5,
+				{
+					top: side,
+					bottom: side,
+					left: side,
+					right: side,
+				},
+				background
+			),
+			-width / 2 + targetDim.width / 2 + (config.xOffset / 1000) * width,
+			-height / 2 + targetDim.height / 2 + (config.yOffset / 1000) * height,
+			width,
+			height
+		);
+	});
+
+	templateRenderer.renderTemplateOnCanvas(
+		loopMockupTemplate,
+		{
+			patternRender: embroideryMockup,
+		},
+		ctx
+	);
 };
 
 export const StitchFairyCoCover: CustomizableCoverTemplate = {

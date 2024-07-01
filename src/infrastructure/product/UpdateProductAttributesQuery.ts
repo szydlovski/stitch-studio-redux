@@ -1,6 +1,6 @@
+import { ProductAttributes } from '@domain/product/types';
 import { XataQuery } from '@lib/api/XataQuery';
 
-type ProductAttributes = any;
 
 export interface UpdateProductAttributesQueryResult {
 	id: string;
