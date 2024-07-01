@@ -190,6 +190,7 @@ export const LaunchChecklistCard = () => {
 					{items.map(({ key, label, checked, content }, index) =>
 						key === activeItem ? (
 							<ActiveChecklistItem
+								key={key}
 								title={label}
 								number={index + 1}
 								status="active"
@@ -198,6 +199,7 @@ export const LaunchChecklistCard = () => {
 							</ActiveChecklistItem>
 						) : (
 							<ChecklistItem
+								key={key}
 								title={label}
 								number={index + 1}
 								status={activeIndex >= index ? 'completed' : 'inactive'}

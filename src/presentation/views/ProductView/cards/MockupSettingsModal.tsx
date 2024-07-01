@@ -60,7 +60,7 @@ export const MockupSettingsModal = ({
 					hoopConfig: state,
 				},
 			}),
-		[state, product]
+		[mutate, state, product]
 	);
 	return (
 		<Dialog
