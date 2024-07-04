@@ -27,6 +27,16 @@ interface ChangelogEntry {
 
 const CHANGELOG: ChangelogEntry[] = [
 	{
+		version: '0.5.0',
+		date: '07.07.2024',
+		changes: [
+			'Topbar & overall UI refresh (in progress)',
+			'Added mockup customized & launch step',
+			'Revamped product menu',
+			'Revamped product list',
+		],
+	},
+	{
 		version: '0.4.0',
 		date: '23.06.2024',
 		changes: [
@@ -96,9 +106,7 @@ export const DashboardView = () => {
 								'h-full'
 							)}
 						>
-							<div className="">
-								Hello
-							</div>
+							<div className="">Hello</div>
 						</DialogContent>
 					</Dialog>
 				</div>
