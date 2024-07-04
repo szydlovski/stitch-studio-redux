@@ -1,10 +1,10 @@
 import { DashboardLayout } from '@presentation/layout';
-import { ProductListView } from '@presentation/views';
+import { ProductsView } from '@presentation/views';
 
 export default function ProductsPage() {
 	return (
 		<DashboardLayout>
-			<ProductListView />
+			<ProductsView />
 		</DashboardLayout>
 	);
 }

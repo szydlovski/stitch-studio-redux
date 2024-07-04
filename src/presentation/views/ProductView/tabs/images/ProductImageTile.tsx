@@ -124,8 +124,8 @@ export const ProductImageTile = ({
 				<Image
 					className="aspect-etsy object-contain my-auto"
 					src={transformImage(src, { height: 350 })}
-					width={width}
-					height={height}
+					width={350 * (width / height)}
+					height={350}
 					alt=""
 				/>
 			</div>

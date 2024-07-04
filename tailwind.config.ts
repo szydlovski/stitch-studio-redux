@@ -13,9 +13,6 @@ const config = {
 		container: {
 			center: true,
 			padding: '2rem',
-			screens: {
-				'2xl': '1400px',
-			},
 		},
 		extend: {
 			width: {
@@ -64,7 +61,6 @@ const config = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
-
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -86,8 +82,8 @@ const config = {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
 			aspectRatio: {
-				'etsy': '170 / 135'
-			}
+				etsy: '170 / 135',
+			},
 		},
 	},
 	plugins: [require('tailwindcss-animate')],

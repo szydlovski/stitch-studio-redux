@@ -12,6 +12,12 @@ import {
 } from './breadcrumb';
 import Link from 'next/link';
 
+const mainContainerClasses = 'max-w-screen-2xl w-full mx-auto';
+export const responsivePaddingX = 'px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10';
+export const responsiveGap = 'gap-2 sm:gap-4 lg:gap-5';
+export const responsivePaddingYMuted = 'py-1 sm:py-2 lg:py-3 xl:py-4';
+export const responsiveGridPaddingY = 'py-2 sm:py-4 lg:py-5';
+
 interface ContainerProps {
 	children?: ReactNode;
 	className?: string;
@@ -24,7 +30,11 @@ export const ViewTitle = ({ children, className }: ContainerProps) => (
 );
 
 export const ViewActions = ({ children, className }: ContainerProps) => (
-	<div className={cn('flex gap-2', className)}>{children}</div>
+	<div className={cn('flex gap-2 lg:gap-3 xl:gap-4', className)}>{children}</div>
+);
+
+export const ViewActionsGroup = ({ children, className }: ContainerProps) => (
+	<div className={cn('flex gap-2 lg:gap-3 xl:gap-4', className)}>{children}</div>
 );
 
 export const ViewHeader = ({ children, className }: ContainerProps) => (
@@ -34,13 +44,28 @@ export const ViewHeader = ({ children, className }: ContainerProps) => (
 			className
 		)}
 	>
-		<div className="max-w-screen-2xl w-full mx-auto">{children}</div>
+		<div
+			className={cn(
+				'max-w-screen-2xl w-full mx-auto',
+				responsivePaddingX,
+				responsivePaddingYMuted
+			)}
+		>
+			{children}
+		</div>
 	</div>
 );
 
 export const ViewFooter = ({ children, className }: ContainerProps) => (
 	<div className={cn('flex border-t bg-background', className)}>
-		<div className="max-w-screen-2xl w-full mx-auto px-6 py-2 flex">
+		<div
+			className={cn(
+				'flex',
+				mainContainerClasses,
+				responsivePaddingX,
+				responsivePaddingYMuted
+			)}
+		>
 			{children}
 		</div>
 	</div>
@@ -49,23 +74,30 @@ export const ViewFooter = ({ children, className }: ContainerProps) => (
 interface ViewContentProps {
 	children?: ReactNode;
 	className?: string;
+	containerClassName?: string;
 	fullWidth?: boolean;
 	scrollX?: boolean;
+	noPadding?: boolean;
 }
 
 export const ViewContent = forwardRef<HTMLDivElement, ViewContentProps>(
-	({ children, className, fullWidth, scrollX }, ref) => (
-		<div
-			ref={ref}
-			className={cn('max-w-screen-2xl w-full mx-auto flex-1', className)}
-		>
-			<ScrollArea className={cn('flex flex-col h-full')}>
+	({ children, className, containerClassName, fullWidth, scrollX, noPadding }, ref) => (
+		<div ref={ref} className={cn('w-full mx-auto flex-1', containerClassName)}>
+			<ScrollArea className={cn('flex flex-col h-full w-full')}>
 				<div
-					className={cn('h-1', {
-						'max-w-screen-md mx-auto': !fullWidth,
+					className={cn('h-1 w-full', {
+						'max-w-screen-2xl mx-auto': !fullWidth,
 					})}
 				>
-					{children}
+					<div
+						className={cn(
+							className,
+							!noPadding && responsiveGridPaddingY,
+							!noPadding && responsivePaddingX
+						)}
+					>
+						{children}
+					</div>
 				</div>
 				{scrollX && <ScrollBar orientation="horizontal" />}
 			</ScrollArea>
@@ -76,7 +108,7 @@ export const ViewContent = forwardRef<HTMLDivElement, ViewContentProps>(
 ViewContent.displayName = 'ViewContent';
 
 export const View = ({ children, className }: ContainerProps) => (
-	<div className={cn('flex flex-1 flex-col h-full bg-muted', className)}>
+	<div className={cn('flex flex-1 flex-col h-full', className)}>
 		{children}
 	</div>
 );
@@ -92,8 +124,14 @@ interface ViewBreadcrumbsProps {
 
 export const ViewBreadcrumbs = ({ items, page }: ViewBreadcrumbsProps) => {
 	return (
-		<div className="flex flex-col py-3 px-6 gap-4 border-b bg-background">
-			<div className='max-w-screen-2xl w-full mx-auto px-6'>
+		<div className="flex flex-col gap-4 border-b bg-background">
+			<div
+				className={cn(
+					'max-w-screen-2xl w-full mx-auto',
+					responsivePaddingX,
+					responsivePaddingYMuted
+				)}
+			>
 				<Breadcrumb>
 					<BreadcrumbList>
 						{items.map(({ label, href }, index) => (
@@ -115,3 +153,22 @@ export const ViewBreadcrumbs = ({ items, page }: ViewBreadcrumbsProps) => {
 		</div>
 	);
 };
+
+// export const View = ({ children, className }: ContainerProps) => (
+// 	<div
+// 		className={cn(
+// 			'flex justify-between items-center border-b bg-background',
+// 			className
+// 		)}
+// 	>
+// 		<div
+// 			className={cn(
+// 				'max-w-screen-2xl w-full mx-auto',
+// 				responsivePaddingX,
+// 				responsivePaddingY
+// 			)}
+// 		>
+// 			{children}
+// 		</div>
+// 	</div>
+// );

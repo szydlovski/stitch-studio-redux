@@ -34,17 +34,24 @@ export const BrandHoverCardContent = ({ brand }: { brand: BrandItem }) => {
 };
 
 export const BrandHoverCard = ({
-	brand,
+	brandId,
 	children,
 }: {
-	brand: BrandItem;
+	brandId: string;
 	children: ReactNode;
 }) => {
+	const { data: brand, status } = useGetBrand(brandId);
 	return (
 		<HoverCard openDelay={300} closeDelay={0}>
 			<HoverCardTrigger asChild>{children}</HoverCardTrigger>
 			<HoverCardContent className="w-80">
-				<BrandHoverCardContent brand={brand} />
+				{status === 'pending' ? (
+					<>Loading...</>
+				) : status === 'error' ? (
+					<>Error</>
+				) : (
+					<BrandHoverCardContent brand={brand} />
+				)}
 			</HoverCardContent>
 		</HoverCard>
 	);

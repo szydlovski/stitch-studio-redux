@@ -1,6 +1,7 @@
 'use client';
 import { BrushIcon, SearchIcon } from 'lucide-react';
 import {
+	Button,
 	CommandDialog,
 	CommandEmpty,
 	CommandGroup,
@@ -17,7 +18,7 @@ import { MENU_LINKS } from '@presentation/layout/links';
 import {
 	CreateProductDialogContent,
 	FilePatternPayload,
-} from '@presentation/views/ProductsView/CreateProduct/CreateProductDialog';
+} from '@presentation/views/ProductsView/components/CreateProductDialog';
 import debounce from 'lodash.debounce';
 import Link from 'next/link';
 import React from 'react';
@@ -184,20 +185,8 @@ export function NavigationCommands() {
 
 export const DashboardCommandTrigger = ({ onOpen }: { onOpen: () => void }) => {
 	return (
-		<>
-			<div className="ml-auto">
-				<form>
-					<div className="relative">
-						<SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-						<Input
-							type="search"
-							placeholder="Search..."
-							className="w-full appearance-none bg-background pl-8 shadow-none"
-							onFocus={onOpen}
-						/>
-					</div>
-				</form>
-			</div>
-		</>
+		<Button className="" size="icon" variant="ghost" onClick={onOpen}>
+			<SearchIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+		</Button>
 	);
 };
