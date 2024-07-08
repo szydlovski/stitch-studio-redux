@@ -2,19 +2,23 @@ import { Drawable } from '@lib/canvas';
 
 // core
 
-export type TextureDictionary = Record<string, HTMLImageElement>;
+export interface Dimensions {
+	width: number;
+	height: number;
+}
+
+export type TextureDictionary = Record<string, Drawable>;
+
+export interface TemplatePropDefinition {
+	type: TemplatePropType;
+	name: string;
+}
 
 export type TemplateProps = Record<string, string | Drawable>;
 export interface TemplateManifest {
-	props: {
-		type: TemplatePropType;
-		name: string;
-	}[];
-	dimensions: {
-		width: number;
-		height: number;
-	};
+	dimensions: Dimensions;
 	layers: TemplateLayer[];
+	props: TemplatePropDefinition[];
 }
 
 // layers

@@ -107,7 +107,7 @@ export const ProductViewHeader = () => {
 					</div>
 					<div className="flex flex-col gap-0">
 						<span className="text-xs text-muted-foreground">Brand</span>
-						<BrandHoverCard brand={product.brand}>
+						<BrandHoverCard brandId={product.brand.id}>
 							<Link
 								className="text-sm"
 								href={AppViews.Brand(product.brand?.id)}

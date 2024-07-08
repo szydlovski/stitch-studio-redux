@@ -112,7 +112,7 @@ export const renderHoopMockup = (
 		);
 	});
 
-	templateRenderer.renderTemplateOnCanvas(
+	templateRenderer.renderTemplate(
 		loopMockupTemplate,
 		{
 			patternRender: embroideryMockup,
@@ -125,7 +125,7 @@ export const StitchFairyCoCover: CustomizableCoverTemplate = {
 	name: 'StitchFairyCo',
 	renderPreview: (props: RenderCoverProps, ctx: CanvasRenderingContext2D) => {
 		const { templateRenderer } = props.context;
-		templateRenderer.renderTemplateOnCanvas(
+		templateRenderer.renderTemplate(
 			etsyCoverTemplate,
 			renderStitchFairyCommons(props),
 			ctx
