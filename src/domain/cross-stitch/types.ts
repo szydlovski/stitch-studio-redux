@@ -1,11 +1,5 @@
 import { Drawable } from '@lib/canvas';
 
-export type ColorGroup = {
-	id: string;
-	hex: string;
-	pixels: { x: number; y: number }[];
-};
-
 export interface Padding {
 	left: number;
 	top: number;
@@ -27,8 +21,23 @@ export type StylizedPatternTextureDictionary = Record<
 	Drawable
 >;
 
+export interface FlossColor {
+	id: string;
+	name: string;
+	color: string;
+	palette: string;
+	symbol: string;
+}
+
+export interface Stitch {
+	colorId: string;
+	x: number;
+	y: number;
+}
+
 export interface CrossStitchPatternData {
 	readonly width: number;
 	readonly height: number;
-	readonly groups: ColorGroup[];
+	readonly stitches: Stitch[];
+	readonly colors: FlossColor[];
 }

@@ -64,11 +64,11 @@ export const ProductViewHeader = () => {
 										<ZoomInIcon size={36} />
 									</div>
 									<div className="mt-auto flex flex-wrap items-end justify-items-end content-end">
-										{product.pattern.groups.map((group) => (
+										{product.pattern.colors.map(({ id, color }) => (
 											<div
 												className="h-2 flex-1"
-												key={group.id}
-												style={{ backgroundColor: group.hex }}
+												key={id}
+												style={{ backgroundColor: color }}
 											/>
 										))}
 									</div>
@@ -86,7 +86,7 @@ export const ProductViewHeader = () => {
 					</Dialog>
 				</div>
 			</div>
-			<div className={cn("flex flex-col gap-4", responsiveGap)}>
+			<div className={cn('flex flex-col gap-4', responsiveGap)}>
 				<div className="flex gap-4">
 					<div className="flex flex-col gap-0">
 						<span className="text-xs text-muted-foreground">Title</span>

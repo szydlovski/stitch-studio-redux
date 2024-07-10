@@ -1,86 +1,55 @@
-import { DrawnStitch } from '@presentation/views/CrossStitchEdit/editor/crossStitchEditorReducer';
-import { ColorGroup, CrossStitchPatternData } from './types';
-
-export interface FlossColor {
-	name: string;
-	color: string;
-	palette: string;
-}
-
+import { CrossStitchPatternData, Stitch, FlossColor } from './types';
 export class CrossStitchPattern {
 	private constructor(
 		public readonly width: number,
 		public readonly height: number,
-		public readonly groups: ColorGroup[]
+		public readonly colors: FlossColor[],
+		public readonly stitches: Stitch[]
 	) {}
-	static fromAttributes({
+	static fromSerialized({
 		width,
 		height,
-		groups,
+		colors,
+		stitches,
 	}: CrossStitchPatternData): CrossStitchPattern {
-		return new CrossStitchPattern(width, height, groups);
+		return new CrossStitchPattern(width, height, colors, stitches);
 	}
 	private getDataArrayIndex({ x, y }: { x: number; y: number }): number {
 		return y * this.width + x;
 	}
-	public getStitches(): DrawnStitch[] {
-		const stitches: DrawnStitch[] = [];
-		for (const [index, { pixels }] of Object.entries(this.groups)) {
-			const colorNumber = Number(index);
-			for (const { x, y } of pixels) {
-				stitches.push({ x, y, color: colorNumber });
-			}
-		}
-		return stitches;
+	public getStitches(): Stitch[] {
+		return this.stitches;
 	}
 	public getColors(): FlossColor[] {
-		return this.groups.map(({ hex }, index) => ({
-			name: `Color ${index}`,
-			color: hex,
-			palette: 'custom',
-		}));
+		return this.colors;
 	}
-	public getRawArray(): (number | undefined)[] {
-		const data: (number | undefined)[] = Array(this.width * this.height).fill(
-			undefined
-		);
-		for (const [index, { pixels }] of Object.entries(this.groups)) {
-			const colorNumber = Number(index);
-			for (const pixel of pixels) {
-				data[this.getDataArrayIndex(pixel)] = colorNumber;
-			}
-		}
-		return data;
+	public getColorIndex(color: FlossColor): number {
+		return this.colors.findIndex(({ id }) => id === color.id);
 	}
-	public getGroupIndex(group: ColorGroup): number {
-		return this.groups.findIndex(({ id }) => id === group.id);
-	}
-	public getColorGroup(x: number, y: number): ColorGroup | undefined {
-		return this.groups.find(({ pixels }) =>
-			pixels.some((pixel) => pixel.x === x && pixel.y === y)
-		);
+	public getFlossAt(x: number, y: number): FlossColor | undefined {
+		const stitch = this.stitches.find((s) => s.x === x && s.y === y);
+		if (!stitch) return;
+		return this.colors.find(({ id }) => id === stitch.colorId);
 	}
 	public getPixelColor(x: number, y: number): string | undefined {
-		return this.groups.find(({ pixels }) =>
-			pixels.some((pixel) => pixel.x === x && pixel.y === y)
-		)?.hex;
+		return this.getFlossAt(x, y)?.color;
 	}
-	public toData(): CrossStitchPatternData {
-		const { width, height, groups } = this;
-		return { width, height, groups };
+	public toSerializable(): CrossStitchPatternData {
+		const { width, height, colors, stitches } = this;
+		return { width, height, colors, stitches };
 	}
 	public serialize(): string {
-		return JSON.stringify(this.toData());
+		return JSON.stringify(this.toSerializable());
 	}
 	// utility getters
 	get dimensionsText(): string {
 		return `${this.width} x ${this.height}`;
 	}
 	get colorCount(): number {
-		return this.groups.length;
+		return this.colors.length;
 	}
 	get stitchCount(): number {
-		return this.groups.reduce((total, group) => total + group.pixels.length, 0);
+		return this.stitches.length;
 	}
 	public getFinishedDimensions(ct: number) {
 		return {

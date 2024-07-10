@@ -37,7 +37,7 @@ export const SinglePatternPage = ({
 										{Array(60)
 											.fill(0)
 											.map((_, column) => {
-												const colorGroup = pattern.getColorGroup(
+												const floss = pattern.getFlossAt(
 													xOffset + column,
 													yOffset + row
 												);
@@ -46,18 +46,18 @@ export const SinglePatternPage = ({
 														key={column}
 														style={
 															{
-																'--c': colorGroup?.hex,
+																'--c': floss?.color,
 																'--t':
-																	colorGroup &&
-																	getContrastColor(hexToRgb(colorGroup.hex)),
+																	floss &&
+																	getContrastColor(hexToRgb(floss.color)),
 															} as any
 														}
 													>
-														{colorGroup && (
+														{floss && (
 															<a>
 																{
 																	symbolDictionary[
-																		pattern.getGroupIndex(colorGroup)
+																		pattern.getColorIndex(floss)
 																	]
 																}
 															</a>

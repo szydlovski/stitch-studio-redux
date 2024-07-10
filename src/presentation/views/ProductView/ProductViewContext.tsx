@@ -63,7 +63,7 @@ export const ProductViewContextProvider = ({
 				<ProductViewContext.Provider
 					value={{
 						product: data,
-						pattern: CrossStitchPattern.fromAttributes(data.data),
+						pattern: CrossStitchPattern.fromSerialized(data.data),
 					}}
 				>
 					{children}

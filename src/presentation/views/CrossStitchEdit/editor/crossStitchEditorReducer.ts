@@ -1,4 +1,4 @@
-import { FlossColor } from '@domain/cross-stitch';
+import { Stitch, FlossColor } from '@domain/cross-stitch';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export enum CrossStitchEditorTool {
@@ -8,16 +8,10 @@ export enum CrossStitchEditorTool {
 	Eraser = 'eraser',
 }
 
-export interface DrawnStitch {
-	x: number;
-	y: number;
-	color: number;
-}
-
 export interface CrossStitchEditorState {
-	stitches: DrawnStitch[];
+	stitches: Stitch[];
 	colors: FlossColor[];
-	activeColor?: number;
+	activeColor?: string;
 	canvasWidth: number;
 	canvasHeight: number;
 	scale: number;
@@ -40,13 +34,15 @@ export const {
 		stitches: [],
 		colors: [
 			{
+				id: 'black',
 				name: 'Black',
 				color: '#000000',
 				palette: 'custom',
+				symbol: 'X',
 			},
 		],
 		tool: CrossStitchEditorTool.Mouse,
-		activeColor: 0,
+		activeColor: undefined,
 		canvasWidth: 512,
 		canvasHeight: 512,
 		scale: 10,
@@ -89,7 +85,7 @@ export const {
 			state.canvasWidth = width;
 			state.canvasHeight = height;
 		},
-		setActiveColor: (state, action: PayloadAction<number | undefined>) => {
+		setActiveColor: (state, action: PayloadAction<string | undefined>) => {
 			state.activeColor = action.payload;
 		},
 		draw: (state, action: PayloadAction<{ x: number; y: number }>) => {
@@ -98,12 +94,12 @@ export const {
 				({ x, y }) => x === action.payload.x && y === action.payload.y
 			);
 			if (existingStitch) {
-				existingStitch.color = state.activeColor;
+				existingStitch.colorId = state.activeColor;
 			} else {
 				state.stitches.push({
 					x: action.payload.x,
 					y: action.payload.y,
-					color: state.activeColor,
+					colorId: state.activeColor,
 				});
 			}
 		},

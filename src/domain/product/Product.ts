@@ -58,14 +58,13 @@ export class FullProductObject
 	implements FullProductAttributes
 {
 	public readonly data: CrossStitchPatternData;
+	public readonly pattern: CrossStitchPattern;
 	protected constructor({ data, ...attrs }: FullProductAttributes) {
 		super(attrs);
 		this.data = data;
+		this.pattern = CrossStitchPattern.fromSerialized(this.data);
 	}
 	static fromAttributes(attrs: FullProductAttributes): FullProductObject {
 		return new FullProductObject(attrs);
-	}
-	get pattern(): CrossStitchPattern {
-		return CrossStitchPattern.fromAttributes(this.data);
 	}
 }

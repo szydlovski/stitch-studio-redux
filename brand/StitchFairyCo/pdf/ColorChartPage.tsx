@@ -1,7 +1,9 @@
 import { Page } from '@components/pdf/Page';
 import { CrossStitchPdfPageProps } from '@infrastructure/pdf/types';
 
-export const ColorChartPage = ({ product: { pattern } }: CrossStitchPdfPageProps) => (
+export const ColorChartPage = ({
+	product: { pattern },
+}: CrossStitchPdfPageProps) => (
 	<Page>
 		<div className="content">
 			<div className="header">
@@ -9,9 +11,11 @@ export const ColorChartPage = ({ product: { pattern } }: CrossStitchPdfPageProps
 			</div>
 			<table className="w-full">
 				<tbody>
-					{pattern.groups.map((group, index) => (
+					{pattern.colors.map((floss, index) => (
 						<tr key={index}>
-							<td style={{ backgroundColor: group.hex }}>{group.hex}</td>
+							<td style={{ backgroundColor: floss.color }}>
+								{floss.name} ({floss.palette})
+							</td>
 						</tr>
 					))}
 				</tbody>

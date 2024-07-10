@@ -1,4 +1,4 @@
-import { CrossStitchPattern } from '@domain/cross-stitch';
+import { CrossStitchPattern, FlossColor } from '@domain/cross-stitch';
 import { CrossStitchEditorState } from './crossStitchEditorReducer';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
@@ -51,6 +51,9 @@ export const render = (props: RenderProps) => {
 		options: { theme = 'dark', grids = DEFAULT_GRIDS } = {},
 	} = props;
 	const { canvas } = ctx;
+	const colorMap: Record<string, FlossColor> = Object.fromEntries(
+		colors.map((c) => [c.id, c])
+	);
 
 	// Resize & clear canvas
 	if (canvas.width !== canvasWidth || canvas.height !== canvasHeight) {
@@ -62,8 +65,8 @@ export const render = (props: RenderProps) => {
 
 	// Draw stitches
 	ctx.translate(canvas.width / 2 + offsetX, canvas.height / 2 + offsetY);
-	for (const { x, y, color: colorNumber } of stitches) {
-		const hex = colors[colorNumber].color;
+	for (const { x, y, colorId } of stitches) {
+		const hex = colorMap[colorId].color;
 		if (hex !== undefined) {
 			ctx.fillStyle = hex;
 			ctx.fillRect(x * scale, y * scale, scale, scale);
@@ -77,7 +80,7 @@ export const render = (props: RenderProps) => {
 		canvas.width / 2 + (offsetX % maxGridPixelSize),
 		canvas.height / 2 + (offsetY % maxGridPixelSize)
 	);
-	
+
 	for (const { unit, alpha, width, minScale } of grids) {
 		if (minScale !== undefined && scale < minScale) continue;
 		ctx.strokeStyle = fullConfig.theme.colors.border;
@@ -91,7 +94,7 @@ export const render = (props: RenderProps) => {
 	// Draw active pixel
 	ctx.translate(canvas.width / 2 + offsetX, canvas.height / 2 + offsetY);
 	if (activeColor !== undefined) {
-		const activeHex = colors[activeColor].color;
+		const activeHex = colorMap[activeColor].color;
 		ctx.fillStyle = activeHex;
 		ctx.strokeStyle = '#000';
 		ctx.lineWidth = 2;

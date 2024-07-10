@@ -4,7 +4,7 @@ import {
 	flossMockupTemplate,
 	frameCoverTemplate,
 	frameMockupTemplate,
-	loopMockupTemplate,
+	hoopMockupTemplate,
 	pinterest1Template,
 	squareCoverTemplate,
 	wideCoverTemplate,
@@ -13,11 +13,14 @@ import {
 	CrossStitchPatternRenderer,
 	loadStitchTextureDictionary,
 } from '@infrastructure/cross-stitch';
-import { ImageTemplateRenderer } from '@infrastructure/product-image/ImageTemplateRenderer';
+import {
+	Template,
+	Renderer,
+} from '@infrastructure/product-image/template-engine';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 export interface RendererContextType {
-	templateRenderer: ImageTemplateRenderer;
+	templateRenderer: Renderer;
 	crossStitchRenderer: CrossStitchPatternRenderer;
 }
 
@@ -36,18 +39,21 @@ export const RendererProvider = ({
 				const crossStitchRenderer = new CrossStitchPatternRenderer(
 					stitchTextureDictionary
 				);
-				const templateRenderer = new ImageTemplateRenderer();
+				const templateRenderer = new Renderer();
+
+				const load =
+					templateRenderer.loadTemplateTextures.bind(templateRenderer);
 
 				// TODO this is temp for StitchFairy
-				await templateRenderer.preloadTemplateTextures(loopMockupTemplate);
-				await templateRenderer.preloadTemplateTextures(flossMockupTemplate);
-				await templateRenderer.preloadTemplateTextures(fabricMockupTemplate);
-				await templateRenderer.preloadTemplateTextures(etsyCoverTemplate);
-				await templateRenderer.preloadTemplateTextures(squareCoverTemplate);
-				await templateRenderer.preloadTemplateTextures(wideCoverTemplate);
-				await templateRenderer.preloadTemplateTextures(pinterest1Template);
-				await templateRenderer.preloadTemplateTextures(frameMockupTemplate);
-				await templateRenderer.preloadTemplateTextures(frameCoverTemplate);
+				await load(new Template(hoopMockupTemplate));
+				await load(new Template(flossMockupTemplate));
+				await load(new Template(fabricMockupTemplate));
+				await load(new Template(etsyCoverTemplate));
+				await load(new Template(squareCoverTemplate));
+				await load(new Template(wideCoverTemplate));
+				await load(new Template(pinterest1Template));
+				await load(new Template(frameMockupTemplate));
+				await load(new Template(frameCoverTemplate));
 
 				setValue({ templateRenderer, crossStitchRenderer });
 			})(),

@@ -33,7 +33,7 @@ const CrossStitchEditorContext = createContext<
 const loadCrossStitchEditorStateFromPatternData = (
 	data: CrossStitchPatternData
 ): CrossStitchEditorState => {
-	const pattern = CrossStitchPattern.fromAttributes(data);
+	const pattern = CrossStitchPattern.fromSerialized(data);
 	return {
 		...getInitialCrossStitchEditorState(),
 		stitches: pattern.getStitches().map((stitch) => ({

@@ -5,6 +5,7 @@ import {
 	StylizedPatternLayers,
 	PaddingOpts,
 	Padding,
+	FlossColor,
 } from '@domain/cross-stitch/types';
 
 const resolvePaddingOpts = (options: PaddingOpts): Padding => {
@@ -26,11 +27,12 @@ export class CrossStitchPatternRenderer {
 		const targetWidth = pattern.width * scale;
 		const targetHeight = pattern.height * scale;
 		return createCanvas([targetWidth, targetHeight], (ctx) => {
-			for (const { hex, pixels } of pattern.groups) {
-				for (const { x, y } of pixels) {
-					ctx.fillStyle = hex;
-					ctx.fillRect(x * scale, y * scale, scale, scale);
-				}
+			const colorMap: Record<string, FlossColor> = Object.fromEntries(
+				pattern.colors.map((c) => [c.id, c])
+			);
+			for (const { x, y, colorId } of pattern.stitches) {
+				ctx.fillStyle = colorMap[colorId].color;
+				ctx.fillRect(x * scale, y * scale, scale, scale);
 			}
 		});
 	}

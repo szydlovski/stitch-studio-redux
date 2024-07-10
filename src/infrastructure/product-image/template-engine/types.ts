@@ -16,6 +16,8 @@ export interface TemplatePropDefinition {
 
 export type TemplateProps = Record<string, string | Drawable>;
 export interface TemplateManifest {
+	id: string;
+	name: string;
 	dimensions: Dimensions;
 	layers: TemplateLayer[];
 	props: TemplatePropDefinition[];
@@ -28,21 +30,30 @@ export enum LayerType {
 	TextureProp = 'texture_prop',
 	StaticColor = 'static_color',
 	ColorProp = 'color_prop',
+	SmartObject = 'smart_object',
 }
 
 interface BaseLayer {
+	id: string;
+	name: string;
 	x?: number;
 	y?: number;
 	width?: number;
 	height?: number;
 	mask?: TemplateLayer;
 	mode?: GlobalCompositeOperation;
+	opactity?: number;
 	rotation?: number;
 }
 
 export interface StaticTextureLayer extends BaseLayer {
 	type: LayerType.StaticTexture;
 	textureUrl: string;
+}
+
+export interface SmartObjectLayer extends BaseLayer {
+	type: LayerType.SmartObject;
+	template: TemplateManifest;
 }
 
 export interface TexturePropLayer extends BaseLayer {
@@ -58,7 +69,8 @@ export interface ColorPropLayer extends BaseLayer {
 export type TemplateLayer =
 	| StaticTextureLayer
 	| TexturePropLayer
-	| ColorPropLayer;
+	| ColorPropLayer
+	| SmartObjectLayer;
 
 // props
 

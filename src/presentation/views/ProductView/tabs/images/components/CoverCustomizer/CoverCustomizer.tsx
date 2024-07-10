@@ -18,6 +18,8 @@ import { ColorPicker, ColorPickerPlaceholer } from './components/ColorPicker';
 import { PaddingOptionsInput } from './components/PaddingOptionsInput';
 import { usePreviewRenderer } from './hooks/usePreviewRenderer';
 import { CoverColorPickerConfig, CustomizableCoverTemplate } from './types';
+import { etsyCoverTemplate } from '@brand/StitchFairyCo/cover/templates';
+import { Template } from '@infrastructure/product-image/template-engine';
 
 export const CoverCustomizer = <ColorKey extends string = string>({
 	pattern,
@@ -46,14 +48,20 @@ export const CoverCustomizer = <ColorKey extends string = string>({
 		[activeColorKey]
 	);
 
-	usePreviewRenderer({ pattern, state, canvasRef, render, debounce: 50 });
+	usePreviewRenderer({
+		pattern,
+		state,
+		canvasRef,
+		debounce: 50,
+		template: new Template(etsyCoverTemplate),
+	});
 
 	const palette = useMemo(
 		() => [
 			...((activeColorKey && pickersConfig[activeColorKey]?.palette) ?? []),
-			...pattern.groups.map((color) => color.hex),
+			...pattern.colors.map(({ color }) => color),
 		],
-		[activeColorKey, pattern.groups, pickersConfig]
+		[activeColorKey, pattern.colors, pickersConfig]
 	);
 
 	const pickerEntries = Object.entries(pickersConfig) as [

@@ -5,7 +5,7 @@ import {
 	flossMockupTemplate,
 	frameCoverTemplate,
 	frameMockupTemplate,
-	loopMockupTemplate,
+	hoopMockupTemplate,
 	pinterest1Template,
 	squareCoverTemplate,
 	wideCoverTemplate,
@@ -53,7 +53,7 @@ const renderStitchFairyCommons = ({
 
 	const render = templateRenderer.renderTemplate.bind(templateRenderer);
 
-	const loopMockup = render(loopMockupTemplate, {
+	const loopMockup = render(hoopMockupTemplate, {
 		patternRender: embroideryMockup,
 	});
 
@@ -113,7 +113,7 @@ export const renderHoopMockup = (
 	});
 
 	templateRenderer.renderTemplate(
-		loopMockupTemplate,
+		hoopMockupTemplate,
 		{
 			patternRender: embroideryMockup,
 		},

@@ -68,7 +68,7 @@ export const CoverPage = ({ product: { pattern, title } }: CrossStitchPdfPagePro
 									</tr>
 									<tr>
 										<td>Colors</td>
-										<td>{pattern.groups.length}</td>
+										<td>{pattern.colors.length}</td>
 									</tr>
 								</tbody>
 							</table>

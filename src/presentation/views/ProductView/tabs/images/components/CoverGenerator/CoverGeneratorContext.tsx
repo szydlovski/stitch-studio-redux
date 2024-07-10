@@ -36,7 +36,7 @@ export const CoverGeneratorConsumer = CoverGeneratorContext.Consumer;
 const getCoverGeneratorInitialState = (
 	pattern: CrossStitchPattern
 ): CoverGeneratorState => {
-	const defaultColor = pattern.groups[0].hex;
+	const defaultColor = pattern.colors[0].color;
 	return {
 		renders: [],
 		coverConfig: {
@@ -48,11 +48,11 @@ const getCoverGeneratorInitialState = (
 				frame: defaultColor,
 				pinterestBar: defaultColor,
 				background: '#ffffff',
-				floss1: pattern.groups[1]?.hex ?? defaultColor,
-				floss2: pattern.groups[2]?.hex ?? defaultColor,
-				floss3: pattern.groups[3]?.hex ?? defaultColor,
-				floss4: pattern.groups[4]?.hex ?? defaultColor,
-				floss5: pattern.groups[5]?.hex ?? defaultColor,
+				floss1: pattern.colors[1]?.color ?? defaultColor,
+				floss2: pattern.colors[2]?.color ?? defaultColor,
+				floss3: pattern.colors[3]?.color ?? defaultColor,
+				floss4: pattern.colors[4]?.color ?? defaultColor,
+				floss5: pattern.colors[5]?.color ?? defaultColor,
 			},
 		},
 	};

@@ -76,7 +76,7 @@ export const CreateProductDialogContent = ({
 		const product = await mutateAsync({
 			title,
 			thumbnail: dataUrlToXataBase64(state.src),
-			data: JSON.stringify(state.pattern.toData()),
+			data: JSON.stringify(state.pattern.toSerializable()),
 		});
 
 		await queryClient.invalidateQueries({ queryKey: listProductQueryKey() });
