@@ -138,6 +138,7 @@ interface MyMenuSeparatorConfig {
 interface MyMenuLabelConfig {
 	type: 'label';
 	label: string;
+	variant?: 'title' | 'default';
 }
 
 const MyMenuItem = ({
@@ -235,7 +236,7 @@ export const DropdownMenu = ({
 						case 'label':
 							return (
 								<DropdownMenuLabel
-									className="uppercase text-[0.6rem] opacity-50 flex items-center gap-2"
+									className={item.variant === 'title' ? '' : "uppercase text-[0.6rem] opacity-50 flex items-center gap-2"}
 									key={index}
 								>
 									{item.label}

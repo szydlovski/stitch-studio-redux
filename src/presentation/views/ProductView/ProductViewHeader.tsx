@@ -4,13 +4,7 @@ import Image from 'next/image';
 
 import { AppViews } from '@/app/routes';
 import { DropdownMenu } from '@components/DropdownMenu';
-import {
-	Button,
-	Dialog,
-	DialogContent,
-	DialogTrigger,
-	responsiveGap,
-} from '@components/ui';
+import { Button, Dialog, DialogContent, DialogTrigger } from '@components/ui';
 import { useCustomSearchItems } from '@presentation/features/search/SearchContext';
 import {
 	CopyIcon,
@@ -48,7 +42,7 @@ export const ProductViewHeader = () => {
 	);
 	useCustomSearchItems(items);
 	return (
-		<div className={cn('flex', responsiveGap)}>
+		<div className={cn('flex gap-md')}>
 			<div className="h-full">
 				<div className="relative group border rounded-md p-2 overflow-hidden">
 					<Dialog>
@@ -86,7 +80,7 @@ export const ProductViewHeader = () => {
 					</Dialog>
 				</div>
 			</div>
-			<div className={cn('flex flex-col gap-4', responsiveGap)}>
+			<div className={cn('flex flex-col gap-md')}>
 				<div className="flex gap-4">
 					<div className="flex flex-col gap-0">
 						<span className="text-xs text-muted-foreground">Title</span>

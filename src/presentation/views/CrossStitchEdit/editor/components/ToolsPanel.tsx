@@ -53,7 +53,7 @@ export const ToolsPanel = () => {
 			<div className="grid gap-1">
 				{tools.map(({ label, value, disabled, icon: Icon }) => (
 					<Tooltip key={value}>
-						<TooltipTrigger>
+						<TooltipTrigger asChild>
 							<Toggle
 								size="xs"
 								key={value}

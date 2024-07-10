@@ -147,7 +147,7 @@ export const EditorCanvas = () => {
 			ref={canvasRef}
 			width={512}
 			height={512}
-			className="bg-muted/20 w-full h-full cursor-none"
+			className="bg-muted/20 cursor-none"
 			onMouseDown={handleMouseDown}
 			onMouseMove={handleMouseMove}
 			onMouseUp={handleMouseUp}

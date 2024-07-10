@@ -61,7 +61,7 @@ export const ProductViewContent = () => {
 					</TabsList>
 				</ViewHeader>
 				<TabsContent asChild value="properties">
-					<ViewContent className="bg-muted">
+					<ViewContent containerClassName="bg-muted/50">
 						<CardStack>
 							<LaunchChecklistCard />
 							<PatternCard />

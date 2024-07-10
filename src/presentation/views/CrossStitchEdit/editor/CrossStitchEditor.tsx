@@ -34,12 +34,13 @@ export const EditorInner = () => {
 	}, [state, canvasRef]);
 	return (
 		<>
-			<div ref={containerRef} className="h-[calc(100vh-56px)]">
+			<div ref={containerRef} className="relative h-full">
 				<EditorCanvas />
+				<ColorsPanel />
+				<DevPanel />
+				<ToolsPanel />
 			</div>
-			<ColorsPanel />
-			<DevPanel />
-			<ToolsPanel />
+
 			{!ready && (
 				<div className="absolute top-0 w-full h-full bg-red-500">
 					loading...

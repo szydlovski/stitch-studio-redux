@@ -8,13 +8,6 @@ import { UserMenu } from '../UserMenu/UserMenu';
 import React, { ReactNode, useEffect } from 'react';
 import { CommandToolbarItem } from '@components/CommandMenu';
 import { MENU_LINKS } from '../links';
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-	responsivePaddingX,
-	responsivePaddingYMuted,
-} from '@components/ui';
 import Link from 'next/link';
 import { cn } from '@lib/utils';
 import Image from 'next/image';
@@ -70,15 +63,13 @@ export const Header = () => {
 		<header className="border-b bg-muted/40">
 			<div
 				className={cn(
-					'max-w-screen-2xl w-full mx-auto flex items-center gap-4 lg:gap-6 xl:gap-8',
-					responsivePaddingX,
-					responsivePaddingYMuted
+					'max-w-screen-2xl w-full mx-auto flex items-center gap-4 lg:gap-6 xl:gap-8 px-md py-sm'
 				)}
 			>
 				<HeaderLogo />
 				<HeaderNav />
 				<div className="flex items-center gap-4 lg:gap-6 xl:gap-8 ml-auto">
-					<div className='flex gap-2'>
+					<div className="flex gap-2">
 						<CommandToolbarItem />
 						<MobileMenu />
 					</div>

@@ -76,7 +76,37 @@
 }
 
 @layer utilities {
-  .gap-md {
-    @apply hidden
-  }
+	.px-md {
+		@apply px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10;
+	}
+	.px-sm {
+		@apply px-1 sm:px-2 lg:px-3 xl:px-4;
+	}
+	.px-xs {
+		@apply px-1 lg:px-2;
+	}
+	.py-md {
+		@apply py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10;
+	}
+	.py-sm {
+		@apply py-1 sm:py-2 lg:py-3 xl:py-4;
+	}
+	.py-xs {
+		@apply py-1 lg:py-2;
+	}
+	.p-md {
+		@appply px-md py-md;
+	}
+	.p-sm {
+		@appply px-sm py-sm;
+	}
+	.p-xs {
+		@appply px-xs py-xs;
+	}
+	.gap-md {
+		@apply gap-2 sm:gap-4 lg:gap-5;
+	}
+	.py-grid {
+		@apply py-2 sm:py-4 lg:py-5;
+	}
 }

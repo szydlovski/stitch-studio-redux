@@ -8,7 +8,8 @@ export const CrossStitchEditView = ({
 	patternData: CrossStitchPatternData;
 }) => (
 	<View>
-		<ViewContent className="relative" fullWidth>
+		<ViewContent fullWidth noPadding noScroll>
+			{/* <div className='flex flex-1 h-full'>hello</div> */}
 			<CrossStitchEditor patternData={patternData} />
 		</ViewContent>
 	</View>

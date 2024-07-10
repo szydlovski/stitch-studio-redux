@@ -11,7 +11,7 @@ export enum CrossStitchEditorTool {
 export interface CrossStitchEditorState {
 	stitches: Stitch[];
 	colors: FlossColor[];
-	activeColor?: string;
+	activeColorId?: string;
 	canvasWidth: number;
 	canvasHeight: number;
 	scale: number;
@@ -42,7 +42,7 @@ export const {
 			},
 		],
 		tool: CrossStitchEditorTool.Mouse,
-		activeColor: undefined,
+		activeColorId: undefined,
 		canvasWidth: 512,
 		canvasHeight: 512,
 		scale: 10,
@@ -86,20 +86,20 @@ export const {
 			state.canvasHeight = height;
 		},
 		setActiveColor: (state, action: PayloadAction<string | undefined>) => {
-			state.activeColor = action.payload;
+			state.activeColorId = action.payload;
 		},
 		draw: (state, action: PayloadAction<{ x: number; y: number }>) => {
-			if (state.activeColor === undefined) return;
+			if (state.activeColorId === undefined) return;
 			const existingStitch = state.stitches.find(
 				({ x, y }) => x === action.payload.x && y === action.payload.y
 			);
 			if (existingStitch) {
-				existingStitch.colorId = state.activeColor;
+				existingStitch.colorId = state.activeColorId;
 			} else {
 				state.stitches.push({
 					x: action.payload.x,
 					y: action.payload.y,
-					colorId: state.activeColor,
+					colorId: state.activeColorId,
 				});
 			}
 		},

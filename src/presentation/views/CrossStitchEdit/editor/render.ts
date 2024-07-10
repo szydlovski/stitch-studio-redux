@@ -42,7 +42,7 @@ export const render = (props: RenderProps) => {
 			offsetY,
 			pixelX,
 			pixelY,
-			activeColor,
+			activeColorId: activeColor,
 			canvasWidth,
 			canvasHeight,
 			stitches,
