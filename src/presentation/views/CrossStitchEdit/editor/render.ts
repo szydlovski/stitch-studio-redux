@@ -6,8 +6,6 @@ import tailwindConfig from '@/tailwind.config';
 
 const fullConfig = resolveConfig(tailwindConfig);
 
-console.log(fullConfig);
-
 interface RenderProps {
 	ctx: CanvasRenderingContext2D;
 	state: CrossStitchEditorState;

@@ -27,8 +27,6 @@ const getPixelPosition = (
 export const EditorCanvas = () => {
 	const { canvasRef, state, dispatch } = useCrossStitchEditorContext();
 
-	// console.log('dimensions', dimensions);
-
 	const mousePosRef = useRef<[number, number]>([0, 0]);
 	const dragTool = useRef<CrossStitchEditorTool>();
 	const dragStart = useRef<[number, number]>([0, 0]);

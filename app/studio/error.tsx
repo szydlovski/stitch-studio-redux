@@ -18,18 +18,21 @@ export default function Error({
 		console.error(error);
 	}, [error]);
 
-	console.log(JSON.stringify(error.name));
-
 	return (
 		<DashboardLayout>
 			<View className="p-6 bg-muted flex-row justify-center items-center">
 				<div className="max-w-xl flex-1">
 					<div>
-						<CircleAlertIcon strokeWidth={1} className="text-destructive h-12 w-12" />
+						<CircleAlertIcon
+							strokeWidth={1}
+							className="text-destructive h-12 w-12"
+						/>
 						<h1 className="text-destructive font-semibold text-lg">
 							Something went wrong...
 						</h1>
-            <Button onClick={reset} variant='ghost' className="mt-4">Reset</Button>
+						<Button onClick={reset} variant="ghost" className="mt-4">
+							Reset
+						</Button>
 					</div>
 				</div>
 			</View>

@@ -170,8 +170,6 @@ export const useGlobalModal = <Props extends Record<string, any>>(
 	const close = useCallback(() => handleOpenChange(false), [handleOpenChange]);
 
 	useEffect(() => {
-		console.log('controlled open effect');
-
 		if (controlledOpen !== undefined) {
 			dispatch(
 				modalProviderActions.setModalOpen({ id, value: controlledOpen })
@@ -180,8 +178,6 @@ export const useGlobalModal = <Props extends Record<string, any>>(
 	}, [controlledOpen, dispatch, id]);
 
 	useEffect(() => {
-		console.log('add modal effect');
-
 		dispatch(
 			modalProviderActions.addModal({
 				// children: <Component {...props} />,
@@ -200,16 +196,12 @@ export const useGlobalModal = <Props extends Record<string, any>>(
 			</Dialog>,
 			containerRef.current as HTMLElement
 		);
-		console.log('portalled');
-
 		return () => {
 			dispatch(modalProviderActions.removeModal(id));
 		};
 	}, []);
 
 	useEffect(() => {
-		console.log('update modal');
-
 		dispatch(
 			modalProviderActions.updateModal({
 				id,
@@ -243,7 +235,6 @@ export const GlobalModal = <Props extends Record<string, any>>({
 	const { state, dispatch, containerRef } = useModalContext();
 
 	useEffect(() => {
-		console.log('add modal effect');
 
 		dispatch(
 			modalProviderActions.addModal({
@@ -335,8 +326,6 @@ const ConsumerModalContent = ({
 };
 
 export const Consumer = () => {
-	console.log('render consumer');
-
 	const [count, setCount] = useState(0);
 	const { state: isOpen, set: setIsOpen, open } = useDisclosure();
 	return (

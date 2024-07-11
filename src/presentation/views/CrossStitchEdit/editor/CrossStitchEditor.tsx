@@ -6,7 +6,6 @@ import {
 	useCrossStitchEditorContext,
 } from './CrossStitchEditorContext';
 import { ColorsPanel } from './components/ColorsPanel';
-import { DevPanel } from './components/DevPanel';
 import { EditorCanvas } from './components/EditorCanvas';
 import { ToolsPanel } from './components/ToolsPanel';
 import { CrossStitchEditorActions } from './crossStitchEditorReducer';
@@ -22,14 +21,8 @@ export const EditorInner = () => {
 	});
 	useEffect(() => {
 		const ctx = canvasRef.current?.getContext('2d');
-		if (!ctx) {
-			console.log('no ctx');
-
-			return;
-		}
+		if (!ctx) return;
 		render({ ctx, state, options: { theme: 'dark' } });
-		console.log('rendered');
-
 		setReady(true);
 	}, [state, canvasRef]);
 	return (
@@ -37,7 +30,6 @@ export const EditorInner = () => {
 			<div ref={containerRef} className="relative h-full">
 				<EditorCanvas />
 				<ColorsPanel />
-				<DevPanel />
 				<ToolsPanel />
 			</div>
 

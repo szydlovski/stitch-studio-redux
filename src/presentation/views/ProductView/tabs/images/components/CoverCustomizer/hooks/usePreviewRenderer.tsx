@@ -92,13 +92,6 @@ export const usePreviewRenderer = ({
 			),
 		[]
 	);
-	useEffect(() => console.log('debouncedRender changed'), [debouncedRender]);
-	useEffect(() => console.log('pattern changed'), [pattern]);
-	useEffect(() => console.log('renderer changed'), [renderer]);
-	useEffect(
-		() => console.log('crossStitchRenderer changed'),
-		[crossStitchRenderer]
-	);
 
 	useEffect(() => debouncedRender(state), [state, debouncedRender]);
 };

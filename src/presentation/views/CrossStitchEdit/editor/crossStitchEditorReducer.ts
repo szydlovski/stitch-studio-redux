@@ -1,4 +1,4 @@
-import { Stitch, FlossColor } from '@domain/cross-stitch';
+import { Stitch, FlossColor, FlossPalette } from '@domain/cross-stitch';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export enum CrossStitchEditorTool {
@@ -37,7 +37,7 @@ export const {
 				id: 'black',
 				name: 'Black',
 				color: '#000000',
-				palette: 'custom',
+				palette: FlossPalette.Custom,
 				symbol: 'X',
 			},
 		],

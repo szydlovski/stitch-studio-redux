@@ -1,7 +1,7 @@
 import { Drawable } from '@lib/canvas';
 import { v4 as uuid } from 'uuid';
 import { readImageFromFile } from '@presentation/utils';
-import { CrossStitchPattern, FlossColor, Stitch } from '@domain/cross-stitch';
+import { CrossStitchPattern, FlossColor, FlossPalette, Stitch } from '@domain/cross-stitch';
 import { rgbToHex } from '@lib/color';
 
 export class CrossStitchPatternParser {
@@ -37,7 +37,7 @@ export class CrossStitchPatternParser {
 						id: id.toString(),
 						color: hex,
 						name: `Color ${id}`,
-						palette: 'custom',
+						palette: FlossPalette.Custom,
 						symbol: 'X',
 					};
 					id++;

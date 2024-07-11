@@ -34,8 +34,6 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 		index: number,
 		evt: MouseEvent<HTMLButtonElement>
 	) => {
-		console.log('last selected index', lastSelectedIndex);
-
 		if (evt.shiftKey) {
 			if (lastSelectedIndex !== undefined) {
 				const start = Math.min(lastSelectedIndex, index);
@@ -137,7 +135,7 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 			<SelectionBar
 				selectedCount={selectedImages.length}
 				onUnselect={() => setSelectedImages([])}
-				onDelete={() => console.log('Delete')}
+				onDelete={() => {}}
 			/>
 		</ViewContent>
 	);

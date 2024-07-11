@@ -187,7 +187,7 @@ const MyMenuItem = ({
 			</Link>
 		</DropdownMenuItem>
 	) : (
-		<DropdownMenuItem disabled={disabled}>
+		<DropdownMenuItem disabled={disabled} onClick={onClick}>
 			{content}
 			{shortcut && <DropdownMenuShortcut>{shortcut}</DropdownMenuShortcut>}
 		</DropdownMenuItem>

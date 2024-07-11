@@ -19,7 +19,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 				try {
 					let userRecord = await new GetUserByEmailQuery().execute(email);
 					if (userRecord.avatar === null) {
-						console.log('User has no avatar!');
 						if (user.image) {
 							const fetchedImage = await fetch(user.image).then((res) =>
 								res.blob()

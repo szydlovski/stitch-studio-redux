@@ -21,11 +21,16 @@ export type StylizedPatternTextureDictionary = Record<
 	Drawable
 >;
 
+export enum FlossPalette {
+	Custom = 'custom',
+	DMC = 'dmc',
+}
+
 export interface FlossColor {
 	id: string;
 	name: string;
 	color: string;
-	palette: string;
+	palette: FlossPalette;
 	symbol: string;
 }
 

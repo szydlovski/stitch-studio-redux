@@ -31,8 +31,6 @@ interface ListProductsResults {
 export const listProducts = async (
 	params: ListProductsParameters = {}
 ): Promise<ListProductsResults> => {
-	console.log(params);
-
 	return fetch(`/api/products?${encodeQueryParams(params)}`)
 		.then((res): Promise<ListProductsResult> => res.json())
 		.then(({ total, products }) => {

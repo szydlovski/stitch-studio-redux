@@ -30,15 +30,12 @@ export const MockupSettingsModal = ({
 	const [initialState, setInitialState] = useState(
 		product.attributes.hoopConfig ?? getMockupCustomizerInitialState()
 	);
-	console.log(product.attributes.hoopConfig?.background);
-	console.log(initialState.background);
 
 	const [state, dispatch] = useReducer(
 		mockupCustomizerReducer,
 		initialState,
 		() => initialState
 	);
-	console.log(state.background);
 
 	const hasChanges = useMemo(
 		() => !isEqual(state, initialState),

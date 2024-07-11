@@ -6,12 +6,7 @@ export const getProductQueryKey = (productId: string) => ['product', productId];
 export const getProduct = (productId: string) => {
 	return fetch(`/api/products/${productId}`)
 		.then((res) => res.json())
-		.then(FullProductObject.fromAttributes)
-		.then(product => {
-			console.log(product.attributes.hoopConfig);
-			
-			return product;
-		});
+		.then(FullProductObject.fromAttributes);
 };
 
 export const useGetProduct = (productId: string) => {

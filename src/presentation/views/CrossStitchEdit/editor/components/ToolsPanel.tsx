@@ -49,27 +49,29 @@ const tools: CrossStitchEditorToolConfig[] = [
 export const ToolsPanel = () => {
 	const { state, dispatch } = useCrossStitchEditorContext();
 	return (
-		<div className="absolute top-0 left-0 p-1 bg-background border-b border-r rounded-br-lg grid gap-4">
-			<div className="grid gap-1">
-				{tools.map(({ label, value, disabled, icon: Icon }) => (
-					<Tooltip key={value}>
-						<TooltipTrigger asChild>
-							<Toggle
-								size="xs"
-								key={value}
-								disabled={disabled}
-								pressed={state.tool === value}
-								onPressedChange={() =>
-									state.tool !== value &&
-									dispatch(CrossStitchEditorActions.setTool(value))
-								}
-							>
-								<Icon size={16} />
-							</Toggle>
-						</TooltipTrigger>
-						<TooltipContent side="right">{label}</TooltipContent>
-					</Tooltip>
-				))}
+		<div className="absolute h-full top-0 left-0 p-1 bg-background border-b border-r rounded-br-lg grid gap-4">
+			<div>
+				<div className="grid gap-1">
+					{tools.map(({ label, value, disabled, icon: Icon }) => (
+						<Tooltip key={value}>
+							<TooltipTrigger>
+								<Toggle
+									size="xs"
+									key={value}
+									disabled={disabled}
+									pressed={state.tool === value}
+									onPressedChange={() =>
+										state.tool !== value &&
+										dispatch(CrossStitchEditorActions.setTool(value))
+									}
+								>
+									<Icon size={16} />
+								</Toggle>
+							</TooltipTrigger>
+							<TooltipContent side="right">{label}</TooltipContent>
+						</Tooltip>
+					))}
+				</div>
 			</div>
 		</div>
 	);
