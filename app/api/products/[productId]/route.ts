@@ -1,4 +1,4 @@
-import { DeleteProductQuery } from '@infrastructure/product/DeleteProductQuery';
+import { DeleteProductCommand } from '@infrastructure/product/DeleteProductCommand';
 import { GetProductQuery } from '@infrastructure/product/GetProductQuery';
 import { UpdateProductTitleQuery } from '@infrastructure/product/UpdateProductTitleQuery';
 import { routeHandler } from '@lib/api/routeHandler';
@@ -35,7 +35,7 @@ export const PATCH = routeHandler<{ productId: string }>(
 
 export const DELETE = routeHandler<{ productId: string }>(
 	async ({ xata, params: { productId } }) => {
-		const result = await new DeleteProductQuery(xata).execute(productId);
+		const result = await new DeleteProductCommand(xata).execute(productId);
 		if (!result)
 			return NextResponse.json(
 				{ error: true, message: 'Failed to delete product' },
