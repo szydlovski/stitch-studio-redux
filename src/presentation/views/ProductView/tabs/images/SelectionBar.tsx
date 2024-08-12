@@ -6,12 +6,14 @@ interface SelectionBarProps {
 	selectedCount: number;
 	onUnselect: () => void;
 	onDelete: () => void;
+	deleteDisabled: boolean;
 }
 
 export const SelectionBar = ({
 	selectedCount,
 	onUnselect,
 	onDelete,
+	deleteDisabled,
 }: SelectionBarProps) => {
 	return (
 		<div
@@ -29,7 +31,8 @@ export const SelectionBar = ({
 						<span> images selected</span>
 					</span>
 					<Button onClick={onUnselect}>Unselect</Button>
-					<Button onClick={onDelete} variant="destructive" disabled>
+					<Button onClick={onDelete} variant="destructive"
+							disabled={deleteDisabled && selectedCount > 0}>
 						Delete
 					</Button>
 				</div>

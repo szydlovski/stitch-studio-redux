@@ -8,11 +8,12 @@ import { LoadingButton, ViewContent } from '@components/ui';
 import { dataUrlToXataBase64, selectFile } from '@presentation/utils';
 import { useProductViewContext } from '@presentation/views/ProductView/ProductViewContext';
 import { useQueryClient } from '@tanstack/react-query';
-import { BoxSelectIcon, ConstructionIcon } from 'lucide-react';
+import { ConstructionIcon } from 'lucide-react';
 import { MouseEvent, forwardRef, useCallback, useState } from 'react';
 import { ProductImageTile, ProductImageTileSkeleton } from './ProductImageTile';
 import { SelectionBar } from './SelectionBar';
 import { CoverGeneratorDialog } from './components/CoverGenerator/CoverGeneratorDialog';
+import {useDeleteProductImages} from "@application/product-image/deleteProductImage";
 
 const readFileAsDataURL = (file: File) => {
 	return new Promise<string>((resolve) => {
@@ -69,6 +70,18 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 			queryKey: getProductImagesQueryKey(product.id),
 		});
 	}, [mutateAsync, product.id, queryClient]);
+
+	const { status: deleteStatus, mutateAsync: mutateDeleteAsync } = useDeleteProductImages();
+
+	const handleDelete = useCallback(async () => {
+		for (const id of selectedImages) {
+			await mutateDeleteAsync({ productId: product.id, imageId: id });
+		}
+		await queryClient.invalidateQueries({
+			queryKey: getProductImagesQueryKey(product.id),
+		});
+		setSelectedImages([])
+	}, [queryClient, mutateDeleteAsync, product.id, selectedImages]);
 
 	return (
 		<ViewContent ref={ref} fullWidth className="flex-1 bg-muted relative">
@@ -135,7 +148,8 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 			<SelectionBar
 				selectedCount={selectedImages.length}
 				onUnselect={() => setSelectedImages([])}
-				onDelete={() => {}}
+				onDelete={() => handleDelete()}
+				deleteDisabled={deleteStatus === 'pending'}
 			/>
 		</ViewContent>
 	);
