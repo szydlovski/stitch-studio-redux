@@ -1,10 +1,10 @@
 import { DeleteProductCommand } from '@infrastructure/product/DeleteProductCommand';
 import { GetProductQuery } from '@infrastructure/product/GetProductQuery';
 import { UpdateProductTitleQuery } from '@infrastructure/product/UpdateProductTitleQuery';
-import { routeHandler } from '@lib/api/routeHandler';
+import { routeHandlerFactory } from '@lib/api/routeHandlerFactory';
 import { NextResponse } from 'next/server';
 
-export const GET = routeHandler<{ productId: string }>(
+export const GET = routeHandlerFactory<{ productId: string }>(
 	async ({ xata, params: { productId } }) => {
 		const product = await new GetProductQuery(xata).execute(productId);
 		return NextResponse.json(product);
@@ -14,7 +14,7 @@ export const GET = routeHandler<{ productId: string }>(
 	}
 );
 
-export const PATCH = routeHandler<{ productId: string }>(
+export const PATCH = routeHandlerFactory<{ productId: string }>(
 	async ({ req, xata, params: { productId } }) => {
 		const body = await req.json();
 		const result = await new UpdateProductTitleQuery(xata).execute(
@@ -33,7 +33,7 @@ export const PATCH = routeHandler<{ productId: string }>(
 	}
 );
 
-export const DELETE = routeHandler<{ productId: string }>(
+export const DELETE = routeHandlerFactory<{ productId: string }>(
 	async ({ xata, params: { productId } }) => {
 		const result = await new DeleteProductCommand(xata).execute(productId);
 		if (!result)
