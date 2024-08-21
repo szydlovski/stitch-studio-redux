@@ -10,7 +10,7 @@ import {
 	DropdownMenuSub,
 	DropdownMenuSubContent,
 	DropdownMenuSubTrigger,
-	DropdownMenuTrigger,
+	DropdownMenuTrigger, Input,
 	Skeleton,
 } from '@components/ui';
 import { ProductImageItem } from '@domain/product-image';
@@ -21,11 +21,16 @@ import {
 	Mail,
 	MessageSquare,
 	PlusCircle,
-	UserPlus,
+	UserPlus, XIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MouseEvent } from 'react';
+import {MouseEvent, useCallback, useState} from 'react';
+import {useDeleteProductImageTags} from "@application/product-image/deleteProductImageTag";
+import {FullProductObject} from "@domain/product";
+import {useAddProductImageTags} from "@application/product-image/addProductImageTag";
+import {useQueryClient} from "@tanstack/react-query";
+import {getProductImagesQueryKey} from "@application/product-image";
 
 const ProductImageMenuContent = ({
 	image: { src, tags },
@@ -101,6 +106,7 @@ const showOnHoverClasses =
 
 interface ProductImageTileProps {
 	image: ProductImageItem;
+	product: FullProductObject;
 	active?: boolean;
 	selected?: boolean;
 	selectionOngoing?: boolean;
@@ -112,12 +118,34 @@ interface ProductImageTileProps {
 
 export const ProductImageTile = ({
 	image,
+	product,
 	active,
 	selected,
 	selectionOngoing,
 	onSelectedChange,
 }: ProductImageTileProps) => {
+	const queryClient = useQueryClient();
 	const { src, tags, width, height } = image;
+
+	const { status: deleteTagStatus, mutateAsync: mutateDeleteAsync } = useDeleteProductImageTags();
+	const { status: addTagStatus, mutateAsync: mutatePutAsync } = useAddProductImageTags();
+
+	const handleDelete = useCallback(async (tag) => {
+        await mutateDeleteAsync({ productId: product.id, imageId: image.id, tag: tag});
+		await queryClient.invalidateQueries({
+			queryKey: getProductImagesQueryKey(product.id),
+		});
+	}, [queryClient, mutateDeleteAsync, image, product]);
+
+	const handleAddTag = useCallback(async (tag) => {
+        await mutatePutAsync({ productId: product.id, imageId: image.id, tag: tag});
+		await queryClient.invalidateQueries({
+			queryKey: getProductImagesQueryKey(product.id),
+		});
+	}, [queryClient, mutatePutAsync, image, product]);
+
+	const [tagInput, setTagInput] = useState('');
+
 	return (
 		<div className="flex flex-col justify-center border rounded-sm group relative overflow-hidden transition-all bg-background">
 			<div className="flex bg-neutral-200 transition-all relative">
@@ -138,13 +166,31 @@ export const ProductImageTile = ({
 			<ul className="p-2 flex">
 				{tags.map((tag) => (
 					<li
-						className="text-[0.6rem] font-semibold uppercase bg-orange-600 px-1 py-0.5 rounded-sm text-white"
+						className="text-xs font-semibold uppercase bg-orange-600 px-1 py-0.5 rounded-sm text-white flex items-center gap-1"
 						key={tag}
 					>
 						{tag}
+						<button className={'p-1'}
+								onClick={()=> handleDelete(tag)}
+								disabled={deleteTagStatus === 'pending'}>
+							<XIcon size={12} />
+						</button>
 					</li>
 				))}
 			</ul>
+			<Input
+				id="new-tag"
+				value={tagInput}
+				disabled={addTagStatus === 'pending'}
+				onChange={(e) => setTagInput(e.target.value)}
+				onKeyDown={(e) => {
+					if (e.key === 'Enter') {
+						handleAddTag(tagInput);
+						setTagInput('');
+					}
+				}}
+				className="col-span-3"
+			/>
 			<div
 				className={cn(
 					'absolute top-0 left-0 p-3 w-full',
