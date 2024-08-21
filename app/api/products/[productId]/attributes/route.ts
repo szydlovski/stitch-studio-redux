@@ -1,6 +1,6 @@
 import { ProductAttributesSchema } from '@domain/product/types';
 import { UpdateProductAttributesQuery } from '@infrastructure/product/UpdateProductAttributesQuery';
-import { routeHandler } from '@lib/api/routeHandler';
+import { routeHandlerFactory } from '@lib/api/routeHandlerFactory';
 import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
 
@@ -22,7 +22,7 @@ const getZodErrorDescription = <T>(error: ZodError<T>) => {
 	}
 };
 
-export const PATCH = routeHandler<{ productId: string }>(
+export const PATCH = routeHandlerFactory<{ productId: string }>(
 	async ({ req, xata, params: { productId } }) => {
 		const attributes = await req.json();
 		const x = ProductAttributesSchema.safeParse(attributes);

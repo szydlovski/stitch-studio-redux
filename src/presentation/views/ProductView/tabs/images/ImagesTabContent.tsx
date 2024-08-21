@@ -133,6 +133,7 @@ export const ImagesTabContent = forwardRef<HTMLDivElement>((_, ref) => {
 								<ProductImageTile
 									key={image.src}
 									image={image}
+									product={product}
 									active={false}
 									selectionOngoing={selectedImages.length > 0}
 									selected={selectedImages.includes(image.id)}

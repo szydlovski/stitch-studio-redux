@@ -1,9 +1,9 @@
-import { routeHandler } from '@lib/api/routeHandler';
+import { routeHandlerFactory } from '@lib/api/routeHandlerFactory';
 import { NextResponse } from 'next/server';
 import { ListProductsQuery } from '@infrastructure/product/ListProductsQuery';
 import { CreateProductQuery } from '@infrastructure/product/CreateProductQuery';
 
-export const GET = routeHandler(
+export const GET = routeHandlerFactory(
 	async ({ req, xata }) => {
 		const searchParams = new URL(req.url).searchParams;
 		const result = await new ListProductsQuery(xata).execute({
@@ -22,7 +22,7 @@ export const GET = routeHandler(
 	}
 );
 
-export const POST = routeHandler(
+export const POST = routeHandlerFactory(
 	async ({ xata, req, session }) => {
 		const body = await req.json();
 		const product = await new CreateProductQuery(xata).execute(

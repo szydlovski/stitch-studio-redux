@@ -1,11 +1,10 @@
 import { GetProductImagesQuery } from '@infrastructure/product/GetProductImagesQuery';
 import { XataQuery } from '@lib/api/XataQuery';
-import { routeHandler } from '@lib/api/routeHandler';
-import { getXataClient } from '@lib/xata';
+import { routeHandlerFactory } from '@lib/api/routeHandlerFactory';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
-export const GET = routeHandler<{ productId: string }>(
+export const GET = routeHandlerFactory<{ productId: string }>(
 	async ({ params: { productId } }) => {
 		const images = await new GetProductImagesQuery().execute(productId);
 		return NextResponse.json({ images });

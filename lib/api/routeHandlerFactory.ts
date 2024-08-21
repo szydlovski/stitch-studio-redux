@@ -7,14 +7,14 @@ interface RouteOptions {
 	auth?: boolean;
 }
 
-interface RequestContext<Params> {
+export interface RequestContext<Params> {
 	req: Request;
 	params: Params;
 	xata: XataClient;
 	session: Session;
 }
 
-export const routeHandler = <Params, T = any>(
+export const routeHandlerFactory = <Params, T = any>(
 	handler: (ctx: RequestContext<Params>) => T,
 	options?: RouteOptions
 ) => {
